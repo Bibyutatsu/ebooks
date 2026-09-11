@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python virtualenvs
+.venv/
+env/
+venv/
+
+# Large local raw downloads (assets hosted via GitHub Releases)
+downloads/
+*.epub
+*.kfx
+*.rar
+*.zip
