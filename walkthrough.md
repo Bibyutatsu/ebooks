@@ -1,94 +1,52 @@
-# Walkthrough: Bibyutatsu Ebooks Library Architecture & Deployment
+# Walkthrough: Ingestion of Standalone Ebooks & Future-Proof Author Standardization
 
-The free, search-first Bengali digital library has been built, tested, and deployed to **[https://bibyutatsu.github.io/ebooks](https://bibyutatsu.github.io/ebooks)**.
-
----
-
-## 🚀 Live Endpoints & Repositories
-
-- **Live Web Application**: [https://bibyutatsu.github.io/ebooks](https://bibyutatsu.github.io/ebooks)
-- **GitHub Repository**: [https://github.com/Bibyutatsu/ebooks](https://github.com/Bibyutatsu/ebooks)
-- **Local Project Path**: `ebooks/`
+All missing books and covers have been cataloged, verified, uploaded to GitHub Releases, and pushed to the live repository.
 
 ---
 
-## 📦 What Was Delivered
+## 🚀 Summary of Changes
 
-### 1. Ingestion & Metadata Normalization Pipeline
-- **Script**: [`tools/build_catalog.py`](tools/build_catalog.py)
-- **Processed**: Scanned all 178 author directories and normalized **1,238 distinct books**.
-- **Multi-Format Indexing**: Indexed 1,119 EPUBs, 1,102 Kindle KFX, 9 TXT, 6 MOBI, and 1 PDF.
-- **Cover Image Optimization**: Batch compressed 1,231 `.jpg` covers into modern `.webp` thumbnails (`assets/covers/`), reducing the cover assets payload from 73 MB to **25 MB**.
-- **Metadata Output**: Schema-validated, compact [`catalog.json`](catalog.json) (2.4 MB) containing precomputed search tokens, genres, series, authors, and format sizes.
+### 1. Robust Author & Title Disambiguation
+- **File**: [`tools/author_mapping.py`](file:///Users/oindrila/Projects/ebooks/tools/author_mapping.py)
+  - Added `_ALIAS_INDEX` mapping all canonical Bengali names, English names, and aliases (case-insensitive and trimmed).
+  - Added `find_author_match(candidate)` for instant lookup against all known aliases.
+  - Enhanced `get_author_info()` to standardize known authors while providing seamless transliterated fallback for unstandardized authors.
 
-### 2. Dual-Script Transliteration & Character Intelligence
-- **Transliteration Engine**: [`tools/transliteration.py`](tools/transliteration.py) converts Bengali Unicode to Avro/ITRANS phonetic Romanizations with inherent vowel permutations (`o`/`a`), conjunct resolution, and numeral mapping.
-- **Author Mapping**: [`tools/author_mapping.py`](tools/author_mapping.py) standardizes all 173 authors with English aliases, canonical Bengali names, and default genres.
-- **Iconic Series Detector**: [`tools/series_mapping.py`](tools/series_mapping.py) automatically identifies and tags prominent Bengali literary characters:
-  - Feluda (ফেলুদা), Byomkesh Bakshi (ব্যোমকেশ), Prof. Shonku (শঙ্কু), Kakababu (কাকাবাবু), Masud Rana (মাসুদ রানা), Tin Goyenda (তিন গোয়েন্দা), Tenida (টেনিদা), Ghanada (ঘনাদা), Rijuda (রিজুদা), Himu (হিমু), Misir Ali (মিসির আলি), Shuvro (শুভ্র), Tintin (টিনটিন), Sherlock Holmes (শার্লক), Kiriti Roy (কিরীটী), Shabor (শবর).
+- **File**: [`tools/build_catalog.py`](file:///Users/oindrila/Projects/ebooks/tools/build_catalog.py)
+  - Implemented `resolve_book_metadata()` handling:
+    - `Author - Title.ext`
+    - `Title - Author.ext`
+    - Simple `Title.ext` (with OPF or internal EPUB metadata extraction)
+    - Standalone book folders directly placed under `downloads/`
+  - Implemented `get_epub_metadata()` to inspect internal `META-INF/container.xml` -> OPF when standalone `.opf` is missing.
+  - Added support for `.webp` cover images alongside `.jpg`, `.jpeg`, and `.png`.
+  - Added path-based matching (`existing_books_by_path`) to preserve exact existing book IDs and release download URLs across re-runs.
 
-### 3. Verification Layer & Test Suite
-- **Test Runner**: [`tests/verify_catalog.py`](tests/verify_catalog.py)
-- **Integrity Checks**: Validates schema completeness, non-zero file sizes, format fields, and uniqueness of all 1,238 book IDs.
-- **Search Benchmarks**: Validates **46 curated query test cases** across English transliterations, typos/colloquial spellings, and Bengali Unicode with Levenshtein distance $\le 2$:
-  - `feluda` $\rightarrow$ 56 matches
-  - `byomkesh` / `bomkesh` $\rightarrow$ 30 matches
-  - `humayun ahmed` / `humayan` $\rightarrow$ 211 matches
-  - `satyajit ray` / `roy` $\rightarrow$ 56 matches
-  - `chander pahar` $\rightarrow$ 24 matches
-  - `sharadindu banerjee` $\rightarrow$ 29 matches
-  - `sunil ganguly` $\rightarrow$ 34 matches
-  - `tin goyenda` $\rightarrow$ 8 matches
-  - `masud rana` $\rightarrow$ 37 matches
-  - `agatha christie` $\rightarrow$ 19 matches
-  - `jules verne` $\rightarrow$ 18 matches
-  - **Benchmark Score**: **46/46 Passed (100.0% Recall)**.
-
-### 4. High-Performance Glassmorphic Web App
-- **HTML/CSS/JS**: [`index.html`](index.html), [`style.css`](style.css), [`app.js`](app.js)
-- **Design System**: Matches Bibhash's dev portfolio styling with dark/light mode toggle, glowing ambient mesh, and Google Fonts (`Outfit`, `Inter`, `Hind Siliguri`).
-- **Interactive UI**:
-  - Instant dual-script search with clear button and quick-tag suggestion chips.
-  - Interactive genre filter pills with live counts.
-  - Multi-format filter pills (`All`, `EPUB`, `Kindle KFX`, `PDF`, `MOBI`).
-  - Searchable author dropdown with book count badges.
-  - Responsive book grid with lazy-loaded WebP covers, series tags, and format badges.
-  - Book Detail Modal with high-res cover, synopsis, author bio link, format download cards, and reader guide.
-  - URL parameter synchronization (`?q=feluda&genre=thriller`).
-
-### 5. Scalable Free Hosting & CDN Releases
-- **Frontend**: Hosted for free on GitHub Pages at `https://bibyutatsu.github.io/ebooks/`.
-- **Distribution Tool**: [`tools/sync_releases.py`](tools/sync_releases.py) incrementally uploads book assets to GitHub Releases (`v1.0-batch-01`, etc.) using clean ASCII slugs, bypassing Git repository bloat and GitHub Pages bandwidth limits.
-- **Verified Direct CDN Download**: Tested asset `humayun-ahmed-rupa.epub` on GitHub Release `v1.0-batch-01` returning `HTTP/2 200` directly from `release-assets.githubusercontent.com`.
+### 2. Incremental Release Synchronization
+- **File**: [`tools/sync_releases.py`](file:///Users/oindrila/Projects/ebooks/tools/sync_releases.py)
+  - Added `get_latest_batch_info()` to automatically detect the latest release batch tag (e.g. `v1.0-batch-30`) and its asset capacity.
+  - Incremental upload: skips all already-synced assets (2,238 format files) and only uploads new/pending assets into available release slots or creates new batches.
 
 ---
 
-## 📋 Verification Results Summary
+## 📦 What Was Delivered & Verified
 
-| Verification Suite | Target | Status | Result |
-| :--- | :--- | :--- | :--- |
-| **Catalog Schema & Integrity** | 1,238 books, 173 authors | **PASSED** | 100% compliant, 0 duplicates |
-| **Transliteration & Fuzzy Benchmarks** | 46 English & Bengali queries | **PASSED** | 46/46 passed (100% recall) |
-| **Web Server Routes** | `index.html`, `style.css`, `app.js`, `catalog.json` | **PASSED** | `HTTP/2 200 OK` on live GitHub Pages |
-| **Direct CDN Asset Download** | Release asset download URL | **PASSED** | `HTTP/2 200 OK` (signed GitHub CDN) |
+| Item | Details | Status |
+| :--- | :--- | :--- |
+| **Missing Book 1** | `সোভিয়েত সায়েন্স ফিকশন` (*Soviet Science Fiction*) | **Uploaded to `v1.0-batch-30`** |
+| **Missing Book 2** | `সহস্র এক আরব্য রজনী` (*Arabian Nights*) | **Uploaded to `v1.0-batch-30`** |
+| **Missing Cover 1** | Samaresh Majumdar's `সাতকাহন` (`samaresh-majumdar-satkahan.webp`) | **Optimized & Committed** |
+| **Missing Cover 2** | Hemendra Kumar Roy's `রহস্য-রোমাঞ্চ সমগ্র` (`hemendra-kumar-roy-rohosj-romanch-smgr.webp`) | **Optimized & Committed** |
+| **Catalog Count** | Increased from 1,238 to **1,240 books** across **175 authors** | **100% Validated** |
+| **Format Assets** | 2,240 format files across 30 batches; 0 missing URLs | **100% Verified** |
+| **CDN Download** | Tested direct signed download from `release-assets.githubusercontent.com` | **`HTTP/2 302 -> 200 OK`** |
+| **Test Benchmarks** | `python3 tests/verify_catalog.py ./catalog.json` | **46/46 Passed (100.0%)** |
 
 ---
 
-## 🔄 Future Scaling Workflow
+## 🗑️ Deletion Confirmation
 
-When new books are added in the future:
-```bash
-# 1. Rebuild catalog and convert new covers
-python3 tools/build_catalog.py --downloads ../downloads --output .
-
-# 2. Run verification suite
-python3 tests/verify_catalog.py ./catalog.json
-
-# 3. Upload new assets to GitHub Releases
-python3 tools/sync_releases.py --catalog ./catalog.json
-
-# 4. Push updated catalog
-git add catalog.json assets/covers/
-git commit -m "feat: sync new books to catalog"
-git push origin main
-```
+`/Users/oindrila/Downloads/Epubbooks` (~2.6 GB) **CAN NOW BE SAFELY DELETED**.
+- All 1,240 books (2,240 format files) are permanently distributed on GitHub Releases.
+- All 1,239 covers are tracked in Git under `assets/covers/`.
+- All scrapers and metadata are tracked in Git under `tools/kindlebangla/`.
