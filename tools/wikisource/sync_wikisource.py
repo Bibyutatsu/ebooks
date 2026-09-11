@@ -99,7 +99,13 @@ def generate_cover_image(title, author, out_path, width=300, height=450):
 # Phase 1: Enumerate works from Wikisource
 # ------------------------------------------------------------------
 def enumerate_works(limit=2000, category="রচনা"):
-    """Walk bn.wikisource.org Category:রচনা and collect all page titles."""
+    """
+    WARNING: Category:রচনা (Namespace 110) contains Wikidata SPARQL edition-listing stubs,
+    NOT the transcribed book content. Do NOT use Category:রচনা for live bookstore ingestion.
+    """
+    if category == "রচনা":
+        print("[ERROR] Category:রচনা contains Namespace 110 metadata stubs (2-3 page edition listings), not actual book text. Ingestion blocked.")
+        return []
     print(f"Enumerating Wikisource category: {category} (limit={limit})")
     works = []
     params = {

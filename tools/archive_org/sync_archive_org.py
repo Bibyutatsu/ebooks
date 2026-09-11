@@ -75,7 +75,7 @@ def fetch_ia_files_and_thumb(identifier):
                     thumb_name = name
                 if name.endswith("_files.xml") or name.endswith("_meta.xml") or name.endswith("_chocr.html.gz") or name.endswith("_archive.torrent"):
                     continue
-                if fmt == "EPUB" or name.lower().endswith(".epub"):
+                if (fmt == "EPUB" or name.lower().endswith(".epub")) and sz > 50000:
                     epubs.append({"name": name, "size": sz, "format": "epub"})
                 elif (fmt in ["Text PDF", "Image Container PDF", "PDF"] or name.lower().endswith(".pdf")) and sz > 50000:
                     pdfs.append({"name": name, "size": sz, "format": "pdf"})
