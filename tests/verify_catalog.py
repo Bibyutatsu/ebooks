@@ -56,17 +56,22 @@ def test_schema_and_integrity(catalog_path: str):
     with open(catalog_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # Top-level keys
-    for key in ("version", "stats", "genres", "top_authors", "books"):
+    # Top-level keys: books and version are required
+    for key in ("version", "books"):
         assert key in data, f"Missing top-level key: {key}"
 
-    stats = data["stats"]
-    assert stats["total_books"] > 0, "Catalog contains 0 books"
-    assert stats["total_authors"] > 0, "Catalog contains 0 authors"
-    assert len(data["books"]) == stats["total_books"], "Mismatch in book counts"
+    books = data["books"]
+    assert len(books) > 0, "Catalog contains 0 books"
 
-    print(f"✓ Validated stats: {stats['total_books']} books, {stats['total_authors']} authors.")
-    print(f"✓ Formats verified: {stats['formats']}")
+    # Derive runtime stats from books
+    author_set = set(b.get("author") for b in books if b.get("author"))
+    format_counts = {}
+    for b in books:
+        for fmt in b.get("formats", {}):
+            format_counts[fmt] = format_counts.get(fmt, 0) + 1
+
+    print(f"✓ Validated: {len(books)} books, {len(author_set)} authors.")
+    print(f"✓ Formats verified: {format_counts}")
 
     # Validate individual books
     valid_formats = { "epub", "kfx", "mobi", "pdf", "docx", "txt", "azw3", "external" }

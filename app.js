@@ -400,6 +400,7 @@
     selectedAuthor: 'all',
     selectedSort: 'popular',
     topAuthors: [],
+    authors: [],
     genres: []
   };
 
@@ -425,7 +426,8 @@
     modalOverlay: document.getElementById('book-modal-overlay'),
     modalCloseBtn: document.getElementById('modal-close-btn'),
     modalBody: document.getElementById('modal-body'),
-    statCountText: document.getElementById('stat-count-text')
+    statCountText: document.getElementById('stat-count-text'),
+    totalGenreCount: document.getElementById('total-genre-count')
   };
 
   /* --------------------------------------------------------------------------
@@ -469,72 +471,247 @@
   }
 
   /* --------------------------------------------------------------------------
-     Catalog Fetching & Setup
+     IndexedDB Local Catalog Cache
      -------------------------------------------------------------------------- */
-  async function loadCatalog() {
-    try {
-      const response = await fetch('./catalog.json');
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const data = await response.json();
-      state.catalog = data;
-      state.books = data.books || [];
-      state.topAuthors = data.top_authors || [];
-      state.genres = data.genres || [];
+  const DB_NAME = 'bibyutatsu_ebooks_store';
+  const STORE_NAME = 'catalog_cache';
+  const DB_VERSION = 1;
 
-      // Pre-compute normalized search tokens once for instantaneous filtering
-      for (let i = 0; i < state.books.length; i++) {
-        const b = state.books[i];
+  function openCacheDB() {
+    return new Promise((resolve) => {
+      if (!window.indexedDB) return resolve(null);
+      try {
+        const req = indexedDB.open(DB_NAME, DB_VERSION);
+        req.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains(STORE_NAME)) {
+            db.createObjectStore(STORE_NAME);
+          }
+        };
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => resolve(null);
+      } catch {
+        resolve(null);
+      }
+    });
+  }
+
+  async function getLocalCachedCatalog() {
+    try {
+      const db = await openCacheDB();
+      if (!db) return null;
+      return new Promise((resolve) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore(STORE_NAME);
+        const req = store.get('active_catalog');
+        req.onsuccess = () => resolve(req.result || null);
+        req.onerror = () => resolve(null);
+      });
+    } catch {
+      return null;
+    }
+  }
+
+  async function setLocalCachedCatalog(data) {
+    try {
+      const db = await openCacheDB();
+      if (!db) return;
+      const tx = db.transaction(STORE_NAME, 'readwrite');
+      const store = tx.objectStore(STORE_NAME);
+      store.put(data, 'active_catalog');
+    } catch {}
+  }
+
+  /* --------------------------------------------------------------------------
+     Dynamic Runtime Aggregation (Zero Hardcoded Stats)
+     -------------------------------------------------------------------------- */
+  function computeRuntimeAggregates(books) {
+    const authorMap = new Map();
+    const genreMap = new Map();
+    const formatMap = new Map();
+
+    for (let i = 0; i < books.length; i++) {
+      const b = books[i];
+
+      // Author aggregation
+      const auth = b.author || 'অজ্ঞাত';
+      let aRec = authorMap.get(auth);
+      if (!aRec) {
+        aRec = {
+          author: auth,
+          author_en: b.author_en || '',
+          count: 0
+        };
+        authorMap.set(auth, aRec);
+      }
+      aRec.count++;
+
+      // Department / Genre aggregation
+      if (b.genres && Array.isArray(b.genres)) {
+        for (let j = 0; j < b.genres.length; j++) {
+          const g = b.genres[j];
+          if (g) {
+            genreMap.set(g, (genreMap.get(g) || 0) + 1);
+          }
+        }
+      }
+
+      // Format aggregation
+      if (b.formats && typeof b.formats === 'object') {
+        for (const fmt in b.formats) {
+          formatMap.set(fmt, (formatMap.get(fmt) || 0) + 1);
+        }
+      }
+
+      // Pre-compute normalized search tokens if not already cached
+      if (!b._st) {
         b._st = (b.search_text || '').toLowerCase();
         b._tokens = b._st.split(/\s+/);
       }
+    }
 
-      if (elements.statCountText && data.stats) {
-        elements.statCountText.textContent = `${data.stats.total_books.toLocaleString()} Books`;
-      }
+    const authors = Array.from(authorMap.values()).sort((a, b) => b.count - a.count);
+    const genres = Array.from(genreMap.entries())
+      .map(([genre, count]) => ({ genre, count }))
+      .sort((a, b) => b.count - a.count);
 
-      setupSidebarFilters();
+    return {
+      totalBooks: books.length,
+      totalAuthors: authors.length,
+      authors,
+      genres,
+      formats: Object.fromEntries(formatMap)
+    };
+  }
+
+  function applyCatalogData(data, isBackgroundUpdate = false) {
+    state.catalog = data;
+    state.books = data.books || [];
+
+    // Compute all numbers, authors, departments, and formats in real-time
+    const aggregates = computeRuntimeAggregates(state.books);
+    state.authors = aggregates.authors;
+    state.genres = aggregates.genres;
+    state.stats = {
+      total_books: aggregates.totalBooks,
+      total_authors: aggregates.totalAuthors,
+      formats: aggregates.formats
+    };
+
+    // Update Header Stat Badge
+    if (elements.statCountText) {
+      elements.statCountText.textContent = `${aggregates.totalBooks.toLocaleString()} Books`;
+    }
+
+    // Update All Departments Badge
+    if (elements.totalGenreCount) {
+      elements.totalGenreCount.textContent = aggregates.totalBooks.toLocaleString();
+    }
+
+    setupSidebarFilters();
+
+    if (!isBackgroundUpdate) {
       parseUrlParams();
       applyFiltersAndSearch(false);
+    } else {
+      // Background update: refresh current view with latest data without resetting user's page/search
+      applyFiltersAndSearch(false);
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     Initialization & Data Loading
+     -------------------------------------------------------------------------- */
+  async function loadCatalog() {
+    let hasLoadedFromCache = false;
+
+    // 1. Check IndexedDB cache for instant 0ms load
+    try {
+      const cached = await getLocalCachedCatalog();
+      if (cached && Array.isArray(cached.books) && cached.books.length > 0) {
+        applyCatalogData(cached, false);
+        hasLoadedFromCache = true;
+      }
+    } catch (e) {
+      console.warn('Cache read error:', e);
+    }
+
+    // 2. Network fetch with conditional revalidation
+    try {
+      const response = await fetch('./catalog.json', { cache: 'no-cache' });
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const serverData = await response.json();
+
+      const isDifferent = !state.catalog ||
+        serverData.version !== state.catalog.version ||
+        serverData.generated_at !== state.catalog.generated_at ||
+        (serverData.books && serverData.books.length !== state.books.length);
+
+      if (!hasLoadedFromCache || isDifferent) {
+        applyCatalogData(serverData, hasLoadedFromCache);
+        await setLocalCachedCatalog(serverData);
+      }
     } catch (err) {
-      console.error('Failed to load catalog:', err);
-      elements.booksGrid.innerHTML = `
-        <div class="empty-state" style="display: block; grid-column: 1 / -1;">
-          <div class="empty-icon">⚠️</div>
-          <h3>Failed to load ebook catalog</h3>
-          <p>Please check your connection or make sure catalog.json is present.</p>
-        </div>
-      `;
+      console.error('Failed to load fresh catalog:', err);
+      if (!hasLoadedFromCache) {
+        elements.booksGrid.innerHTML = `
+          <div class="empty-state" style="display: block; grid-column: 1 / -1;">
+            <div class="empty-icon">⚠️</div>
+            <h3>Failed to load ebook catalog</h3>
+            <p>Please check your connection or make sure catalog.json is present.</p>
+          </div>
+        `;
+      }
     }
   }
 
   function setupSidebarFilters() {
     // 1. Department / Genre List
-    if (state.genres.length > 0) {
-      const frag = document.createDocumentFragment();
-      state.genres.forEach(g => {
-        const btn = document.createElement('button');
-        btn.className = 'genre-item';
-        btn.dataset.genre = g.genre;
-        const cleanName = g.genre.split('(')[0].trim();
-        btn.innerHTML = `
-          <span class="genre-name">${escapeHtml(cleanName)}</span>
-          <span class="genre-badge">${g.count}</span>
-        `;
-        frag.appendChild(btn);
-      });
-      elements.genrePills.appendChild(frag);
+    if (elements.genrePills) {
+      // Keep only the first "All Departments" button
+      const allBtn = elements.genrePills.querySelector('.genre-item[data-genre="all"]');
+      elements.genrePills.innerHTML = '';
+      if (allBtn) {
+        elements.genrePills.appendChild(allBtn);
+      }
+
+      if (state.genres.length > 0) {
+        const frag = document.createDocumentFragment();
+        state.genres.forEach(g => {
+          const btn = document.createElement('button');
+          btn.className = 'genre-item' + (state.selectedGenre === g.genre ? ' active' : '');
+          btn.dataset.genre = g.genre;
+          const cleanName = g.genre.split('(')[0].trim();
+          btn.innerHTML = `
+            <span class="genre-name">${escapeHtml(cleanName)}</span>
+            <span class="genre-badge">${g.count}</span>
+          `;
+          frag.appendChild(btn);
+        });
+        elements.genrePills.appendChild(frag);
+      }
     }
 
     // 2. Author Select Dropdown
-    if (state.topAuthors.length > 0) {
-      const frag = document.createDocumentFragment();
-      state.topAuthors.forEach(a => {
-        const opt = document.createElement('option');
-        opt.value = a.author;
-        opt.textContent = `${a.author} (${a.author_en}) [${a.count}]`;
-        frag.appendChild(opt);
-      });
-      elements.authorFilter.appendChild(frag);
+    if (elements.authorFilter) {
+      const totalAuthorsCount = state.stats ? state.stats.total_authors : state.authors.length;
+      
+      // Reset options except the first 'all' option
+      elements.authorFilter.options.length = 1;
+      elements.authorFilter.options[0].textContent = `All Authors (${totalAuthorsCount.toLocaleString()})`;
+
+      if (state.authors.length > 0) {
+        const frag = document.createDocumentFragment();
+        state.authors.forEach(a => {
+          const opt = document.createElement('option');
+          opt.value = a.author;
+          const enPart = a.author_en ? ` (${a.author_en})` : '';
+          opt.textContent = `${a.author}${enPart} [${a.count}]`;
+          frag.appendChild(opt);
+        });
+        elements.authorFilter.appendChild(frag);
+      }
+      elements.authorFilter.value = state.selectedAuthor;
     }
   }
 
