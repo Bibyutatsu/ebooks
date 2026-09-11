@@ -69,7 +69,7 @@ def test_schema_and_integrity(catalog_path: str):
     print(f"✓ Formats verified: {stats['formats']}")
 
     # Validate individual books
-    valid_formats = { "epub", "kfx", "mobi", "pdf", "docx", "txt", "azw3" }
+    valid_formats = { "epub", "kfx", "mobi", "pdf", "docx", "txt", "azw3", "external" }
     id_set = set()
 
     for idx, book in enumerate(data["books"]):
@@ -88,7 +88,8 @@ def test_schema_and_integrity(catalog_path: str):
         for fmt, info in book["formats"].items():
             assert fmt in valid_formats, f"Invalid format {fmt} in book {b_id}"
             assert info.get("filename"), f"Missing filename for {fmt} in {b_id}"
-            assert info.get("size_bytes", 0) > 0, f"Zero byte size for {fmt} in {b_id}"
+            if info.get("source") not in ("wikisource", "archive_org", "eboipotro") and not info.get("download_url", "").startswith("https://ws-export"):
+                assert info.get("size_bytes", 0) > 0, f"Zero byte size for {fmt} in {b_id}"
             assert info.get("size_formatted"), f"Missing formatted size in {b_id}"
 
         # Check search text

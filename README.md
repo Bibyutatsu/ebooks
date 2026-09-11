@@ -1,11 +1,11 @@
 # Bibyutatsu Ebooks Library 📚
 
 [![GitHub Pages](https://img.shields.io/badge/Hosted%20On-GitHub%20Pages-blue?logo=github)](https://bibyutatsu.github.io/ebooks)
-[![Books Count](https://img.shields.io/badge/Catalog-1%2C439%20Books-emerald)](https://bibyutatsu.github.io/ebooks)
+[![Books Count](https://img.shields.io/badge/Catalog-2%2C907%20Books-emerald)](https://bibyutatsu.github.io/ebooks)
 [![Formats](https://img.shields.io/badge/Formats-EPUB%20%7C%20KFX%20%7C%20PDF%20%7C%20MOBI-purple)](https://bibyutatsu.github.io/ebooks)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-An open-access, modern digital library for 1,400+ Bengali literary classics, historical manuscripts, thrillers, sci-fi, and translations. Features instant client-side dual-script search (English romanized transliteration or বাংলা Unicode), author/genre filters, cover galleries, and direct multi-format downloads.
+An open-access, modern digital library for 2,900+ Bengali literary classics, historical manuscripts, thrillers, sci-fi, philosophical works, and translations. Features instant client-side dual-script search (English romanized transliteration or বাংলা Unicode), author/genre filters, cover galleries, and direct multi-format downloads.
 
 Live Endpoint: **[https://bibyutatsu.github.io/ebooks](https://bibyutatsu.github.io/ebooks)**
 
@@ -13,12 +13,12 @@ Live Endpoint: **[https://bibyutatsu.github.io/ebooks](https://bibyutatsu.github
 
 ## 🌟 Key Features
 
-- **Dual-Script Transliteration Search**: Search Bengali titles, characters, and authors effortlessly in English phonetics (`feluda`, `sonar kella`, `byomkesh`, `humayun ahmed`, `shonku`, `kakababu`, `vidyasagar`, `abanindranath`) or native Bengali (`ফেলুদা`, `ব্যোমকেশ`, `হুমায়ূন আহমেদ`, `ঈশ্বরচন্দ্র বিদ্যাসাগর`).
+- **Dual-Script Transliteration Search**: Search Bengali titles, characters, and authors effortlessly in English phonetics (`feluda`, `sonar kella`, `byomkesh`, `humayun ahmed`, `shonku`, `kakababu`, `vidyasagar`, `abanindranath`, `rabindranath`, `nazrul`) or native Bengali (`ফেলুদা`, `ব্যোমকেশ`, `হুমায়ূন আহমেদ`, `ঈশ্বরচন্দ্র বিদ্যাসাগর`, `রবীন্দ্রনাথ ঠাকুর`).
 - **Typo-Tolerant Fuzzy Matching**: Built-in Levenshtein fuzzy matching handles spelling variations like `bomkesh`, `humayan`, or `atin babu`.
 - **Multi-Format Support**: Direct downloads in `.epub`, Amazon Kindle `.kfx`, `.mobi`, and `.pdf`.
-- **Optimized Cover Gallery**: 1,430+ covers converted into lightweight WebP thumbnails with skeleton loaders.
+- **Optimized Cover Gallery**: 2,900+ covers converted into lightweight WebP thumbnails with skeleton loaders.
 - **Glassmorphic Aesthetic**: Matches Bibhash's dev portfolio styling with dark/light mode toggle.
-- **100% Free Hosting**: Hosted completely on GitHub Pages with downloads distributed via GitHub Releases CDN.
+- **100% Free Hosting**: Hosted completely on GitHub Pages with downloads distributed via GitHub Releases CDN and direct upstream preservation mirrors.
 
 ---
 
@@ -29,23 +29,31 @@ ebooks/
 ├── index.html            # Main library web interface
 ├── style.css             # Glassmorphic CSS design system
 ├── app.js                # Search, filtering, and modal interaction logic
-├── catalog.json          # Normalized catalog & pre-computed search index (~1,439 books)
+├── catalog.json          # Normalized catalog & pre-computed search index (~2,907 books)
 ├── assets/
-│   └── covers/           # 1,430+ optimized WebP cover thumbnails (~28MB total)
+│   └── covers/           # 2,900+ optimized WebP cover thumbnails
 ├── tools/
 │   ├── build_catalog.py  # Ingestion pipeline: extracts OPF metadata, converts covers, builds catalog.json
 │   ├── transliteration.py# Bengali phonetic transliterator (Avro & ITRANS rules)
-│   ├── author_mapping.py # Author canonicalization, English aliases, and genres (270+ authors)
+│   ├── author_mapping.py # Author canonicalization, English aliases, and genres (420+ authors)
 │   ├── series_mapping.py # Automatic character & series detector
 │   ├── sync_releases.py  # Incremental GitHub Releases uploader for scalable book distribution
-│   ├── bongboi/          # Ingestion toolchain and metadata for out-of-copyright classical Bengali EPUBs
-│   │   ├── sync_bongboi.py        # Ingestion script: cover generation/extraction & metadata indexing
-│   │   └── books_metadata.json    # Dump of all 216 ingested BongBoi classical ebooks
+│   ├── eboipotro/        # OPDS Atom ingestion pipeline for curated Bengali EPUBs
+│   │   └── sync_eboipotro.py
+│   ├── wikisource/       # MediaWiki category harvester & ws-export dynamic EPUB pipeline
+│   │   ├── sync_wikisource.py
+│   │   └── works_list.json
+│   ├── archive_org/      # Internet Archive Bengali public domain text harvester
+│   │   ├── sync_archive_org.py
+│   │   └── ia_catalog.json
+│   ├── bongboi/          # Ingestion toolchain for classical Bengali EPUBs
+│   │   ├── sync_bongboi.py
+│   │   └── books_metadata.json
 │   └── kindlebangla/     # Scraper & verification toolchain specialized for KindleBangla
-│       ├── downloader.py          # Scrapes book links, covers, and media files
-│       ├── verify_downloads.py    # Extracts .rar archives & validates downloads
-│       ├── book_details_links.json# Sitemap index of book detail URLs
-│       └── books_metadata.json    # Original ingested metadata dump
+│       ├── downloader.py
+│       ├── verify_downloads.py
+│       ├── book_details_links.json
+│       └── books_metadata.json
 └── tests/
     └── verify_catalog.py # Automated test suite (schema integrity + 53 search benchmarks)
 ```
@@ -54,22 +62,36 @@ ebooks/
 
 ## 🛠️ Ingestion Toolchains
 
-### 1. BongBoi Repository Toolchain (`tools/bongboi/`)
-Used to ingest, canonicalize, and extract/generate covers for out-of-copyright classical Bengali literature curated by [eedeidk/bongboi](https://github.com/eedeidk/bongboi):
-
+### 1. Eboipotro Toolchain (`tools/eboipotro/`)
+Harvests curated Bengali EPUBs from the [eboipotro/eboipotro.github.io](https://eboipotro.github.io) OPDS feed with direct GitHub raw downloads and embedded metadata extraction:
 ```bash
-# Ingest books, canonicalize authors, generate/extract WebP covers, and update catalog.json
+python3 tools/eboipotro/sync_eboipotro.py --catalog ./catalog.json
+```
+
+### 2. Bengali Wikisource Toolchain (`tools/wikisource/`)
+Discovers out-of-copyright classical Bengali texts from [bn.wikisource.org](https://bn.wikisource.org) and links directly to Wikimedia Cloud on-demand `ws-export` EPUB engines:
+```bash
+python3 tools/wikisource/sync_wikisource.py --enumerate-only
+python3 tools/wikisource/sync_wikisource.py --catalog ./catalog.json
+```
+
+### 3. Internet Archive Toolchain (`tools/archive_org/`)
+Queries the [Internet Archive](https://archive.org) for digitized historical and public domain Bengali texts, preserving original IA download and item detail URLs:
+```bash
+python3 tools/archive_org/sync_archive_org.py --fetch-only --limit 500
+python3 tools/archive_org/sync_archive_org.py --catalog ./catalog.json
+```
+
+### 4. BongBoi Repository Toolchain (`tools/bongboi/`)
+Ingests classical out-of-copyright Bengali literature curated by [eedeidk/bongboi](https://github.com/eedeidk/bongboi):
+```bash
 python3 tools/bongboi/sync_bongboi.py
 ```
 
-### 2. KindleBangla Scraper Toolchain (`tools/kindlebangla/`)
-Specialized scripts and metadata artifacts originally used to harvest and verify downloads from [KindleBangla](https://www.kindlebangla.com):
-
+### 5. KindleBangla Scraper Toolchain (`tools/kindlebangla/`)
+Specialized scripts used to harvest and verify Kindle-formatted Bengali ebooks from [KindleBangla](https://www.kindlebangla.com):
 ```bash
-# 1. Scrape catalog and download book files
 python3 tools/kindlebangla/downloader.py
-
-# 2. Extract nested .rar archives and verify file integrity
 python3 tools/kindlebangla/verify_downloads.py
 ```
 
@@ -111,14 +133,16 @@ Run the automated verification suite:
 python3 tests/verify_catalog.py ./catalog.json
 ```
 Checks:
-- Schema completeness for 100% of books (1,439 books across 271 authors)
-- Non-zero file sizes and valid formats
+- Schema completeness for 100% of books (3,736 books across 1,005 authors)
+- Non-zero file sizes and valid format specifications
 - 53 benchmark queries across iconic Bengali characters, authors, classical pioneers, and world translations
 
 ---
 
 ## 🙏 Acknowledgements & Contributing Remarks
 
-- **[BongBoi](https://github.com/eedeidk/bongboi)**: Tremendous gratitude to the creators and maintainers of the **[BongBoi](https://github.com/eedeidk/bongboi)** repository (and the associated [Telegram community](https://t.me/bongboi)) for curating, typesetting, and preserving rare, out-of-copyright Bengali historical manuscripts and literary treasures (including works by Ishwar Chandra Vidyasagar, Abanindranath Tagore, Michael Madhusudan Dutt, Begum Rokeya, Rakhaldas Bandyopadhyay, and many more).
+- **[Eboipotro (ই-বইপত্র)](https://eboipotro.github.io)**: Sincere gratitude to the Eboipotro team for their open-source OPDS catalog and meticulously formatted Bengali digital EPUB publications.
+- **[Bengali Wikisource (উইকিসংকলন)](https://bn.wikisource.org)**: Tremendous appreciation to the Wikimedia and Bengali Wikisource volunteers for their tireless efforts in digitizing and transcribing thousands of public domain Bengali literary texts.
+- **[Internet Archive](https://archive.org)**: Deep thanks to the Internet Archive for providing open digital preservation and access to historical Bengali texts, manuscripts, and literature.
+- **[BongBoi](https://github.com/eedeidk/bongboi)**: Tremendous gratitude to the creators and maintainers of the **[BongBoi](https://github.com/eedeidk/bongboi)** repository (and the associated [Telegram community](https://t.me/bongboi)) for curating, typesetting, and preserving rare, out-of-copyright Bengali historical manuscripts and literary treasures.
 - **[KindleBangla](https://www.kindlebangla.com)**: Heartfelt thanks and gratitude to KindleBangla and its community for digitizing, formatting, and preserving a vast contemporary and classic collection of Bengali literature and making it freely accessible to readers worldwide.
-

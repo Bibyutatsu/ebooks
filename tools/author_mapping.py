@@ -163,7 +163,7 @@ AUTHORS_DB = {
     "বঙ্কিমচন্দ্র চট্টোপাধ্যায়": {
         "en": "Bankim Chandra Chattopadhyay",
         "canonical_bn": "বঙ্কিমচন্দ্র চট্টোপাধ্যায়",
-        "aliases": ["Bankim Chandra Chattopadhyay", "Bankimchandra Chatterjee", "Anandamath"],
+        "aliases": ["Bankim Chandra Chattopadhyay", "Bankimchandra Chatterjee", "Bankim Chandra Chatterjee", "Bankim Chandra Chatterji", "Bankimchandra Chatterji", "Anandamath"],
         "default_genres": ["ক্লাসিক ও সাহিত্য (Classics)", "ঐতিহাসিক উপন্যাস (Historical Fiction)"]
     },
     "কাজী নজরুল ইসলাম": {
@@ -451,7 +451,7 @@ AUTHORS_DB = {
     "ঈশ্বরচন্দ্র বিদ্যাসাগর": {
         "en": "Ishwar Chandra Vidyasagar",
         "canonical_bn": "ঈশ্বরচন্দ্র বিদ্যাসাগর",
-        "aliases": ["Ishwar Chandra Vidyasagar", "Ishwarchandra Vidyasagar", "Vidyasagar", "Bidyasagar", "Betal Panchabingshati", "Sakuntala"],
+        "aliases": ["Ishwar Chandra Vidyasagar", "Ishwarchandra Vidyasagar", "Iswar Chandra Vidyasagar", "Iswarchandra Vidyasagar", "Vidyasagar", "Bidyasagar", "Betal Panchabingshati", "Sakuntala"],
         "default_genres": ["ক্লাসিক ও সাহিত্য (Classics)", "প্রবন্ধ ও ব্যাকরণ (Essays & Language)", "শিশু ও কিশোর সাহিত্য (Children & YA)"]
     },
     "উইলিয়াম কেরি": {
@@ -1072,6 +1072,17 @@ def find_author_match(candidate: str) -> dict | None:
     stripped_norm = _norm_bn_alias(stripped)
     if stripped_norm in _ALIAS_INDEX:
         return AUTHORS_DB[_ALIAS_INDEX[stripped_norm]]
+    # Handle "Last, First" (common in library catalogs and IA metadata)
+    if "," in cleaned:
+        parts = [p.strip() for p in cleaned.split(",", 1)]
+        if len(parts) == 2 and parts[0] and parts[1]:
+            flipped = f"{parts[1]} {parts[0]}"
+            flipped_low = flipped.lower()
+            if flipped_low in _ALIAS_INDEX:
+                return AUTHORS_DB[_ALIAS_INDEX[flipped_low]]
+            flipped_norm = _norm_bn_alias(flipped)
+            if flipped_norm in _ALIAS_INDEX:
+                return AUTHORS_DB[_ALIAS_INDEX[flipped_norm]]
     return None
 
 
