@@ -1,0 +1,117 @@
+#!/usr/bin/env python3
+"""
+Generate a comprehensive XML sitemap (sitemap.xml) for Bibyutatsu BookStore.
+Includes:
+- Homepage root (priority 1.0)
+- Trending searches & iconic series (priority 0.85)
+- Top curated authors (priority 0.8)
+- Library departments / genres (priority 0.8)
+- All 2,900+ individual book deep links (priority 0.7)
+"""
+
+import json
+import os
+import urllib.parse
+from datetime import datetime
+from xml.sax.saxutils import escape
+
+BASE_URL = "https://bibyutatsu.github.io/ebooks/"
+
+TRENDING_SEARCHES = [
+    "feluda",
+    "byomkesh",
+    "humayun ahmed",
+    "shonku",
+    "kakababu",
+    "tintin",
+    "masud rana",
+    "himu",
+    "misir ali",
+    "tenida",
+    "satyajit ray",
+    "rabindranath tagore",
+    "sukumar ray",
+    "sharadindu"
+]
+
+def generate_sitemap(catalog_path, output_path):
+    with open(catalog_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    books = data.get('books', [])
+    generated_at = data.get('generated_at') or datetime.utcnow().strftime('%Y-%m-%d')
+    if 'T' in generated_at:
+        today_str = generated_at.split('T')[0]
+    else:
+        today_str = generated_at[:10]
+
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"',
+        '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'
+    ]
+
+    def add_url(loc, priority="0.7", changefreq="monthly", lastmod=today_str):
+        # Escape XML entities (especially '&' to '&amp;')
+        safe_loc = escape(loc)
+        xml_lines.append('  <url>')
+        xml_lines.append(f'    <loc>{safe_loc}</loc>')
+        xml_lines.append(f'    <lastmod>{lastmod}</lastmod>')
+        xml_lines.append(f'    <changefreq>{changefreq}</changefreq>')
+        xml_lines.append(f'    <priority>{priority}</priority>')
+        xml_lines.append('  </url>')
+
+    # 1. Homepage Root
+    add_url(BASE_URL, priority="1.0", changefreq="daily")
+
+    # 2. Trending searches
+    for query in TRENDING_SEARCHES:
+        param = urllib.parse.quote(query)
+        add_url(f"{BASE_URL}?q={param}", priority="0.85", changefreq="weekly")
+
+    # 3. Authors & Genres extraction
+    author_counts = {}
+    genre_set = set()
+
+    for b in books:
+        auth = b.get('author')
+        if auth and auth != 'Unknown':
+            author_counts[auth] = author_counts.get(auth, 0) + 1
+        for g in b.get('genres', []):
+            if g:
+                genre_set.add(g)
+
+    # Sort authors by volume, take top authors with >= 2 books or top 100
+    top_authors = [auth for auth, count in sorted(author_counts.items(), key=lambda x: -x[1]) if count >= 2]
+    for auth in top_authors:
+        param = urllib.parse.quote(auth)
+        add_url(f"{BASE_URL}?author={param}", priority="0.8", changefreq="weekly")
+
+    # Genres
+    for g in sorted(genre_set):
+        param = urllib.parse.quote(g)
+        add_url(f"{BASE_URL}?genre={param}", priority="0.8", changefreq="weekly")
+
+    # 4. Individual Books
+    for b in books:
+        book_id = b.get('id')
+        if not book_id:
+            continue
+        book_url = f"{BASE_URL}?book={book_id}"
+        add_url(book_url, priority="0.7", changefreq="monthly")
+
+    xml_lines.append('</urlset>')
+    xml_content = "\n".join(xml_lines) + "\n"
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(xml_content)
+
+    total_urls = len(books) + len(TRENDING_SEARCHES) + len(top_authors) + len(genre_set) + 1
+    print(f"Generated {output_path} with {total_urls} URLs successfully.")
+
+if __name__ == '__main__':
+    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    cat_file = os.path.join(root_dir, 'catalog.json')
+    sitemap_file = os.path.join(root_dir, 'sitemap.xml')
+    generate_sitemap(cat_file, sitemap_file)

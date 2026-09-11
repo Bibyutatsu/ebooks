@@ -1,0 +1,6 @@
+# Robots.txt for Bibyutatsu BookStore (https://bibyutatsu.github.io/ebooks/)
+User-agent: *
+Allow: /
+
+# Canonical XML Sitemap for search engines (Googlebot, Bingbot, DuckDuckGo)
+Sitemap: https://bibyutatsu.github.io/ebooks/sitemap.xml

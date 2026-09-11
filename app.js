@@ -401,7 +401,8 @@
     selectedSort: 'popular',
     topAuthors: [],
     authors: [],
-    genres: []
+    genres: [],
+    activeBookId: null
   };
 
   const elements = {
@@ -681,6 +682,13 @@
     if (!isBackgroundUpdate) {
       parseUrlParams();
       applyFiltersAndSearch(false);
+
+      if (state.activeBookId) {
+        const targetBook = state.books.find(b => b.id === state.activeBookId);
+        if (targetBook) {
+          openBookModal(targetBook);
+        }
+      }
     } else {
       // Background update: refresh current view with latest data without resetting user's page/search
       applyFiltersAndSearch(false);
@@ -794,6 +802,7 @@
     const format = params.get('format');
     const sort = params.get('sort');
     const page = parseInt(params.get('page'), 10);
+    const book = params.get('book');
 
     if (q) {
       state.currentQuery = q;
@@ -805,6 +814,7 @@
     if (format) state.selectedFormat = format;
     if (sort) state.selectedSort = sort;
     if (page && page > 0) state.currentPage = page;
+    if (book) state.activeBookId = book;
 
     syncFilterControlsUI();
   }
@@ -817,6 +827,7 @@
     if (state.selectedFormat !== 'all') params.set('format', state.selectedFormat);
     if (state.selectedSort !== 'popular') params.set('sort', state.selectedSort);
     if (state.currentPage > 1) params.set('page', state.currentPage);
+    if (state.activeBookId) params.set('book', state.activeBookId);
 
     const newUrl = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
     window.history.replaceState({}, '', newUrl);
@@ -1293,6 +1304,9 @@
 
     elements.modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    state.activeBookId = book.id;
+    updateUrlParams();
+    document.title = `${book.title} (${book.author}) | Bibyutatsu BookStore`;
 
     if (window.applyMagnetic) {
       window.applyMagnetic('.modal-dl-card, .modal-close');
@@ -1302,6 +1316,9 @@
   function closeModal() {
     elements.modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    state.activeBookId = null;
+    updateUrlParams();
+    document.title = 'Bibyutatsu BookStore | Free Bengali Ebooks Library (বাংলা ডিজিটাল বইঘর)';
   }
 
   /* --------------------------------------------------------------------------
@@ -1393,6 +1410,14 @@
     window.addEventListener('popstate', () => {
       parseUrlParams();
       applyFiltersAndSearch(false);
+      if (state.activeBookId) {
+        const targetBook = state.books.find(b => b.id === state.activeBookId);
+        if (targetBook) {
+          openBookModal(targetBook);
+        }
+      } else if (elements.modalOverlay.classList.contains('active')) {
+        closeModal();
+      }
     });
   }
 
