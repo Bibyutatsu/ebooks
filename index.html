@@ -232,10 +232,15 @@
         <button class="btn-primary" id="empty-reset-btn">Reset Filters</button>
       </div>
 
-      <!-- Infinite Scroll / Load More Trigger -->
-      <div class="load-more-container" id="load-more-container">
-        <button class="load-more-btn" id="load-more-btn">Load More Books</button>
-      </div>
+      <!-- Bookstore Pagination Navigation -->
+      <nav class="pagination-wrap" id="pagination-wrap" aria-label="Book catalog pagination" style="display: none;">
+        <div class="pagination-info" id="pagination-info">
+          Page <strong id="pagination-current-page">1</strong> of <span id="pagination-total-pages">1</span>
+        </div>
+        <div class="pagination-controls" id="pagination-controls">
+          <!-- Dynamic pagination buttons injected by app.js -->
+        </div>
+      </nav>
 
     </main>
 

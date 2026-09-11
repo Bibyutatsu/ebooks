@@ -218,10 +218,12 @@ button {
 /* === CUSTOM CURSOR === */
 #cursor-dot, #cursor-ring {
   position: fixed;
+  top: 0;
+  left: 0;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
+  will-change: transform;
 }
 #cursor-dot {
   width: 7px;
@@ -263,8 +265,8 @@ body.c-click #cursor-ring { width: 22px; height: 22px; opacity: 1; }
   right: 0;
   height: 68px;
   background: var(--nav-blur);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   z-index: 200;
   display: flex;
@@ -1049,28 +1051,116 @@ body.c-click #cursor-ring { width: 22px; height: 22px; opacity: 1; }
   transform: translateY(-2px);
 }
 
-/* Load More */
-.load-more-container {
+/* === BOOKSTORE PAGINATION === */
+.pagination-wrap {
   display: flex;
-  justify-content: center;
-  margin: 16px 0 48px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
 }
-.load-more-btn {
-  padding: 10px 32px;
-  border: 1px solid var(--border-hover);
-  background: var(--surface);
-  color: var(--heading-color);
-  border-radius: 40px;
+
+.pagination-info {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: all 0.2s;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
-.load-more-btn:hover {
-  border-color: var(--accent);
+
+.pagination-info strong {
   color: var(--accent);
-  box-shadow: var(--glow);
+  font-weight: 700;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagination-btn {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  user-select: none;
+}
+
+.pagination-btn:hover:not(:disabled):not(.active) {
+  border-color: var(--border-hover);
+  color: var(--heading-color);
+  background: var(--surface-2);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pagination-btn.active {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  font-weight: 700;
+  box-shadow: var(--glow);
+  cursor: default;
+}
+
+[data-theme="light"] .pagination-btn.active {
+  color: #fff;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.pagination-btn.nav-step {
+  font-size: 1.1rem;
+  padding: 0 14px;
+}
+
+.pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 40px;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+@media (max-width: 640px) {
+  .pagination-controls {
+    gap: 4px;
+  }
+  .pagination-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 8px;
+    font-size: 0.82rem;
+  }
+  .pagination-btn.nav-step {
+    padding: 0 10px;
+    font-size: 1rem;
+  }
 }
 
 /* === BOOK DETAIL MODAL === */
@@ -1078,8 +1168,8 @@ body.c-click #cursor-ring { width: 22px; height: 22px; opacity: 1; }
   position: fixed;
   inset: 0;
   background: rgba(6, 6, 15, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1200;
   display: flex;
   align-items: center;
