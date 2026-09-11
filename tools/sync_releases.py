@@ -63,7 +63,7 @@ def ensure_release_tag(tag: str, title: str):
     return True
 
 
-def sync_releases(catalog_path: str, dry_run: bool = False, format_filter: str = None):
+def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = False, format_filter: str = None, batch_limit: int = None):
     """
     Iterates through all books and formats in catalog.json, uploads missing assets,
     and writes CDN download URLs back to catalog.json.
@@ -76,9 +76,17 @@ def sync_releases(catalog_path: str, dry_run: bool = False, format_filter: str =
     with open(catalog_file, "r", encoding="utf-8") as f:
         catalog = json.load(f)
 
+    # Resolve downloads base_dir
+    default_download_dir = Path.home() / "Downloads" / "Epubbooks"
+    if source_dir:
+        base_dir = Path(source_dir)
+    elif default_download_dir.exists():
+        base_dir = default_download_dir
+    else:
+        base_dir = catalog_file.parent.parent
+
     # Collect all upload tasks
     tasks = []
-    base_dir = catalog_file.parent.parent  # /Users/oindrila/Downloads/Epubbooks
 
     for book in catalog["books"]:
         for fmt_key, fmt_info in book["formats"].items():
@@ -113,6 +121,10 @@ def sync_releases(catalog_path: str, dry_run: bool = False, format_filter: str =
     url_map = {}
 
     for batch_idx, batch in enumerate(batches, 1):
+        if batch_limit and batch_idx > batch_limit:
+            print(f"Reached batch limit of {batch_limit}. Stopping.")
+            break
+
         tag = f"v1.0-batch-{batch_idx:02d}"
         title = f"Library Assets Batch {batch_idx:02d}"
 
@@ -137,6 +149,9 @@ def sync_releases(catalog_path: str, dry_run: bool = False, format_filter: str =
             print(f"[{tag}] Uploading {len(to_upload)} new files...")
             scratch_dir = Path("/tmp/ebooks_release_upload")
             scratch_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Prepare files in scratch_dir
+            staged_files = []
             for item in to_upload:
                 fpath = item["filepath"]
                 aname = item["asset_name"]
@@ -145,25 +160,52 @@ def sync_releases(catalog_path: str, dry_run: bool = False, format_filter: str =
                     url_map[(item["book_id"], item["fmt"])] = mock_url
                     continue
 
-                # Prepare clean ASCII file for upload
                 tmp_file = scratch_dir / aname
                 try:
                     import shutil
                     shutil.copyfile(fpath, tmp_file)
+                    staged_files.append((item, tmp_file))
+                except Exception as e:
+                    print(f"  Failed to stage {aname}: {e}")
+
+            if not dry_run and staged_files:
+                # Upload in chunks of 15 files per gh command for high throughput and reliability
+                CHUNK_SIZE = 15
+                for i in range(0, len(staged_files), CHUNK_SIZE):
+                    chunk = staged_files[i:i + CHUNK_SIZE]
+                    file_paths = [str(tf) for _, tf in chunk]
                     up_code, _, stderr = run_cmd([
-                        "gh", "release", "upload", tag, str(tmp_file),
+                        "gh", "release", "upload", tag,
+                        *file_paths,
                         "--repo", REPO,
                         "--clobber"
                     ])
                     if up_code == 0:
-                        cdn_url = f"https://github.com/{REPO}/releases/download/{tag}/{aname}"
-                        url_map[(item["book_id"], item["fmt"])] = cdn_url
-                        updated_count += 1
+                        for itm, _ in chunk:
+                            aname = itm["asset_name"]
+                            cdn_url = f"https://github.com/{REPO}/releases/download/{tag}/{aname}"
+                            url_map[(itm["book_id"], itm["fmt"])] = cdn_url
+                            updated_count += 1
                     else:
-                        print(f"  Failed to upload {aname}: {stderr}")
-                finally:
-                    if tmp_file.exists():
-                        tmp_file.unlink()
+                        print(f"  Chunk upload failed on {tag}: {stderr}. Falling back to single uploads...")
+                        for itm, tf in chunk:
+                            u_code, _, s_err = run_cmd([
+                                "gh", "release", "upload", tag, str(tf),
+                                "--repo", REPO,
+                                "--clobber"
+                            ])
+                            if u_code == 0:
+                                aname = itm["asset_name"]
+                                cdn_url = f"https://github.com/{REPO}/releases/download/{tag}/{aname}"
+                                url_map[(itm["book_id"], itm["fmt"])] = cdn_url
+                                updated_count += 1
+                            else:
+                                print(f"    Failed single upload {itm['asset_name']}: {s_err}")
+
+                # Clean up scratch files
+                for _, tf in staged_files:
+                    if tf.exists():
+                        tf.unlink()
 
     # Write URLs back to catalog.json
     for book in catalog["books"]:
@@ -182,9 +224,11 @@ def sync_releases(catalog_path: str, dry_run: bool = False, format_filter: str =
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Sync ebooks to GitHub Releases")
-    parser.add_argument("--catalog", default="./ebooks/catalog.json", help="Path to catalog.json")
+    parser.add_argument("--catalog", default="./catalog.json", help="Path to catalog.json")
+    parser.add_argument("--source", default=None, help="Source directory containing downloads/ (defaults to ~/Downloads/Epubbooks)")
     parser.add_argument("--dry-run", action="store_true", help="Simulate without uploading")
     parser.add_argument("--format", default=None, help="Filter by format (e.g. epub)")
+    parser.add_argument("--batch-limit", type=int, default=None, help="Limit number of batches to process")
     args = parser.parse_args()
 
-    sync_releases(args.catalog, dry_run=args.dry_run, format_filter=args.format)
+    sync_releases(args.catalog, source_dir=args.source, dry_run=args.dry_run, format_filter=args.format, batch_limit=args.batch_limit)

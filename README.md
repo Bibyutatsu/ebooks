@@ -37,9 +37,28 @@ ebooks/
 │   ├── transliteration.py# Bengali phonetic transliterator (Avro & ITRANS rules)
 │   ├── author_mapping.py # Author canonicalization, English aliases, and genres
 │   ├── series_mapping.py # Automatic character & series detector
-│   └── sync_releases.py  # Incremental GitHub Releases uploader for scalable book distribution
+│   ├── sync_releases.py  # Incremental GitHub Releases uploader for scalable book distribution
+│   └── kindlebangla/     # Scraper & verification toolchain specialized for KindleBangla
+│       ├── downloader.py          # Scrapes book links, covers, and media files
+│       ├── verify_downloads.py    # Extracts .rar archives & validates downloads
+│       ├── book_details_links.json# Sitemap index of book detail URLs
+│       └── books_metadata.json    # Original ingested metadata dump
 └── tests/
     └── verify_catalog.py # Automated test suite (schema integrity + 46 search benchmarks)
+```
+
+---
+
+## 🛠️ KindleBangla Scraper Toolchain
+
+Specialized scripts and metadata artifacts originally used to harvest and verify downloads from [KindleBangla](https://www.kindlebangla.com):
+
+```bash
+# 1. Scrape catalog and download book files
+python3 tools/kindlebangla/downloader.py
+
+# 2. Extract nested .rar archives and verify file integrity
+python3 tools/kindlebangla/verify_downloads.py
 ```
 
 ---
@@ -83,3 +102,10 @@ Checks:
 - Schema completeness for 100% of books
 - Non-zero file sizes and valid formats
 - 46 benchmark queries across iconic Bengali characters, authors, and world translations
+
+---
+
+## 🙏 Acknowledgements
+
+Heartfelt thanks and gratitude to **[KindleBangla](https://www.kindlebangla.com)** and its community for digitizing, formatting, and preserving this rich collection of Bengali literature and making it freely accessible to readers worldwide.
+
