@@ -79,7 +79,7 @@ def get_latest_batch_info() -> tuple[int, dict[str, str]]:
     return max_batch, assets
 
 
-def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = False, format_filter: str = None, batch_limit: int = None):
+def sync_releases(catalog_path: str, source_dir: str = None, extra_dirs: list[str] = None, dry_run: bool = False, format_filter: str = None, batch_limit: int = None):
     """
     Iterates through all books and formats in catalog.json, uploads missing assets,
     and writes CDN download URLs back to catalog.json.
@@ -105,13 +105,19 @@ def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = Fal
     tasks = []
     url_map = {}
 
-    # Pre-index fallback directories once for fast O(1) lookup
-    bongboi_cache = {}
-    bongboi_path = Path("/tmp/bongboi")
-    if bongboi_path.exists():
-        for p in bongboi_path.glob("**/*"):
-            if p.is_file():
-                bongboi_cache[p.name] = p
+    # Pre-index any extra folders passed by the user for fast O(1) filename matching
+    extra_cache = {}
+    search_dirs = [Path(d) for d in (extra_dirs or [])]
+    # Default search dirs if existing
+    for d_candidate in [Path("/tmp/bongboi"), Path("./downloads")]:
+        if d_candidate.exists() and d_candidate not in search_dirs:
+            search_dirs.append(d_candidate)
+
+    for sdir in search_dirs:
+        if sdir.exists():
+            for p in sdir.glob("**/*"):
+                if p.is_file() and not p.name.startswith('.'):
+                    extra_cache[p.name] = p
 
     for book in catalog["books"]:
         for fmt_key, fmt_info in book["formats"].items():
@@ -124,8 +130,8 @@ def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = Fal
             full_path = base_dir / rel_path
             if not full_path.exists():
                 fn = fmt_info.get("filename")
-                if fn and fn in bongboi_cache:
-                    full_path = bongboi_cache[fn]
+                if fn and fn in extra_cache:
+                    full_path = extra_cache[fn]
 
             if full_path.exists():
                 existing_url = fmt_info.get("download_url", "")
@@ -261,9 +267,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Sync ebooks to GitHub Releases")
     parser.add_argument("--catalog", default="./catalog.json", help="Path to catalog.json")
     parser.add_argument("--source", default=None, help="Source directory containing downloads/ (defaults to ~/Downloads/Epubbooks)")
+    parser.add_argument("--extra-dirs", nargs="*", default=[], help="Extra folder paths containing ebook format files to index")
     parser.add_argument("--dry-run", action="store_true", help="Simulate without uploading")
     parser.add_argument("--format", default=None, help="Filter by format (e.g. epub)")
     parser.add_argument("--batch-limit", type=int, default=None, help="Limit number of batches to process")
     args = parser.parse_args()
 
-    sync_releases(args.catalog, source_dir=args.source, dry_run=args.dry_run, format_filter=args.format, batch_limit=args.batch_limit)
+    sync_releases(args.catalog, source_dir=args.source, extra_dirs=args.extra_dirs, dry_run=args.dry_run, format_filter=args.format, batch_limit=args.batch_limit)

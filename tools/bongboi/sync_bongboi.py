@@ -386,8 +386,15 @@ def ingest_bongboi(bongboi_dir: str, catalog_path: str, covers_dir: str):
     print(f"Catalog updated at: {catalog_file.resolve()}")
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Ingest BongBoi repository EPUBs into library catalog")
+    parser.add_argument("--input", "-i", default="/tmp/bongboi", help="Path to BongBoi repository directory")
+    parser.add_argument("--catalog", "-c", default="./catalog.json", help="Path to catalog.json")
+    parser.add_argument("--covers-dir", default="./assets/covers", help="Path to covers directory")
+    args = parser.parse_args()
+
     ingest_bongboi(
-        bongboi_dir="/tmp/bongboi",
-        catalog_path="./catalog.json",
-        covers_dir="./assets/covers"
+        bongboi_dir=args.input,
+        catalog_path=args.catalog,
+        covers_dir=args.covers_dir
     )
