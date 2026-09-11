@@ -431,8 +431,63 @@
   };
 
   /* --------------------------------------------------------------------------
-     Fast Indexed Fuzzy Search Engine
+     MiniSearch Engine & Calibrated Fallback
      -------------------------------------------------------------------------- */
+  let miniSearchEngine = null;
+
+  function initMiniSearch(books) {
+    if (typeof MiniSearch === 'undefined') {
+      console.warn('MiniSearch not available on window, using calibrated fallback.');
+      return;
+    }
+
+    try {
+      miniSearchEngine = new MiniSearch({
+        fields: ['title', 'title_en', 'title_translit', 'author', 'author_en', 'author_aliases', 'series_name', 'genres'],
+        storeFields: ['id'],
+        extractField: (doc, fieldName) => {
+          if (fieldName === 'title_translit') {
+            return Array.isArray(doc.title_translit) ? doc.title_translit.join(' ') : '';
+          }
+          if (fieldName === 'author_aliases') {
+            return Array.isArray(doc.author_aliases) ? doc.author_aliases.join(' ') : '';
+          }
+          if (fieldName === 'series_name') {
+            return doc.series ? `${doc.series.name_bn || ''} ${doc.series.name_en || ''}` : '';
+          }
+          if (fieldName === 'genres') {
+            return Array.isArray(doc.genres) ? doc.genres.join(' ') : '';
+          }
+          return doc[fieldName] || '';
+        },
+        searchOptions: {
+          prefix: true,
+          fuzzy: (term) => {
+            if (term.length <= 3) return 0;
+            if (term.length <= 6) return 1;
+            return 2;
+          },
+          boost: {
+            title: 6,
+            title_en: 5,
+            title_translit: 4,
+            author: 4,
+            author_en: 4,
+            author_aliases: 3,
+            series_name: 2,
+            genres: 1
+          },
+          combineWith: 'AND'
+        }
+      });
+
+      miniSearchEngine.addAll(books);
+    } catch (e) {
+      console.error('Failed to initialize MiniSearch:', e);
+      miniSearchEngine = null;
+    }
+  }
+
   function levenshtein(s1, s2) {
     if (s1.length < s2.length) return levenshtein(s2, s1);
     if (s2.length === 0) return s1.length;
@@ -451,15 +506,25 @@
     return prevRow[s2.length];
   }
 
-  function matchesToken(qTok, targetTokens, targetSearchText, maxDist = 2) {
+  function matchesToken(qTok, targetTokens, targetSearchText) {
+    // Calibrated maxDist based on query token length
+    let maxDist = 0;
+    if (qTok.length >= 7) {
+      maxDist = 2;
+    } else if (qTok.length >= 4) {
+      maxDist = 1;
+    } else {
+      maxDist = 0;
+    }
+
     // Fast path: direct substring match in pre-indexed string
     if (targetSearchText && targetSearchText.includes(qTok)) return true;
     for (let i = 0; i < targetTokens.length; i++) {
       const t = targetTokens[i];
       if (t.startsWith(qTok)) return true;
     }
-    // Fallback: Levenshtein distance on tokens with close length
-    if (qTok.length >= 4) {
+    // Calibrated fallback: Levenshtein distance on tokens with close length
+    if (maxDist > 0) {
       for (let i = 0; i < targetTokens.length; i++) {
         const t = targetTokens[i];
         if (Math.abs(qTok.length - t.length) <= maxDist) {
@@ -607,6 +672,9 @@
     if (elements.totalGenreCount) {
       elements.totalGenreCount.textContent = aggregates.totalBooks.toLocaleString();
     }
+
+    // Initialize MiniSearch indexing
+    initMiniSearch(state.books);
 
     setupSidebarFilters();
 
@@ -780,14 +848,35 @@
       state.currentPage = 1;
     }
 
-    const query = state.currentQuery.trim().toLowerCase();
-    const queryTokens = query.split(/\s+/).filter(Boolean);
+    const query = state.currentQuery.trim();
+    let searchResultsMap = null;
+
+    if (query) {
+      if (miniSearchEngine) {
+        try {
+          const results = miniSearchEngine.search(query);
+          searchResultsMap = new Map();
+          for (let i = 0; i < results.length; i++) {
+            searchResultsMap.set(results[i].id, results[i].score);
+          }
+        } catch (err) {
+          console.warn('MiniSearch search failed, falling back:', err);
+          searchResultsMap = null;
+        }
+      }
+    }
+
+    const queryTokens = query.toLowerCase().split(/\s+/).filter(Boolean);
 
     let filtered = state.books.filter(book => {
-      // 1. Pre-Indexed Fast Search Query
-      if (queryTokens.length > 0) {
-        const matchesAll = queryTokens.every(qTok => matchesToken(qTok, book._tokens, book._st, 2));
-        if (!matchesAll) return false;
+      // 1. Search Query
+      if (query) {
+        if (searchResultsMap !== null) {
+          if (!searchResultsMap.has(book.id)) return false;
+        } else if (queryTokens.length > 0) {
+          const matchesAll = queryTokens.every(qTok => matchesToken(qTok, book._tokens, book._st));
+          if (!matchesAll) return false;
+        }
       }
 
       // 2. Genre
@@ -809,7 +898,11 @@
       return true;
     });
 
-    filtered = sortBooks(filtered, state.selectedSort);
+    if (query && searchResultsMap && state.selectedSort === 'popular') {
+      filtered.sort((a, b) => (searchResultsMap.get(b.id) || 0) - (searchResultsMap.get(a.id) || 0));
+    } else {
+      filtered = sortBooks(filtered, state.selectedSort);
+    }
 
     state.filteredBooks = filtered;
     state.totalPages = Math.ceil(filtered.length / state.pageSize) || 1;
@@ -1121,6 +1214,22 @@
       ? `<div class="modal-desc">${escapeHtml(book.description)}</div>`
       : `<div class="modal-desc" style="color: var(--text-muted); font-style: italic;">No synopsis available for this volume.</div>`;
 
+    let translitSectionHtml = '';
+    if (Array.isArray(book.title_translit) && book.title_translit.length > 0) {
+      const cleanAliases = [...new Set(book.title_translit.map(t => (t || '').trim()))].filter(Boolean);
+      if (cleanAliases.length > 0) {
+        const pills = cleanAliases.map(t => `<button type="button" class="translit-pill" data-query="${escapeHtml(t)}" title="Search '${escapeHtml(t)}'">${escapeHtml(t)}</button>`).join('');
+        translitSectionHtml = `
+          <div class="modal-translit-section">
+            <span class="modal-translit-label">🔍 Alternative Spellings & Transliterations:</span>
+            <div class="modal-translit-pills">
+              ${pills}
+            </div>
+          </div>
+        `;
+      }
+    }
+
     elements.modalBody.innerHTML = `
       <div class="modal-cover-wrap">
         ${coverHtml}
@@ -1138,6 +1247,7 @@
         <div class="modal-genres">
           ${genresHtml}
         </div>
+        ${translitSectionHtml}
         ${descriptionHtml}
         <div class="modal-downloads-section">
           <h4>Available Formats</h4>
@@ -1158,6 +1268,20 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    elements.modalBody.querySelectorAll('.translit-pill').forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        const q = e.currentTarget.dataset.query;
+        if (q) {
+          closeModal();
+          elements.searchInput.value = q;
+          elements.clearSearch.style.display = 'block';
+          state.currentQuery = q;
+          applyFiltersAndSearch(true);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
 
     elements.modalBody.querySelectorAll('.modal-dl-card').forEach(dlCard => {
       dlCard.addEventListener('click', () => {

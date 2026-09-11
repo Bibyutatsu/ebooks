@@ -1293,6 +1293,45 @@ body.c-click #cursor-ring { width: 22px; height: 22px; opacity: 1; }
   border: 1px solid var(--border);
   color: var(--text);
 }
+.modal-translit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.modal-translit-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+.modal-translit-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.translit-pill {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.translit-pill:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
 .modal-desc {
   font-size: 0.86rem;
   color: var(--text);
