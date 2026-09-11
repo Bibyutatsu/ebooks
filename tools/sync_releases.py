@@ -63,6 +63,22 @@ def ensure_release_tag(tag: str, title: str):
     return True
 
 
+def get_latest_batch_info() -> tuple[int, dict[str, str]]:
+    """Finds the highest existing batch tag and its current uploaded assets."""
+    code, stdout, _ = run_cmd(["gh", "release", "list", "--repo", REPO, "--limit", "100"])
+    if code != 0:
+        return 1, {}
+    import re
+    max_batch = 1
+    for line in stdout.splitlines():
+        m = re.search(r'v1\.0-batch-(\d+)', line)
+        if m:
+            max_batch = max(max_batch, int(m.group(1)))
+    tag = f"v1.0-batch-{max_batch:02d}"
+    assets = get_existing_release_assets(tag)
+    return max_batch, assets
+
+
 def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = False, format_filter: str = None, batch_limit: int = None):
     """
     Iterates through all books and formats in catalog.json, uploads missing assets,
@@ -87,6 +103,7 @@ def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = Fal
 
     # Collect all upload tasks
     tasks = []
+    url_map = {}
 
     for book in catalog["books"]:
         for fmt_key, fmt_info in book["formats"].items():
@@ -98,124 +115,128 @@ def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = Fal
                 continue
             full_path = base_dir / rel_path
             if full_path.exists():
+                existing_url = fmt_info.get("download_url", "")
                 tasks.append({
                     "book_id": book["id"],
                     "fmt": fmt_key,
+                    "asset_name": f"{book['id']}.{fmt_key}",
                     "filename": full_path.name,
                     "filepath": str(full_path),
-                    "size": fmt_info.get("size_bytes", 0)
+                    "size": fmt_info.get("size_bytes", 0),
+                    "download_url": existing_url
                 })
+                if existing_url:
+                    url_map[(book["id"], fmt_key)] = existing_url
 
-    print(f"Total files indexed for release sync: {len(tasks)}")
+    pending = [t for t in tasks if not t.get("download_url")]
+    skipped_count = len(tasks) - len(pending)
+    print(f"Total files indexed for release sync: {len(tasks)}. Already synced: {skipped_count}. Pending upload: {len(pending)}")
     if dry_run:
         print("[DRY-RUN] Will not upload files or modify releases.")
 
-    # Group into batches
-    batches = [tasks[i:i + BATCH_SIZE] for i in range(0, len(tasks), BATCH_SIZE)]
-    print(f"Divided into {len(batches)} release batches of max {BATCH_SIZE} files.")
-
     updated_count = 0
-    skipped_count = 0
 
-    # Build mapping of book_id + fmt -> download_url
-    url_map = {}
+    if not pending:
+        print("All book files are already synced with GitHub releases!")
+    else:
+        latest_batch, latest_assets = get_latest_batch_info()
+        curr_batch = latest_batch
+        curr_tag = f"v1.0-batch-{curr_batch:02d}"
+        curr_assets = latest_assets
 
-    for batch_idx, batch in enumerate(batches, 1):
-        if batch_limit and batch_idx > batch_limit:
-            print(f"Reached batch limit of {batch_limit}. Stopping.")
-            break
+        while pending:
+            available_slots = BATCH_SIZE - len(curr_assets)
+            if available_slots <= 0:
+                curr_batch += 1
+                curr_tag = f"v1.0-batch-{curr_batch:02d}"
+                title = f"Library Assets Batch {curr_batch:02d}"
+                if not dry_run:
+                    if not ensure_release_tag(curr_tag, title):
+                        print(f"Failed to ensure release tag {curr_tag}")
+                        break
+                curr_assets = {}
+                available_slots = BATCH_SIZE
 
-        tag = f"v1.0-batch-{batch_idx:02d}"
-        title = f"Library Assets Batch {batch_idx:02d}"
+            chunk = pending[:available_slots]
+            pending = pending[available_slots:]
 
-        if not dry_run:
-            if not ensure_release_tag(tag, title):
-                continue
-            existing_assets = get_existing_release_assets(tag)
-        else:
-            existing_assets = {}
+            to_upload = []
+            for item in chunk:
+                if item["asset_name"] in curr_assets:
+                    url_map[(item["book_id"], item["fmt"])] = curr_assets[item["asset_name"]]
+                    skipped_count += 1
+                else:
+                    to_upload.append(item)
 
-        to_upload = []
-        for item in batch:
-            asset_name = f"{item['book_id']}.{item['fmt']}"
-            item["asset_name"] = asset_name
-            if asset_name in existing_assets:
-                url_map[(item["book_id"], item["fmt"])] = existing_assets[asset_name]
-                skipped_count += 1
-            else:
-                to_upload.append(item)
+            if to_upload:
+                print(f"[{curr_tag}] Uploading {len(to_upload)} new files...")
+                scratch_dir = Path("/tmp/ebooks_release_upload")
+                scratch_dir.mkdir(parents=True, exist_ok=True)
 
-        if to_upload:
-            print(f"[{tag}] Uploading {len(to_upload)} new files...")
-            scratch_dir = Path("/tmp/ebooks_release_upload")
-            scratch_dir.mkdir(parents=True, exist_ok=True)
-            
-            # Prepare files in scratch_dir
-            staged_files = []
-            for item in to_upload:
-                fpath = item["filepath"]
-                aname = item["asset_name"]
-                if dry_run:
-                    mock_url = f"https://github.com/{REPO}/releases/download/{tag}/{aname}"
-                    url_map[(item["book_id"], item["fmt"])] = mock_url
-                    continue
+                staged_files = []
+                for item in to_upload:
+                    if dry_run:
+                        mock_url = f"https://github.com/{REPO}/releases/download/{curr_tag}/{item['asset_name']}"
+                        url_map[(item["book_id"], item["fmt"])] = mock_url
+                        continue
+                    tmp_file = scratch_dir / item["asset_name"]
+                    try:
+                        import shutil
+                        shutil.copyfile(item["filepath"], tmp_file)
+                        staged_files.append((item, tmp_file))
+                    except Exception as e:
+                        print(f"  Failed to stage {item['asset_name']}: {e}")
 
-                tmp_file = scratch_dir / aname
-                try:
-                    import shutil
-                    shutil.copyfile(fpath, tmp_file)
-                    staged_files.append((item, tmp_file))
-                except Exception as e:
-                    print(f"  Failed to stage {aname}: {e}")
-
-            if not dry_run and staged_files:
-                # Upload in chunks of 15 files per gh command for high throughput and reliability
-                CHUNK_SIZE = 15
-                for i in range(0, len(staged_files), CHUNK_SIZE):
-                    chunk = staged_files[i:i + CHUNK_SIZE]
-                    file_paths = [str(tf) for _, tf in chunk]
-                    up_code, _, stderr = run_cmd([
-                        "gh", "release", "upload", tag,
-                        *file_paths,
-                        "--repo", REPO,
-                        "--clobber"
-                    ])
-                    if up_code == 0:
-                        for itm, _ in chunk:
-                            aname = itm["asset_name"]
-                            cdn_url = f"https://github.com/{REPO}/releases/download/{tag}/{aname}"
-                            url_map[(itm["book_id"], itm["fmt"])] = cdn_url
-                            updated_count += 1
-                    else:
-                        print(f"  Chunk upload failed on {tag}: {stderr}. Falling back to single uploads...")
-                        for itm, tf in chunk:
-                            u_code, _, s_err = run_cmd([
-                                "gh", "release", "upload", tag, str(tf),
-                                "--repo", REPO,
-                                "--clobber"
-                            ])
-                            if u_code == 0:
+                if not dry_run and staged_files:
+                    CHUNK_SIZE = 15
+                    for i in range(0, len(staged_files), CHUNK_SIZE):
+                        sub_chunk = staged_files[i:i + CHUNK_SIZE]
+                        file_paths = [str(tf) for _, tf in sub_chunk]
+                        up_code, _, stderr = run_cmd([
+                            "gh", "release", "upload", curr_tag,
+                            *file_paths,
+                            "--repo", REPO,
+                            "--clobber"
+                        ])
+                        if up_code == 0:
+                            for itm, _ in sub_chunk:
                                 aname = itm["asset_name"]
-                                cdn_url = f"https://github.com/{REPO}/releases/download/{tag}/{aname}"
+                                cdn_url = f"https://github.com/{REPO}/releases/download/{curr_tag}/{aname}"
                                 url_map[(itm["book_id"], itm["fmt"])] = cdn_url
+                                curr_assets[aname] = cdn_url
                                 updated_count += 1
-                            else:
-                                print(f"    Failed single upload {itm['asset_name']}: {s_err}")
+                        else:
+                            print(f"  Chunk upload failed on {curr_tag}: {stderr}. Falling back to single uploads...")
+                            for itm, tf in sub_chunk:
+                                u_code, _, s_err = run_cmd([
+                                    "gh", "release", "upload", curr_tag, str(tf),
+                                    "--repo", REPO,
+                                    "--clobber"
+                                ])
+                                if u_code == 0:
+                                    aname = itm["asset_name"]
+                                    cdn_url = f"https://github.com/{REPO}/releases/download/{curr_tag}/{aname}"
+                                    url_map[(itm["book_id"], itm["fmt"])] = cdn_url
+                                    curr_assets[aname] = cdn_url
+                                    updated_count += 1
+                                else:
+                                    print(f"    Failed single upload {itm['asset_name']}: {s_err}")
 
-                # Clean up scratch files
-                for _, tf in staged_files:
-                    if tf.exists():
-                        tf.unlink()
+                    # Clean up scratch files
+                    for _, tf in staged_files:
+                        if tf.exists():
+                            tf.unlink()
 
     # Write URLs back to catalog.json
-    for book in catalog["books"]:
-        for fmt_key, fmt_info in book["formats"].items():
-            key = (book["id"], fmt_key)
-            if key in url_map:
-                fmt_info["download_url"] = url_map[key]
+    if not dry_run:
+        for book in catalog["books"]:
+            for fmt_key, fmt_info in book["formats"].items():
+                key = (book["id"], fmt_key)
+                if key in url_map:
+                    fmt_info["download_url"] = url_map[key]
 
-    with open(catalog_file, "w", encoding="utf-8") as f:
-        json.dump(catalog, f, ensure_ascii=False, indent=2)
+        with open(catalog_file, "w", encoding="utf-8") as f:
+            json.dump(catalog, f, ensure_ascii=False, indent=2)
 
     print(f"\nSync complete! Updated: {updated_count}, Already synced: {skipped_count}.")
     print(f"Catalog updated with direct CDN links at {catalog_file.resolve()}")

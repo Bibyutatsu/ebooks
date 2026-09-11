@@ -420,16 +420,46 @@ AUTHORS_DB = {
     }
 }
 
+# Precompute lowercase lookup index for canonical Bengali, English names, and aliases
+_ALIAS_INDEX: dict[str, str] = {}
+for _canonical_bn, _data in AUTHORS_DB.items():
+    _ALIAS_INDEX[_canonical_bn.strip().lower()] = _canonical_bn
+    if _data.get("en"):
+        _ALIAS_INDEX[_data["en"].strip().lower()] = _canonical_bn
+    for _alias in _data.get("aliases", []):
+        _ALIAS_INDEX[_alias.strip().lower()] = _canonical_bn
+
+
+def find_author_match(candidate: str) -> dict | None:
+    """
+    Finds author in AUTHORS_DB by canonical Bengali, English name, or alias.
+    Returns matched author dict or None.
+    """
+    if not candidate:
+        return None
+    cleaned = candidate.strip()
+    low = cleaned.lower()
+    if low in _ALIAS_INDEX:
+        return AUTHORS_DB[_ALIAS_INDEX[low]]
+    # Check without trailing punctuation or whitespace
+    stripped = low.strip("-–—_ \t")
+    if stripped in _ALIAS_INDEX:
+        return AUTHORS_DB[_ALIAS_INDEX[stripped]]
+    return None
+
 
 def get_author_info(bn_name: str, transliterated_fallback: str = "") -> dict:
     """
     Returns normalized author dictionary with English name, aliases, and genres.
+    Checks exact canonical key, then aliases and English names via find_author_match.
+    Falls back to unstandardized author name with transliterated fallback.
     """
     cleaned = bn_name.strip()
-    if cleaned in AUTHORS_DB:
-        return AUTHORS_DB[cleaned]
+    matched = find_author_match(cleaned)
+    if matched:
+        return matched
 
-    # Fallback to transliteration
+    # Fallback to unstandardized author
     en_name = transliterated_fallback or cleaned
     return {
         "en": en_name.title(),
