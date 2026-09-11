@@ -1,16 +1,339 @@
 /**
- * Bibyutatsu Ebooks - Client Application
+ * Bibyutatsu BookStore - Client Application
  * Features:
+ * - 5-Theme system (Dark, Light, Batman, Cyberpunk, Ocean) with Three.js particle canvas
+ * - 3D Bookshelf showcase & realistic book cards
+ * - Series & Author shelf navigation
  * - Ultra-fast dual-script transliteration & fuzzy search
  * - Multi-format download management (EPUB, KFX, PDF, MOBI)
- * - Infinite scroll / batch rendering
- * - URL state synchronization & theme persistence
+ * - Infinite scroll / batch rendering & URL state synchronization
  */
 
 (function () {
   'use strict';
 
-  // Application State
+  /* --------------------------------------------------------------------------
+     1. THREE.JS AMBIENT PARTICLE BACKGROUND (from bibyutatsu.github.io)
+     -------------------------------------------------------------------------- */
+  (function initThreeHero() {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas || typeof THREE === 'undefined') return;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1200);
+    camera.position.z = 320;
+
+    const N = window.innerWidth < 700 ? 50 : 90;
+    const nodes = [];
+    const nodeGeo = new THREE.SphereGeometry(1.8, 6, 6);
+    for (let i = 0; i < N; i++) {
+      const mat = new THREE.MeshBasicMaterial({
+        color: i % 3 === 0 ? 0x8855ff : 0x00ccff,
+        transparent: true,
+        opacity: Math.random() * 0.5 + 0.3
+      });
+      const m = new THREE.Mesh(nodeGeo, mat);
+      m.position.set(
+        (Math.random() - 0.5) * 700,
+        (Math.random() - 0.5) * 460,
+        (Math.random() - 0.5) * 340
+      );
+      m.userData.vx = (Math.random() - 0.5) * 0.18;
+      m.userData.vy = (Math.random() - 0.5) * 0.15;
+      scene.add(m);
+      nodes.push(m);
+    }
+
+    const MAX = 240;
+    const lPos = new Float32Array(MAX * 6), lCol = new Float32Array(MAX * 6);
+    const lGeo = new THREE.BufferGeometry();
+    lGeo.setAttribute('position', new THREE.BufferAttribute(lPos, 3));
+    lGeo.setAttribute('color', new THREE.BufferAttribute(lCol, 3));
+    const lMat = new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.18 });
+    const lines = new THREE.LineSegments(lGeo, lMat);
+    scene.add(lines);
+
+    const icoGeo = new THREE.IcosahedronGeometry(64, 1);
+    const icoMat = new THREE.MeshBasicMaterial({ color: 0x00ccff, wireframe: true, transparent: true, opacity: 0.22 });
+    const ico = new THREE.Mesh(icoGeo, icoMat);
+    ico.position.set(window.innerWidth < 700 ? 0 : 260, 10, -60);
+    scene.add(ico);
+
+    const loader = new THREE.TextureLoader();
+    const pGeo = new THREE.BufferGeometry();
+    const pCount = 180;
+    const pPos = new Float32Array(pCount * 3);
+    for (let i = 0; i < pCount * 3; i++) pPos[i] = (Math.random() - 0.5) * 900;
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+    const pMat = new THREE.PointsMaterial({
+      size: 0.5,
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.7,
+      alphaTest: 0.5,
+      depthWrite: false
+    });
+    loader.load('assets/particles/bokeh.png', tex => {
+      pMat.map = tex;
+      pMat.needsUpdate = true;
+    });
+    const particles = new THREE.Points(pGeo, pMat);
+    scene.add(particles);
+
+    const THEME_COLORS = {
+      dark:      { ico: 0x00ccff, n1: 0x00ccff, n2: 0x8855ff, p: 0xffffff, ptex: 'bokeh' },
+      light:     { ico: 0x0055cc, n1: 0x0055cc, n2: 0x7722cc, p: 0x0055cc, ptex: 'bokeh' },
+      batman:    { ico: 0xFFE919, n1: 0xFFE919, n2: 0xff4444, p: 0xFFE919, ptex: 'batman' },
+      cyberpunk: { ico: 0xff0080, n1: 0xff0080, n2: 0x00ffcc, p: 0xff0080, ptex: 'bokeh' },
+      ocean:     { ico: 0x00e5b0, n1: 0x00e5b0, n2: 0x0099ff, p: 0x00e5b0, ptex: 'bokeh' },
+    };
+    let lastTex = 'bokeh';
+
+    window.updateThreeColors = function(theme) {
+      const c = THEME_COLORS[theme] || THEME_COLORS.dark;
+      icoMat.color.setHex(c.ico);
+      nodes.forEach((n, i) => n.material.color.setHex(i % 3 === 0 ? c.n2 : c.n1));
+      pMat.color.setHex(c.p);
+      if (c.ptex !== lastTex) {
+        lastTex = c.ptex;
+        loader.load(`assets/particles/${c.ptex}.png`, tex => {
+          pMat.map = tex;
+          pMat.needsUpdate = true;
+        });
+      }
+    };
+
+    const cA = new THREE.Color(0x00ccff), cB = new THREE.Color(0x8855ff);
+    function updateLines() {
+      let cnt = 0;
+      for (let i = 0; i < nodes.length && cnt < MAX; i++) {
+        for (let j = i + 1; j < nodes.length && cnt < MAX; j++) {
+          const dx = nodes[i].position.x - nodes[j].position.x;
+          const dy = nodes[i].position.y - nodes[j].position.y;
+          const dz = nodes[i].position.z - nodes[j].position.z;
+          const d = Math.sqrt(dx * dx + dy * dy + dz * dz);
+          if (d < 130) {
+            const idx = cnt * 6, f = 1 - d / 130;
+            const c = cnt % 2 === 0 ? cA : cB;
+            lPos[idx]   = nodes[i].position.x; lPos[idx+1] = nodes[i].position.y; lPos[idx+2] = nodes[i].position.z;
+            lPos[idx+3] = nodes[j].position.x; lPos[idx+4] = nodes[j].position.y; lPos[idx+5] = nodes[j].position.z;
+            lCol[idx]   = c.r * f;             lCol[idx+1] = c.g * f;             lCol[idx+2] = c.b * f;
+            lCol[idx+3] = c.r * f;             lCol[idx+4] = c.g * f;             lCol[idx+5] = c.b * f;
+            cnt++;
+          }
+        }
+      }
+      lGeo.setDrawRange(0, cnt * 2);
+      lGeo.attributes.position.needsUpdate = true;
+      lGeo.attributes.color.needsUpdate = true;
+    }
+
+    let mx = 0, my = 0, tx = 0, ty = 0;
+    document.addEventListener('mousemove', e => {
+      mx = (e.clientX / window.innerWidth - 0.5) * 2;
+      my = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    let frame = 0, heroGone = false;
+    window.addEventListener('scroll', () => {
+      heroGone = window.scrollY > window.innerHeight * 1.2;
+      canvas.style.opacity = heroGone ? '0' : '1';
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if (heroGone) return;
+      frame++;
+
+      nodes.forEach(n => {
+        n.position.x += n.userData.vx;
+        n.position.y += n.userData.vy;
+        if (Math.abs(n.position.x) > 360) n.userData.vx *= -1;
+        if (Math.abs(n.position.y) > 240) n.userData.vy *= -1;
+      });
+
+      tx += (mx * 18 - tx) * 0.03;
+      ty += (my * 10 - ty) * 0.03;
+      camera.position.x = tx;
+      camera.position.y = -ty;
+      camera.lookAt(scene.position);
+
+      ico.rotation.y += 0.05 * (mx * 0.5 - ico.rotation.y);
+      ico.rotation.x += 0.05 * (my * 0.5 - ico.rotation.x);
+      ico.rotation.z += 0.002;
+
+      particles.rotation.y = -mx * 0.0002;
+      particles.rotation.x = -my * 0.0002;
+
+      if (frame % 4 === 0) updateLines();
+      renderer.render(scene, camera);
+    }
+    animate();
+  })();
+
+  /* --------------------------------------------------------------------------
+     2. CUSTOM CURSOR & MAGNETIC BUTTONS
+     -------------------------------------------------------------------------- */
+  (function initCursorAndMagnetic() {
+    if (window.matchMedia('(hover: none)').matches) return;
+    const dot = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+    if (!dot || !ring) return;
+
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+      dot.style.left = mx + 'px';
+      dot.style.top = my + 'px';
+    });
+
+    const hoverSelector = 'a, button, .book-card, .tag-btn, .pill, .format-btn, .series-card, .author-chip, .book-3d-item, .social-btn, .theme-opt, select';
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest(hoverSelector)) document.body.classList.add('c-hover');
+    });
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest(hoverSelector)) document.body.classList.remove('c-hover');
+    });
+    document.addEventListener('mousedown', () => document.body.classList.add('c-click'));
+    document.addEventListener('mouseup', () => document.body.classList.remove('c-click'));
+
+    (function lerpRing() {
+      rx += (mx - rx) * 0.15;
+      ry += (my - ry) * 0.15;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(lerpRing);
+    })();
+
+    window.applyMagnetic = function(selector) {
+      document.querySelectorAll(selector).forEach(btn => {
+        btn.addEventListener('mouseenter', () => btn.style.transition = 'transform 0.1s linear');
+        btn.addEventListener('mousemove', e => {
+          const r = btn.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+          btn.style.transform = `translate(${(e.clientX - cx) * 0.24}px, ${(e.clientY - cy) * 0.24}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+          btn.style.transform = '';
+        });
+      });
+    };
+    window.applyMagnetic('.btn-primary, .btn-ghost, .social-btn, .theme-opt, .tag-btn');
+  })();
+
+  /* --------------------------------------------------------------------------
+     3. 3D CARD TILT
+     -------------------------------------------------------------------------- */
+  window.applyTilt = function(selector) {
+    if (window.matchMedia('(hover: none)').matches) return;
+    document.querySelectorAll(selector).forEach(card => {
+      if (card.dataset.tiltInit) return;
+      card.dataset.tiltInit = 'true';
+      card.addEventListener('mouseenter', () => card.style.transition = 'transform 0.1s linear');
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(700px) rotateX(${y * -7}deg) rotateY(${x * 7}deg) translateY(-5px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        card.style.transform = '';
+      });
+    });
+  };
+
+  /* --------------------------------------------------------------------------
+     4. 5-THEME ENGINE (from bibyutatsu.github.io)
+     -------------------------------------------------------------------------- */
+  (function initThemeEngine() {
+    const btn = document.getElementById('theme-btn');
+    const pop = document.getElementById('theme-popover');
+    const opts = document.querySelectorAll('.theme-opt');
+    if (!btn || !pop) return;
+
+    const saved = localStorage.getItem('bm-theme') || 'dark';
+    applyTheme(saved, false);
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      pop.classList.toggle('open');
+    });
+
+    document.addEventListener('click', e => {
+      if (!btn.contains(e.target)) pop.classList.remove('open');
+    });
+    pop.addEventListener('click', e => e.stopPropagation());
+
+    opts.forEach(opt => {
+      opt.addEventListener('click', () => {
+        applyTheme(opt.dataset.theme, true);
+        pop.classList.remove('open');
+      });
+    });
+
+    function applyTheme(theme, save) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (save) localStorage.setItem('bm-theme', theme);
+      opts.forEach(o => o.classList.toggle('active', o.dataset.theme === theme));
+
+      const names = { dark: 'Dark', light: 'Light', batman: 'Batman', cyberpunk: 'Cyber', ocean: 'Ocean' };
+      const label = btn.querySelector('.theme-label');
+      if (label) label.textContent = names[theme] || theme;
+
+      if (typeof window.updateThreeColors === 'function') {
+        window.updateThreeColors(theme);
+      }
+    }
+  })();
+
+  /* --------------------------------------------------------------------------
+     5. NAVIGATION & SCROLL
+     -------------------------------------------------------------------------- */
+  (function initNavAndScroll() {
+    const nav = document.getElementById('nav');
+    const toggle = document.getElementById('menu-toggle');
+    const links = document.querySelector('.nav-links');
+
+    window.addEventListener('scroll', () => {
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
+
+      const progressBar = document.getElementById('progress-bar');
+      if (progressBar && !CSS.supports('animation-timeline', 'scroll()')) {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / totalHeight) * 100;
+        progressBar.style.width = `${progress}%`;
+      }
+    });
+
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('open');
+        document.body.classList.toggle('menu-open');
+      });
+      links.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          links.classList.remove('open');
+          document.body.classList.remove('menu-open');
+        });
+      });
+    }
+  })();
+
+  /* --------------------------------------------------------------------------
+     6. APPLICATION STATE & CATALOG ENGINE
+     -------------------------------------------------------------------------- */
   const state = {
     catalog: null,
     books: [],
@@ -26,9 +349,7 @@
     genres: []
   };
 
-  // DOM Elements
   const elements = {
-    themeToggle: document.getElementById('theme-toggle'),
     searchInput: document.getElementById('search-input'),
     clearSearch: document.getElementById('clear-search'),
     quickTags: document.getElementById('quick-tags'),
@@ -50,28 +371,7 @@
   };
 
   /* --------------------------------------------------------------------------
-     Theme Management
-     -------------------------------------------------------------------------- */
-  function initTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-    setTheme(theme);
-
-    elements.themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      setTheme(next);
-    });
-  }
-
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }
-
-  /* --------------------------------------------------------------------------
-     Fuzzy Search Engine & String Distance
+     Fuzzy Search Engine & Levenshtein Distance
      -------------------------------------------------------------------------- */
   function levenshtein(s1, s2) {
     if (s1.length < s2.length) return levenshtein(s2, s1);
@@ -103,7 +403,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     Data Fetching & Initialization
+     Catalog Loading & Setup
      -------------------------------------------------------------------------- */
   async function loadCatalog() {
     try {
@@ -115,12 +415,12 @@
       state.topAuthors = data.top_authors || [];
       state.genres = data.genres || [];
 
-      // Update badge
       if (elements.statCountText && data.stats) {
         elements.statCountText.textContent = `${data.stats.total_books.toLocaleString()} Books`;
       }
 
       setupFiltersUI();
+      setupSpotlights();
       parseUrlParams();
       applyFiltersAndSearch();
     } catch (err) {
@@ -135,18 +435,14 @@
     }
   }
 
-  /* --------------------------------------------------------------------------
-     Setup Filter Controls
-     -------------------------------------------------------------------------- */
   function setupFiltersUI() {
-    // 1. Genre Pills
+    // 1. Department / Genre Pills
     if (state.genres.length > 0) {
       const frag = document.createDocumentFragment();
       state.genres.slice(0, 10).forEach(g => {
         const btn = document.createElement('button');
         btn.className = 'pill';
         btn.dataset.genre = g.genre;
-        // Strip parenthetical English for clean pill text
         const cleanName = g.genre.split('(')[0].trim();
         btn.textContent = `${cleanName} (${g.count})`;
         frag.appendChild(btn);
@@ -164,6 +460,67 @@
         frag.appendChild(opt);
       });
       elements.authorFilter.appendChild(frag);
+    }
+
+    if (window.applyMagnetic) {
+      window.applyMagnetic('.pill, .format-btn');
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     Bookstore Spotlight & Showcase Interactions
+     -------------------------------------------------------------------------- */
+  function setupSpotlights() {
+    // 1. 3D Showcase Books
+    document.querySelectorAll('.book-3d-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const bookId = item.dataset.bookId;
+        const targetBook = state.books.find(b => b.id === bookId);
+        if (targetBook) {
+          openBookModal(targetBook);
+        } else {
+          // Fallback: search by title
+          const title = item.getAttribute('title') || '';
+          elements.searchInput.value = title.split('(')[0].trim();
+          state.currentQuery = elements.searchInput.value;
+          applyFiltersAndSearch();
+          scrollToCatalog();
+        }
+      });
+    });
+
+    // 2. Series Shelf Cards
+    document.querySelectorAll('.series-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const term = card.dataset.search;
+        elements.searchInput.value = term;
+        state.currentQuery = term;
+        elements.clearSearch.style.display = 'flex';
+        applyFiltersAndSearch();
+        scrollToCatalog();
+      });
+    });
+
+    // 3. Authors Spotlight Chips
+    document.querySelectorAll('.author-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const author = chip.dataset.author;
+        state.selectedAuthor = author;
+        elements.authorFilter.value = author;
+        applyFiltersAndSearch();
+        scrollToCatalog();
+      });
+    });
+
+    if (window.applyTilt) {
+      window.applyTilt('.series-card, .author-chip');
+    }
+  }
+
+  function scrollToCatalog() {
+    const section = document.getElementById('catalog-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -204,50 +561,47 @@
   }
 
   function syncFilterControlsUI() {
-    // Genre pills active class
     const genreButtons = elements.genrePills.querySelectorAll('.pill');
     genreButtons.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.genre === state.selectedGenre);
     });
 
-    // Format buttons active class
     const formatButtons = elements.formatPills.querySelectorAll('.format-btn');
     formatButtons.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.format === state.selectedFormat);
     });
 
-    // Selects
     elements.authorFilter.value = state.selectedAuthor;
     elements.sortSelect.value = state.selectedSort;
   }
 
   /* --------------------------------------------------------------------------
-     Filter, Search, and Sort Logic
+     Search & Filtering Logic
      -------------------------------------------------------------------------- */
   function applyFiltersAndSearch() {
     const query = state.currentQuery.trim().toLowerCase();
     const queryTokens = query.split(/\s+/).filter(Boolean);
 
     let filtered = state.books.filter(book => {
-      // 1. Search Query Match
+      // Search Query
       if (queryTokens.length > 0) {
         const searchTokens = (book.search_text || '').toLowerCase().split(/\s+/);
         const matchesAll = queryTokens.every(qTok => matchesToken(qTok, searchTokens, 2));
         if (!matchesAll) return false;
       }
 
-      // 2. Genre Filter
+      // Genre
       if (state.selectedGenre !== 'all') {
         const hasGenre = book.genres.some(g => g.toLowerCase().includes(state.selectedGenre.toLowerCase()));
         if (!hasGenre) return false;
       }
 
-      // 3. Format Filter
+      // Format
       if (state.selectedFormat !== 'all') {
         if (!book.formats || !book.formats[state.selectedFormat]) return false;
       }
 
-      // 4. Author Filter
+      // Author
       if (state.selectedAuthor !== 'all') {
         if (book.author !== state.selectedAuthor) return false;
       }
@@ -255,14 +609,12 @@
       return true;
     });
 
-    // Sort
     filtered = sortBooks(filtered, state.selectedSort);
 
     state.filteredBooks = filtered;
     state.renderedCount = 0;
     elements.booksGrid.innerHTML = '';
 
-    // Update Result Counts
     elements.resultsCount.innerHTML = `Showing <strong>${filtered.length.toLocaleString()}</strong> books`;
     const hasActiveFilters = query || state.selectedGenre !== 'all' || state.selectedFormat !== 'all' || state.selectedAuthor !== 'all';
     elements.resetFiltersBtn.style.display = hasActiveFilters ? 'inline-block' : 'none';
@@ -289,13 +641,12 @@
         return list.sort((a, b) => a.author_en.localeCompare(b.author_en));
       case 'popular':
       default:
-        // Already naturally ordered by top authors in catalog
         return list;
     }
   }
 
   /* --------------------------------------------------------------------------
-     Batch Rendering
+     Batch Rendering & Card Creation (3D Bookstore Book Design)
      -------------------------------------------------------------------------- */
   function renderNextBatch() {
     const nextBatch = state.filteredBooks.slice(state.renderedCount, state.renderedCount + state.pageSize);
@@ -312,39 +663,38 @@
     elements.booksGrid.appendChild(frag);
     state.renderedCount += nextBatch.length;
 
-    // Show/hide load more button
     if (state.renderedCount < state.filteredBooks.length) {
       elements.loadMoreContainer.style.display = 'flex';
     } else {
       elements.loadMoreContainer.style.display = 'none';
     }
+
+    if (window.applyTilt) {
+      window.applyTilt('.book-card');
+    }
+    if (window.applyMagnetic) {
+      window.applyMagnetic('.download-btn, .details-btn');
+    }
   }
 
-  /* --------------------------------------------------------------------------
-     Book Card Creation
-     -------------------------------------------------------------------------- */
   function createBookCard(book) {
     const card = document.createElement('article');
     card.className = 'book-card';
     card.dataset.id = book.id;
 
-    // Badges
     const seriesHtml = book.series ? `<span class="series-tag">${escapeHtml(book.series.name_bn)}</span>` : '<span></span>';
     
-    // Format chips
     let formatBadgesHtml = '';
     const fmts = Object.keys(book.formats || {});
     fmts.forEach(f => {
       formatBadgesHtml += `<span class="badge-fmt ${f}">${f.toUpperCase()}</span>`;
     });
 
-    // Primary download button link
     const primaryFormat = book.formats.epub ? 'epub' : (book.formats.kfx ? 'kfx' : fmts[0]);
     const primaryInfo = book.formats[primaryFormat] || {};
     const downloadHref = primaryInfo.download_url || '#';
     const downloadFilename = primaryInfo.filename || `${book.id}.${primaryFormat}`;
 
-    // Cover image or fallback
     let coverHtml = '';
     if (book.cover) {
       coverHtml = `<img src="${book.cover}" alt="${escapeHtml(book.title)}" class="book-cover" loading="lazy">`;
@@ -375,7 +725,7 @@
         </div>
         <div class="card-actions">
           <a href="${downloadHref}" download="${downloadFilename}" class="download-btn" data-fmt="${primaryFormat}" title="Download ${primaryFormat.toUpperCase()} (${primaryInfo.size_formatted || ''})">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             <span>${primaryFormat.toUpperCase()}</span>
           </a>
           <button class="details-btn" aria-label="Book Details">Details</button>
@@ -383,7 +733,6 @@
       </div>
     `;
 
-    // Card click opens modal (unless download button was clicked)
     card.addEventListener('click', (e) => {
       if (e.target.closest('.download-btn')) {
         handleDownloadClick(e, book, primaryFormat, primaryInfo);
@@ -398,7 +747,6 @@
   function handleDownloadClick(e, book, format, formatInfo) {
     if (!formatInfo.download_url || formatInfo.download_url === '#') {
       e.preventDefault();
-      // If direct release URL is not yet connected, trigger modal or fallback alert
       openBookModal(book);
     }
   }
@@ -417,7 +765,7 @@
         <a href="${dlUrl}" download="${fmtInfo.filename}" ${targetAttr} class="modal-dl-card">
           <span class="modal-dl-format">${fmtKey.toUpperCase()}</span>
           <span class="modal-dl-size">${fmtInfo.size_formatted}</span>
-          <span class="modal-dl-btn">Download ${fmtKey.toUpperCase()}</span>
+          <span class="modal-dl-btn">Download ↗</span>
         </a>
       `;
     });
@@ -456,7 +804,7 @@
         </div>
         ${descriptionHtml}
         <div class="modal-downloads-section">
-          <h4>Available Download Formats</h4>
+          <h4>Available Formats</h4>
           <div class="modal-download-grid">
             ${downloadCardsHtml}
           </div>
@@ -464,7 +812,6 @@
       </div>
     `;
 
-    // Clicking author in modal filters by author
     const authorLink = elements.modalBody.querySelector('.modal-author-link');
     if (authorLink) {
       authorLink.addEventListener('click', () => {
@@ -472,12 +819,16 @@
         state.selectedAuthor = book.author;
         syncFilterControlsUI();
         applyFiltersAndSearch();
-        window.scrollTo({ top: 400, behavior: 'smooth' });
+        scrollToCatalog();
       });
     }
 
     elements.modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    if (window.applyMagnetic) {
+      window.applyMagnetic('.modal-dl-card, .modal-close');
+    }
   }
 
   function closeModal() {
@@ -489,7 +840,6 @@
      Event Listeners
      -------------------------------------------------------------------------- */
   function setupEvents() {
-    // 1. Search Input
     let debounceTimer;
     elements.searchInput.addEventListener('input', (e) => {
       clearTimeout(debounceTimer);
@@ -510,7 +860,6 @@
       elements.searchInput.focus();
     });
 
-    // 2. Quick Tags
     elements.quickTags.addEventListener('click', (e) => {
       const btn = e.target.closest('.tag-btn');
       if (!btn) return;
@@ -519,10 +868,9 @@
       state.currentQuery = term;
       elements.clearSearch.style.display = 'flex';
       applyFiltersAndSearch();
-      elements.searchInput.focus();
+      scrollToCatalog();
     });
 
-    // 3. Genre Pills
     elements.genrePills.addEventListener('click', (e) => {
       const pill = e.target.closest('.pill');
       if (!pill) return;
@@ -531,7 +879,6 @@
       applyFiltersAndSearch();
     });
 
-    // 4. Format Filter Buttons
     elements.formatPills.addEventListener('click', (e) => {
       const btn = e.target.closest('.format-btn');
       if (!btn) return;
@@ -540,28 +887,23 @@
       applyFiltersAndSearch();
     });
 
-    // 5. Author Select Dropdown
     elements.authorFilter.addEventListener('change', (e) => {
       state.selectedAuthor = e.target.value;
       applyFiltersAndSearch();
     });
 
-    // 6. Sort Select Dropdown
     elements.sortSelect.addEventListener('change', (e) => {
       state.selectedSort = e.target.value;
       applyFiltersAndSearch();
     });
 
-    // 7. Reset Filters Buttons
     elements.resetFiltersBtn.addEventListener('click', resetAllFilters);
     elements.emptyResetBtn.addEventListener('click', resetAllFilters);
 
-    // 8. Load More
     elements.loadMoreBtn.addEventListener('click', () => {
       renderNextBatch();
     });
 
-    // 9. Infinite Scroll (IntersectionObserver)
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && state.renderedCount < state.filteredBooks.length) {
@@ -571,7 +913,6 @@
       observer.observe(elements.loadMoreContainer);
     }
 
-    // 10. Modal Close
     elements.modalCloseBtn.addEventListener('click', closeModal);
     elements.modalOverlay.addEventListener('click', (e) => {
       if (e.target === elements.modalOverlay) closeModal();
@@ -606,7 +947,6 @@
   }
 
   // Initialize
-  initTheme();
   setupEvents();
   loadCatalog();
 

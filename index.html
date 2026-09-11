@@ -3,225 +3,476 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bibyutatsu Ebooks | বাংলা ইবুক ও ডিজিটাল বই সংকলন</title>
-  <meta name="description" content="Free digital library of 1,200+ Bengali ebooks. Search in English transliteration or Bengali across iconic detectives, sci-fi, classics, and novels. Download in EPUB, Kindle KFX, MOBI & PDF.">
-  <meta name="keywords" content="bangla ebooks, bengali books, free epub, kindle kfx, feluda, byomkesh, humayun ahmed, satyajit ray, bengali digital library">
+  <title>Bibyutatsu BookStore | বাংলা ইবুক ও ডিজিটাল বইঘর</title>
+  <meta name="description" content="Free open digital bookstore of 1,200+ Bengali ebooks. Direct downloads in EPUB, Kindle KFX, MOBI & PDF across Feluda, Byomkesh, Humayun Ahmed, Satyajit Ray and classic literature.">
+  <meta name="keywords" content="bangla bookstore, bengali ebooks, free epub, kindle kfx, feluda, byomkesh, humayun ahmed, satyajit ray, bengali digital bookstore">
   
   <!-- OpenGraph -->
-  <meta property="og:title" content="Bibyutatsu Ebooks | বাংলা ইবুক লাইব্রেরি">
-  <meta property="og:description" content="Free digital collection of 1,200+ Bengali ebooks in EPUB, KFX & PDF. Search in English or বাংলা.">
+  <meta property="og:title" content="Bibyutatsu BookStore | বাংলা ডিজিটাল বইঘর">
+  <meta property="og:description" content="Explore and download 1,200+ Bengali ebooks in EPUB, Kindle KFX & PDF. Search in English transliteration or বাংলা.">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts: Outfit, Inter, Hind Siliguri for Bengali -->
+  <!-- Google Fonts: Space Grotesk · Inter · Fira Code · Bangers (Batman) · Hind Siliguri (Bengali) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&family=Bangers&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Libraries: Three.js for Ambient Particle Canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Background ambient glow -->
-  <div class="bg-mesh" aria-hidden="true"></div>
 
-  <!-- Navigation Bar -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="brand-logo" id="brand-logo">
-        <span class="logo-icon">📚</span>
-        <div class="logo-text">
-          <span class="logo-title">Bibyutatsu <span class="accent-text">Ebooks</span></span>
-          <span class="logo-subtitle">বাংলা ডিজিটাল লাইব্রেরি</span>
-        </div>
+  <!-- Scroll Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Ambient Particle Canvas -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Bookstore Navigation Bar -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="brand-logo">
+        <span class="logo-emoji">📚</span>
+        <span>Bibyutatsu <span class="logo-accent">BookStore</span><span class="dot">.</span></span>
+        <span class="nav-logo-sub">বাংলা ডিজিটাল বইঘর</span>
       </a>
 
-      <div class="nav-actions">
-        <a href="https://bibyutatsu.github.io" class="nav-link" id="nav-portfolio" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-          <span>Portfolio</span>
-        </a>
-        <a href="https://bibyutatsu.github.io/Blogs" class="nav-link" id="nav-blog" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-          <span>Dev Blog</span>
-        </a>
-        <div class="stat-badge" id="library-stat-badge">
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#hero">Storefront</a></li>
+          <li><a href="#series-section">Series</a></li>
+          <li><a href="#authors-section">Authors</a></li>
+          <li><a href="#catalog-section">Catalog</a></li>
+          <li><a href="https://bibyutatsu.github.io" target="_blank" rel="noopener">Portfolio ↗</a></li>
+          <li><a href="https://bibyutatsu.github.io/Blogs/" target="_blank" rel="noopener">Dev Blog ↗</a></li>
+        </ul>
+
+        <div class="nav-stat-pill" id="nav-stat-pill" title="Verified titles in library">
           <span class="pulse-dot"></span>
           <span id="stat-count-text">1,238 Books</span>
         </div>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
-          <span class="theme-icon moon-icon">🌙</span>
-          <span class="theme-icon sun-icon">☀️</span>
+
+        <!-- 5-Theme Popover Component -->
+        <div class="theme-wrap">
+          <button class="theme-icon-btn" id="theme-btn" aria-label="Change theme">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/>
+            </svg>
+            <span class="theme-label">Dark</span>
+          </button>
+          <div class="theme-popover" id="theme-popover">
+            <button class="theme-opt active" data-theme="dark">
+              <span class="theme-swatch" style="background:#00ccff"></span> Dark
+            </button>
+            <button class="theme-opt" data-theme="light">
+              <span class="theme-swatch" style="background:#0055cc"></span> Light
+            </button>
+            <button class="theme-opt" data-theme="batman">
+              <span class="theme-swatch" style="background:#FFE919"></span> Batman
+            </button>
+            <button class="theme-opt" data-theme="cyberpunk">
+              <span class="theme-swatch" style="background:#ff0080"></span> Cyberpunk
+            </button>
+            <button class="theme-opt" data-theme="ocean">
+              <span class="theme-swatch" style="background:#00e5b0"></span> Ocean
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- Hero Header -->
-  <main class="main-container">
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="badge-pill">
-          <span class="badge-emoji">⚡</span>
-          <span>Dual-Script Transliteration Search & Direct Free Downloads</span>
+  <!-- Bookstore Hero Storefront -->
+  <section id="hero" class="store-hero">
+    <div class="container store-hero-container">
+      <!-- Left Column: Storefront Pitch & Universal Search -->
+      <div class="store-hero-left">
+        <div class="store-badge-pill">
+          <span class="badge-icon">🏷️</span>
+          <span>Open Digital Bookstore · 100% Free Forever</span>
         </div>
-        <h1 class="hero-heading">
-          Explore Bengali Literature <br>
-          <span class="gradient-text">Search In English Or বাংলা</span>
+        <h1 class="store-hero-title">
+          Discover Timeless <br>
+          <span class="gradient-text">Bengali Classics &amp; Novels</span>
         </h1>
-        <p class="hero-description">
-          Over 1,200 hand-curated Bengali classics, mystery thrillers, science fiction, and world translations. Download directly in <strong>EPUB</strong>, <strong>Kindle KFX</strong>, <strong>MOBI</strong> & <strong>PDF</strong>.
+        <p class="store-hero-desc">
+          Your complete digital bookshelf for Bengali literature. Download over <strong>1,230+ full-length novels</strong>, detective mysteries, sci-fi sagas, and translations directly in <strong>EPUB</strong>, <strong>Kindle KFX</strong>, <strong>MOBI</strong> &amp; <strong>PDF</strong>.
         </p>
 
-        <!-- Quick Transliteration Search Suggestions -->
-        <div class="quick-tags" id="quick-tags">
-          <span class="quick-tags-label">Popular Searches:</span>
-          <button class="tag-btn" data-search="feluda">🕵️‍♂️ Feluda</button>
-          <button class="tag-btn" data-search="byomkesh">🔍 Byomkesh</button>
-          <button class="tag-btn" data-search="humayun ahmed">🖋️ Humayun Ahmed</button>
-          <button class="tag-btn" data-search="satyajit ray">🎬 Satyajit Ray</button>
-          <button class="tag-btn" data-search="shonku">🔬 Prof. Shonku</button>
-          <button class="tag-btn" data-search="kakababu">🏔️ Kakababu</button>
-          <button class="tag-btn" data-search="tintin">🚀 Tintin</button>
-          <button class="tag-btn" data-search="masud rana">💥 Masud Rana</button>
-          <button class="tag-btn" data-search="sherlock">🔎 Sherlock Holmes</button>
-        </div>
-      </div>
-
-      <!-- Search Box Card -->
-      <div class="search-card">
-        <div class="search-input-wrapper">
-          <span class="search-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          </span>
-          <input 
-            type="text" 
-            id="search-input" 
-            class="search-input" 
-            placeholder="Search by title, author, series in English or বাংলা (e.g. 'feluda', 'sonar kella', 'হুমায়ূন')..." 
-            autocomplete="off"
-            spellcheck="false"
-          >
-          <button class="clear-btn" id="clear-search" aria-label="Clear Search" style="display: none;">✕</button>
-        </div>
-        <div class="search-subtext">
-          <span>💡 <em>Phonetic search supported:</em> Try typing colloquial English ("atin babu", "bomkesh", "chander pahar")</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Filters Section -->
-    <section class="filters-section" id="filters-section">
-      <!-- Genre Pills -->
-      <div class="filter-group">
-        <span class="filter-label">Genres:</span>
-        <div class="pills-scroll" id="genre-pills">
-          <button class="pill active" data-genre="all">All Genres</button>
-          <!-- Injected dynamically -->
-        </div>
-      </div>
-
-      <!-- Secondary Controls Bar -->
-      <div class="controls-bar">
-        <!-- Formats Filter -->
-        <div class="format-filters" id="format-pills">
-          <span class="filter-label">Format:</span>
-          <button class="format-btn active" data-format="all">All</button>
-          <button class="format-btn" data-format="epub">EPUB</button>
-          <button class="format-btn" data-format="kfx">Kindle KFX</button>
-          <button class="format-btn" data-format="pdf">PDF</button>
-          <button class="format-btn" data-format="mobi">MOBI</button>
-        </div>
-
-        <div class="dropdown-controls">
-          <!-- Author Dropdown -->
-          <div class="custom-select-wrapper">
-            <select id="author-filter" class="custom-select" aria-label="Filter by Author">
-              <option value="all">All Authors (173)</option>
-            </select>
+        <!-- Store Value Highlights -->
+        <div class="store-highlights">
+          <div class="highlight-item">
+            <span class="highlight-icon">⚡</span>
+            <span>1-Click Direct Downloads</span>
           </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">📱</span>
+            <span>Kindle &amp; Apple Books Ready</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🔍</span>
+            <span>Dual-Script English &amp; বাংলা Search</span>
+          </div>
+        </div>
 
-          <!-- Sort Dropdown -->
-          <div class="custom-select-wrapper">
-            <select id="sort-select" class="custom-select" aria-label="Sort Books">
-              <option value="popular">Top Authors First</option>
-              <option value="title-asc">Title: বাংলা (ক-হ)</option>
-              <option value="title-en-asc">Title: English (A-Z)</option>
-              <option value="author-asc">Author (A-Z)</option>
-            </select>
+        <!-- Store Universal Search Bar -->
+        <div class="store-search-box" id="store-search-box">
+          <div class="search-input-wrapper">
+            <span class="search-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </span>
+            <input 
+              type="text" 
+              id="search-input" 
+              class="search-input" 
+              placeholder="Search books, authors, or series in English or বাংলা (e.g. 'feluda', 'sonar kella', 'হুমায়ূন')..." 
+              autocomplete="off"
+              spellcheck="false"
+            >
+            <button class="clear-btn" id="clear-search" aria-label="Clear Search" style="display: none;">✕</button>
+          </div>
+          <div class="search-quick-tags" id="quick-tags">
+            <span class="quick-label">Trending:</span>
+            <button class="tag-btn" data-search="feluda">🕵️‍♂️ Feluda</button>
+            <button class="tag-btn" data-search="byomkesh">🔍 Byomkesh</button>
+            <button class="tag-btn" data-search="humayun ahmed">🖋️ Humayun Ahmed</button>
+            <button class="tag-btn" data-search="shonku">🔬 Shonku</button>
+            <button class="tag-btn" data-search="kakababu">🏔️ Kakababu</button>
+            <button class="tag-btn" data-search="tintin">🚀 Tintin</button>
           </div>
         </div>
       </div>
 
-      <!-- Active Filters & Result Count -->
-      <div class="results-meta">
-        <div class="results-count" id="results-count">
-          Showing <strong>1,238</strong> books
+      <!-- Right Column: 3D Bookstore Floating Bookshelf Showcase -->
+      <div class="store-hero-right">
+        <div class="showcase-header">
+          <span class="showcase-tag">★ Featured Best-Sellers</span>
+          <span class="showcase-hint">Click book to preview</span>
         </div>
-        <button class="reset-filters-btn" id="reset-filters-btn" style="display: none;">
-          Clear All Filters ↺
+        <div class="bookshelf-3d-wrap">
+          <div class="bookshelf-stage">
+            <!-- Book 1: Feluda - Sonar Kella -->
+            <div class="book-3d-item" data-book-id="satyajit-ray-sonar-kella" title="সোনার কেল্লা (Sonar Kella) - সত্যজিৎ রায়">
+              <div class="book-3d">
+                <img src="assets/covers/satyajit-ray-sonar-kella.webp" alt="সোনার কেল্লা" class="book-3d-cover" loading="eager">
+                <div class="book-3d-spine"></div>
+              </div>
+              <span class="book-3d-caption">সোনার কেল্লা</span>
+            </div>
+
+            <!-- Book 2: Byomkesh - Ogniban -->
+            <div class="book-3d-item" data-book-id="sharadindu-bandyopadhyay-ogniban" title="অগ্নিবাণ (Byomkesh) - শরদিন্দু বন্দ্যোপাধ্যায়">
+              <div class="book-3d">
+                <img src="assets/covers/sharadindu-bandyopadhyay-ogniban.webp" alt="অগ্নিবাণ" class="book-3d-cover" loading="eager">
+                <div class="book-3d-spine"></div>
+              </div>
+              <span class="book-3d-caption">ব্যোমকেশ বক্সী</span>
+            </div>
+
+            <!-- Book 3: Satyajit Ray - Opur Pjachali -->
+            <div class="book-3d-item" data-book-id="satyajit-ray-opur-pjachali" title="অপুর প্যাচালি - সত্যজিৎ রায়">
+              <div class="book-3d">
+                <img src="assets/covers/satyajit-ray-opur-pjachali.webp" alt="অপুর প্যাচালি" class="book-3d-cover" loading="eager">
+                <div class="book-3d-spine"></div>
+              </div>
+              <span class="book-3d-caption">সত্যজিৎ রায়</span>
+            </div>
+
+            <!-- Book 4: Sunil Gangopadhyay - Achena Manus -->
+            <div class="book-3d-item" data-book-id="sunil-gangopadhyay-achena-manus" title="অচেনা মানুষ (Kakababu) - সুনীল গঙ্গোপাধ্যায়">
+              <div class="book-3d">
+                <img src="assets/covers/sunil-gangopadhyay-achena-manus.webp" alt="অচেনা মানুষ" class="book-3d-cover" loading="eager">
+                <div class="book-3d-spine"></div>
+              </div>
+              <span class="book-3d-caption">কাকাবাবু</span>
+            </div>
+          </div>
+          <div class="bookshelf-wood"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE SHELF 1: Iconic Detective & Adventure Series -->
+  <section id="series-section" class="store-shelf-section">
+    <div class="container">
+      <div class="shelf-header">
+        <div class="shelf-title-wrap">
+          <span class="shelf-eyebrow">Curated Collections</span>
+          <h2 class="shelf-title">Iconic Series &amp; Universes</h2>
+        </div>
+        <p class="shelf-desc">Complete sagas from beloved literary detectives, adventurers, and fictional masters.</p>
+      </div>
+
+      <div class="series-cards-scroll">
+        <div class="series-card" data-search="feluda">
+          <div class="series-card-icon">🕵️‍♂️</div>
+          <div class="series-card-info">
+            <h3>ফেলুদা (Feluda)</h3>
+            <span class="series-card-author">সত্যজিৎ রায় · 56 Volumes</span>
+          </div>
+          <span class="series-explore-btn">Browse →</span>
+        </div>
+
+        <div class="series-card" data-search="byomkesh">
+          <div class="series-card-icon">🔍</div>
+          <div class="series-card-info">
+            <h3>ব্যোমকেশ বক্সী (Byomkesh)</h3>
+            <span class="series-card-author">শরদিন্দু বন্দ্যোপাধ্যায় · 30 Volumes</span>
+          </div>
+          <span class="series-explore-btn">Browse →</span>
+        </div>
+
+        <div class="series-card" data-search="shonku">
+          <div class="series-card-icon">🧪</div>
+          <div class="series-card-info">
+            <h3>প্রফেসর শঙ্কু (Prof. Shonku)</h3>
+            <span class="series-card-author">বিজ্ঞান কল্পকাহিনী · 58 Volumes</span>
+          </div>
+          <span class="series-explore-btn">Browse →</span>
+        </div>
+
+        <div class="series-card" data-search="kakababu">
+          <div class="series-card-icon">🏔️</div>
+          <div class="series-card-info">
+            <h3>কাকাবাবু (Kakababu)</h3>
+            <span class="series-card-author">সুনীল গঙ্গোপাধ্যায় · 34 Volumes</span>
+          </div>
+          <span class="series-explore-btn">Browse →</span>
+        </div>
+
+        <div class="series-card" data-search="himu">
+          <div class="series-card-icon">🌕</div>
+          <div class="series-card-info">
+            <h3>হিমু ও মিসির আলি</h3>
+            <span class="series-card-author">হুমায়ূন আহমেদ · 230+ Volumes</span>
+          </div>
+          <span class="series-explore-btn">Browse →</span>
+        </div>
+
+        <div class="series-card" data-search="masud rana">
+          <div class="series-card-icon">💥</div>
+          <div class="series-card-info">
+            <h3>মাসুদ রানা (Masud Rana)</h3>
+            <span class="series-card-author">কাজী আনোয়ার হোসেন · 37 Volumes</span>
+          </div>
+          <span class="series-explore-btn">Browse →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE SHELF 2: Legendary Authors Spotlight -->
+  <section id="authors-section" class="store-shelf-section store-shelf-alt">
+    <div class="container">
+      <div class="shelf-header">
+        <div class="shelf-title-wrap">
+          <span class="shelf-eyebrow">Literary Giants</span>
+          <h2 class="shelf-title">Top Authors Spotlight</h2>
+        </div>
+        <p class="shelf-desc">Filter books instantly by master storytellers across centuries of Bengali letters.</p>
+      </div>
+
+      <div class="authors-shelf-grid" id="authors-spotlight">
+        <button class="author-chip" data-author="হুমায়ূন আহমেদ">
+          <span class="author-avatar">🖋️</span>
+          <div class="author-details">
+            <span class="author-name">হুমায়ূন আহমেদ</span>
+            <span class="author-count">208 Books</span>
+          </div>
+        </button>
+
+        <button class="author-chip" data-author="সত্যজিৎ রায়">
+          <span class="author-avatar">🎬</span>
+          <div class="author-details">
+            <span class="author-name">সত্যজিৎ রায়</span>
+            <span class="author-count">56 Books</span>
+          </div>
+        </button>
+
+        <button class="author-chip" data-author="সুনীল গঙ্গোপাধ্যায়">
+          <span class="author-avatar">📖</span>
+          <div class="author-details">
+            <span class="author-name">সুনীল গঙ্গোপাধ্যায়</span>
+            <span class="author-count">34 Books</span>
+          </div>
+        </button>
+
+        <button class="author-chip" data-author="মুহম্মদ জাফর ইকবাল">
+          <span class="author-avatar">🚀</span>
+          <div class="author-details">
+            <span class="author-name">মুহম্মদ জাফর ইকবাল</span>
+            <span class="author-count">32 Books</span>
+          </div>
+        </button>
+
+        <button class="author-chip" data-author="শরদিন্দু বন্দ্যোপাধ্যায়">
+          <span class="author-avatar">🕵️</span>
+          <div class="author-details">
+            <span class="author-name">শরদিন্দু বন্দ্যোপাধ্যায়</span>
+            <span class="author-count">29 Books</span>
+          </div>
+        </button>
+
+        <button class="author-chip" data-author="শীর্ষেন্দু মুখোপাধ্যায়">
+          <span class="author-avatar">✨</span>
+          <div class="author-details">
+            <span class="author-name">শীর্ষেন্দু মুখোপাধ্যায়</span>
+            <span class="author-count">30 Books</span>
+          </div>
+        </button>
+
+        <button class="author-chip" data-author="বুদ্ধদেব গুহ">
+          <span class="author-avatar">🌿</span>
+          <div class="author-details">
+            <span class="author-name">বুদ্ধদেব গুহ</span>
+            <span class="author-count">31 Books</span>
+          </div>
+        </button>
+
+        <button class="author-chip" data-author="সমরেশ মজুমদার">
+          <span class="author-avatar">☕</span>
+          <div class="author-details">
+            <span class="author-name">সমরেশ মজুমদার</span>
+            <span class="author-count">26 Books</span>
+          </div>
         </button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Books Gallery Grid -->
-    <section class="books-section">
+  <!-- STORE SHELF 3: Full Catalogue & Filter Bar -->
+  <section id="catalog-section" class="store-shelf-section">
+    <div class="container">
+      <div class="shelf-header">
+        <div class="shelf-title-wrap">
+          <span class="shelf-eyebrow">Explore Bookshelf</span>
+          <h2 class="shelf-title">Complete Library Catalogue</h2>
+        </div>
+      </div>
+
+      <!-- Filter Controls Bar -->
+      <div class="catalog-filters-wrap" id="filters-section">
+        <!-- Genre Pills -->
+        <div class="genre-filter-row">
+          <span class="filter-row-label">Department:</span>
+          <div class="pills-scroll" id="genre-pills">
+            <button class="pill active" data-genre="all">All Departments</button>
+          </div>
+        </div>
+
+        <!-- Secondary Controls Bar -->
+        <div class="controls-bar">
+          <div class="format-filters" id="format-pills">
+            <span class="filter-row-label">Format:</span>
+            <button class="format-btn active" data-format="all">All</button>
+            <button class="format-btn" data-format="epub">EPUB</button>
+            <button class="format-btn" data-format="kfx">Kindle KFX</button>
+            <button class="format-btn" data-format="pdf">PDF</button>
+            <button class="format-btn" data-format="mobi">MOBI</button>
+          </div>
+
+          <div class="dropdown-controls">
+            <div class="custom-select-wrapper">
+              <select id="author-filter" class="custom-select" aria-label="Filter by Author">
+                <option value="all">All Authors</option>
+              </select>
+            </div>
+
+            <div class="custom-select-wrapper">
+              <select id="sort-select" class="custom-select" aria-label="Sort Books">
+                <option value="popular">Top Authors First</option>
+                <option value="title-asc">Title: বাংলা (ক-হ)</option>
+                <option value="title-en-asc">Title: English (A-Z)</option>
+                <option value="author-asc">Author (A-Z)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Filters & Result Count -->
+        <div class="results-meta">
+          <div class="results-count" id="results-count">
+            Showing <strong>1,238</strong> books
+          </div>
+          <button class="reset-filters-btn" id="reset-filters-btn" style="display: none;">
+            Clear All Filters ↺
+          </button>
+        </div>
+      </div>
+
+      <!-- Books Grid (Real 3D Book Cards) -->
       <div class="books-grid" id="books-grid">
-        <!-- Rendered dynamically -->
+        <!-- Rendered dynamically by app.js -->
       </div>
 
       <!-- Empty State -->
       <div class="empty-state" id="empty-state" style="display: none;">
         <div class="empty-icon">📖</div>
         <h3>No books found matching your search</h3>
-        <p>Try searching with another phonetic spelling, author alias, or clearing active genre filters.</p>
-        <button class="primary-btn" id="empty-reset-btn">Reset Search</button>
+        <p>Try searching with another phonetic spelling, author alias, or clearing active department filters.</p>
+        <button class="btn-primary" id="empty-reset-btn">Reset Search</button>
       </div>
 
-      <!-- Load More / Infinite Scroll Trigger -->
+      <!-- Load More Button -->
       <div class="load-more-container" id="load-more-container">
         <button class="load-more-btn" id="load-more-btn">Load More Books</button>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <!-- Book Detail Modal -->
   <div class="modal-overlay" id="book-modal-overlay" aria-hidden="true">
     <div class="modal-card" id="book-modal" role="dialog" aria-modal="true">
       <button class="modal-close" id="modal-close-btn" aria-label="Close Modal">✕</button>
-      
       <div class="modal-body" id="modal-body">
         <!-- Dynamically injected -->
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <span class="footer-logo">📚 Bibyutatsu Ebooks</span>
-        <p class="footer-desc">
-          An open-access digital preservation project for Bengali literature. Free, high-speed downloads powered by GitHub.
-        </p>
+  <!-- Bookstore Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>📚 Bibyutatsu BookStore</h3>
+          <p>An open-access digital preservation bookstore for Bengali literature. High-speed direct downloads in Kindle KFX, EPUB, MOBI and PDF powered by GitHub Releases.</p>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/Bibyutatsu" target="_blank" rel="noopener" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://bibyutatsu.github.io" target="_blank" rel="noopener" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+            Portfolio
+          </a>
+          <a href="https://bibyutatsu.github.io/Blogs/" target="_blank" rel="noopener" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Dev Blog
+          </a>
+          <a href="https://www.linkedin.com/in/bibhashm/" target="_blank" rel="noopener" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
-      <div class="footer-links">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="https://bibyutatsu.github.io" target="_blank" rel="noopener">Dev Portfolio</a></li>
-          <li><a href="https://bibyutatsu.github.io/Blogs" target="_blank" rel="noopener">Dev Blog</a></li>
-          <li><a href="https://github.com/Bibyutatsu/ebooks" target="_blank" rel="noopener">GitHub Repository</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p>Curated &amp; engineered by <strong>Bibhash Chandra Mitra</strong> &nbsp;·&nbsp; 2026</p>
+        <a href="#hero" class="back-top">↑ Back to top</a>
       </div>
-      <div class="footer-guide">
-        <h4>Reader Help</h4>
-        <ul>
-          <li><span class="guide-link" data-reader-guide="kindle">Send to Kindle Guide</span></li>
-          <li><span class="guide-link" data-reader-guide="apple">Apple Books (iOS/Mac)</span></li>
-          <li><span class="guide-link" data-reader-guide="android">Android Reading Apps</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Bibyutatsu. Open digital library hosted on GitHub Pages.</p>
     </div>
   </footer>
 
