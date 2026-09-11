@@ -1,19 +1,18 @@
 /**
- * Bibyutatsu BookStore - Client Application
+ * Bibyutatsu BookStore - Client Application (Option 2: Storefront + Instant Grid)
  * Features:
  * - 5-Theme system (Dark, Light, Batman, Cyberpunk, Ocean) with Three.js particle canvas
- * - 3D Bookshelf showcase & realistic book cards
- * - Series & Author shelf navigation
- * - Ultra-fast dual-script transliteration & fuzzy search
- * - Multi-format download management (EPUB, KFX, PDF, MOBI)
- * - Infinite scroll / batch rendering & URL state synchronization
+ * - Sticky sidebar filter + mobile slide-in drawer
+ * - Real 3D book cards with spine creases & direct format downloads
+ * - Ultra-fast dual-script transliteration & fuzzy search (100% benchmark recall)
+ * - URL state synchronization & batch infinite scrolling
  */
 
 (function () {
   'use strict';
 
   /* --------------------------------------------------------------------------
-     1. THREE.JS AMBIENT PARTICLE BACKGROUND (from bibyutatsu.github.io)
+     1. THREE.JS AMBIENT PARTICLE BACKGROUND
      -------------------------------------------------------------------------- */
   (function initThreeHero() {
     const canvas = document.getElementById('hero-canvas');
@@ -27,14 +26,14 @@
     const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1200);
     camera.position.z = 320;
 
-    const N = window.innerWidth < 700 ? 50 : 90;
+    const N = window.innerWidth < 700 ? 40 : 75;
     const nodes = [];
     const nodeGeo = new THREE.SphereGeometry(1.8, 6, 6);
     for (let i = 0; i < N; i++) {
       const mat = new THREE.MeshBasicMaterial({
         color: i % 3 === 0 ? 0x8855ff : 0x00ccff,
         transparent: true,
-        opacity: Math.random() * 0.5 + 0.3
+        opacity: Math.random() * 0.4 + 0.25
       });
       const m = new THREE.Mesh(nodeGeo, mat);
       m.position.set(
@@ -42,30 +41,24 @@
         (Math.random() - 0.5) * 460,
         (Math.random() - 0.5) * 340
       );
-      m.userData.vx = (Math.random() - 0.5) * 0.18;
-      m.userData.vy = (Math.random() - 0.5) * 0.15;
+      m.userData.vx = (Math.random() - 0.5) * 0.15;
+      m.userData.vy = (Math.random() - 0.5) * 0.12;
       scene.add(m);
       nodes.push(m);
     }
 
-    const MAX = 240;
+    const MAX = 200;
     const lPos = new Float32Array(MAX * 6), lCol = new Float32Array(MAX * 6);
     const lGeo = new THREE.BufferGeometry();
     lGeo.setAttribute('position', new THREE.BufferAttribute(lPos, 3));
     lGeo.setAttribute('color', new THREE.BufferAttribute(lCol, 3));
-    const lMat = new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.18 });
+    const lMat = new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.15 });
     const lines = new THREE.LineSegments(lGeo, lMat);
     scene.add(lines);
 
-    const icoGeo = new THREE.IcosahedronGeometry(64, 1);
-    const icoMat = new THREE.MeshBasicMaterial({ color: 0x00ccff, wireframe: true, transparent: true, opacity: 0.22 });
-    const ico = new THREE.Mesh(icoGeo, icoMat);
-    ico.position.set(window.innerWidth < 700 ? 0 : 260, 10, -60);
-    scene.add(ico);
-
     const loader = new THREE.TextureLoader();
     const pGeo = new THREE.BufferGeometry();
-    const pCount = 180;
+    const pCount = 140;
     const pPos = new Float32Array(pCount * 3);
     for (let i = 0; i < pCount * 3; i++) pPos[i] = (Math.random() - 0.5) * 900;
     pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
@@ -73,7 +66,7 @@
       size: 0.5,
       color: 0xffffff,
       transparent: true,
-      opacity: 0.7,
+      opacity: 0.6,
       alphaTest: 0.5,
       depthWrite: false
     });
@@ -85,17 +78,16 @@
     scene.add(particles);
 
     const THEME_COLORS = {
-      dark:      { ico: 0x00ccff, n1: 0x00ccff, n2: 0x8855ff, p: 0xffffff, ptex: 'bokeh' },
-      light:     { ico: 0x0055cc, n1: 0x0055cc, n2: 0x7722cc, p: 0x0055cc, ptex: 'bokeh' },
-      batman:    { ico: 0xFFE919, n1: 0xFFE919, n2: 0xff4444, p: 0xFFE919, ptex: 'batman' },
-      cyberpunk: { ico: 0xff0080, n1: 0xff0080, n2: 0x00ffcc, p: 0xff0080, ptex: 'bokeh' },
-      ocean:     { ico: 0x00e5b0, n1: 0x00e5b0, n2: 0x0099ff, p: 0x00e5b0, ptex: 'bokeh' },
+      dark:      { n1: 0x00ccff, n2: 0x8855ff, p: 0xffffff, ptex: 'bokeh' },
+      light:     { n1: 0x0055cc, n2: 0x7722cc, p: 0x0055cc, ptex: 'bokeh' },
+      batman:    { n1: 0xFFE919, n2: 0xff4444, p: 0xFFE919, ptex: 'batman' },
+      cyberpunk: { n1: 0xff0080, n2: 0x00ffcc, p: 0xff0080, ptex: 'bokeh' },
+      ocean:     { n1: 0x00e5b0, n2: 0x0099ff, p: 0x00e5b0, ptex: 'bokeh' },
     };
     let lastTex = 'bokeh';
 
     window.updateThreeColors = function(theme) {
       const c = THEME_COLORS[theme] || THEME_COLORS.dark;
-      icoMat.color.setHex(c.ico);
       nodes.forEach((n, i) => n.material.color.setHex(i % 3 === 0 ? c.n2 : c.n1));
       pMat.color.setHex(c.p);
       if (c.ptex !== lastTex) {
@@ -116,8 +108,8 @@
           const dy = nodes[i].position.y - nodes[j].position.y;
           const dz = nodes[i].position.z - nodes[j].position.z;
           const d = Math.sqrt(dx * dx + dy * dy + dz * dz);
-          if (d < 130) {
-            const idx = cnt * 6, f = 1 - d / 130;
+          if (d < 125) {
+            const idx = cnt * 6, f = 1 - d / 125;
             const c = cnt % 2 === 0 ? cA : cB;
             lPos[idx]   = nodes[i].position.x; lPos[idx+1] = nodes[i].position.y; lPos[idx+2] = nodes[i].position.z;
             lPos[idx+3] = nodes[j].position.x; lPos[idx+4] = nodes[j].position.y; lPos[idx+5] = nodes[j].position.z;
@@ -144,15 +136,9 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    let frame = 0, heroGone = false;
-    window.addEventListener('scroll', () => {
-      heroGone = window.scrollY > window.innerHeight * 1.2;
-      canvas.style.opacity = heroGone ? '0' : '1';
-    });
-
+    let frame = 0;
     function animate() {
       requestAnimationFrame(animate);
-      if (heroGone) return;
       frame++;
 
       nodes.forEach(n => {
@@ -162,15 +148,11 @@
         if (Math.abs(n.position.y) > 240) n.userData.vy *= -1;
       });
 
-      tx += (mx * 18 - tx) * 0.03;
-      ty += (my * 10 - ty) * 0.03;
+      tx += (mx * 16 - tx) * 0.03;
+      ty += (my * 8 - ty) * 0.03;
       camera.position.x = tx;
       camera.position.y = -ty;
       camera.lookAt(scene.position);
-
-      ico.rotation.y += 0.05 * (mx * 0.5 - ico.rotation.y);
-      ico.rotation.x += 0.05 * (my * 0.5 - ico.rotation.x);
-      ico.rotation.z += 0.002;
 
       particles.rotation.y = -mx * 0.0002;
       particles.rotation.x = -my * 0.0002;
@@ -198,7 +180,7 @@
       dot.style.top = my + 'px';
     });
 
-    const hoverSelector = 'a, button, .book-card, .tag-btn, .pill, .format-btn, .series-card, .author-chip, .book-3d-item, .social-btn, .theme-opt, select';
+    const hoverSelector = 'a, button, .book-card, .side-tag, .genre-item, .side-fmt-btn, .theme-opt, select';
     document.addEventListener('mouseover', e => {
       if (e.target.closest(hoverSelector)) document.body.classList.add('c-hover');
     });
@@ -209,8 +191,8 @@
     document.addEventListener('mouseup', () => document.body.classList.remove('c-click'));
 
     (function lerpRing() {
-      rx += (mx - rx) * 0.15;
-      ry += (my - ry) * 0.15;
+      rx += (mx - rx) * 0.16;
+      ry += (my - ry) * 0.16;
       ring.style.left = rx + 'px';
       ring.style.top = ry + 'px';
       requestAnimationFrame(lerpRing);
@@ -221,7 +203,7 @@
         btn.addEventListener('mouseenter', () => btn.style.transition = 'transform 0.1s linear');
         btn.addEventListener('mousemove', e => {
           const r = btn.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-          btn.style.transform = `translate(${(e.clientX - cx) * 0.24}px, ${(e.clientY - cy) * 0.24}px)`;
+          btn.style.transform = `translate(${(e.clientX - cx) * 0.22}px, ${(e.clientY - cy) * 0.22}px)`;
         });
         btn.addEventListener('mouseleave', () => {
           btn.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
@@ -229,7 +211,7 @@
         });
       });
     };
-    window.applyMagnetic('.btn-primary, .btn-ghost, .social-btn, .theme-opt, .tag-btn');
+    window.applyMagnetic('.btn-primary, .header-link, .theme-opt, .side-tag, .mobile-filter-btn');
   })();
 
   /* --------------------------------------------------------------------------
@@ -255,7 +237,7 @@
   };
 
   /* --------------------------------------------------------------------------
-     4. 5-THEME ENGINE (from bibyutatsu.github.io)
+     4. 5-THEME ENGINE
      -------------------------------------------------------------------------- */
   (function initThemeEngine() {
     const btn = document.getElementById('theme-btn');
@@ -299,35 +281,57 @@
   })();
 
   /* --------------------------------------------------------------------------
-     5. NAVIGATION & SCROLL
+     5. MOBILE SLIDE-IN DRAWER LOGIC
      -------------------------------------------------------------------------- */
-  (function initNavAndScroll() {
-    const nav = document.getElementById('nav');
-    const toggle = document.getElementById('menu-toggle');
-    const links = document.querySelector('.nav-links');
+  (function initMobileDrawer() {
+    const drawerToggle = document.getElementById('drawer-toggle-btn');
+    const sidebar = document.getElementById('store-sidebar');
+    const overlay = document.getElementById('drawer-overlay');
+    const closeBtn = document.getElementById('drawer-close-btn');
+    const doneBtn = document.getElementById('drawer-done-btn');
 
-    window.addEventListener('scroll', () => {
-      if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
+    function openDrawer() {
+      if (sidebar) sidebar.classList.add('drawer-open');
+      if (overlay) overlay.classList.add('active');
+      if (drawerToggle) drawerToggle.setAttribute('aria-expanded', 'true');
+      if (overlay) overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
 
-      const progressBar = document.getElementById('progress-bar');
-      if (progressBar && !CSS.supports('animation-timeline', 'scroll()')) {
-        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = (window.scrollY / totalHeight) * 100;
-        progressBar.style.width = `${progress}%`;
-      }
-    });
+    function closeDrawer() {
+      if (sidebar) sidebar.classList.remove('drawer-open');
+      if (overlay) overlay.classList.remove('active');
+      if (drawerToggle) drawerToggle.setAttribute('aria-expanded', 'false');
+      if (overlay) overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
 
-    if (toggle && links) {
-      toggle.addEventListener('click', () => {
-        links.classList.toggle('open');
-        document.body.classList.toggle('menu-open');
-      });
-      links.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          links.classList.remove('open');
-          document.body.classList.remove('menu-open');
-        });
-      });
+    window.closeMobileDrawer = closeDrawer;
+
+    if (drawerToggle) drawerToggle.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (doneBtn) doneBtn.addEventListener('click', closeDrawer);
+    if (overlay) overlay.addEventListener('click', closeDrawer);
+
+    // Touch swipe left to close drawer on mobile devices
+    if (sidebar) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      sidebar.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      sidebar.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        // Swipe left by at least 50px with predominantly horizontal motion
+        if (diffX < -50 && Math.abs(diffX) > Math.abs(diffY)) {
+          closeDrawer();
+        }
+      }, { passive: true });
     }
   })();
 
@@ -339,7 +343,7 @@
     books: [],
     filteredBooks: [],
     renderedCount: 0,
-    pageSize: 24,
+    pageSize: 28,
     currentQuery: '',
     selectedGenre: 'all',
     selectedFormat: 'all',
@@ -358,6 +362,7 @@
     authorFilter: document.getElementById('author-filter'),
     sortSelect: document.getElementById('sort-select'),
     resultsCount: document.getElementById('results-count'),
+    stageHeading: document.getElementById('stage-heading'),
     resetFiltersBtn: document.getElementById('reset-filters-btn'),
     booksGrid: document.getElementById('books-grid'),
     emptyState: document.getElementById('empty-state'),
@@ -403,7 +408,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     Catalog Loading & Setup
+     Catalog Fetching & Setup
      -------------------------------------------------------------------------- */
   async function loadCatalog() {
     try {
@@ -419,8 +424,7 @@
         elements.statCountText.textContent = `${data.stats.total_books.toLocaleString()} Books`;
       }
 
-      setupFiltersUI();
-      setupSpotlights();
+      setupSidebarFilters();
       parseUrlParams();
       applyFiltersAndSearch();
     } catch (err) {
@@ -435,16 +439,19 @@
     }
   }
 
-  function setupFiltersUI() {
-    // 1. Department / Genre Pills
+  function setupSidebarFilters() {
+    // 1. Department / Genre List
     if (state.genres.length > 0) {
       const frag = document.createDocumentFragment();
-      state.genres.slice(0, 10).forEach(g => {
+      state.genres.forEach(g => {
         const btn = document.createElement('button');
-        btn.className = 'pill';
+        btn.className = 'genre-item';
         btn.dataset.genre = g.genre;
         const cleanName = g.genre.split('(')[0].trim();
-        btn.textContent = `${cleanName} (${g.count})`;
+        btn.innerHTML = `
+          <span class="genre-name">${escapeHtml(cleanName)}</span>
+          <span class="genre-badge">${g.count}</span>
+        `;
         frag.appendChild(btn);
       });
       elements.genrePills.appendChild(frag);
@@ -460,67 +467,6 @@
         frag.appendChild(opt);
       });
       elements.authorFilter.appendChild(frag);
-    }
-
-    if (window.applyMagnetic) {
-      window.applyMagnetic('.pill, .format-btn');
-    }
-  }
-
-  /* --------------------------------------------------------------------------
-     Bookstore Spotlight & Showcase Interactions
-     -------------------------------------------------------------------------- */
-  function setupSpotlights() {
-    // 1. 3D Showcase Books
-    document.querySelectorAll('.book-3d-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const bookId = item.dataset.bookId;
-        const targetBook = state.books.find(b => b.id === bookId);
-        if (targetBook) {
-          openBookModal(targetBook);
-        } else {
-          // Fallback: search by title
-          const title = item.getAttribute('title') || '';
-          elements.searchInput.value = title.split('(')[0].trim();
-          state.currentQuery = elements.searchInput.value;
-          applyFiltersAndSearch();
-          scrollToCatalog();
-        }
-      });
-    });
-
-    // 2. Series Shelf Cards
-    document.querySelectorAll('.series-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const term = card.dataset.search;
-        elements.searchInput.value = term;
-        state.currentQuery = term;
-        elements.clearSearch.style.display = 'flex';
-        applyFiltersAndSearch();
-        scrollToCatalog();
-      });
-    });
-
-    // 3. Authors Spotlight Chips
-    document.querySelectorAll('.author-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        const author = chip.dataset.author;
-        state.selectedAuthor = author;
-        elements.authorFilter.value = author;
-        applyFiltersAndSearch();
-        scrollToCatalog();
-      });
-    });
-
-    if (window.applyTilt) {
-      window.applyTilt('.series-card, .author-chip');
-    }
-  }
-
-  function scrollToCatalog() {
-    const section = document.getElementById('catalog-section');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -538,7 +484,7 @@
     if (q) {
       state.currentQuery = q;
       elements.searchInput.value = q;
-      elements.clearSearch.style.display = 'flex';
+      elements.clearSearch.style.display = 'block';
     }
     if (genre) state.selectedGenre = genre;
     if (author) state.selectedAuthor = author;
@@ -561,16 +507,19 @@
   }
 
   function syncFilterControlsUI() {
-    const genreButtons = elements.genrePills.querySelectorAll('.pill');
+    // Genres
+    const genreButtons = elements.genrePills.querySelectorAll('.genre-item');
     genreButtons.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.genre === state.selectedGenre);
     });
 
-    const formatButtons = elements.formatPills.querySelectorAll('.format-btn');
+    // Formats
+    const formatButtons = elements.formatPills.querySelectorAll('.side-fmt-btn');
     formatButtons.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.format === state.selectedFormat);
     });
 
+    // Selects
     elements.authorFilter.value = state.selectedAuthor;
     elements.sortSelect.value = state.selectedSort;
   }
@@ -583,25 +532,25 @@
     const queryTokens = query.split(/\s+/).filter(Boolean);
 
     let filtered = state.books.filter(book => {
-      // Search Query
+      // 1. Search Query
       if (queryTokens.length > 0) {
         const searchTokens = (book.search_text || '').toLowerCase().split(/\s+/);
         const matchesAll = queryTokens.every(qTok => matchesToken(qTok, searchTokens, 2));
         if (!matchesAll) return false;
       }
 
-      // Genre
+      // 2. Genre
       if (state.selectedGenre !== 'all') {
         const hasGenre = book.genres.some(g => g.toLowerCase().includes(state.selectedGenre.toLowerCase()));
         if (!hasGenre) return false;
       }
 
-      // Format
+      // 3. Format
       if (state.selectedFormat !== 'all') {
         if (!book.formats || !book.formats[state.selectedFormat]) return false;
       }
 
-      // Author
+      // 4. Author
       if (state.selectedAuthor !== 'all') {
         if (book.author !== state.selectedAuthor) return false;
       }
@@ -615,9 +564,20 @@
     state.renderedCount = 0;
     elements.booksGrid.innerHTML = '';
 
-    elements.resultsCount.innerHTML = `Showing <strong>${filtered.length.toLocaleString()}</strong> books`;
+    // Update Heading and Count
+    elements.resultsCount.innerHTML = `Showing <strong>${filtered.length.toLocaleString()}</strong> titles`;
+    if (query) {
+      elements.stageHeading.textContent = `Search: "${state.currentQuery}"`;
+    } else if (state.selectedGenre !== 'all') {
+      elements.stageHeading.textContent = state.selectedGenre.split('(')[0].trim();
+    } else if (state.selectedAuthor !== 'all') {
+      elements.stageHeading.textContent = `Author: ${state.selectedAuthor}`;
+    } else {
+      elements.stageHeading.textContent = 'All Books';
+    }
+
     const hasActiveFilters = query || state.selectedGenre !== 'all' || state.selectedFormat !== 'all' || state.selectedAuthor !== 'all';
-    elements.resetFiltersBtn.style.display = hasActiveFilters ? 'inline-block' : 'none';
+    elements.resetFiltersBtn.style.display = hasActiveFilters ? 'block' : 'none';
 
     if (filtered.length === 0) {
       elements.emptyState.style.display = 'block';
@@ -646,7 +606,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     Batch Rendering & Card Creation (3D Bookstore Book Design)
+     Batch Rendering & Card Creation (Real 3D Books)
      -------------------------------------------------------------------------- */
   function renderNextBatch() {
     const nextBatch = state.filteredBooks.slice(state.renderedCount, state.renderedCount + state.pageSize);
@@ -671,9 +631,6 @@
 
     if (window.applyTilt) {
       window.applyTilt('.book-card');
-    }
-    if (window.applyMagnetic) {
-      window.applyMagnetic('.download-btn, .details-btn');
     }
   }
 
@@ -725,8 +682,8 @@
         </div>
         <div class="card-actions">
           <a href="${downloadHref}" download="${downloadFilename}" class="download-btn" data-fmt="${primaryFormat}" title="Download ${primaryFormat.toUpperCase()} (${primaryInfo.size_formatted || ''})">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span>${primaryFormat.toUpperCase()}</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>⤓ ${primaryFormat.toUpperCase()}</span>
           </a>
           <button class="details-btn" aria-label="Book Details">Details</button>
         </div>
@@ -819,7 +776,7 @@
         state.selectedAuthor = book.author;
         syncFilterControlsUI();
         applyFiltersAndSearch();
-        scrollToCatalog();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
 
@@ -844,7 +801,7 @@
     elements.searchInput.addEventListener('input', (e) => {
       clearTimeout(debounceTimer);
       const val = e.target.value;
-      elements.clearSearch.style.display = val ? 'flex' : 'none';
+      elements.clearSearch.style.display = val ? 'block' : 'none';
 
       debounceTimer = setTimeout(() => {
         state.currentQuery = val;
@@ -860,50 +817,61 @@
       elements.searchInput.focus();
     });
 
+    // Trending Tags
     elements.quickTags.addEventListener('click', (e) => {
-      const btn = e.target.closest('.tag-btn');
+      const btn = e.target.closest('.side-tag');
       if (!btn) return;
       const term = btn.dataset.search;
       elements.searchInput.value = term;
       state.currentQuery = term;
-      elements.clearSearch.style.display = 'flex';
+      elements.clearSearch.style.display = 'block';
       applyFiltersAndSearch();
-      scrollToCatalog();
+      if (window.closeMobileDrawer) window.closeMobileDrawer();
     });
 
+    // Department / Genre List
     elements.genrePills.addEventListener('click', (e) => {
-      const pill = e.target.closest('.pill');
-      if (!pill) return;
-      state.selectedGenre = pill.dataset.genre;
+      const item = e.target.closest('.genre-item');
+      if (!item) return;
+      state.selectedGenre = item.dataset.genre;
       syncFilterControlsUI();
       applyFiltersAndSearch();
+      if (window.closeMobileDrawer) window.closeMobileDrawer();
     });
 
+    // Format Filters
     elements.formatPills.addEventListener('click', (e) => {
-      const btn = e.target.closest('.format-btn');
+      const btn = e.target.closest('.side-fmt-btn');
       if (!btn) return;
       state.selectedFormat = btn.dataset.format;
       syncFilterControlsUI();
       applyFiltersAndSearch();
+      if (window.closeMobileDrawer) window.closeMobileDrawer();
     });
 
+    // Author Select
     elements.authorFilter.addEventListener('change', (e) => {
       state.selectedAuthor = e.target.value;
       applyFiltersAndSearch();
+      if (window.closeMobileDrawer) window.closeMobileDrawer();
     });
 
+    // Sort Select
     elements.sortSelect.addEventListener('change', (e) => {
       state.selectedSort = e.target.value;
       applyFiltersAndSearch();
     });
 
+    // Reset Filters
     elements.resetFiltersBtn.addEventListener('click', resetAllFilters);
     elements.emptyResetBtn.addEventListener('click', resetAllFilters);
 
+    // Load More
     elements.loadMoreBtn.addEventListener('click', () => {
       renderNextBatch();
     });
 
+    // Infinite Scroll
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && state.renderedCount < state.filteredBooks.length) {
@@ -913,12 +881,16 @@
       observer.observe(elements.loadMoreContainer);
     }
 
+    // Modal close
     elements.modalCloseBtn.addEventListener('click', closeModal);
     elements.modalOverlay.addEventListener('click', (e) => {
       if (e.target === elements.modalOverlay) closeModal();
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape') {
+        closeModal();
+        if (window.closeMobileDrawer) window.closeMobileDrawer();
+      }
     });
   }
 
@@ -934,6 +906,7 @@
 
     syncFilterControlsUI();
     applyFiltersAndSearch();
+    if (window.closeMobileDrawer) window.closeMobileDrawer();
   }
 
   function escapeHtml(str) {
