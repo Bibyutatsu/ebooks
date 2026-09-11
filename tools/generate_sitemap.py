@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """
-Generate a comprehensive XML sitemap (sitemap.xml) for Bibyutatsu BookStore.
-Includes:
-- Homepage root (priority 1.0)
-- Trending searches & iconic series (priority 0.85)
-- Top curated authors (priority 0.8)
-- Library departments / genres (priority 0.8)
-- All 2,900+ individual book deep links (priority 0.7)
+Generate a strictly RFC 3986 and Google-compliant XML sitemap (sitemap.xml) for Bibyutatsu BookStore.
+Ensures:
+- 100% ASCII-safe URL encoding for all queries, author names, genres, and book IDs
+- Canonical Google Sitemaps 0.9 XML namespace without external XSD schema locks
+- Valid XML character escaping
 """
 
 import json
@@ -47,14 +45,18 @@ def generate_sitemap(catalog_path, output_path):
 
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
-        '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"',
-        '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     ]
 
     def add_url(loc, priority="0.7", changefreq="monthly", lastmod=today_str):
-        # Escape XML entities (especially '&' to '&amp;')
-        safe_loc = escape(loc)
+        # Strict ASCII check
+        try:
+            loc.encode('ascii')
+        except UnicodeEncodeError as e:
+            raise ValueError(f"Non-ASCII character in URL: {loc}") from e
+
+        # Escape XML entities (especially '&' to '&amp;', quotes to &quot;)
+        safe_loc = escape(loc, {'"': '&quot;', "'": '&apos;'})
         xml_lines.append('  <url>')
         xml_lines.append(f'    <loc>{safe_loc}</loc>')
         xml_lines.append(f'    <lastmod>{lastmod}</lastmod>')
@@ -82,7 +84,7 @@ def generate_sitemap(catalog_path, output_path):
             if g:
                 genre_set.add(g)
 
-    # Sort authors by volume, take top authors with >= 2 books or top 100
+    # Sort authors by volume, take top authors with >= 2 books
     top_authors = [auth for auth, count in sorted(author_counts.items(), key=lambda x: -x[1]) if count >= 2]
     for auth in top_authors:
         param = urllib.parse.quote(auth)
@@ -93,12 +95,13 @@ def generate_sitemap(catalog_path, output_path):
         param = urllib.parse.quote(g)
         add_url(f"{BASE_URL}?genre={param}", priority="0.8", changefreq="weekly")
 
-    # 4. Individual Books
+    # 4. Individual Books (every single book URL safely percent-encoded)
     for b in books:
         book_id = b.get('id')
         if not book_id:
             continue
-        book_url = f"{BASE_URL}?book={book_id}"
+        param = urllib.parse.quote(book_id)
+        book_url = f"{BASE_URL}?book={param}"
         add_url(book_url, priority="0.7", changefreq="monthly")
 
     xml_lines.append('</urlset>')
@@ -108,7 +111,7 @@ def generate_sitemap(catalog_path, output_path):
         f.write(xml_content)
 
     total_urls = len(books) + len(TRENDING_SEARCHES) + len(top_authors) + len(genre_set) + 1
-    print(f"Generated {output_path} with {total_urls} URLs successfully.")
+    print(f"Generated {output_path} with {total_urls} URLs successfully (100% RFC 3986 ASCII compliant).")
 
 if __name__ == '__main__':
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

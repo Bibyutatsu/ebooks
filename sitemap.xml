@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bibyutatsu.github.io/ebooks/</loc>
     <lastmod>2026-09-11</lastmod>
@@ -15303,7 +15301,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-imam-abu-hanipha-laibreree-مكتبة-الامام-ابو-حنيفة</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-imam-abu-hanipha-laibreree-%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D8%A7%D9%84%D8%A7%D9%85%D8%A7%D9%85-%D8%A7%D8%A8%D9%88-%D8%AD%D9%86%D9%8A%D9%81%D8%A9</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -15315,7 +15313,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-ইসলমক-অনযনয-বই-collection-১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%95-%E0%A6%85%E0%A6%A8%E0%A6%AF%E0%A6%A8%E0%A6%AF-%E0%A6%AC%E0%A6%87-collection-%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -15543,7 +15541,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-ইসলমক-অনযনয-বই-collection-২</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%95-%E0%A6%85%E0%A6%A8%E0%A6%AF%E0%A6%A8%E0%A6%AF-%E0%A6%AC%E0%A6%87-collection-%E0%A7%A8</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -15633,7 +15631,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=azharmeaicloud-com-তফসর-মরফল-করআন-সকষপত-কপ-১৪৯২-পসঠ-tafsir-m</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=azharmeaicloud-com-%E0%A6%A4%E0%A6%AB%E0%A6%B8%E0%A6%B0-%E0%A6%AE%E0%A6%B0%E0%A6%AB%E0%A6%B2-%E0%A6%95%E0%A6%B0%E0%A6%86%E0%A6%A8-%E0%A6%B8%E0%A6%95%E0%A6%B7%E0%A6%AA%E0%A6%A4-%E0%A6%95%E0%A6%AA-%E0%A7%A7%E0%A7%AA%E0%A7%AF%E0%A7%A8-%E0%A6%AA%E0%A6%B8%E0%A6%A0-tafsir-m</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -16275,7 +16273,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=al-fajr-bangla-ইসলমর-দষটত-৯১১-শযখ-হমদ-বন-উককল-আশ-শযইব-রহ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=al-fajr-bangla-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%B0-%E0%A6%A6%E0%A6%B7%E0%A6%9F%E0%A6%A4-%E0%A7%AF%E0%A7%A7%E0%A7%A7-%E0%A6%B6%E0%A6%AF%E0%A6%96-%E0%A6%B9%E0%A6%AE%E0%A6%A6-%E0%A6%AC%E0%A6%A8-%E0%A6%89%E0%A6%95%E0%A6%95%E0%A6%B2-%E0%A6%86%E0%A6%B6-%E0%A6%B6%E0%A6%AF%E0%A6%87%E0%A6%AC-%E0%A6%B0%E0%A6%B9</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -16311,7 +16309,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-মদন-বক-১-এর-বল-নট</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%AE%E0%A6%A6%E0%A6%A8-%E0%A6%AC%E0%A6%95-%E0%A7%A7-%E0%A6%8F%E0%A6%B0-%E0%A6%AC%E0%A6%B2-%E0%A6%A8%E0%A6%9F</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -16389,7 +16387,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=adnan-ইতহসর-মড-ঘরয-দওয-৯১১-অপরশনর-মল-পরকলপনকর-শযখ-খলদ-শইখ-মহ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=adnan-%E0%A6%87%E0%A6%A4%E0%A6%B9%E0%A6%B8%E0%A6%B0-%E0%A6%AE%E0%A6%A1-%E0%A6%98%E0%A6%B0%E0%A6%AF-%E0%A6%A6%E0%A6%93%E0%A6%AF-%E0%A7%AF%E0%A7%A7%E0%A7%A7-%E0%A6%85%E0%A6%AA%E0%A6%B0%E0%A6%B6%E0%A6%A8%E0%A6%B0-%E0%A6%AE%E0%A6%B2-%E0%A6%AA%E0%A6%B0%E0%A6%95%E0%A6%B2%E0%A6%AA%E0%A6%A8%E0%A6%95%E0%A6%B0-%E0%A6%B6%E0%A6%AF%E0%A6%96-%E0%A6%96%E0%A6%B2%E0%A6%A6-%E0%A6%B6%E0%A6%87%E0%A6%96-%E0%A6%AE%E0%A6%B9</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -16635,7 +16633,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-দবক-১৩-বল</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%A6%E0%A6%AC%E0%A6%95-%E0%A7%A7%E0%A7%A9-%E0%A6%AC%E0%A6%B2</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -16845,7 +16843,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=www-banglakitab-weebly-com-sirah-muhammad-صلى-الله-عليه-وسلم</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=www-banglakitab-weebly-com-sirah-muhammad-%D8%B5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D9%88%D8%B3%D9%84%D9%85</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -16857,7 +16855,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-learn-quran-in-bangla-by-27-hours-নরন-পদধতত-২৭-ঘনটয-করআন-শকষ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-learn-quran-in-bangla-by-27-hours-%E0%A6%A8%E0%A6%B0%E0%A6%A8-%E0%A6%AA%E0%A6%A6%E0%A6%A7%E0%A6%A4%E0%A6%A4-%E0%A7%A8%E0%A7%AD-%E0%A6%98%E0%A6%A8%E0%A6%9F%E0%A6%AF-%E0%A6%95%E0%A6%B0%E0%A6%86%E0%A6%A8-%E0%A6%B6%E0%A6%95%E0%A6%B7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -17097,7 +17095,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=saeejjed-masudul-hasan-রসল-স-সমপরক-১০০০-পরশন</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=saeejjed-masudul-hasan-%E0%A6%B0%E0%A6%B8%E0%A6%B2-%E0%A6%B8-%E0%A6%B8%E0%A6%AE%E0%A6%AA%E0%A6%B0%E0%A6%95-%E0%A7%A7%E0%A7%A6%E0%A7%A6%E0%A7%A6-%E0%A6%AA%E0%A6%B0%E0%A6%B6%E0%A6%A8</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -17163,7 +17161,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ishalamik-lo-risarch-sentar-end-ligjal-eid-banglades-ইসলম-আই</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=ishalamik-lo-risarch-sentar-end-ligjal-eid-banglades-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE-%E0%A6%86%E0%A6%87</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -17181,7 +17179,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=biml-kar-bimal-kar-ককর-সমগর-১-kikira-samagra-1</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=biml-kar-bimal-kar-%E0%A6%95%E0%A6%95%E0%A6%B0-%E0%A6%B8%E0%A6%AE%E0%A6%97%E0%A6%B0-%E0%A7%A7-kikira-samagra-1</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -17217,7 +17215,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ishalamik-lo-risarch-sentar-end-ligjal-eid-banglades-ইসলম-আই-2</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=ishalamik-lo-risarch-sentar-end-ligjal-eid-banglades-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE-%E0%A6%86%E0%A6%87-2</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -17253,7 +17251,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ishalamik-lo-risarch-sentar-end-ligjal-eid-banglades-ইসলম-আই-3</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=ishalamik-lo-risarch-sentar-end-ligjal-eid-banglades-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE-%E0%A6%86%E0%A6%87-3</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -17571,7 +17569,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=rasikul-islam-আকদ-বষযক-বই-২</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=rasikul-islam-%E0%A6%86%E0%A6%95%E0%A6%A6-%E0%A6%AC%E0%A6%B7%E0%A6%AF%E0%A6%95-%E0%A6%AC%E0%A6%87-%E0%A7%A8</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -17595,7 +17593,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-সহহ-বখর-শরফ-১-তওহদ-পরকশণ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%B8%E0%A6%B9%E0%A6%B9-%E0%A6%AC%E0%A6%96%E0%A6%B0-%E0%A6%B6%E0%A6%B0%E0%A6%AB-%E0%A7%A7-%E0%A6%A4%E0%A6%93%E0%A6%B9%E0%A6%A6-%E0%A6%AA%E0%A6%B0%E0%A6%95%E0%A6%B6%E0%A6%A3</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -17859,7 +17857,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-তফসর-সর-তওব-১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%A4%E0%A6%AB%E0%A6%B8%E0%A6%B0-%E0%A6%B8%E0%A6%B0-%E0%A6%A4%E0%A6%93%E0%A6%AC-%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -17961,7 +17959,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-মসক-আল-কউসর-এপরল-২০১৮</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%AE%E0%A6%B8%E0%A6%95-%E0%A6%86%E0%A6%B2-%E0%A6%95%E0%A6%89%E0%A6%B8%E0%A6%B0-%E0%A6%8F%E0%A6%AA%E0%A6%B0%E0%A6%B2-%E0%A7%A8%E0%A7%A6%E0%A7%A7%E0%A7%AE</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18105,7 +18103,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=azharmeaicloud-com-রসলললহ-সললললহ-আলইহ-ওযসললমর-২০০-সনল-উপদশ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=azharmeaicloud-com-%E0%A6%B0%E0%A6%B8%E0%A6%B2%E0%A6%B2%E0%A6%B2%E0%A6%B9-%E0%A6%B8%E0%A6%B2%E0%A6%B2%E0%A6%B2%E0%A6%B2%E0%A6%B9-%E0%A6%86%E0%A6%B2%E0%A6%87%E0%A6%B9-%E0%A6%93%E0%A6%AF%E0%A6%B8%E0%A6%B2%E0%A6%B2%E0%A6%AE%E0%A6%B0-%E0%A7%A8%E0%A7%A6%E0%A7%A6-%E0%A6%B8%E0%A6%A8%E0%A6%B2-%E0%A6%89%E0%A6%AA%E0%A6%A6%E0%A6%B6</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18159,7 +18157,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=রকব-হসন-tin-goyaenda</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B0%E0%A6%95%E0%A6%AC-%E0%A6%B9%E0%A6%B8%E0%A6%A8-tin-goyaenda</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18351,7 +18349,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=শবপরসদ-রয-anuprbes-bina-yuddhe-vart-dokhl</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B6%E0%A6%AC%E0%A6%AA%E0%A6%B0%E0%A6%B8%E0%A6%A6-%E0%A6%B0%E0%A6%AF-anuprbes-bina-yuddhe-vart-dokhl</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18369,7 +18367,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মরগন-হউসল-dy-shaikolji-ob-mani</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%B0%E0%A6%97%E0%A6%A8-%E0%A6%B9%E0%A6%89%E0%A6%B8%E0%A6%B2-dy-shaikolji-ob-mani</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18381,7 +18379,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=rabindranath-tagore-রবনদরনথ-ঠকর-complete-set-of-27-volumes-r</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=rabindranath-tagore-%E0%A6%B0%E0%A6%AC%E0%A6%A8%E0%A6%A6%E0%A6%B0%E0%A6%A8%E0%A6%A5-%E0%A6%A0%E0%A6%95%E0%A6%B0-complete-set-of-27-volumes-r</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18513,7 +18511,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=manoj-mitra-মনজ-মতর-monoj-mitra-natok-samagra-1-মনজ-মতর-নটক-সমগর-১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=manoj-mitra-%E0%A6%AE%E0%A6%A8%E0%A6%9C-%E0%A6%AE%E0%A6%A4%E0%A6%B0-monoj-mitra-natok-samagra-1-%E0%A6%AE%E0%A6%A8%E0%A6%9C-%E0%A6%AE%E0%A6%A4%E0%A6%B0-%E0%A6%A8%E0%A6%9F%E0%A6%95-%E0%A6%B8%E0%A6%AE%E0%A6%97%E0%A6%B0-%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18639,7 +18637,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আল-জময-আল-ইসলময-পটয-চটটগরম-masik-at-taohid</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%B2-%E0%A6%9C%E0%A6%AE%E0%A6%AF-%E0%A6%86%E0%A6%B2-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%AF-%E0%A6%AA%E0%A6%9F%E0%A6%AF-%E0%A6%9A%E0%A6%9F%E0%A6%9F%E0%A6%97%E0%A6%B0%E0%A6%AE-masik-at-taohid</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18663,7 +18661,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=বল-একডম-bangla-ovidhan-bangla-ekademi</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AC%E0%A6%B2-%E0%A6%8F%E0%A6%95%E0%A6%A1%E0%A6%AE-bangla-ovidhan-bangla-ekademi</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18687,7 +18685,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আশরফ-আল-থনব-রহ-beheshti-zewar-almodina-com</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%B6%E0%A6%B0%E0%A6%AB-%E0%A6%86%E0%A6%B2-%E0%A6%A5%E0%A6%A8%E0%A6%AC-%E0%A6%B0%E0%A6%B9-beheshti-zewar-almodina-com</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18717,7 +18715,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=balai-chand-mukhopadhyay-বলইচদ-মখপধযয-bonophuler-galpo-samag</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=balai-chand-mukhopadhyay-%E0%A6%AC%E0%A6%B2%E0%A6%87%E0%A6%9A%E0%A6%A6-%E0%A6%AE%E0%A6%96%E0%A6%AA%E0%A6%A7%E0%A6%AF%E0%A6%AF-bonophuler-galpo-samag</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18753,19 +18751,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=kashidashi-কশরম-দস-kashidashi-mahabharat-kaseedasee-mahavart</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=kashidashi-%E0%A6%95%E0%A6%B6%E0%A6%B0%E0%A6%AE-%E0%A6%A6%E0%A6%B8-kashidashi-mahabharat-kaseedasee-mahavart</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=upendrakishore-ray-chowdhury-উপনদরকশর-রযচধর-upendrokishor-so</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=upendrakishore-ray-chowdhury-%E0%A6%89%E0%A6%AA%E0%A6%A8%E0%A6%A6%E0%A6%B0%E0%A6%95%E0%A6%B6%E0%A6%B0-%E0%A6%B0%E0%A6%AF%E0%A6%9A%E0%A6%A7%E0%A6%B0-upendrokishor-so</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=saradindu-bandopadhyay-শরদনদ-বনদযপধযয-byomkesh-somogro-bjomokes-samgr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=saradindu-bandopadhyay-%E0%A6%B6%E0%A6%B0%E0%A6%A6%E0%A6%A8%E0%A6%A6-%E0%A6%AC%E0%A6%A8%E0%A6%A6%E0%A6%AF%E0%A6%AA%E0%A6%A7%E0%A6%AF%E0%A6%AF-byomkesh-somogro-bjomokes-samgr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18795,7 +18793,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মহমমদ-রহল-আমন-রহ-phurophura-shoripher-eetihas-o-abubakar-sid</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%AE%E0%A6%A6-%E0%A6%B0%E0%A6%B9%E0%A6%B2-%E0%A6%86%E0%A6%AE%E0%A6%A8-%E0%A6%B0%E0%A6%B9-phurophura-shoripher-eetihas-o-abubakar-sid</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18831,31 +18829,31 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=তরক-চনদর-সরকর-sri-sri-hari-lilamrita-shreesrihari-lilamrit</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A4%E0%A6%B0%E0%A6%95-%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%B0-sri-sri-hari-lilamrita-shreesrihari-lilamrit</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=baru-chadidas-বড-চনডদস-srikrishna-kirtan-shreekrishnkirttn</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=baru-chadidas-%E0%A6%AC%E0%A6%A1-%E0%A6%9A%E0%A6%A8%E0%A6%A1%E0%A6%A6%E0%A6%B8-srikrishna-kirtan-shreekrishnkirttn</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=rajsekhar-basu-রজশখর-বস-poroshuram-golpo-samagra-prshuram-golpsamgr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=rajsekhar-basu-%E0%A6%B0%E0%A6%9C%E0%A6%B6%E0%A6%96%E0%A6%B0-%E0%A6%AC%E0%A6%B8-poroshuram-golpo-samagra-prshuram-golpsamgr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=কলদস-kalidas-kalidas-somogro-kalidas-samgr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%95%E0%A6%B2%E0%A6%A6%E0%A6%B8-kalidas-kalidas-somogro-kalidas-samgr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=নব-মহমমদর-صلى-الله-عليه-وسلم-বণ-pdf-hadith-books-in-bangla-b</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A8%E0%A6%AC-%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%AE%E0%A6%A6%E0%A6%B0-%D8%B5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%87-%D8%B9%D9%84%D9%8A%D9%87-%D9%88%D8%B3%D9%84%D9%85-%E0%A6%AC%E0%A6%A3-pdf-hadith-books-in-bangla-b</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18873,7 +18871,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=syed-mujtaba-ali-সযদ-মজতব-আল-deshe-bideshe-dese-bidese</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=syed-mujtaba-ali-%E0%A6%B8%E0%A6%AF%E0%A6%A6-%E0%A6%AE%E0%A6%9C%E0%A6%A4%E0%A6%AC-%E0%A6%86%E0%A6%B2-deshe-bideshe-dese-bidese</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -18933,7 +18931,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=mahashweta-devi-মহশবত-দব-aranyer-adhikar-arnyer-adhikar</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=mahashweta-devi-%E0%A6%AE%E0%A6%B9%E0%A6%B6%E0%A6%AC%E0%A6%A4-%E0%A6%A6%E0%A6%AC-aranyer-adhikar-arnyer-adhikar</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19017,7 +19015,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=শবরম-চকরবরত-shibram-chakraborty-shibram-rochona-somogro-sibr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B6%E0%A6%AC%E0%A6%B0%E0%A6%AE-%E0%A6%9A%E0%A6%95%E0%A6%B0%E0%A6%AC%E0%A6%B0%E0%A6%A4-shibram-chakraborty-shibram-rochona-somogro-sibr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19035,7 +19033,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-১৮-তম-শকষক-নবনধন-এনলইসস-part-3-গজ-মজনর-রহমন</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A7%A7%E0%A7%AE-%E0%A6%A4%E0%A6%AE-%E0%A6%B6%E0%A6%95%E0%A6%B7%E0%A6%95-%E0%A6%A8%E0%A6%AC%E0%A6%A8%E0%A6%A7%E0%A6%A8-%E0%A6%8F%E0%A6%A8%E0%A6%B2%E0%A6%87%E0%A6%B8%E0%A6%B8-part-3-%E0%A6%97%E0%A6%9C-%E0%A6%AE%E0%A6%9C%E0%A6%A8%E0%A6%B0-%E0%A6%B0%E0%A6%B9%E0%A6%AE%E0%A6%A8</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19053,7 +19051,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-2020-2023-বল-ইসলমক-বই-পরব-৩</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-2020-2023-%E0%A6%AC%E0%A6%B2-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%95-%E0%A6%AC%E0%A6%87-%E0%A6%AA%E0%A6%B0%E0%A6%AC-%E0%A7%A9</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19089,7 +19087,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=শখ-মজবর-রহমন-karagarer-rojonamocha-sekh-mujibur-rohoman</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B6%E0%A6%96-%E0%A6%AE%E0%A6%9C%E0%A6%AC%E0%A6%B0-%E0%A6%B0%E0%A6%B9%E0%A6%AE%E0%A6%A8-karagarer-rojonamocha-sekh-mujibur-rohoman</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19101,13 +19099,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=sukumar-ray-সকমর-রয-sukumar-sahitya-somogro-সকমর-সহতয-সমগর-৩-খণড-একতর</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=sukumar-ray-%E0%A6%B8%E0%A6%95%E0%A6%AE%E0%A6%B0-%E0%A6%B0%E0%A6%AF-sukumar-sahitya-somogro-%E0%A6%B8%E0%A6%95%E0%A6%AE%E0%A6%B0-%E0%A6%B8%E0%A6%B9%E0%A6%A4%E0%A6%AF-%E0%A6%B8%E0%A6%AE%E0%A6%97%E0%A6%B0-%E0%A7%A9-%E0%A6%96%E0%A6%A3%E0%A6%A1-%E0%A6%8F%E0%A6%95%E0%A6%A4%E0%A6%B0</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ইবরহম-আল-হনদ-eesalami-boi</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%87%E0%A6%AC%E0%A6%B0%E0%A6%B9%E0%A6%AE-%E0%A6%86%E0%A6%B2-%E0%A6%B9%E0%A6%A8%E0%A6%A6-eesalami-boi</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19173,7 +19171,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আহমদ-শরফ-ahmed-sharif-বল-একডম-bangla-academy-bangla-academy</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%B9%E0%A6%AE%E0%A6%A6-%E0%A6%B6%E0%A6%B0%E0%A6%AB-ahmed-sharif-%E0%A6%AC%E0%A6%B2-%E0%A6%8F%E0%A6%95%E0%A6%A1%E0%A6%AE-bangla-academy-bangla-academy</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19185,7 +19183,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ড-সলতন-মহমদ-rajniti-o-kootonitikosh-d-sulatan-mahmud-bibi-morijm</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A1-%E0%A6%B8%E0%A6%B2%E0%A6%A4%E0%A6%A8-%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%A6-rajniti-o-kootonitikosh-d-sulatan-mahmud-bibi-morijm</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19197,7 +19195,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bankim-chandra-chattopadhyay-বঙকমচনদর-চটটপধযয-জন-২৭-১৮৩৮-এপর</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bankim-chandra-chattopadhyay-%E0%A6%AC%E0%A6%99%E0%A6%95%E0%A6%AE%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%9A%E0%A6%9F%E0%A6%9F%E0%A6%AA%E0%A6%A7%E0%A6%AF%E0%A6%AF-%E0%A6%9C%E0%A6%A8-%E0%A7%A8%E0%A7%AD-%E0%A7%A7%E0%A7%AE%E0%A7%A9%E0%A7%AE-%E0%A6%8F%E0%A6%AA%E0%A6%B0</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19245,7 +19243,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=তরদস-বনদযপধযয-taradas-bandyopadhyay-taranath-tantrik-taranath-tantrik</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A4%E0%A6%B0%E0%A6%A6%E0%A6%B8-%E0%A6%AC%E0%A6%A8%E0%A6%A6%E0%A6%AF%E0%A6%AA%E0%A6%A7%E0%A6%AF%E0%A6%AF-taradas-bandyopadhyay-taranath-tantrik-taranath-tantrik</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19263,19 +19261,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=jibonanondo-das-জবনননদ-দশ-jibanananda-das-kabita-samagra-jib</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=jibonanondo-das-%E0%A6%9C%E0%A6%AC%E0%A6%A8%E0%A6%A8%E0%A6%A8%E0%A6%A6-%E0%A6%A6%E0%A6%B6-jibanananda-das-kabita-samagra-jib</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মন-ঋষ-১-মনসমত-ব-অনশসনসহত</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%A8-%E0%A6%8B%E0%A6%B7-%E0%A7%A7-%E0%A6%AE%E0%A6%A8%E0%A6%B8%E0%A6%AE%E0%A6%A4-%E0%A6%AC-%E0%A6%85%E0%A6%A8%E0%A6%B6%E0%A6%B8%E0%A6%A8%E0%A6%B8%E0%A6%B9%E0%A6%A4</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=নজম-bistarit-jibni</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A8%E0%A6%9C%E0%A6%AE-bistarit-jibni</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19341,13 +19339,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bibhutibhushan-bandyopadhyay-গলপসমগর-১-বভতভষণ-galposamagro-1</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bibhutibhushan-bandyopadhyay-%E0%A6%97%E0%A6%B2%E0%A6%AA%E0%A6%B8%E0%A6%AE%E0%A6%97%E0%A6%B0-%E0%A7%A7-%E0%A6%AC%E0%A6%AD%E0%A6%A4%E0%A6%AD%E0%A6%B7%E0%A6%A3-galposamagro-1</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=হরনর-রশদ-rajonitikos-harunur-rshid</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B9%E0%A6%B0%E0%A6%A8%E0%A6%B0-%E0%A6%B0%E0%A6%B6%E0%A6%A6-rajonitikos-harunur-rshid</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19389,7 +19387,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ishan-chandra-ghosh-ঈশনচনদর-ঘষ-jatak-jatk</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=ishan-chandra-ghosh-%E0%A6%88%E0%A6%B6%E0%A6%A8%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%98%E0%A6%B7-jatak-jatk</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19431,7 +19429,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অভক-সরকর-ebang-inokuijisn</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%AD%E0%A6%95-%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%B0-ebang-inokuijisn</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19449,7 +19447,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=mahasweta-debi-মহশবত-দব-hazar-churashir-ma-hajar-churasir-ma</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=mahasweta-debi-%E0%A6%AE%E0%A6%B9%E0%A6%B6%E0%A6%AC%E0%A6%A4-%E0%A6%A6%E0%A6%AC-hazar-churashir-ma-hajar-churasir-ma</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19509,7 +19507,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=utpal-dutta-উৎপল-দতত-tiner-talwar-tiner-taloyar</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=utpal-dutta-%E0%A6%89%E0%A7%8E%E0%A6%AA%E0%A6%B2-%E0%A6%A6%E0%A6%A4%E0%A6%A4-tiner-talwar-tiner-taloyar</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19521,7 +19519,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=samriddha-dutta-সমদধ-দতত-বলযক-করডর-১-black-corridor-1</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=samriddha-dutta-%E0%A6%B8%E0%A6%AE%E0%A6%A6%E0%A6%A7-%E0%A6%A6%E0%A6%A4%E0%A6%A4-%E0%A6%AC%E0%A6%B2%E0%A6%AF%E0%A6%95-%E0%A6%95%E0%A6%B0%E0%A6%A1%E0%A6%B0-%E0%A7%A7-black-corridor-1</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19533,13 +19531,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=syed-mujtaba-ali-সযদ-মজতব-আল-syed-mujtaba-ali-rachanaboli-so</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=syed-mujtaba-ali-%E0%A6%B8%E0%A6%AF%E0%A6%A6-%E0%A6%AE%E0%A6%9C%E0%A6%A4%E0%A6%AC-%E0%A6%86%E0%A6%B2-syed-mujtaba-ali-rachanaboli-so</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=চরকট-টম-arby-rajonir-ntun-odhjajo-saiyjed-selim-sehojad</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%9A%E0%A6%B0%E0%A6%95%E0%A6%9F-%E0%A6%9F%E0%A6%AE-arby-rajonir-ntun-odhjajo-saiyjed-selim-sehojad</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19581,13 +19579,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=manoj-mitra-মনজ-মতর-norok-guljar-nark-gulojar</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=manoj-mitra-%E0%A6%AE%E0%A6%A8%E0%A6%9C-%E0%A6%AE%E0%A6%A4%E0%A6%B0-norok-guljar-nark-gulojar</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=শরল-শরজবগসবম-shreeshreebhakti-shndrv</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B6%E0%A6%B0%E0%A6%B2-%E0%A6%B6%E0%A6%B0%E0%A6%9C%E0%A6%AC%E0%A6%97%E0%A6%B8%E0%A6%AC%E0%A6%AE-shreeshreebhakti-shndrv</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19623,7 +19621,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=পঞচনন-তরকরতন-panchanan-tarkaratna-kalika-puran-kalika-puran</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AA%E0%A6%9E%E0%A6%9A%E0%A6%A8%E0%A6%A8-%E0%A6%A4%E0%A6%B0%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A6%A8-panchanan-tarkaratna-kalika-puran-kalika-puran</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19635,13 +19633,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anil-bhoumik-অনল-ভমক-francis-samagra-franshis-samgr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anil-bhoumik-%E0%A6%85%E0%A6%A8%E0%A6%B2-%E0%A6%AD%E0%A6%AE%E0%A6%95-francis-samagra-franshis-samgr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মতরয-দব-moitrei-devi-n-hanjate-na-hanyate</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%A4%E0%A6%B0%E0%A6%AF-%E0%A6%A6%E0%A6%AC-moitrei-devi-n-hanjate-na-hanyate</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19665,7 +19663,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=hajam-bakey-ᱪᱤᱠᱤ-ᱪᱮᱢᱮᱫ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=hajam-bakey-%E1%B1%AA%E1%B1%A4%E1%B1%A0%E1%B1%A4-%E1%B1%AA%E1%B1%AE%E1%B1%A2%E1%B1%AE%E1%B1%AB</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19725,7 +19723,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-sri-sri-rudra-chandi-bengali-शर-रदर-चणड-sri-sri-rudr-chndi</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-sri-sri-rudra-chandi-bengali-%E0%A4%B6%E0%A4%B0-%E0%A4%B0%E0%A4%A6%E0%A4%B0-%E0%A4%9A%E0%A4%A3%E0%A4%A1-sri-sri-rudr-chndi</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19755,25 +19753,25 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অজয-bedshar-snggrh-sbamee-arunannd</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%9C%E0%A6%AF-bedshar-snggrh-sbamee-arunannd</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=পরজঞসনদর-দব-amis-o-niramis-ahar-2</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AA%E0%A6%B0%E0%A6%9C%E0%A6%9E%E0%A6%B8%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%A6%E0%A6%AC-amis-o-niramis-ahar-2</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=girish-chandra-ghosh-গরশ-চনদর-ঘষ-girish-rochonaboli-girish-rochnabli</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=girish-chandra-ghosh-%E0%A6%97%E0%A6%B0%E0%A6%B6-%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%98%E0%A6%B7-girish-rochonaboli-girish-rochnabli</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আবদল-মননন-okhond-lalonasngit-abdel-mannan-smpadit</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%AC%E0%A6%A6%E0%A6%B2-%E0%A6%AE%E0%A6%A8%E0%A6%A8%E0%A6%A8-okhond-lalonasngit-abdel-mannan-smpadit</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19869,7 +19867,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ল-জ-এ-এ-ক-নযজ-dy-bitreyal-ov-eest-pakistan-le-je-e-e-ke-nijaji</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B2-%E0%A6%9C-%E0%A6%8F-%E0%A6%8F-%E0%A6%95-%E0%A6%A8%E0%A6%AF%E0%A6%9C-dy-bitreyal-ov-eest-pakistan-le-je-e-e-ke-nijaji</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19935,7 +19933,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-2022-2023-ইসলমক-বই-পরব-৬</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-2022-2023-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%95-%E0%A6%AC%E0%A6%87-%E0%A6%AA%E0%A6%B0%E0%A6%AC-%E0%A7%AC</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19959,7 +19957,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মফত-মহমমদ-তক-উসমন-tafshire-taoyihul-kuran</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%AB%E0%A6%A4-%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%AE%E0%A6%A6-%E0%A6%A4%E0%A6%95-%E0%A6%89%E0%A6%B8%E0%A6%AE%E0%A6%A8-tafshire-taoyihul-kuran</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -19971,7 +19969,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=হমযন-আহমদ-humayun-ahmed-হম-সমগর-১-himu-samagra-1</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B9%E0%A6%AE%E0%A6%AF%E0%A6%A8-%E0%A6%86%E0%A6%B9%E0%A6%AE%E0%A6%A6-humayun-ahmed-%E0%A6%B9%E0%A6%AE-%E0%A6%B8%E0%A6%AE%E0%A6%97%E0%A6%B0-%E0%A7%A7-himu-samagra-1</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20007,7 +20005,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=বশত-ঋষঋষক-বঙলয-হনদদর-২০-ধরমচর-ঋষর-নতশসতরমল-অনশসনসহত</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AC%E0%A6%B6%E0%A6%A4-%E0%A6%8B%E0%A6%B7%E0%A6%8B%E0%A6%B7%E0%A6%95-%E0%A6%AC%E0%A6%99%E0%A6%B2%E0%A6%AF-%E0%A6%B9%E0%A6%A8%E0%A6%A6%E0%A6%A6%E0%A6%B0-%E0%A7%A8%E0%A7%A6-%E0%A6%A7%E0%A6%B0%E0%A6%AE%E0%A6%9A%E0%A6%B0-%E0%A6%8B%E0%A6%B7%E0%A6%B0-%E0%A6%A8%E0%A6%A4%E0%A6%B6%E0%A6%B8%E0%A6%A4%E0%A6%B0%E0%A6%AE%E0%A6%B2-%E0%A6%85%E0%A6%A8%E0%A6%B6%E0%A6%B8%E0%A6%A8%E0%A6%B8%E0%A6%B9%E0%A6%A4</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20067,7 +20065,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=tanvir-বযঙচ-আগসট-২০২০-সরজগৎ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=tanvir-%E0%A6%AC%E0%A6%AF%E0%A6%99%E0%A6%9A-%E0%A6%86%E0%A6%97%E0%A6%B8%E0%A6%9F-%E0%A7%A8%E0%A7%A6%E0%A7%A8%E0%A7%A6-%E0%A6%B8%E0%A6%B0%E0%A6%9C%E0%A6%97%E0%A7%8E</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20079,7 +20077,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=muhammad-abdul-malek-পরচলত-জল-হদস-খণড-১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=muhammad-abdul-malek-%E0%A6%AA%E0%A6%B0%E0%A6%9A%E0%A6%B2%E0%A6%A4-%E0%A6%9C%E0%A6%B2-%E0%A6%B9%E0%A6%A6%E0%A6%B8-%E0%A6%96%E0%A6%A3%E0%A6%A1-%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20157,7 +20155,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অভর-বস-abhra-bose-bangla-slang-samikkha-o-abhidhan-2006</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%AD%E0%A6%B0-%E0%A6%AC%E0%A6%B8-abhra-bose-bangla-slang-samikkha-o-abhidhan-2006</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20271,7 +20269,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=সযনতন-পততনড-sayantani-putatunda-chupi-chupi-asche-chupi-chupi-asche</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B8%E0%A6%AF%E0%A6%A8%E0%A6%A4%E0%A6%A8-%E0%A6%AA%E0%A6%A4%E0%A6%A4%E0%A6%A8%E0%A6%A1-sayantani-putatunda-chupi-chupi-asche-chupi-chupi-asche</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20295,13 +20293,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=premendra-mitra-পরমনদর-মতর-premendra-mitra-kabita-samagra-pr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=premendra-mitra-%E0%A6%AA%E0%A6%B0%E0%A6%AE%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%AE%E0%A6%A4%E0%A6%B0-premendra-mitra-kabita-samagra-pr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=manoj-mitra-মনজ-মতর-sajano-bagan</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=manoj-mitra-%E0%A6%AE%E0%A6%A8%E0%A6%9C-%E0%A6%AE%E0%A6%A4%E0%A6%B0-sajano-bagan</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20319,7 +20317,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মণনদর-গপত-manindra-gupta-okkhj-maloberi-akshay-malberi</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%A3%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%97%E0%A6%AA%E0%A6%A4-manindra-gupta-okkhj-maloberi-akshay-malberi</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20421,7 +20419,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=swami-swarupananda-paramhansa-deva-vol-01-akhanda-sanhita-অখ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=swami-swarupananda-paramhansa-deva-vol-01-akhanda-sanhita-%E0%A6%85%E0%A6%96</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20439,7 +20437,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bibhutibhushan-bandopadhyay-বভতভষণ-বনদযপধযয-chander-pahar-চদ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bibhutibhushan-bandopadhyay-%E0%A6%AC%E0%A6%AD%E0%A6%A4%E0%A6%AD%E0%A6%B7%E0%A6%A3-%E0%A6%AC%E0%A6%A8%E0%A6%A6%E0%A6%AF%E0%A6%AA%E0%A6%A7%E0%A6%AF%E0%A6%AF-chander-pahar-%E0%A6%9A%E0%A6%A6</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20463,7 +20461,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আরফ-আজদ-arj-alee-shmeepe-pdf-download</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%B0%E0%A6%AB-%E0%A6%86%E0%A6%9C%E0%A6%A6-arj-alee-shmeepe-pdf-download</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20505,7 +20503,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=manoj-mitra-মনজ-মতর-manoj-mitror-dosh-ekanko-mnoj-mitrer-dsh-ekank</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=manoj-mitra-%E0%A6%AE%E0%A6%A8%E0%A6%9C-%E0%A6%AE%E0%A6%A4%E0%A6%B0-manoj-mitror-dosh-ekanko-mnoj-mitrer-dsh-ekank</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20517,13 +20515,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অজয-bedant-grnth-brhmoshutr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%9C%E0%A6%AF-bedant-grnth-brhmoshutr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মজর-জনরল-এস-এস-উবন-phjantamos-ab-chitagongh-di-fiphth-armi-i</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%9C%E0%A6%B0-%E0%A6%9C%E0%A6%A8%E0%A6%B0%E0%A6%B2-%E0%A6%8F%E0%A6%B8-%E0%A6%8F%E0%A6%B8-%E0%A6%89%E0%A6%AC%E0%A6%A8-phjantamos-ab-chitagongh-di-fiphth-armi-i</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20541,7 +20539,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=সযনতন-পততনড-sayantani-putatunda-srbanashini-sarbanashini</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B8%E0%A6%AF%E0%A6%A8%E0%A6%A4%E0%A6%A8-%E0%A6%AA%E0%A6%A4%E0%A6%A4%E0%A6%A8%E0%A6%A1-sayantani-putatunda-srbanashini-sarbanashini</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20553,7 +20551,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ইমম-আব-মহমমদ-হসইন-ইবন-মসউদ-আল-ফররহ-আল-বগব-রহ-anaojaarul-misk</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%87%E0%A6%AE%E0%A6%AE-%E0%A6%86%E0%A6%AC-%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%AE%E0%A6%A6-%E0%A6%B9%E0%A6%B8%E0%A6%87%E0%A6%A8-%E0%A6%87%E0%A6%AC%E0%A6%A8-%E0%A6%AE%E0%A6%B8%E0%A6%89%E0%A6%A6-%E0%A6%86%E0%A6%B2-%E0%A6%AB%E0%A6%B0%E0%A6%B0%E0%A6%B9-%E0%A6%86%E0%A6%B2-%E0%A6%AC%E0%A6%97%E0%A6%AC-%E0%A6%B0%E0%A6%B9-anaojaarul-misk</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20577,7 +20575,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ইমম-আব-জফর-আহমদ-ইবন-মহমমদ-রহমহললহ-akida-at-tahawiyyah-bangla</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%87%E0%A6%AE%E0%A6%AE-%E0%A6%86%E0%A6%AC-%E0%A6%9C%E0%A6%AB%E0%A6%B0-%E0%A6%86%E0%A6%B9%E0%A6%AE%E0%A6%A6-%E0%A6%87%E0%A6%AC%E0%A6%A8-%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%AE%E0%A6%A6-%E0%A6%B0%E0%A6%B9%E0%A6%AE%E0%A6%B9%E0%A6%B2%E0%A6%B2%E0%A6%B9-akida-at-tahawiyyah-bangla</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20625,7 +20623,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=troilokyanath-mukhopadhyay-তরলকযনথ-মখপধযয-troilokyanath-mukh</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=troilokyanath-mukhopadhyay-%E0%A6%A4%E0%A6%B0%E0%A6%B2%E0%A6%95%E0%A6%AF%E0%A6%A8%E0%A6%A5-%E0%A6%AE%E0%A6%96%E0%A6%AA%E0%A6%A7%E0%A6%AF%E0%A6%AF-troilokyanath-mukh</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20655,13 +20653,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=জতয-শকষকরম-ও-পঠযপসতক-বরড-bangla-bhasar-bjakrn-nobomo-dasam-sreni</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%9C%E0%A6%A4%E0%A6%AF-%E0%A6%B6%E0%A6%95%E0%A6%B7%E0%A6%95%E0%A6%B0%E0%A6%AE-%E0%A6%93-%E0%A6%AA%E0%A6%A0%E0%A6%AF%E0%A6%AA%E0%A6%B8%E0%A6%A4%E0%A6%95-%E0%A6%AC%E0%A6%B0%E0%A6%A1-bangla-bhasar-bjakrn-nobomo-dasam-sreni</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=নফস-নহল-mesin-larning-ojalogridom</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A8%E0%A6%AB%E0%A6%B8-%E0%A6%A8%E0%A6%B9%E0%A6%B2-mesin-larning-ojalogridom</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20709,7 +20707,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=কব-গঙগরম-kabi-gangaram-mharashtr-puran-maharshtra-puran</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%95%E0%A6%AC-%E0%A6%97%E0%A6%99%E0%A6%97%E0%A6%B0%E0%A6%AE-kabi-gangaram-mharashtr-puran-maharshtra-puran</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20733,7 +20731,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=দনশচনদর-সহ-১৯৫০-রকতরঞজত-ঢক-ও-বরশল-এব</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A6%E0%A6%A8%E0%A6%B6%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%B8%E0%A6%B9-%E0%A7%A7%E0%A7%AF%E0%A7%AB%E0%A7%A6-%E0%A6%B0%E0%A6%95%E0%A6%A4%E0%A6%B0%E0%A6%9E%E0%A6%9C%E0%A6%A4-%E0%A6%A2%E0%A6%95-%E0%A6%93-%E0%A6%AC%E0%A6%B0%E0%A6%B6%E0%A6%B2-%E0%A6%8F%E0%A6%AC</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20745,7 +20743,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=চরনতন-ভণডর-feluda-bee-o-komiks-songokoln</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%9A%E0%A6%B0%E0%A6%A8%E0%A6%A4%E0%A6%A8-%E0%A6%AD%E0%A6%A3%E0%A6%A1%E0%A6%B0-feluda-bee-o-komiks-songokoln</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20769,7 +20767,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-শকতরর-১০১-ভতর-গলপ-৩য-খণড</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%B6%E0%A6%95%E0%A6%A4%E0%A6%B0%E0%A6%B0-%E0%A7%A7%E0%A7%A6%E0%A7%A7-%E0%A6%AD%E0%A6%A4%E0%A6%B0-%E0%A6%97%E0%A6%B2%E0%A6%AA-%E0%A7%A9%E0%A6%AF-%E0%A6%96%E0%A6%A3%E0%A6%A1</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20805,7 +20803,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=কবরল-ইসলম-barsa-potrika-o-mjagajin</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%95%E0%A6%AC%E0%A6%B0%E0%A6%B2-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE-barsa-potrika-o-mjagajin</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20823,7 +20821,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=সবম-ববকননদ-swami-vivekananda-patnjl-jogasootr-patanjal-yogasutra</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B8%E0%A6%AC%E0%A6%AE-%E0%A6%AC%E0%A6%AC%E0%A6%95%E0%A6%A8%E0%A6%A8%E0%A6%A6-swami-vivekananda-patnjl-jogasootr-patanjal-yogasutra</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20847,7 +20845,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-২০২০-২০২৩-ইসলম-বই-পরব-৭</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A7%A8%E0%A7%A6%E0%A7%A8%E0%A7%A6-%E0%A7%A8%E0%A7%A6%E0%A7%A8%E0%A7%A9-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE-%E0%A6%AC%E0%A6%87-%E0%A6%AA%E0%A6%B0%E0%A6%AC-%E0%A7%AD</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20877,7 +20875,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অশক-মখপধযয-ashoke-mukhopadhyay-samsad-samarthasabda-kosh-2011</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%B6%E0%A6%95-%E0%A6%AE%E0%A6%96%E0%A6%AA%E0%A6%A7%E0%A6%AF%E0%A6%AF-ashoke-mukhopadhyay-samsad-samarthasabda-kosh-2011</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20895,7 +20893,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-২০২০-২২-নতন-ইসলমক-বই-পরব-২</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A7%A8%E0%A7%A6%E0%A7%A8%E0%A7%A6-%E0%A7%A8%E0%A7%A8-%E0%A6%A8%E0%A6%A4%E0%A6%A8-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%95-%E0%A6%AC%E0%A6%87-%E0%A6%AA%E0%A6%B0%E0%A6%AC-%E0%A7%A8</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20949,13 +20947,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=জশ-কফমযন-parasonal-mba</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%9C%E0%A6%B6-%E0%A6%95%E0%A6%AB%E0%A6%AE%E0%A6%AF%E0%A6%A8-parasonal-mba</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=হনদ-ধরম-rigbed-shmpoorn</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B9%E0%A6%A8%E0%A6%A6-%E0%A6%A7%E0%A6%B0%E0%A6%AE-rigbed-shmpoorn</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -20967,7 +20965,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-2020-2023-ইসলমক-বই-পরব-৫</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-2020-2023-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%95-%E0%A6%AC%E0%A6%87-%E0%A6%AA%E0%A6%B0%E0%A6%AC-%E0%A7%AB</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21039,19 +21037,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=mark-twain-মরক-টযন-mark-twain-golpo-somogro-mark-toyaen-glp-samgr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=mark-twain-%E0%A6%AE%E0%A6%B0%E0%A6%95-%E0%A6%9F%E0%A6%AF%E0%A6%A8-mark-twain-golpo-somogro-mark-toyaen-glp-samgr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=নথরম-গডস-sunun-dhormabotar</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A8%E0%A6%A5%E0%A6%B0%E0%A6%AE-%E0%A6%97%E0%A6%A1%E0%A6%B8-sunun-dhormabotar</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anish-deb-অনশ-দব-23-ghonta-60-minit-২৩-ঘণট-৬০-মনট</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anish-deb-%E0%A6%85%E0%A6%A8%E0%A6%B6-%E0%A6%A6%E0%A6%AC-23-ghonta-60-minit-%E0%A7%A8%E0%A7%A9-%E0%A6%98%E0%A6%A3%E0%A6%9F-%E0%A7%AC%E0%A7%A6-%E0%A6%AE%E0%A6%A8%E0%A6%9F</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21081,13 +21079,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=তরদস-বনদযপধযয-taradas-bandyopadhyay-olatchokr-alatchakra</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A4%E0%A6%B0%E0%A6%A6%E0%A6%B8-%E0%A6%AC%E0%A6%A8%E0%A6%A6%E0%A6%AF%E0%A6%AA%E0%A6%A7%E0%A6%AF%E0%A6%AF-taradas-bandyopadhyay-olatchokr-alatchakra</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মহমমদ-নজম-উদদন-mohammad-nazim-uddin-rabindrnath-ekhane-kokho</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%AE%E0%A6%A6-%E0%A6%A8%E0%A6%9C%E0%A6%AE-%E0%A6%89%E0%A6%A6%E0%A6%A6%E0%A6%A8-mohammad-nazim-uddin-rabindrnath-ekhane-kokho</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21105,7 +21103,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=চরনতন-ভণডর-অলকক-অযডভঞচর-রহসয-রমঞচ-বই-সগরহ-১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%9A%E0%A6%B0%E0%A6%A8%E0%A6%A4%E0%A6%A8-%E0%A6%AD%E0%A6%A3%E0%A6%A1%E0%A6%B0-%E0%A6%85%E0%A6%B2%E0%A6%95%E0%A6%95-%E0%A6%85%E0%A6%AF%E0%A6%A1%E0%A6%AD%E0%A6%9E%E0%A6%9A%E0%A6%B0-%E0%A6%B0%E0%A6%B9%E0%A6%B8%E0%A6%AF-%E0%A6%B0%E0%A6%AE%E0%A6%9E%E0%A6%9A-%E0%A6%AC%E0%A6%87-%E0%A6%B8%E0%A6%97%E0%A6%B0%E0%A6%B9-%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21183,7 +21181,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আবদল-খলক-ihudi-chkrant-the-protocols-of-the-learned-elders-of-zion</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%AC%E0%A6%A6%E0%A6%B2-%E0%A6%96%E0%A6%B2%E0%A6%95-ihudi-chkrant-the-protocols-of-the-learned-elders-of-zion</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21201,31 +21199,31 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=নতযরঞজন-দস-musalim-shisn-o-bharotbors</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A8%E0%A6%A4%E0%A6%AF%E0%A6%B0%E0%A6%9E%E0%A6%9C%E0%A6%A8-%E0%A6%A6%E0%A6%B8-musalim-shisn-o-bharotbors</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=zillur-rahman-siddiqui-বল-একডম-bangla-academy-bangla-academy</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=zillur-rahman-siddiqui-%E0%A6%AC%E0%A6%B2-%E0%A6%8F%E0%A6%95%E0%A6%A1%E0%A6%AE-bangla-academy-bangla-academy</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ল-করণল-অব-এম-এ-হমদ-পএসস-tinti-sena-avyutthan-o-kichu-na-bla</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B2-%E0%A6%95%E0%A6%B0%E0%A6%A3%E0%A6%B2-%E0%A6%85%E0%A6%AC-%E0%A6%8F%E0%A6%AE-%E0%A6%8F-%E0%A6%B9%E0%A6%AE%E0%A6%A6-%E0%A6%AA%E0%A6%8F%E0%A6%B8%E0%A6%B8-tinti-sena-avyutthan-o-kichu-na-bla</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আবল-হসনৎ-schitr-younobiggoan-abul-hasanat-m-y-khnd</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%AC%E0%A6%B2-%E0%A6%B9%E0%A6%B8%E0%A6%A8%E0%A7%8E-schitr-younobiggoan-abul-hasanat-m-y-khnd</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bedabyas-বদবযস-bhagabatgita-bedabyas-bhagobat-gita-bedbyas</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bedabyas-%E0%A6%AC%E0%A6%A6%E0%A6%AC%E0%A6%AF%E0%A6%B8-bhagabatgita-bedabyas-bhagobat-gita-bedbyas</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21261,7 +21259,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=শহরযর-কবর-শবতপতর-বলদশ-সখযলঘ-নরযতনর-১৫০০-দন-১ম-খণড-দবতয-পরব-স</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B6%E0%A6%B9%E0%A6%B0%E0%A6%AF%E0%A6%B0-%E0%A6%95%E0%A6%AC%E0%A6%B0-%E0%A6%B6%E0%A6%AC%E0%A6%A4%E0%A6%AA%E0%A6%A4%E0%A6%B0-%E0%A6%AC%E0%A6%B2%E0%A6%A6%E0%A6%B6-%E0%A6%B8%E0%A6%96%E0%A6%AF%E0%A6%B2%E0%A6%98-%E0%A6%A8%E0%A6%B0%E0%A6%AF%E0%A6%A4%E0%A6%A8%E0%A6%B0-%E0%A7%A7%E0%A7%AB%E0%A7%A6%E0%A7%A6-%E0%A6%A6%E0%A6%A8-%E0%A7%A7%E0%A6%AE-%E0%A6%96%E0%A6%A3%E0%A6%A1-%E0%A6%A6%E0%A6%AC%E0%A6%A4%E0%A6%AF-%E0%A6%AA%E0%A6%B0%E0%A6%AC-%E0%A6%B8</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21273,7 +21271,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-مذكرة-ومراجعة-كونكت-بلس-للصف-الرابع-الترم-الثاني</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%D9%85%D8%B0%D9%83%D8%B1%D8%A9-%D9%88%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%D8%A9-%D9%83%D9%88%D9%86%D9%83%D8%AA-%D8%A8%D9%84%D8%B3-%D9%84%D9%84%D8%B5%D9%81-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-%D8%A7%D9%84%D8%AA%D8%B1%D9%85-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21303,7 +21301,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অভক-সরকর-sodh</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%AD%E0%A6%95-%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%B0-sodh</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21333,7 +21331,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-pdf-word-important-রমযন-মসর-৩০-আসর-শইখ-মহমমদ-ইবন-স</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-pdf-word-important-%E0%A6%B0%E0%A6%AE%E0%A6%AF%E0%A6%A8-%E0%A6%AE%E0%A6%B8%E0%A6%B0-%E0%A7%A9%E0%A7%A6-%E0%A6%86%E0%A6%B8%E0%A6%B0-%E0%A6%B6%E0%A6%87%E0%A6%96-%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%AE%E0%A6%A6-%E0%A6%87%E0%A6%AC%E0%A6%A8-%E0%A6%B8</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21351,7 +21349,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আবদল-হমদ-ফইয-kuij-prsnouttr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%AC%E0%A6%A6%E0%A6%B2-%E0%A6%B9%E0%A6%AE%E0%A6%A6-%E0%A6%AB%E0%A6%87%E0%A6%AF-kuij-prsnouttr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21381,7 +21379,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-2020-2023-নতন-ইসলম-বই-পরব-৪</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-2020-2023-%E0%A6%A8%E0%A6%A4%E0%A6%A8-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE-%E0%A6%AC%E0%A6%87-%E0%A6%AA%E0%A6%B0%E0%A6%AC-%E0%A7%AA</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21399,7 +21397,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মনতসর-মমন-rajakarer-mn-m-khnd-muntasir-mamun</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%A8%E0%A6%A4%E0%A6%B8%E0%A6%B0-%E0%A6%AE%E0%A6%AE%E0%A6%A8-rajakarer-mn-m-khnd-muntasir-mamun</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21411,7 +21409,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মও-মশররফ-হছইন-সগর-সনমগঞজ-kashida-i-burada</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%93-%E0%A6%AE%E0%A6%B6%E0%A6%B0%E0%A6%B0%E0%A6%AB-%E0%A6%B9%E0%A6%9B%E0%A6%87%E0%A6%A8-%E0%A6%B8%E0%A6%97%E0%A6%B0-%E0%A6%B8%E0%A6%A8%E0%A6%AE%E0%A6%97%E0%A6%9E%E0%A6%9C-kashida-i-burada</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21465,7 +21463,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অপরচত-al-wala-wal-bara-ayman</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%AA%E0%A6%B0%E0%A6%9A%E0%A6%A4-al-wala-wal-bara-ayman</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21489,7 +21487,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=কবরল-ইসলম-bishbkosh-shreengendronath-basu-shonklit-o-prkasit</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%95%E0%A6%AC%E0%A6%B0%E0%A6%B2-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE-bishbkosh-shreengendronath-basu-shonklit-o-prkasit</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21513,7 +21511,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%AC%E0%A6%B2%E0%A6%A6%E0%A6%B6-%E0%A6%B6%E0%A6%B0%E0%A6%AE-%E0%A6%AC%E0%A6%A7%E0%A6%AE%E0%A6%B2-%E0%A7%A8%E0%A7%A6%E0%A7%A7%E0%A7%AB-%E0%A6%B8%E0%A6%B6%E0%A6%A7%E0%A6%A8-%E0%A7%A8%E0%A7%A6%E0%A7%A8%E0%A7%A8%E0%A6%87-%E0%A6%B8%E0%A6%B9-bangladesh-labour</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21561,7 +21559,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=shankar-শকর-bhromn-samgr-shangokr</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=shankar-%E0%A6%B6%E0%A6%95%E0%A6%B0-bhromn-samgr-shangokr</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21615,7 +21613,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=সলতন-সলহদদন-আইউব-punner-sondhane-punyer-sndhane</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B8%E0%A6%B2%E0%A6%A4%E0%A6%A8-%E0%A6%B8%E0%A6%B2%E0%A6%B9%E0%A6%A6%E0%A6%A6%E0%A6%A8-%E0%A6%86%E0%A6%87%E0%A6%89%E0%A6%AC-punner-sondhane-punyer-sndhane</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21627,7 +21625,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আব-তহর-মসবহ-jibon-pther-patheyo</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%AC-%E0%A6%A4%E0%A6%B9%E0%A6%B0-%E0%A6%AE%E0%A6%B8%E0%A6%AC%E0%A6%B9-jibon-pther-patheyo</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21699,7 +21697,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অজয-toitteriyo-oitorej-shbetashbtar</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%9C%E0%A6%AF-toitteriyo-oitorej-shbetashbtar</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21723,31 +21721,31 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=balai-chand-mukhopadhyay-বলইচদ-মখপধযয-jongom-jongm</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=balai-chand-mukhopadhyay-%E0%A6%AC%E0%A6%B2%E0%A6%87%E0%A6%9A%E0%A6%A6-%E0%A6%AE%E0%A6%96%E0%A6%AA%E0%A6%A7%E0%A6%AF%E0%A6%AF-jongom-jongm</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মহইমন-পটযর-byangk-byabstha-o-takar-gopn-rohshy</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%B9%E0%A6%87%E0%A6%AE%E0%A6%A8-%E0%A6%AA%E0%A6%9F%E0%A6%AF%E0%A6%B0-byangk-byabstha-o-takar-gopn-rohshy</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=রনদপম-বস-charbaker-khonje-bharoteey-dorshon</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B0%E0%A6%A8%E0%A6%A6%E0%A6%AA%E0%A6%AE-%E0%A6%AC%E0%A6%B8-charbaker-khonje-bharoteey-dorshon</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ইমম-আব-ঈস-আত-তরময-রহ-sheeh-shamayaele-tirmijee</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%87%E0%A6%AE%E0%A6%AE-%E0%A6%86%E0%A6%AC-%E0%A6%88%E0%A6%B8-%E0%A6%86%E0%A6%A4-%E0%A6%A4%E0%A6%B0%E0%A6%AE%E0%A6%AF-%E0%A6%B0%E0%A6%B9-sheeh-shamayaele-tirmijee</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bhai-girishchandra-sen-ভই-গরশ-চনদর-সন-koran-sharif-kor-an-sorif</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bhai-girishchandra-sen-%E0%A6%AD%E0%A6%87-%E0%A6%97%E0%A6%B0%E0%A6%B6-%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%B8%E0%A6%A8-koran-sharif-kor-an-sorif</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21783,7 +21781,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=kaliprasanna-singha-কলপরসনন-সহ-mahabharat-vol-1-মহভরত-খণড-১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=kaliprasanna-singha-%E0%A6%95%E0%A6%B2%E0%A6%AA%E0%A6%B0%E0%A6%B8%E0%A6%A8%E0%A6%A8-%E0%A6%B8%E0%A6%B9-mahabharat-vol-1-%E0%A6%AE%E0%A6%B9%E0%A6%AD%E0%A6%B0%E0%A6%A4-%E0%A6%96%E0%A6%A3%E0%A6%A1-%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21801,7 +21799,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=ড-আব-আমনহ-বলল-ফলপস-majhab-oteet-bartaman-o-bhobishyot-pdf-download</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A1-%E0%A6%86%E0%A6%AC-%E0%A6%86%E0%A6%AE%E0%A6%A8%E0%A6%B9-%E0%A6%AC%E0%A6%B2%E0%A6%B2-%E0%A6%AB%E0%A6%B2%E0%A6%AA%E0%A6%B8-majhab-oteet-bartaman-o-bhobishyot-pdf-download</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21825,7 +21823,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=গলম-মরশদ-ghulam-murshid-বল-একডম-bangla-academy-bangla-academ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%97%E0%A6%B2%E0%A6%AE-%E0%A6%AE%E0%A6%B0%E0%A6%B6%E0%A6%A6-ghulam-murshid-%E0%A6%AC%E0%A6%B2-%E0%A6%8F%E0%A6%95%E0%A6%A1%E0%A6%AE-bangla-academy-bangla-academ</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21849,7 +21847,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=রজশখর-বস-rajshekhar-basu-chalantika-adhunik-bongovashar-obhi</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B0%E0%A6%9C%E0%A6%B6%E0%A6%96%E0%A6%B0-%E0%A6%AC%E0%A6%B8-rajshekhar-basu-chalantika-adhunik-bongovashar-obhi</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21861,7 +21859,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=বল-একডম-bangla-academy-bangla-ekademi-prmit-bangla-bananer-niym</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AC%E0%A6%B2-%E0%A6%8F%E0%A6%95%E0%A6%A1%E0%A6%AE-bangla-academy-bangla-ekademi-prmit-bangla-bananer-niym</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21879,7 +21877,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bangla-rare-books-aloukik-rahasya-year-2-অলকক-রহসয-দবতয-বরষ-১৩১৭</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bangla-rare-books-aloukik-rahasya-year-2-%E0%A6%85%E0%A6%B2%E0%A6%95%E0%A6%95-%E0%A6%B0%E0%A6%B9%E0%A6%B8%E0%A6%AF-%E0%A6%A6%E0%A6%AC%E0%A6%A4%E0%A6%AF-%E0%A6%AC%E0%A6%B0%E0%A6%B7-%E0%A7%A7%E0%A7%A9%E0%A7%A7%E0%A7%AD</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21897,7 +21895,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=কবরল-ইসলম-amrit-troimasik-patrika</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%95%E0%A6%AC%E0%A6%B0%E0%A6%B2-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE-amrit-troimasik-patrika</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21915,7 +21913,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=জহনর-ইমম-ekattrer-dinguli-jahanara-imam</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%9C%E0%A6%B9%E0%A6%A8%E0%A6%B0-%E0%A6%87%E0%A6%AE%E0%A6%AE-ekattrer-dinguli-jahanara-imam</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21927,19 +21925,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=কষণভবন-দস-inglnde-bngmahila</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%95%E0%A6%B7%E0%A6%A3%E0%A6%AD%E0%A6%AC%E0%A6%A8-%E0%A6%A6%E0%A6%B8-inglnde-bngmahila</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=পণডত-শররঘনথ-দস-শসতর-shreemodbhagabt-o-bhagbat-jibon</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AA%E0%A6%A3%E0%A6%A1%E0%A6%A4-%E0%A6%B6%E0%A6%B0%E0%A6%B0%E0%A6%98%E0%A6%A8%E0%A6%A5-%E0%A6%A6%E0%A6%B8-%E0%A6%B6%E0%A6%B8%E0%A6%A4%E0%A6%B0-shreemodbhagabt-o-bhagbat-jibon</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bibhutibhushan-bandyopadhyay-গলপসমগর-২-বভতভষণ-galposamagro-2</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bibhutibhushan-bandyopadhyay-%E0%A6%97%E0%A6%B2%E0%A6%AA%E0%A6%B8%E0%A6%AE%E0%A6%97%E0%A6%B0-%E0%A7%A8-%E0%A6%AC%E0%A6%AD%E0%A6%A4%E0%A6%AD%E0%A6%B7%E0%A6%A3-galposamagro-2</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -21963,13 +21961,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=engineer-azizul-bari-ইঞজনযর-আজজল-বর-biggoan-shisutos-shirij</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=engineer-azizul-bari-%E0%A6%87%E0%A6%9E%E0%A6%9C%E0%A6%A8%E0%A6%AF%E0%A6%B0-%E0%A6%86%E0%A6%9C%E0%A6%9C%E0%A6%B2-%E0%A6%AC%E0%A6%B0-biggoan-shisutos-shirij</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=rabindranath-tagore-রবনদরনথ-ঠকর-chhanda-chhnd</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=rabindranath-tagore-%E0%A6%B0%E0%A6%AC%E0%A6%A8%E0%A6%A6%E0%A6%B0%E0%A6%A8%E0%A6%A5-%E0%A6%A0%E0%A6%95%E0%A6%B0-chhanda-chhnd</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22053,7 +22051,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-শরকষণচতনয-চরতমতম-ব-মরর-গপতর-কডচ-১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%B6%E0%A6%B0%E0%A6%95%E0%A6%B7%E0%A6%A3%E0%A6%9A%E0%A6%A4%E0%A6%A8%E0%A6%AF-%E0%A6%9A%E0%A6%B0%E0%A6%A4%E0%A6%AE%E0%A6%A4%E0%A6%AE-%E0%A6%AC-%E0%A6%AE%E0%A6%B0%E0%A6%B0-%E0%A6%97%E0%A6%AA%E0%A6%A4%E0%A6%B0-%E0%A6%95%E0%A6%A1%E0%A6%9A-%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22089,25 +22087,25 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-সমকল-ঈদসখয-২০১৬-ঈদ-উল-ফতর</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%B8%E0%A6%AE%E0%A6%95%E0%A6%B2-%E0%A6%88%E0%A6%A6%E0%A6%B8%E0%A6%96%E0%A6%AF-%E0%A7%A8%E0%A7%A6%E0%A7%A7%E0%A7%AC-%E0%A6%88%E0%A6%A6-%E0%A6%89%E0%A6%B2-%E0%A6%AB%E0%A6%A4%E0%A6%B0</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=shoktipodo-rajguru-শকতপদ-রজগর-potla-somogro-1-পটল-সমগর-১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=shoktipodo-rajguru-%E0%A6%B6%E0%A6%95%E0%A6%A4%E0%A6%AA%E0%A6%A6-%E0%A6%B0%E0%A6%9C%E0%A6%97%E0%A6%B0-potla-somogro-1-%E0%A6%AA%E0%A6%9F%E0%A6%B2-%E0%A6%B8%E0%A6%AE%E0%A6%97%E0%A6%B0-%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=পরভস-চনদরলহড-pak-varoter-ruprekha</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AA%E0%A6%B0%E0%A6%AD%E0%A6%B8-%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0%E0%A6%B2%E0%A6%B9%E0%A6%A1-pak-varoter-ruprekha</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=লকষমননদন-বৰ-patal-bhoii</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B2%E0%A6%95%E0%A6%B7%E0%A6%AE%E0%A6%A8%E0%A6%A8%E0%A6%A6%E0%A6%A8-%E0%A6%AC%E0%A7%B0-patal-bhoii</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22173,7 +22171,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=নরযণ-সনযল-narayan-sanyal-bishbasoghatak-biswasghatak</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%A8%E0%A6%B0%E0%A6%AF%E0%A6%A3-%E0%A6%B8%E0%A6%A8%E0%A6%AF%E0%A6%B2-narayan-sanyal-bishbasoghatak-biswasghatak</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22191,7 +22189,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=সখরঞজন-দশগপত-mujib-htyar-shodajntr-sukhrnjn-dasgupt</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B8%E0%A6%96%E0%A6%B0%E0%A6%9E%E0%A6%9C%E0%A6%A8-%E0%A6%A6%E0%A6%B6%E0%A6%97%E0%A6%AA%E0%A6%A4-mujib-htyar-shodajntr-sukhrnjn-dasgupt</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22209,13 +22207,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আবল-ফতহ-মহমমদ-ইযহইয-hadish-odhjojner-moolniti</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%AC%E0%A6%B2-%E0%A6%AB%E0%A6%A4%E0%A6%B9-%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%AE%E0%A6%A6-%E0%A6%87%E0%A6%AF%E0%A6%B9%E0%A6%87%E0%A6%AF-hadish-odhjojner-moolniti</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আব-মহমমদ-আইমন-alo-ojoala-ojaal-bara</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%AC-%E0%A6%AE%E0%A6%B9%E0%A6%AE%E0%A6%AE%E0%A6%A6-%E0%A6%86%E0%A6%87%E0%A6%AE%E0%A6%A8-alo-ojoala-ojaal-bara</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22239,7 +22237,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আনসরললহ-rosayon</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%A8%E0%A6%B8%E0%A6%B0%E0%A6%B2%E0%A6%B2%E0%A6%B9-rosayon</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22269,7 +22267,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bangla-rare-books-aloukik-rahasya-year-1-অলকক-রহসয-পরথম-বরষ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bangla-rare-books-aloukik-rahasya-year-1-%E0%A6%85%E0%A6%B2%E0%A6%95%E0%A6%95-%E0%A6%B0%E0%A6%B9%E0%A6%B8%E0%A6%AF-%E0%A6%AA%E0%A6%B0%E0%A6%A5%E0%A6%AE-%E0%A6%AC%E0%A6%B0%E0%A6%B7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22329,7 +22327,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=শরবরজধম-ও-আচরযযগণ-shreebrjdham-o-acharjjgan</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B6%E0%A6%B0%E0%A6%AC%E0%A6%B0%E0%A6%9C%E0%A6%A7%E0%A6%AE-%E0%A6%93-%E0%A6%86%E0%A6%9A%E0%A6%B0%E0%A6%AF%E0%A6%AF%E0%A6%97%E0%A6%A3-shreebrjdham-o-acharjjgan</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22347,7 +22345,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=সরভ-হছন-হমল-shourav-hasan-himal-shojtaner-baibel</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B8%E0%A6%B0%E0%A6%AD-%E0%A6%B9%E0%A6%9B%E0%A6%A8-%E0%A6%B9%E0%A6%AE%E0%A6%B2-shourav-hasan-himal-shojtaner-baibel</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22401,7 +22399,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=dinabandhu-mitra-দনবনধ-মতর-dinabandhu-rochona-somogro-dinobn</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=dinabandhu-mitra-%E0%A6%A6%E0%A6%A8%E0%A6%AC%E0%A6%A8%E0%A6%A7-%E0%A6%AE%E0%A6%A4%E0%A6%B0-dinabandhu-rochona-somogro-dinobn</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22425,13 +22423,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-বলদশর-পরথম-সবধন-১৯৭২-হত-লখ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A6%AC%E0%A6%B2%E0%A6%A6%E0%A6%B6%E0%A6%B0-%E0%A6%AA%E0%A6%B0%E0%A6%A5%E0%A6%AE-%E0%A6%B8%E0%A6%AC%E0%A6%A7%E0%A6%A8-%E0%A7%A7%E0%A7%AF%E0%A7%AD%E0%A7%A8-%E0%A6%B9%E0%A6%A4-%E0%A6%B2%E0%A6%96</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bangla-rare-books-aloukik-rahasya-year-4-অলকক-রহসয-চতরথ-বরষ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bangla-rare-books-aloukik-rahasya-year-4-%E0%A6%85%E0%A6%B2%E0%A6%95%E0%A6%95-%E0%A6%B0%E0%A6%B9%E0%A6%B8%E0%A6%AF-%E0%A6%9A%E0%A6%A4%E0%A6%B0%E0%A6%A5-%E0%A6%AC%E0%A6%B0%E0%A6%B7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22479,7 +22477,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=গলম-মরশদ-hajar-bachrer-bangali-sngskriti-golam-mursid</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%97%E0%A6%B2%E0%A6%AE-%E0%A6%AE%E0%A6%B0%E0%A6%B6%E0%A6%A6-hajar-bachrer-bangali-sngskriti-golam-mursid</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22491,7 +22489,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=হমযন-আহমদ-humayun-ahmed-jochna-o-jnneer-glp-jochna-o-jananir-galpo</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B9%E0%A6%AE%E0%A6%AF%E0%A6%A8-%E0%A6%86%E0%A6%B9%E0%A6%AE%E0%A6%A6-humayun-ahmed-jochna-o-jnneer-glp-jochna-o-jananir-galpo</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22521,7 +22519,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=tarapada-bhattacharya-তরপদ-ভটটচরয-chhanda-tattva-o-chhando-v</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=tarapada-bhattacharya-%E0%A6%A4%E0%A6%B0%E0%A6%AA%E0%A6%A6-%E0%A6%AD%E0%A6%9F%E0%A6%9F%E0%A6%9A%E0%A6%B0%E0%A6%AF-chhanda-tattva-o-chhando-v</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22533,7 +22531,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=সরশচনদর-সমজপত-agomnee</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%B8%E0%A6%B0%E0%A6%B6%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%B8%E0%A6%AE%E0%A6%9C%E0%A6%AA%E0%A6%A4-agomnee</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22569,7 +22567,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মহউদদন-আহমদ-jasader-utthan-potonh-asthir-somayoer-rajniti-mh</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%B9%E0%A6%89%E0%A6%A6%E0%A6%A6%E0%A6%A8-%E0%A6%86%E0%A6%B9%E0%A6%AE%E0%A6%A6-jasader-utthan-potonh-asthir-somayoer-rajniti-mh</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22641,7 +22639,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=bangla-rare-books-aloukik-rahasya-year-3-অলকক-রহসয-ততয-বরষ-১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=bangla-rare-books-aloukik-rahasya-year-3-%E0%A6%85%E0%A6%B2%E0%A6%95%E0%A6%95-%E0%A6%B0%E0%A6%B9%E0%A6%B8%E0%A6%AF-%E0%A6%A4%E0%A6%A4%E0%A6%AF-%E0%A6%AC%E0%A6%B0%E0%A6%B7-%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22653,7 +22651,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=prabodhchandra-sen-পরবধচনদর-সন-chhanda-jijnasa-chhnd-jijnasa</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=prabodhchandra-sen-%E0%A6%AA%E0%A6%B0%E0%A6%AC%E0%A6%A7%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%B8%E0%A6%A8-chhanda-jijnasa-chhnd-jijnasa</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22665,7 +22663,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=কবরল-ইসলম-bharati-masik-smalochoni-patrika</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%95%E0%A6%AC%E0%A6%B0%E0%A6%B2-%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%AE-bharati-masik-smalochoni-patrika</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22737,13 +22735,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=engineer-azizul-bari-author-ইঞজনযর-আজজল-বর-western-philosoph</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=engineer-azizul-bari-author-%E0%A6%87%E0%A6%9E%E0%A6%9C%E0%A6%A8%E0%A6%AF%E0%A6%B0-%E0%A6%86%E0%A6%9C%E0%A6%9C%E0%A6%B2-%E0%A6%AC%E0%A6%B0-western-philosoph</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=টমথ-ফরস-4-hour-work-week</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%9F%E0%A6%AE%E0%A6%A5-%E0%A6%AB%E0%A6%B0%E0%A6%B8-4-hour-work-week</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22917,13 +22915,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অননদচরণ-ভটটচরযয-amar-kosh-omorkosh</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%A8%E0%A6%A8%E0%A6%A6%E0%A6%9A%E0%A6%B0%E0%A6%A3-%E0%A6%AD%E0%A6%9F%E0%A6%9F%E0%A6%9A%E0%A6%B0%E0%A6%AF%E0%A6%AF-amar-kosh-omorkosh</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=আরজ-আল-মতববর-satyer-sndhane</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%86%E0%A6%B0%E0%A6%9C-%E0%A6%86%E0%A6%B2-%E0%A6%AE%E0%A6%A4%E0%A6%AC%E0%A6%AC%E0%A6%B0-satyer-sndhane</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22953,7 +22951,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-৯১১-হমল-নয-পরচলত-১৩-ট-ষডযনতর-তততবর-খণডন-আব-উবইদ</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=anonymous-%E0%A7%AF%E0%A7%A7%E0%A7%A7-%E0%A6%B9%E0%A6%AE%E0%A6%B2-%E0%A6%A8%E0%A6%AF-%E0%A6%AA%E0%A6%B0%E0%A6%9A%E0%A6%B2%E0%A6%A4-%E0%A7%A7%E0%A7%A9-%E0%A6%9F-%E0%A6%B7%E0%A6%A1%E0%A6%AF%E0%A6%A8%E0%A6%A4%E0%A6%B0-%E0%A6%A4%E0%A6%A4%E0%A6%A4%E0%A6%AC%E0%A6%B0-%E0%A6%96%E0%A6%A3%E0%A6%A1%E0%A6%A8-%E0%A6%86%E0%A6%AC-%E0%A6%89%E0%A6%AC%E0%A6%87%E0%A6%A6</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22983,7 +22981,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=engineer-azizul-bari-ইঞজনযর-আজজল-বর-aulia-e-naqshband-bangla</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=engineer-azizul-bari-%E0%A6%87%E0%A6%9E%E0%A6%9C%E0%A6%A8%E0%A6%AF%E0%A6%B0-%E0%A6%86%E0%A6%9C%E0%A6%9C%E0%A6%B2-%E0%A6%AC%E0%A6%B0-aulia-e-naqshband-bangla</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -23037,7 +23035,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=মনতসর-মমন-pakistanider-dristite-ekattar-muntasir-mamun-o-mhi</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%AE%E0%A6%A8%E0%A6%A4%E0%A6%B8%E0%A6%B0-%E0%A6%AE%E0%A6%AE%E0%A6%A8-pakistanider-dristite-ekattar-muntasir-mamun-o-mhi</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -23055,7 +23053,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=অজয-ঋগবদ-অনরমশচনদর-দতত-১৮১-১০১৯১</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=%E0%A6%85%E0%A6%9C%E0%A6%AF-%E0%A6%8B%E0%A6%97%E0%A6%AC%E0%A6%A6-%E0%A6%85%E0%A6%A8%E0%A6%B0%E0%A6%AE%E0%A6%B6%E0%A6%9A%E0%A6%A8%E0%A6%A6%E0%A6%B0-%E0%A6%A6%E0%A6%A4%E0%A6%A4-%E0%A7%A7%E0%A7%AE%E0%A7%A7-%E0%A7%A7%E0%A7%A6%E0%A7%A7%E0%A7%AF%E0%A7%A7</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -23079,7 +23077,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bibyutatsu.github.io/ebooks/?book=probir-ghosh-পরবর-ঘষ-ami-keno-ishware-bishwas-kori-na-ami-ke</loc>
+    <loc>https://bibyutatsu.github.io/ebooks/?book=probir-ghosh-%E0%A6%AA%E0%A6%B0%E0%A6%AC%E0%A6%B0-%E0%A6%98%E0%A6%B7-ami-keno-ishware-bishwas-kori-na-ami-ke</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
