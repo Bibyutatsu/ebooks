@@ -2,5 +2,6 @@
 User-agent: *
 Allow: /
 
-# Canonical XML Sitemap for search engines (Googlebot, Bingbot, DuckDuckGo)
+# Canonical Sitemaps for search engines (Googlebot, Bingbot, DuckDuckGo)
 Sitemap: https://bibyutatsu.github.io/ebooks/sitemap.xml
+Sitemap: https://bibyutatsu.github.io/ebooks/sitemap.txt

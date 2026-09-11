@@ -47,6 +47,7 @@ def generate_sitemap(catalog_path, output_path):
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     ]
+    url_list = []
 
     def add_url(loc, priority="0.7", changefreq="monthly", lastmod=today_str):
         # Strict ASCII check
@@ -54,6 +55,8 @@ def generate_sitemap(catalog_path, output_path):
             loc.encode('ascii')
         except UnicodeEncodeError as e:
             raise ValueError(f"Non-ASCII character in URL: {loc}") from e
+
+        url_list.append(loc)
 
         # Escape XML entities (especially '&' to '&amp;', quotes to &quot;)
         safe_loc = escape(loc, {'"': '&quot;', "'": '&apos;'})
@@ -110,8 +113,13 @@ def generate_sitemap(catalog_path, output_path):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(xml_content)
 
+    # Also generate sitemap.txt as a fallback for Google Search Console
+    txt_path = os.path.join(os.path.dirname(output_path), 'sitemap.txt')
+    with open(txt_path, 'w', encoding='utf-8') as f:
+        f.write("\n".join(url_list) + "\n")
+
     total_urls = len(books) + len(TRENDING_SEARCHES) + len(top_authors) + len(genre_set) + 1
-    print(f"Generated {output_path} with {total_urls} URLs successfully (100% RFC 3986 ASCII compliant).")
+    print(f"Generated {output_path} and {txt_path} with {total_urls} URLs successfully (100% RFC 3986 ASCII compliant).")
 
 if __name__ == '__main__':
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
