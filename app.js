@@ -701,10 +701,23 @@
     return card;
   }
 
+  function trackDownloadEvent(bookTitle, format, fileName) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'file_download', {
+        file_name: fileName || '',
+        file_extension: format || '',
+        book_title: bookTitle || '',
+        link_url: window.location.href
+      });
+    }
+  }
+
   function handleDownloadClick(e, book, format, formatInfo) {
     if (!formatInfo.download_url || formatInfo.download_url === '#') {
       e.preventDefault();
       openBookModal(book);
+    } else {
+      trackDownloadEvent(book.title_en || book.title_bn, format, formatInfo.filename);
     }
   }
 
@@ -779,6 +792,14 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    elements.modalBody.querySelectorAll('.modal-dl-card').forEach(dlCard => {
+      dlCard.addEventListener('click', () => {
+        const fmt = dlCard.querySelector('.modal-dl-format')?.textContent?.trim().toLowerCase() || '';
+        const fileName = dlCard.getAttribute('download') || '';
+        trackDownloadEvent(book.title_en || book.title_bn, fmt, fileName);
+      });
+    });
 
     elements.modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
