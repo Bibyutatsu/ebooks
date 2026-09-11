@@ -125,34 +125,45 @@ def sync_releases(catalog_path: str, dry_run: bool = False, format_filter: str =
 
         to_upload = []
         for item in batch:
-            fname = item["filename"]
-            if fname in existing_assets:
-                url_map[(item["book_id"], item["fmt"])] = existing_assets[fname]
+            asset_name = f"{item['book_id']}.{item['fmt']}"
+            item["asset_name"] = asset_name
+            if asset_name in existing_assets:
+                url_map[(item["book_id"], item["fmt"])] = existing_assets[asset_name]
                 skipped_count += 1
             else:
                 to_upload.append(item)
 
         if to_upload:
             print(f"[{tag}] Uploading {len(to_upload)} new files...")
+            scratch_dir = Path("/tmp/ebooks_release_upload")
+            scratch_dir.mkdir(parents=True, exist_ok=True)
             for item in to_upload:
                 fpath = item["filepath"]
-                fname = item["filename"]
+                aname = item["asset_name"]
                 if dry_run:
-                    mock_url = f"https://github.com/{REPO}/releases/download/{tag}/{fname}"
+                    mock_url = f"https://github.com/{REPO}/releases/download/{tag}/{aname}"
                     url_map[(item["book_id"], item["fmt"])] = mock_url
                     continue
 
-                up_code, _, stderr = run_cmd([
-                    "gh", "release", "upload", tag, fpath,
-                    "--repo", REPO,
-                    "--clobber"
-                ])
-                if up_code == 0:
-                    cdn_url = f"https://github.com/{REPO}/releases/download/{tag}/{fname}"
-                    url_map[(item["book_id"], item["fmt"])] = cdn_url
-                    updated_count += 1
-                else:
-                    print(f"  Failed to upload {fname}: {stderr}")
+                # Prepare clean ASCII file for upload
+                tmp_file = scratch_dir / aname
+                try:
+                    import shutil
+                    shutil.copyfile(fpath, tmp_file)
+                    up_code, _, stderr = run_cmd([
+                        "gh", "release", "upload", tag, str(tmp_file),
+                        "--repo", REPO,
+                        "--clobber"
+                    ])
+                    if up_code == 0:
+                        cdn_url = f"https://github.com/{REPO}/releases/download/{tag}/{aname}"
+                        url_map[(item["book_id"], item["fmt"])] = cdn_url
+                        updated_count += 1
+                    else:
+                        print(f"  Failed to upload {aname}: {stderr}")
+                finally:
+                    if tmp_file.exists():
+                        tmp_file.unlink()
 
     # Write URLs back to catalog.json
     for book in catalog["books"]:
