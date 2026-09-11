@@ -105,6 +105,14 @@ def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = Fal
     tasks = []
     url_map = {}
 
+    # Pre-index fallback directories once for fast O(1) lookup
+    bongboi_cache = {}
+    bongboi_path = Path("/tmp/bongboi")
+    if bongboi_path.exists():
+        for p in bongboi_path.glob("**/*"):
+            if p.is_file():
+                bongboi_cache[p.name] = p
+
     for book in catalog["books"]:
         for fmt_key, fmt_info in book["formats"].items():
             if format_filter and fmt_key != format_filter:
@@ -114,6 +122,11 @@ def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = Fal
             if not rel_path:
                 continue
             full_path = base_dir / rel_path
+            if not full_path.exists():
+                fn = fmt_info.get("filename")
+                if fn and fn in bongboi_cache:
+                    full_path = bongboi_cache[fn]
+
             if full_path.exists():
                 existing_url = fmt_info.get("download_url", "")
                 tasks.append({
@@ -178,6 +191,7 @@ def sync_releases(catalog_path: str, source_dir: str = None, dry_run: bool = Fal
                     if dry_run:
                         mock_url = f"https://github.com/{REPO}/releases/download/{curr_tag}/{item['asset_name']}"
                         url_map[(item["book_id"], item["fmt"])] = mock_url
+                        curr_assets[item["asset_name"]] = mock_url
                         continue
                     tmp_file = scratch_dir / item["asset_name"]
                     try:

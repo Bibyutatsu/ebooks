@@ -166,6 +166,13 @@ def test_search_and_transliteration(catalog_path: str):
         ("হুমায়ূন আহমেদ", 20, "Humayun Ahmed in Bengali Unicode"),
         ("সত্যজিৎ রায়", 10, "Satyajit Ray in Bengali Unicode"),
         ("তিতাস একটি নদীর নাম", 1, "Titas Ekti Nadir Naam in Bengali"),
+        ("ঈশ্বরচন্দ্র বিদ্যাসাগর", 3, "Ishwar Chandra Vidyasagar in Bengali Unicode"),
+        ("vidyasagar", 3, "Ishwar Chandra Vidyasagar English search"),
+        ("abanindranath", 3, "Abanindranath Tagore English search"),
+        ("ক্ষীরের পুতুল", 1, "Khirer Putul classic children tale"),
+        ("madhusudan dutt", 2, "Michael Madhusudan Dutt epic poet"),
+        ("begum rokeya", 1, "Begum Rokeya feminist pioneer"),
+        ("rakhaldas banerjee", 2, "Rakhaldas Bandyopadhyay archaeologist"),
     ]
 
     total_benchmarks = len(benchmark_queries)
