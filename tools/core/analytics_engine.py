@@ -45,9 +45,11 @@ def jaccard_similarity(set_a: set, set_b: set) -> float:
 class AnalyticsEngine:
     def __init__(self, catalog_path_or_dict):
         if isinstance(catalog_path_or_dict, (str, Path)):
-            with open(catalog_path_or_dict, 'r', encoding='utf-8') as f:
+            self.catalog_path = Path(catalog_path_or_dict)
+            with open(self.catalog_path, 'r', encoding='utf-8') as f:
                 self.data = json.load(f)
         else:
+            self.catalog_path = None
             self.data = catalog_path_or_dict
 
         self.books = self.data.get("books", [])
@@ -368,6 +370,15 @@ class AnalyticsEngine:
 
         print(f"✓ Analytics graph exported to {graph_file} ({len(self.books)} books, {len(authors_data)} authors, {len(series_data)} series).")
         print(f"✓ Summary exported to {summary_file}.")
+
+        if self.catalog_path and self.catalog_path.exists():
+            for b in self.books:
+                author = b.get("author", "").strip()
+                if author in self.author_slugs:
+                    b["author_slug"] = self.author_slugs[author]
+            with open(self.catalog_path, "w", encoding="utf-8") as f:
+                json.dump(self.data, f, ensure_ascii=False, indent=2)
+            print(f"✓ Catalog enriched with author_slug saved to {self.catalog_path}.")
 
         return summary, full_graph
 

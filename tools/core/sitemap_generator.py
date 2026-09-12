@@ -56,13 +56,19 @@ def generate_sitemap(catalog_path: str, output_root: str):
     series_dir = out_root / "series"
     if series_dir.exists():
         for s_file in sorted(series_dir.glob("*.html")):
-            add_entry(f"{BASE_URL}series/{s_file.name}", priority="0.9", changefreq="weekly")
+            if s_file.name == "index.html":
+                add_entry(f"{BASE_URL}series/", priority="0.95", changefreq="weekly")
+            else:
+                add_entry(f"{BASE_URL}series/{s_file.name}", priority="0.9", changefreq="weekly")
 
     # 3. Author Hub Pages
     author_dir = out_root / "author"
     if author_dir.exists():
         for a_file in sorted(author_dir.glob("*.html")):
-            add_entry(f"{BASE_URL}author/{a_file.name}", priority="0.8", changefreq="weekly")
+            if a_file.name == "index.html":
+                add_entry(f"{BASE_URL}author/", priority="0.9", changefreq="weekly")
+            else:
+                add_entry(f"{BASE_URL}author/{a_file.name}", priority="0.8", changefreq="weekly")
 
     # 4. Individual Book Landing Pages
     book_dir = out_root / "book"

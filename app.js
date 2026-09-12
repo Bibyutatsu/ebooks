@@ -654,6 +654,14 @@
     state.catalog = data;
     state.books = data.books || [];
 
+    // Map authors to slugs for instant modal navigation
+    state.authorSlugMap = {};
+    state.books.forEach(b => {
+      if (b.author && b.author_slug) {
+        state.authorSlugMap[b.author] = b.author_slug;
+      }
+    });
+
     // Compute all numbers, authors, departments, and formats in real-time
     const aggregates = computeRuntimeAggregates(state.books);
     state.authors = aggregates.authors;
@@ -1109,7 +1117,9 @@
     card.className = 'book-card';
     card.dataset.id = book.id;
 
-    const seriesHtml = book.series ? `<span class="series-tag">${escapeHtml(book.series.name_bn)}</span>` : '<span></span>';
+    const seriesHtml = (book.series && book.series.id)
+      ? `<a href="series/${encodeURIComponent(book.series.id)}.html" target="_blank" class="series-tag" title="Open ${escapeHtml(book.series.name_en || '')} Series Universe" onclick="event.stopPropagation();">${escapeHtml(book.series.name_bn)}</a>`
+      : '<span></span>';
     
     let formatBadgesHtml = '';
     const fmts = Object.keys(book.formats || {});
@@ -1210,7 +1220,14 @@
       `;
     });
 
-    const seriesBadge = book.series ? `<span class="modal-series-badge">সিরিজ: ${escapeHtml(book.series.name_bn)} (${escapeHtml(book.series.name_en)})</span>` : '';
+    const authorSlug = book.author_slug || (state.authorSlugMap && state.authorSlugMap[book.author]) || '';
+    const authorExtLink = authorSlug
+      ? `<a href="author/${authorSlug}.html" target="_blank" class="modal-ext-badge" title="View dedicated author page for ${escapeHtml(book.author)}">Author Page ↗</a>`
+      : '';
+
+    const seriesBadge = (book.series && book.series.id)
+      ? `<a href="series/${encodeURIComponent(book.series.id)}.html" target="_blank" class="modal-series-badge-link" title="Open ${escapeHtml(book.series.name_en || '')} Series Universe">⚡ সিরিজ: ${escapeHtml(book.series.name_bn)} (${escapeHtml(book.series.name_en)}) ↗</a>`
+      : '';
     
     let genresHtml = '';
     (book.genres || []).forEach(g => {
@@ -1249,9 +1266,12 @@
         <h2 class="modal-title">${escapeHtml(book.title)}</h2>
         <div class="modal-title-en">${escapeHtml(book.title_en)}</div>
         <div class="modal-meta-row">
-          <span class="modal-author-link" data-author="${escapeHtml(book.author)}">
-            লেখক: ${escapeHtml(book.author)} (${escapeHtml(book.author_en)})
-          </span>
+          <div class="modal-author-group">
+            <span class="modal-author-link" data-author="${escapeHtml(book.author)}" title="Filter library by this author">
+              লেখক: ${escapeHtml(book.author)} (${escapeHtml(book.author_en)})
+            </span>
+            ${authorExtLink}
+          </div>
           ${seriesBadge}
           ${book.year ? `<span class="modal-year-badge">Year: ${book.year}</span>` : ''}
         </div>
@@ -1264,6 +1284,11 @@
           <h4>Available Formats</h4>
           <div class="modal-download-grid">
             ${downloadCardsHtml}
+          </div>
+          <div style="margin-top: 14px; display: flex; justify-content: flex-end;">
+            <a href="book/${encodeURIComponent(book.id)}.html" target="_blank" class="modal-book-page-btn" title="View standalone permanent SEO page for ${escapeHtml(book.title)}">
+              🔗 Open Standalone Book Page ↗
+            </a>
           </div>
         </div>
       </div>

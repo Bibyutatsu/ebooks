@@ -912,10 +912,296 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
 """
 
 
+def render_series_index_page(series_data: dict, root_rel: str = "../") -> str:
+    """Renders the main Series directory /series/index.html showcasing all 15 series."""
+    canonical_url = f"{BASE_URL}series/"
+    page_title = "All Bengali Ebook Series & Character Universes | Bibyutatsu BookStore"
+    meta_desc = "Explore complete reading orders and free downloads for 15 iconic Bengali series: Feluda, Byomkesh, Himu, Misir Ali, Shonku, Kakababu, Tintin & more."
+
+    # Sort series by book count descending
+    sorted_series = sorted(series_data.values(), key=lambda x: x["total_books"], reverse=True)
+
+    cards_html = []
+    for s in sorted_series:
+        s_slug = s["slug"]
+        s_bn = escape_txt(s["name_bn"])
+        s_en = escape_txt(s["name_en"])
+        s_auth = escape_txt(s.get("author", ""))
+        count = s["total_books"]
+        genres = ", ".join(list(s.get("genres", {}).keys())[:2])
+
+        cards_html.append(f"""
+          <a href="{s_slug}.html" class="series-hub-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px; display: flex; flex-direction: column; gap: 12px; transition: all 0.25s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+              <div>
+                <h2 style="font-size: 1.4rem; color: var(--heading); margin-bottom: 4px;">{s_bn}</h2>
+                <div style="font-size: 0.95rem; color: var(--text-muted);">{s_en}</div>
+              </div>
+              <span class="badge series-badge" style="font-weight: 700;">{count} Books</span>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text);">Creator: <strong>{s_auth}</strong></div>
+            {f'<div style="font-size: 0.78rem; color: var(--text-muted);">{genres}</div>' if genres else ''}
+            <div style="margin-top: auto; padding-top: 10px; font-size: 0.85rem; color: var(--accent); font-weight: 600; display: flex; align-items: center; gap: 6px;">
+              View Reading Order →
+            </div>
+          </a>
+        """)
+
+    schema_collection = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Bengali Ebook Series Universes",
+        "url": canonical_url,
+        "description": meta_desc
+    }
+
+    return f"""<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{escape_txt(page_title)}</title>
+  <meta name="description" content="{escape_txt(meta_desc)}">
+  <link rel="canonical" href="{canonical_url}">
+  <meta property="og:site_name" content="Bibyutatsu BookStore">
+  <meta property="og:title" content="{escape_txt(page_title)}">
+  <meta property="og:description" content="{escape_txt(meta_desc)}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{canonical_url}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {json.dumps(schema_collection, ensure_ascii=False, indent=2)}
+  </script>
+  {GA_SCRIPT}
+  <style>
+    {SHARED_CSS}
+    .series-hub-card:hover {{
+      background: var(--surface-hover) !important;
+      border-color: var(--accent) !important;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="{root_rel}" class="brand">
+        <span class="brand-icon">📚</span>
+        <span>Bibyutatsu BookStore</span>
+      </a>
+      <nav class="header-nav">
+        <a href="{root_rel}" class="nav-btn">← Back to Full Library</a>
+        <a href="{root_rel}author/" class="nav-btn">Authors Directory →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 30px; padding-bottom: 60px;">
+    <div class="breadcrumbs">
+      <a href="{root_rel}">Home</a> /
+      <span>Series</span>
+    </div>
+
+    <div style="margin-bottom: 30px; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+      <h1 style="font-size: 2.3rem; color: var(--heading); margin-bottom: 8px;">⚡ Iconic Bengali Series Universes</h1>
+      <p style="font-size: 1.05rem; color: var(--text); max-width: 800px;">
+        Curated reading orders and digital editions for Bengal's greatest detective sagas, sci-fi expeditions, and character legends.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+      {"".join(cards_html)}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>Bibyutatsu BookStore — Dedicated to preserving Bengali digital literature.</div>
+    </div>
+  </footer>
+</body>
+</html>
+"""
+
+
+def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
+    """Renders the main Authors directory /author/index.html with search and top authors."""
+    canonical_url = f"{BASE_URL}author/"
+    page_title = "Bengali Authors Directory (700+ Writers) | Bibyutatsu BookStore"
+    meta_desc = "Discover over 700 Bengali authors, novelists, poets, and translators. Browse complete digital bibliographies with free EPUB, Kindle KFX & PDF downloads."
+
+    sorted_authors = sorted(authors_data.values(), key=lambda x: x["total_books"], reverse=True)
+
+    # Top 30 Spotlight
+    top_spotlight_html = []
+    for a in sorted_authors[:30]:
+        a_slug = a["slug"]
+        a_bn = escape_txt(a["name_bn"])
+        a_en = escape_txt(a["name_en"])
+        cnt = a["total_books"]
+        top_spotlight_html.append(f"""
+          <a href="{a_slug}.html" class="top-author-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 6px; transition: all 0.2s ease;">
+            <div style="font-weight: 700; color: var(--heading); font-size: 1.05rem;">{a_bn}</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">{a_en}</div>
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 8px;">
+              <span class="badge" style="background: var(--accent)22; color: var(--accent); font-weight: 700;">{cnt} Books</span>
+              <span style="font-size: 0.8rem; color: var(--accent);">Browse →</span>
+            </div>
+          </a>
+        """)
+
+    # All authors list items for fast filtering
+    all_list_html = []
+    for a in sorted_authors:
+        a_slug = a["slug"]
+        a_bn = escape_txt(a["name_bn"])
+        a_en = escape_txt(a["name_en"])
+        cnt = a["total_books"]
+        all_list_html.append(f"""
+          <a href="{a_slug}.html" class="author-item" data-name="{a_bn.lower()} {a_en.lower()}" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--heading); text-decoration: none;">
+            <div>
+              <span style="font-weight: 600;">{a_bn}</span>
+              <span style="color: var(--text-muted); font-size: 0.85rem; margin-left: 8px;">({a_en})</span>
+            </div>
+            <span class="badge" style="font-size: 0.75rem;">{cnt}</span>
+          </a>
+        """)
+
+    schema_collection = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Bengali Authors Directory",
+        "url": canonical_url,
+        "description": meta_desc
+    }
+
+    return f"""<!DOCTYPE html>
+<html lang="bn" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{escape_txt(page_title)}</title>
+  <meta name="description" content="{escape_txt(meta_desc)}">
+  <link rel="canonical" href="{canonical_url}">
+  <meta property="og:site_name" content="Bibyutatsu BookStore">
+  <meta property="og:title" content="{escape_txt(page_title)}">
+  <meta property="og:description" content="{escape_txt(meta_desc)}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{canonical_url}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {json.dumps(schema_collection, ensure_ascii=False, indent=2)}
+  </script>
+  {GA_SCRIPT}
+  <style>
+    {SHARED_CSS}
+    .top-author-card:hover {{
+      background: var(--surface-hover) !important;
+      border-color: var(--accent) !important;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }}
+    .author-item:hover {{
+      background: var(--surface-hover) !important;
+      border-color: var(--accent) !important;
+    }}
+    #author-search-input {{
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--heading);
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s ease;
+    }}
+    #author-search-input:focus {{
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0, 204, 255, 0.15);
+    }}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="{root_rel}" class="brand">
+        <span class="brand-icon">📚</span>
+        <span>Bibyutatsu BookStore</span>
+      </a>
+      <nav class="header-nav">
+        <a href="{root_rel}" class="nav-btn">← Back to Full Library</a>
+        <a href="{root_rel}series/" class="nav-btn">Series Universes →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 30px; padding-bottom: 60px;">
+    <div class="breadcrumbs">
+      <a href="{root_rel}">Home</a> /
+      <span>Authors</span>
+    </div>
+
+    <div style="margin-bottom: 30px; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+      <h1 style="font-size: 2.3rem; color: var(--heading); margin-bottom: 8px;">✍️ Bengali Authors Directory ({len(sorted_authors)})</h1>
+      <p style="font-size: 1.05rem; color: var(--text); max-width: 800px; margin-bottom: 20px;">
+        Browse our comprehensive digital library catalogued by author. Search in Bengali or English.
+      </p>
+      <input type="text" id="author-search-input" placeholder="Search author by Bengali or English name (e.g. 'সতজিৎ', 'Humayun', 'Tagore')..." autocomplete="off" />
+    </div>
+
+    <h2 class="section-heading"><span>⭐</span> Top Authors Spotlight</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-bottom: 40px;">
+      {"".join(top_spotlight_html)}
+    </div>
+
+    <h2 class="section-heading"><span>📚</span> All Authors Directory (<span id="visible-author-count">{len(sorted_authors)}</span>)</h2>
+    <div id="authors-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px;">
+      {"".join(all_list_html)}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>Bibyutatsu BookStore — Dedicated to preserving Bengali digital literature.</div>
+    </div>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('author-search-input');
+    const items = document.querySelectorAll('.author-item');
+    const countDisplay = document.getElementById('visible-author-count');
+
+    searchInput.addEventListener('input', (e) => {{
+      const q = e.target.value.toLowerCase().trim();
+      let visible = 0;
+      items.forEach(item => {{
+        const name = item.getAttribute('data-name');
+        if (!q || name.includes(q)) {{
+          item.style.display = 'flex';
+          visible++;
+        }} else {{
+          item.style.display = 'none';
+        }}
+      }});
+      if (countDisplay) countDisplay.textContent = visible;
+    }});
+  </script>
+</body>
+</html>
+"""
+
+
 def generate_all_pages(catalog_path: str, output_root: str):
     """
     Main entrypoint:
-    Generates all /book/*.html, /author/*.html, and /series/*.html files.
+    Generates all /book/*.html, /author/*.html, /series/*.html files,
+    plus /series/index.html and /author/index.html.
     """
     out_root = Path(output_root)
     book_dir = out_root / "book"
@@ -956,7 +1242,12 @@ def generate_all_pages(catalog_path: str, output_root: str):
         with open(page_file, "w", encoding="utf-8") as f:
             f.write(html_content)
 
-    print(f"✓ Generated {len(authors_data)} author pages successfully.")
+    # Generate Author Index Page (/author/index.html)
+    author_index_html = render_author_index_page(authors_data, root_rel="../")
+    with open(author_dir / "index.html", "w", encoding="utf-8") as f:
+        f.write(author_index_html)
+
+    print(f"✓ Generated {len(authors_data)} author pages + author/index.html directory successfully.")
 
     # 3. Generate Series Pages
     print(f"Generating {len(series_data)} static series pages in {series_dir}...")
@@ -967,8 +1258,13 @@ def generate_all_pages(catalog_path: str, output_root: str):
         with open(page_file, "w", encoding="utf-8") as f:
             f.write(html_content)
 
-    print(f"✓ Generated {len(series_data)} series pages successfully.")
-    print(f"🎉 Total static SEO landing pages generated: {len(books) + len(authors_data) + len(series_data)}")
+    # Generate Series Index Page (/series/index.html)
+    series_index_html = render_series_index_page(series_data, root_rel="../")
+    with open(series_dir / "index.html", "w", encoding="utf-8") as f:
+        f.write(series_index_html)
+
+    print(f"✓ Generated {len(series_data)} series pages + series/index.html hub successfully.")
+    print(f"🎉 Total static SEO landing pages generated: {len(books) + len(authors_data) + len(series_data) + 2}")
 
 
 if __name__ == "__main__":

@@ -187,8 +187,14 @@
           </div>
         </div>
 
-        <!-- External links -->
+        <!-- External links and directory hubs -->
         <div class="nav-ext-links">
+          <a href="series/" class="nav-hub-btn series-accent" title="Explore 15 Bengali Series Reading Orders">
+            <span>⚡ Series (15)</span>
+          </a>
+          <a href="author/" class="nav-hub-btn" title="Browse 700+ Bengali Authors Directory">
+            <span>✍️ Authors</span>
+          </a>
           <a href="https://bibyutatsu.github.io" target="_blank" rel="noopener" class="header-link" title="Author Portfolio">Portfolio ↗</a>
           <a href="https://bibyutatsu.github.io/Blogs/" target="_blank" rel="noopener" class="header-link" title="Dev Blog">Dev Blog ↗</a>
         </div>
@@ -222,6 +228,24 @@
         </div>
       </div>
 
+      <!-- Series Universes -->
+      <div class="sidebar-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span class="sidebar-label" style="margin-bottom: 0;">Series Universes</span>
+          <a href="series/" class="sidebar-view-all" title="View all 15 series reading orders">All 15 →</a>
+        </div>
+        <div class="sidebar-tags" id="series-hub-tags">
+          <a href="series/feluda.html" class="side-tag">🕵️‍♂️ ফেলুদা (Feluda)</a>
+          <a href="series/byomkesh.html" class="side-tag">🔍 ব্যোমকেশ</a>
+          <a href="series/himu.html" class="side-tag">🟡 হিমু (Himu)</a>
+          <a href="series/misir_ali.html" class="side-tag">🧠 মিসির আলি</a>
+          <a href="series/shonku.html" class="side-tag">🔬 শঙ্কু (Shonku)</a>
+          <a href="series/tintin.html" class="side-tag">🚀 টিনটিন (Tintin)</a>
+          <a href="series/masud_rana.html" class="side-tag">🎯 মাসুদ রানা</a>
+          <a href="series/tin_goyenda.html" class="side-tag">🔎 তিন গোয়েন্দা</a>
+        </div>
+      </div>
+
       <!-- Format Filter -->
       <div class="sidebar-section">
         <span class="sidebar-label">Download Format</span>
@@ -236,12 +260,16 @@
 
       <!-- Author Filter -->
       <div class="sidebar-section">
-        <span class="sidebar-label">Author</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span class="sidebar-label" style="margin-bottom: 0;">Author</span>
+          <a href="author/" class="sidebar-view-all" title="Browse full 700+ authors directory">All 700+ →</a>
+        </div>
         <div class="sidebar-select-wrap">
           <select id="author-filter" class="sidebar-select" aria-label="Filter by Author">
             <option value="all">All Authors</option>
           </select>
         </div>
+        <a href="author/" class="sidebar-link-btn">Browse Full 700+ Authors Directory →</a>
       </div>
 
       <!-- Department / Genre List -->
@@ -374,20 +402,27 @@
     </section>
   </noscript>
 
-  <!-- Clean Bookstore Footer -->
+  <!-- Enhanced Bookstore Footer -->
   <footer class="store-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
         <span class="footer-brand-title">📚 Bibyutatsu BookStore</span>
         <p>Open-access digital library for Bengali literature. High-speed direct downloads in Kindle KFX, EPUB, MOBI and PDF.</p>
+        <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.85rem;">
+          <a href="series/" style="color: var(--accent); font-weight: 600;">⚡ Series Hub (15)</a>
+          <span style="color: var(--border);">·</span>
+          <a href="author/" style="color: var(--accent); font-weight: 600;">✍️ Authors Directory (700+)</a>
+          <span style="color: var(--border);">·</span>
+          <a href="sitemap.xml" style="color: var(--accent); font-weight: 600;">🗺️ Full Sitemap XML (3,677 URLs)</a>
+        </div>
       </div>
       <div class="footer-links">
-        <a href="https://github.com/Bibyutatsu" target="_blank" rel="noopener" class="footer-link">GitHub ↗</a>
+        <a href="https://github.com/Bibyutatsu/ebooks" target="_blank" rel="noopener" class="footer-link">GitHub ↗</a>
         <a href="https://bibyutatsu.github.io" target="_blank" rel="noopener" class="footer-link">Dev Portfolio ↗</a>
         <a href="https://bibyutatsu.github.io/Blogs/" target="_blank" rel="noopener" class="footer-link">Dev Blog ↗</a>
       </div>
       <div class="footer-copy">
-        © 2026 Bibhash Chandra Mitra.
+        © 2026 Bibhash Chandra Mitra. All works preserved for open educational & cultural access.
       </div>
     </div>
   </footer>

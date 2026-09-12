@@ -224990,20 +224990,6 @@
         "series": null
       },
       {
-        "id": "anonymous-ishlamik-boishomuh",
-        "title": "ইসলামিক বইসমূহ",
-        "title_en": "Eesolamik Boeesomooh",
-        "author": "অজ্ঞাত",
-        "author_en": "Anonymous",
-        "cover": "assets/covers/anonymous-ishlamik-boishomuh.webp",
-        "year": "",
-        "score": 39.58,
-        "formats": [
-          "epub"
-        ],
-        "series": null
-      },
-      {
         "id": "anonymous-ishlamik-boishomuh-2",
         "title": "ইসলামিক বইসমূহ",
         "title_en": "Eesolamik Boeesomooh",
@@ -225014,6 +225000,20 @@
         "score": 39.58,
         "formats": [
           "pdf"
+        ],
+        "series": null
+      },
+      {
+        "id": "anonymous-ishlamik-boishomuh",
+        "title": "ইসলামিক বইসমূহ",
+        "title_en": "Eesolamik Boeesomooh",
+        "author": "অজ্ঞাত",
+        "author_en": "Anonymous",
+        "cover": "assets/covers/anonymous-ishlamik-boishomuh.webp",
+        "year": "",
+        "score": 39.58,
+        "formats": [
+          "epub"
         ],
         "series": null
       },
