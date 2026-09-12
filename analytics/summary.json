@@ -1,0 +1,326 @@
+{
+  "version": "1.0.0",
+  "total_books": 2935,
+  "total_authors": 711,
+  "total_series": 15,
+  "format_breakdown": {
+    "epub": 2174,
+    "kfx": 1102,
+    "txt": 9,
+    "pdf": 659,
+    "mobi": 6,
+    "azw3": 1,
+    "docx": 1
+  },
+  "top_genres": {
+    "ইন্টারনেট আর্কাইভ (Internet Archive)": 1314,
+    "উপন্যাস ও সাহিত্য (General Fiction)": 1076,
+    "ক্লাসিক ও সাহিত্য (Classics)": 916,
+    "উপন্যাস (Novel)": 537,
+    "সায়েন্স ফিকশন (Sci-Fi)": 341,
+    "থ্রিলার ও গোয়েন্দা (Mystery & Thriller)": 296,
+    "কবিতা ও নাটক (Poetry & Drama)": 216,
+    "রহস্য ও গোয়েন্দা (Mystery)": 211,
+    "ছোটগল্প (Short Stories)": 209,
+    "কিশোর সাহিত্য (Young Adult)": 183,
+    "অনুবাদ (Translation)": 139,
+    "কবিতা (Poetry)": 107,
+    "অ্যাডভেঞ্চার (Adventure)": 106,
+    "scoerat-bengali": 79,
+    "Bengali Texts": 63,
+    "Educational Resources": 63,
+    "প্রবন্ধ (Essays)": 59,
+    "ঐতিহাসিক উপন্যাস (Historical Fiction)": 49,
+    "রম্যরচনা (Humor)": 47,
+    "ক্লাসিক (Classics)": 46
+  },
+  "top_authors": [
+    {
+      "name_bn": "অজ্ঞাত",
+      "name_en": "Anonymous",
+      "slug": "anonymous",
+      "count": 561
+    },
+    {
+      "name_bn": "হুমায়ূন আহমেদ",
+      "name_en": "Humayun Ahmed",
+      "slug": "humayun-ahmed",
+      "count": 211
+    },
+    {
+      "name_bn": "রবীন্দ্রনাথ ঠাকুর",
+      "name_en": "Rabindranath Tagore",
+      "slug": "rabindranath-tagore",
+      "count": 200
+    },
+    {
+      "name_bn": "সত্যজিৎ রায়",
+      "name_en": "Satyajit Ray",
+      "slug": "satyajit-ray",
+      "count": 57
+    },
+    {
+      "name_bn": "Almodina.com",
+      "name_en": "Almodina.Com",
+      "slug": "almodinacom",
+      "count": 53
+    },
+    {
+      "name_bn": "Bangla Rare Books",
+      "name_en": "Bangla Rare Books",
+      "slug": "bangla-rare-books",
+      "count": 39
+    },
+    {
+      "name_bn": "সুনীল গঙ্গোপাধ্যায়",
+      "name_en": "Sunil Gangopadhyay",
+      "slug": "sunil-gangopadhyay",
+      "count": 34
+    },
+    {
+      "name_bn": "কাজী আনোয়ার হোসেন",
+      "name_en": "Qazi Anwar Hussain",
+      "slug": "qazi-anwar-hussain",
+      "count": 33
+    },
+    {
+      "name_bn": "মুহম্মদ জাফর ইকবাল",
+      "name_en": "Muhammed Zafar Iqbal",
+      "slug": "muhammed-zafar-iqbal",
+      "count": 33
+    },
+    {
+      "name_bn": "সৈয়দ মুজতবা আলী",
+      "name_en": "Syed Mujtaba Ali",
+      "slug": "syed-mujtaba-ali",
+      "count": 32
+    },
+    {
+      "name_bn": "বুদ্ধদেব গুহ",
+      "name_en": "Buddhadeb Guha",
+      "slug": "buddhadeb-guha",
+      "count": 31
+    },
+    {
+      "name_bn": "শরদিন্দু বন্দ্যোপাধ্যায়",
+      "name_en": "Sharadindu Bandyopadhyay",
+      "slug": "sharadindu-bandyopadhyay",
+      "count": 30
+    },
+    {
+      "name_bn": "শীর্ষেন্দু মুখোপাধ্যায়",
+      "name_en": "Shirshendu Mukhopadhyay",
+      "slug": "shirshendu-mukhopadhyay",
+      "count": 30
+    },
+    {
+      "name_bn": "সমরেশ মজুমদার",
+      "name_en": "Samaresh Majumdar",
+      "slug": "samaresh-majumdar",
+      "count": 27
+    },
+    {
+      "name_bn": "বিভূতিভূষণ বন্দ্যোপাধ্যায়",
+      "name_en": "Bibhutibhushan Bandyopadhyay",
+      "slug": "bibhutibhushan-bandyopadhyay",
+      "count": 26
+    },
+    {
+      "name_bn": "শরৎচন্দ্র চট্টোপাধ্যায়",
+      "name_en": "Sarat Chandra Chattopadhyay",
+      "slug": "sarat-chandra-chattopadhyay",
+      "count": 24
+    },
+    {
+      "name_bn": "azharmea@icloud.com",
+      "name_en": "Azharmea@Icloud Com",
+      "slug": "azharmeaicloud-com",
+      "count": 23
+    },
+    {
+      "name_bn": "আগাথা ক্রিস্টি",
+      "name_en": "Agatha Christie",
+      "slug": "agatha-christie",
+      "count": 19
+    },
+    {
+      "name_bn": "জুল ভার্ন",
+      "name_en": "Jules Verne",
+      "slug": "jules-verne",
+      "count": 18
+    },
+    {
+      "name_bn": "সুকুমার রায়",
+      "name_en": "Sukumar Ray",
+      "slug": "sukumar-ray",
+      "count": 18
+    },
+    {
+      "name_bn": "Bongo Tweet",
+      "name_en": "Bongo Tweet",
+      "slug": "bongo-tweet",
+      "count": 17
+    },
+    {
+      "name_bn": "অবনীন্দ্রনাথ ঠাকুর",
+      "name_en": "Obonindrnath Thakur",
+      "slug": "obonindrnath-thakur",
+      "count": 16
+    },
+    {
+      "name_bn": "কাজী নজরুল ইসলাম",
+      "name_en": "Kazi Nazrul Islam",
+      "slug": "kazi-nazrul-islam",
+      "count": 16
+    },
+    {
+      "name_bn": "আশাপূর্ণা দেবী",
+      "name_en": "Ashapurna Debi",
+      "slug": "ashapurna-debi",
+      "count": 14
+    },
+    {
+      "name_bn": "বঙ্কিমচন্দ্র চট্টোপাধ্যায়",
+      "name_en": "Bankim Chandra Chattopadhyay",
+      "slug": "bankim-chandra-chattopadhyay",
+      "count": 14
+    },
+    {
+      "name_bn": "Swami Samarpanananda",
+      "name_en": "Swami Samarpanananda",
+      "slug": "swami-samarpanananda",
+      "count": 14
+    },
+    {
+      "name_bn": "জেমস হ্যাডলি চেজ",
+      "name_en": "James Hadley Chase",
+      "slug": "james-hadley-chase",
+      "count": 13
+    },
+    {
+      "name_bn": "হুমায়ুন আজাদ",
+      "name_en": "Humayun Azad",
+      "slug": "humayun-azad",
+      "count": 13
+    },
+    {
+      "name_bn": "অনীশ দেব",
+      "name_en": "Anish Deb",
+      "slug": "anish-deb",
+      "count": 12
+    },
+    {
+      "name_bn": "আহমদ ছফা",
+      "name_en": "Ahmed Sofa",
+      "slug": "ahmed-sofa",
+      "count": 12
+    }
+  ],
+  "series_list": [
+    {
+      "id": "misir_ali",
+      "slug": "misir_ali",
+      "name_bn": "মিসির আলি",
+      "name_en": "Misir Ali",
+      "count": 52
+    },
+    {
+      "id": "masud_rana",
+      "slug": "masud_rana",
+      "name_bn": "মাসুদ রানা",
+      "name_en": "Masud Rana",
+      "count": 38
+    },
+    {
+      "id": "himu",
+      "slug": "himu",
+      "name_bn": "হিমু",
+      "name_en": "Himu",
+      "count": 23
+    },
+    {
+      "id": "byomkesh",
+      "slug": "byomkesh",
+      "name_bn": "ব্যোমকেশ বক্সী",
+      "name_en": "Byomkesh Bakshi",
+      "count": 12
+    },
+    {
+      "id": "feluda",
+      "slug": "feluda",
+      "name_bn": "ফেলুদা",
+      "name_en": "Feluda",
+      "count": 11
+    },
+    {
+      "id": "shonku",
+      "slug": "shonku",
+      "name_bn": "প্রফেসর শঙ্কু",
+      "name_en": "Professor Shonku",
+      "count": 8
+    },
+    {
+      "id": "tenida",
+      "slug": "tenida",
+      "name_bn": "টেনিদা",
+      "name_en": "Tenida",
+      "count": 7
+    },
+    {
+      "id": "tin_goyenda",
+      "slug": "tin_goyenda",
+      "name_bn": "তিন গোয়েন্দা",
+      "name_en": "Tin Goyenda (Three Detectives)",
+      "count": 7
+    },
+    {
+      "id": "rijuda",
+      "slug": "rijuda",
+      "name_bn": "রিজুদা",
+      "name_en": "Rijuda",
+      "count": 5
+    },
+    {
+      "id": "shuvro",
+      "slug": "shuvro",
+      "name_bn": "শুভ্র",
+      "name_en": "Shuvro",
+      "count": 5
+    },
+    {
+      "id": "sherlock",
+      "slug": "sherlock",
+      "name_bn": "শার্লক হোমস",
+      "name_en": "Sherlock Holmes",
+      "count": 4
+    },
+    {
+      "id": "kiriti",
+      "slug": "kiriti",
+      "name_bn": "কিরীটী রায়",
+      "name_en": "Kiriti Roy",
+      "count": 2
+    },
+    {
+      "id": "ghanada",
+      "slug": "ghanada",
+      "name_bn": "ঘনাদা",
+      "name_en": "Ghanada",
+      "count": 2
+    },
+    {
+      "id": "tintin",
+      "slug": "tintin",
+      "name_bn": "টিনটিন",
+      "name_en": "Tintin",
+      "count": 2
+    },
+    {
+      "id": "shabor",
+      "slug": "shabor",
+      "name_bn": "শবর দাশগুপ্ত",
+      "name_en": "Shabor Dasgupta",
+      "count": 1
+    }
+  ]
+}

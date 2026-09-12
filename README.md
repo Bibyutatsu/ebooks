@@ -55,37 +55,61 @@ Explore popular Bengali authors and literary series directly on the live booksto
 
 ```
 ebooks/
-├── index.html            # Main library web interface
+├── index.html            # Main interactive library web interface
 ├── style.css             # Glassmorphic CSS design system
 ├── app.js                # Search, filtering, and modal interaction logic
-├── catalog.json          # Normalized catalog & pre-computed search index (~2,907 books)
+├── catalog.json          # Normalized catalog & pre-computed search index (2,935 books)
 ├── assets/
-│   └── covers/           # 2,900+ optimized WebP cover thumbnails
+│   └── covers/           # 4,300+ optimized WebP cover thumbnails
+├── book/                 # 2,935 pre-rendered static SEO landing pages (Google Discoverable)
+├── author/               # 711 static author hub & collection pages
+├── series/               # 15 static series landing pages in reading order
+├── analytics/            # Pre-computed relationship graph (catalog_graph.json & summary.json)
+├── sitemap.xml           # 3,677 canonical URLs sitemap for Google & Bing
+├── sitemap.txt           # Plaintext URL feed
 ├── tools/
-│   ├── build_catalog.py  # Ingestion pipeline: extracts OPF metadata, converts covers, builds catalog.json
-│   ├── transliteration.py# Bengali phonetic transliterator (Avro & ITRANS rules)
-│   ├── author_mapping.py # Author canonicalization, English aliases, and genres (420+ authors)
-│   ├── series_mapping.py # Automatic character & series detector
-│   ├── sync_releases.py  # Incremental GitHub Releases uploader for scalable book distribution
-│   ├── eboipotro/        # OPDS Atom ingestion pipeline for curated Bengali EPUBs
-│   │   └── sync_eboipotro.py
-│   ├── wikisource/       # MediaWiki category harvester & ws-export dynamic EPUB pipeline
-│   │   ├── sync_wikisource.py
-│   │   └── works_list.json
-│   ├── archive_org/      # Internet Archive Bengali public domain text harvester
-│   │   ├── sync_archive_org.py
-│   │   └── ia_catalog.json
-│   ├── bongboi/          # Ingestion toolchain for classical Bengali EPUBs
-│   │   ├── sync_bongboi.py
-│   │   └── books_metadata.json
-│   └── kindlebangla/     # Scraper & verification toolchain specialized for KindleBangla
-│       ├── downloader.py
-│       ├── verify_downloads.py
-│       ├── book_details_links.json
-│       └── books_metadata.json
+│   ├── pipeline.py       # 🚀 Unified CLI entrypoint (build, analyze, pages, sitemap, verify)
+│   ├── core/             # Core engines
+│   │   ├── analytics_engine.py  # Scalable similarity graph & author affinity engine
+│   │   ├── page_generator.py    # Static HTML generator for /book, /author, /series
+│   │   ├── sitemap_generator.py # Canonical sitemap builder
+│   │   ├── build_catalog.py     # Metadata normalization & OPF extractor
+│   │   ├── author_mapping.py    # Author canonicalization & alias index (700+ authors)
+│   │   ├── series_mapping.py    # Character & series taxonomy
+│   │   ├── transliteration.py   # Dual-script Bengali <-> English phonetics
+│   │   └── sync_releases.py     # Incremental GitHub Releases CDN asset distributor
+│   ├── sources/          # Specialized scrapers & harvesters (archive_org, bongboi, eboipotro, kindlebangla, wikisource)
+│   └── maintenance/      # Maintenance scripts (e.g. refresh_transliterations.py)
 └── tests/
-    └── verify_catalog.py # Automated test suite (schema integrity + 53 search benchmarks)
+    ├── verify_catalog.py # Catalog schema integrity + 53 search benchmarks
+    └── verify_seo_pages.py # 100% parity & Schema.org JSON-LD validator
 ```
+
+### 🚀 Unified Pipeline CLI (`tools/pipeline.py`)
+
+Run the full end-to-end pipeline with one command:
+```bash
+python3 tools/pipeline.py all
+```
+
+Individual pipeline operations:
+```bash
+# Pre-render all 3,661 static SEO landing pages (/book, /author, /series)
+python3 tools/pipeline.py pages
+
+# Recompute analytics graph & similarity metrics
+python3 tools/pipeline.py analyze
+
+# Update sitemap.xml and sitemap.txt
+python3 tools/pipeline.py sitemap
+
+# Run full automated verification suite
+python3 tools/pipeline.py verify
+
+# Interactive terminal similarity search
+python3 tools/pipeline.py search --query "feluda"
+```
+
 
 ---
 
