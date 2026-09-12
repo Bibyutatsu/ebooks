@@ -717,12 +717,40 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
         "description": meta_desc
     }
 
+    schema_breadcrumbs = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": BASE_URL
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Authors",
+                "item": f"{BASE_URL}author/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": author_info["name_bn"],
+                "item": canonical_url
+            }
+        ]
+    }
+
     json_ld = f"""
     <script type="application/ld+json">
     {json.dumps(schema_person, ensure_ascii=False, indent=2)}
     </script>
     <script type="application/ld+json">
     {json.dumps(schema_collection, ensure_ascii=False, indent=2)}
+    </script>
+    <script type="application/ld+json">
+    {json.dumps(schema_breadcrumbs, ensure_ascii=False, indent=2)}
     </script>
     """
 
@@ -755,6 +783,7 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
       </a>
       <nav class="header-nav">
         <a href="{root_rel}" class="nav-btn">← Back to Full Library</a>
+        <a href="{root_rel}author/" class="nav-btn">All Authors Directory →</a>
       </nav>
     </div>
   </header>
@@ -762,7 +791,7 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
   <main class="container" style="padding-top: 30px; padding-bottom: 60px;">
     <div class="breadcrumbs">
       <a href="{root_rel}">Home</a> /
-      <span>Authors</span> /
+      <a href="{root_rel}author/">Authors</a> /
       <span>{name_bn}</span>
     </div>
 
@@ -840,9 +869,37 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
         "url": canonical_url
     }
 
+    schema_breadcrumbs = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": BASE_URL
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Series",
+                "item": f"{BASE_URL}series/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": f"{series_info['name_bn']} Series",
+                "item": canonical_url
+            }
+        ]
+    }
+
     json_ld = f"""
     <script type="application/ld+json">
     {json.dumps(schema_series, ensure_ascii=False, indent=2)}
+    </script>
+    <script type="application/ld+json">
+    {json.dumps(schema_breadcrumbs, ensure_ascii=False, indent=2)}
     </script>
     """
 
@@ -875,6 +932,7 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
       </a>
       <nav class="header-nav">
         <a href="{root_rel}" class="nav-btn">← Back to Full Library</a>
+        <a href="{root_rel}series/" class="nav-btn">All Series Universes →</a>
       </nav>
     </div>
   </header>
@@ -882,7 +940,7 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
   <main class="container" style="padding-top: 30px; padding-bottom: 60px;">
     <div class="breadcrumbs">
       <a href="{root_rel}">Home</a> /
-      <span>Series</span> /
+      <a href="{root_rel}series/">Series</a> /
       <span>{name_bn}</span>
     </div>
 
