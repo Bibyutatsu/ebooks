@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "total_books": 2935,
-  "total_authors": 711,
+  "total_authors": 710,
   "total_series": 15,
   "format_breakdown": {
     "epub": 2174,
@@ -35,12 +35,6 @@
     "ক্লাসিক (Classics)": 46
   },
   "top_authors": [
-    {
-      "name_bn": "অজ্ঞাত",
-      "name_en": "Anonymous",
-      "slug": "anonymous",
-      "count": 561
-    },
     {
       "name_bn": "হুমায়ূন আহমেদ",
       "name_en": "Humayun Ahmed",
@@ -214,29 +208,28 @@
       "name_en": "Ahmed Sofa",
       "slug": "ahmed-sofa",
       "count": 12
+    },
+    {
+      "name_bn": "উইলবার এডিসন স্মিথ",
+      "name_en": "Wilbur Smith",
+      "slug": "wilbur-smith",
+      "count": 12
     }
   ],
   "series_list": [
-    {
-      "id": "misir_ali",
-      "slug": "misir_ali",
-      "name_bn": "মিসির আলি",
-      "name_en": "Misir Ali",
-      "count": 52
-    },
-    {
-      "id": "masud_rana",
-      "slug": "masud_rana",
-      "name_bn": "মাসুদ রানা",
-      "name_en": "Masud Rana",
-      "count": 38
-    },
     {
       "id": "himu",
       "slug": "himu",
       "name_bn": "হিমু",
       "name_en": "Himu",
       "count": 23
+    },
+    {
+      "id": "misir_ali",
+      "slug": "misir_ali",
+      "name_bn": "মিসির আলি",
+      "name_en": "Misir Ali",
+      "count": 14
     },
     {
       "id": "byomkesh",
@@ -270,22 +263,36 @@
       "id": "tin_goyenda",
       "slug": "tin_goyenda",
       "name_bn": "তিন গোয়েন্দা",
-      "name_en": "Tin Goyenda (Three Detectives)",
+      "name_en": "Tin Goyenda",
       "count": 7
-    },
-    {
-      "id": "rijuda",
-      "slug": "rijuda",
-      "name_bn": "রিজুদা",
-      "name_en": "Rijuda",
-      "count": 5
     },
     {
       "id": "shuvro",
       "slug": "shuvro",
       "name_bn": "শুভ্র",
       "name_en": "Shuvro",
+      "count": 6
+    },
+    {
+      "id": "masud_rana",
+      "slug": "masud_rana",
+      "name_bn": "মাসুদ রানা",
+      "name_en": "Masud Rana",
       "count": 5
+    },
+    {
+      "id": "taranath_tantrik",
+      "slug": "taranath_tantrik",
+      "name_bn": "তারানাথ তান্ত্রিক",
+      "name_en": "Taranath Tantrik",
+      "count": 4
+    },
+    {
+      "id": "rijuda",
+      "slug": "rijuda",
+      "name_bn": "ঋজুদা",
+      "name_en": "Rijuda",
+      "count": 4
     },
     {
       "id": "sherlock",
@@ -293,13 +300,6 @@
       "name_bn": "শার্লক হোমস",
       "name_en": "Sherlock Holmes",
       "count": 4
-    },
-    {
-      "id": "kiriti",
-      "slug": "kiriti",
-      "name_bn": "কিরীটী রায়",
-      "name_en": "Kiriti Roy",
-      "count": 2
     },
     {
       "id": "ghanada",
@@ -316,10 +316,10 @@
       "count": 2
     },
     {
-      "id": "shabor",
-      "slug": "shabor",
-      "name_bn": "শবর দাশগুপ্ত",
-      "name_en": "Shabor Dasgupta",
+      "id": "kiriti",
+      "slug": "kiriti",
+      "name_bn": "কিরীটী রায়",
+      "name_en": "Kiriti Roy",
       "count": 1
     }
   ]

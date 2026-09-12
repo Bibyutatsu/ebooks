@@ -415,7 +415,7 @@ def render_book_page(book: dict, related_books: list[dict], author_slug: str = "
         total_size += f_info.get("size_bytes", 0)
         fmt_color = get_format_color(fmt)
         dl_buttons_html.append(f"""
-          <a href="{escape_txt(dl_url)}" class="download-btn" download="{escape_txt(filename)}" target="_blank" rel="noopener">
+          <a href="{escape_txt(dl_url)}" class="download-btn" download="{escape_txt(filename)}" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{{'file_name':'{escape_txt(filename)}','file_extension':'{fmt}','book_title':'{escape_txt(title_bn)}'}});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: {fmt_color}22; color: {fmt_color}; border: 1px solid {fmt_color}44;">{fmt.upper()}</span>
               <div>
@@ -690,7 +690,11 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
 
     # Similar authors HTML
     similar_html = []
-    for sa in author_info.get("similar_authors", []):
+    clean_similar = [
+        sa for sa in author_info.get("similar_authors", [])
+        if sa.get("slug") != "anonymous" and sa.get("name_bn") != "অজ্ঞাত" and sa.get("name_en", "").lower() != "anonymous"
+    ]
+    for sa in clean_similar:
         sa_bn = escape_txt(sa["name_bn"])
         sa_en = escape_txt(sa["name_en"])
         sa_slug = sa["slug"]
@@ -976,8 +980,9 @@ def render_series_index_page(series_data: dict, root_rel: str = "../") -> str:
     page_title = "All Bengali Ebook Series & Character Universes | Bibyutatsu BookStore"
     meta_desc = "Explore complete reading orders and free downloads for 15 iconic Bengali series: Feluda, Byomkesh, Himu, Misir Ali, Shonku, Kakababu, Tintin & more."
 
-    # Sort series by book count descending
-    sorted_series = sorted(series_data.values(), key=lambda x: x["total_books"], reverse=True)
+    # Sort active series by book count descending
+    active_series = [s for s in series_data.values() if s.get("total_books", 0) > 0]
+    sorted_series = sorted(active_series, key=lambda x: x["total_books"], reverse=True)
 
     cards_html = []
     for s in sorted_series:
@@ -1091,7 +1096,13 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
     page_title = "Bengali Authors Directory (700+ Writers) | Bibyutatsu BookStore"
     meta_desc = "Discover over 700 Bengali authors, novelists, poets, and translators. Browse complete digital bibliographies with free EPUB, Kindle KFX & PDF downloads."
 
-    sorted_authors = sorted(authors_data.values(), key=lambda x: x["total_books"], reverse=True)
+    valid_authors = [
+        a for a in authors_data.values()
+        if a.get("slug") != "anonymous"
+        and a.get("name_bn") != "অজ্ঞাত"
+        and a.get("name_en", "").lower() != "anonymous"
+    ]
+    sorted_authors = sorted(valid_authors, key=lambda x: x["total_books"], reverse=True)
 
     # Top 30 Spotlight
     top_spotlight_html = []
@@ -1307,9 +1318,10 @@ def generate_all_pages(catalog_path: str, output_root: str):
 
     print(f"✓ Generated {len(authors_data)} author pages + author/index.html directory successfully.")
 
-    # 3. Generate Series Pages
-    print(f"Generating {len(series_data)} static series pages in {series_dir}...")
-    for s_id, s_info in series_data.items():
+    # 3. Generate Series Pages (for series with at least 1 book)
+    active_series_data = {sid: s for sid, s in series_data.items() if s.get("total_books", 0) > 0}
+    print(f"Generating {len(active_series_data)} static series pages in {series_dir}...")
+    for s_id, s_info in active_series_data.items():
         s_books = [engine.books_by_id[bid] for bid in s_info["book_ids"] if bid in engine.books_by_id]
         html_content = render_series_page(s_info, s_books, root_rel="../")
         page_file = series_dir / f"{s_info['slug']}.html"
@@ -1317,12 +1329,12 @@ def generate_all_pages(catalog_path: str, output_root: str):
             f.write(html_content)
 
     # Generate Series Index Page (/series/index.html)
-    series_index_html = render_series_index_page(series_data, root_rel="../")
+    series_index_html = render_series_index_page(active_series_data, root_rel="../")
     with open(series_dir / "index.html", "w", encoding="utf-8") as f:
         f.write(series_index_html)
 
-    print(f"✓ Generated {len(series_data)} series pages + series/index.html hub successfully.")
-    print(f"🎉 Total static SEO landing pages generated: {len(books) + len(authors_data) + len(series_data) + 2}")
+    print(f"✓ Generated {len(active_series_data)} series pages + series/index.html hub successfully.")
+    print(f"🎉 Total static SEO landing pages generated: {len(books) + len(authors_data) + len(active_series_data) + 2}")
 
 
 if __name__ == "__main__":

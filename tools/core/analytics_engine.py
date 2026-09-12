@@ -234,7 +234,12 @@ class AnalyticsEngine:
             my_genres = author_genre_profiles.get(author, set())
             similar_candidates = []
             for other_author in all_authors:
-                if other_author == author or len(self.author_to_books[other_author]) < 2:
+                if (
+                    other_author == author
+                    or other_author == "অজ্ঞাত"
+                    or self.author_slugs.get(other_author) == "anonymous"
+                    or len(self.author_to_books[other_author]) < 2
+                ):
                     continue
                 other_genres = author_genre_profiles.get(other_author, set())
                 sim = jaccard_similarity(my_genres, other_genres)
@@ -336,20 +341,29 @@ class AnalyticsEngine:
             for g in b.get("genres", []):
                 total_genres[g] += 1
 
+        real_authors = [
+            a for a in authors_data.values()
+            if a.get("slug") != "anonymous" and a.get("name_bn") != "অজ্ঞাত" and a.get("name_en", "").lower() != "anonymous"
+        ]
+        active_series = [
+            s for s in sorted(series_data.values(), key=lambda x: x["total_books"], reverse=True)
+            if s.get("total_books", 0) > 0
+        ]
+
         summary = {
             "version": "1.0.0",
             "total_books": len(self.books),
-            "total_authors": len(authors_data),
-            "total_series": len(series_data),
+            "total_authors": len(real_authors),
+            "total_series": len(active_series),
             "format_breakdown": dict(total_formats),
             "top_genres": dict(total_genres.most_common(20)),
             "top_authors": [
                 {"name_bn": a["name_bn"], "name_en": a["name_en"], "slug": a["slug"], "count": a["total_books"]}
-                for a in sorted(authors_data.values(), key=lambda x: x["total_books"], reverse=True)[:30]
+                for a in sorted(real_authors, key=lambda x: x["total_books"], reverse=True)[:30]
             ],
             "series_list": [
                 {"id": s["id"], "slug": s["slug"], "name_bn": s["name_bn"], "name_en": s["name_en"], "count": s["total_books"]}
-                for s in sorted(series_data.values(), key=lambda x: x["total_books"], reverse=True)
+                for s in active_series
             ]
         }
 
