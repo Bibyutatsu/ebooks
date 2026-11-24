@@ -77,6 +77,91 @@
     const particles = new THREE.Points(pGeo, pMat);
     scene.add(particles);
 
+    /* -- ShaderGradient Plane (Fluid wavy grain gradient) -- */
+    const gradVertexShader = `
+      varying vec2 vUv;
+      varying float vElevation;
+      uniform float uTime;
+      void main() {
+        vUv = uv;
+        vec3 pos = position;
+        float w1 = sin(pos.x * 0.006 + uTime * 0.35) * cos(pos.y * 0.006 + uTime * 0.28) * 35.0;
+        float w2 = sin((pos.x + pos.y) * 0.004 + uTime * 0.45) * 20.0;
+        pos.z += w1 + w2;
+        vElevation = (w1 + w2) / 55.0;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+      }
+    `;
+
+    const gradFragmentShader = `
+      varying vec2 vUv;
+      varying float vElevation;
+      uniform float uTime;
+      uniform vec3 uColor1;
+      uniform vec3 uColor2;
+      uniform vec3 uColor3;
+      uniform vec3 uColor4;
+      uniform float uOpacity;
+
+      float grain(vec2 uv, float t) {
+        return fract(sin(dot(uv + fract(t * 0.04), vec2(12.9898, 78.233))) * 43758.5453) - 0.5;
+      }
+
+      void main() {
+        vec2 p = vUv;
+        float f1 = sin(p.x * 3.14159 + uTime * 0.25) * 0.5 + 0.5;
+        float f2 = cos(p.y * 3.14159 + uTime * 0.2 + vElevation * 0.8) * 0.5 + 0.5;
+        float f3 = sin((p.x + p.y + vElevation) * 2.0 + uTime * 0.3) * 0.5 + 0.5;
+
+        vec3 colA = mix(uColor1, uColor2, f1);
+        vec3 colB = mix(uColor3, uColor4, f2);
+        vec3 finalCol = mix(colA, colB, f3);
+
+        float g = grain(gl_FragCoord.xy, uTime) * 0.055;
+        finalCol += vec3(g);
+
+        gl_FragColor = vec4(finalCol, uOpacity);
+      }
+    `;
+
+    const THEME_GRADIENTS = {
+      dark:      { c1: 0x050518, c2: 0x160830, c3: 0x01172e, c4: 0x1f0a3d, op: 0.55 },
+      light:     { c1: 0xeeeef8, c2: 0xd8e4fc, c3: 0xebe0f8, c4: 0xfcfcff, op: 0.65 },
+      batman:    { c1: 0x000000, c2: 0x1f1c00, c3: 0x120000, c4: 0x2e2700, op: 0.70 },
+      cyberpunk: { c1: 0x200018, c2: 0x00201e, c3: 0x320038, c4: 0x00332e, op: 0.62 },
+      ocean:     { c1: 0x010c16, c2: 0x002024, c3: 0x01162a, c4: 0x00322b, op: 0.60 },
+    };
+
+    const targetGrad = {
+      c1: new THREE.Color(THEME_GRADIENTS.dark.c1),
+      c2: new THREE.Color(THEME_GRADIENTS.dark.c2),
+      c3: new THREE.Color(THEME_GRADIENTS.dark.c3),
+      c4: new THREE.Color(THEME_GRADIENTS.dark.c4),
+      op: THEME_GRADIENTS.dark.op
+    };
+
+    const gradUniforms = {
+      uTime: { value: 0 },
+      uColor1: { value: new THREE.Color(THEME_GRADIENTS.dark.c1) },
+      uColor2: { value: new THREE.Color(THEME_GRADIENTS.dark.c2) },
+      uColor3: { value: new THREE.Color(THEME_GRADIENTS.dark.c3) },
+      uColor4: { value: new THREE.Color(THEME_GRADIENTS.dark.c4) },
+      uOpacity: { value: THEME_GRADIENTS.dark.op }
+    };
+
+    const gradMat = new THREE.ShaderMaterial({
+      vertexShader: gradVertexShader,
+      fragmentShader: gradFragmentShader,
+      uniforms: gradUniforms,
+      transparent: true,
+      depthWrite: false
+    });
+
+    const gradGeo = new THREE.PlaneGeometry(1800, 1300, 40, 40);
+    const gradMesh = new THREE.Mesh(gradGeo, gradMat);
+    gradMesh.position.set(0, 0, -220);
+    scene.add(gradMesh);
+
     const THEME_COLORS = {
       dark:      { n1: 0x00ccff, n2: 0x8855ff, p: 0xffffff, ptex: 'bokeh' },
       light:     { n1: 0x0055cc, n2: 0x7722cc, p: 0x0055cc, ptex: 'bokeh' },
@@ -97,6 +182,12 @@
           pMat.needsUpdate = true;
         });
       }
+      const tg = THEME_GRADIENTS[theme] || THEME_GRADIENTS.dark;
+      targetGrad.c1.setHex(tg.c1);
+      targetGrad.c2.setHex(tg.c2);
+      targetGrad.c3.setHex(tg.c3);
+      targetGrad.c4.setHex(tg.c4);
+      targetGrad.op = tg.op;
     };
 
     const cA = new THREE.Color(0x00ccff), cB = new THREE.Color(0x8855ff);
@@ -183,12 +274,427 @@
       particles.rotation.y = -mx * 0.0002;
       particles.rotation.x = -my * 0.0002;
 
+      // Update ShaderGradient plane
+      gradUniforms.uTime.value += 0.016;
+      gradUniforms.uColor1.value.lerp(targetGrad.c1, 0.04);
+      gradUniforms.uColor2.value.lerp(targetGrad.c2, 0.04);
+      gradUniforms.uColor3.value.lerp(targetGrad.c3, 0.04);
+      gradUniforms.uColor4.value.lerp(targetGrad.c4, 0.04);
+      gradUniforms.uOpacity.value += (targetGrad.op - gradUniforms.uOpacity.value) * 0.04;
+
       if (frame % 8 === 0) updateLines();
       if (!isScrolling) {
         renderer.render(scene, camera);
       }
     }
     requestAnimationFrame(animate);
+  })();
+
+  /* --------------------------------------------------------------------------
+     PRETEXT: ZERO-REFLOW ARITHMETIC TEXT LAYOUT ENGINE
+     -------------------------------------------------------------------------- */
+  const Pretext = (function () {
+    const cache = new Map();
+    let ctx = null;
+
+    function getContext(font) {
+      if (!ctx) {
+        const c = document.createElement('canvas');
+        ctx = c.getContext('2d');
+      }
+      ctx.font = font;
+      return ctx;
+    }
+
+    function prepare(text, font) {
+      const key = font + '::' + text;
+      if (cache.has(key)) return cache.get(key);
+
+      const c = getContext(font);
+      const words = (text || '').split(/\s+/);
+      const wordWidths = new Float32Array(words.length);
+      const spaceWidth = c.measureText(' ').width;
+
+      for (let i = 0; i < words.length; i++) {
+        wordWidths[i] = c.measureText(words[i]).width;
+      }
+
+      const prep = { text, font, words, wordWidths, spaceWidth };
+      cache.set(key, prep);
+      return prep;
+    }
+
+    function layout(prep, containerWidth, lineHeight) {
+      if (!prep || containerWidth <= 0) return { height: 0, lineCount: 0, lines: [] };
+      const { words, wordWidths, spaceWidth } = prep;
+      let currentLineWidth = 0;
+      let lineCount = 1;
+      let currentLine = [];
+      const lines = [];
+
+      for (let i = 0; i < wordWidths.length; i++) {
+        const w = wordWidths[i];
+        if (currentLineWidth + w <= containerWidth || currentLineWidth === 0) {
+          currentLine.push(words[i]);
+          currentLineWidth += w + spaceWidth;
+        } else {
+          lines.push(currentLine.join(' '));
+          currentLine = [words[i]];
+          currentLineWidth = w + spaceWidth;
+          lineCount++;
+        }
+      }
+      if (currentLine.length > 0) lines.push(currentLine.join(' '));
+
+      const height = Math.round(lineCount * lineHeight);
+      return { height, lineCount, lines };
+    }
+
+    function balance(prep, containerWidth, lineHeight) {
+      if (!prep) return containerWidth;
+      const natural = layout(prep, containerWidth, lineHeight);
+      if (natural.lineCount <= 1) return containerWidth;
+
+      let low = containerWidth * 0.72;
+      let high = containerWidth;
+      let bestWidth = containerWidth;
+      const targetLines = natural.lineCount;
+
+      for (let iter = 0; iter < 8; iter++) {
+        const mid = (low + high) / 2;
+        const res = layout(prep, mid, lineHeight);
+        if (res.lineCount === targetLines) {
+          bestWidth = mid;
+          high = mid;
+        } else {
+          low = mid;
+        }
+      }
+      return Math.round(bestWidth);
+    }
+
+    function fitText(text, containerWidth, baseSize, minSize) {
+      if (!text || containerWidth <= 0) return baseSize;
+      const prep = prepare(text, `${baseSize}px "Fira Code", monospace`);
+      let totalW = 0;
+      for (let i = 0; i < prep.wordWidths.length; i++) totalW += prep.wordWidths[i];
+      totalW += (prep.words.length - 1) * prep.spaceWidth;
+
+      if (totalW <= containerWidth) return baseSize;
+      const scale = containerWidth / totalW;
+      return Math.max(minSize, Math.round(baseSize * scale * 10) / 10);
+    }
+
+    function shapeWrap(prep, containerWidth, lineHeight, obstacle) {
+      if (!prep || containerWidth <= 0) return { height: 0, lines: [] };
+      const { words, wordWidths, spaceWidth } = prep;
+      let wordIdx = 0;
+      const lines = [];
+      let y = 0;
+
+      while (wordIdx < words.length) {
+        let availableWidth = containerWidth;
+        let leftOffset = 0;
+        if (obstacle && y >= obstacle.top && y <= obstacle.top + obstacle.height) {
+          const relY = (y - obstacle.top) / obstacle.height;
+          const exclusionWidth = obstacle.width * Math.sin(relY * Math.PI);
+          if (obstacle.side === 'left') {
+            leftOffset = exclusionWidth;
+            availableWidth = Math.max(120, containerWidth - exclusionWidth);
+          } else {
+            availableWidth = Math.max(120, containerWidth - exclusionWidth);
+          }
+        }
+
+        let lineWidth = 0;
+        const lineWords = [];
+        while (wordIdx < words.length) {
+          const wWidth = wordWidths[wordIdx];
+          if (lineWidth + wWidth <= availableWidth || lineWords.length === 0) {
+            lineWords.push(words[wordIdx]);
+            lineWidth += wWidth + spaceWidth;
+            wordIdx++;
+          } else {
+            break;
+          }
+        }
+        lines.push({ text: lineWords.join(' '), leftOffset, width: lineWidth });
+        y += lineHeight;
+      }
+
+      return { height: lines.length * lineHeight, lines };
+    }
+
+    return { prepare, layout, balance, fitText, shapeWrap };
+  })();
+  window.Pretext = Pretext;
+
+  /* --------------------------------------------------------------------------
+     CANVAS UI: TACTILE GLASS/PAPER SHATTER & THEME TRANSITIONS (Zero-Idle CPU)
+     -------------------------------------------------------------------------- */
+  (function initCanvasUI() {
+    const canvas = document.getElementById('canvas-ui-layer');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let particles = [];
+    let shockwaves = [];
+    let activeThemeFX = null;
+    let isRunning = false;
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    function startLoop() {
+      if (!isRunning) {
+        isRunning = true;
+        requestAnimationFrame(renderLoop);
+      }
+    }
+
+    window.triggerCanvasUIButtonShatter = function (x, y) {
+      if (x === undefined || y === undefined) return;
+      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const count = 16;
+      const colors = {
+        dark: ['rgba(0,204,255,0.8)', 'rgba(136,85,255,0.8)', 'rgba(255,255,255,0.95)'],
+        light: ['rgba(0,85,204,0.7)', 'rgba(119,34,204,0.7)', 'rgba(255,255,255,0.85)'],
+        batman: ['rgba(255,233,25,0.95)', 'rgba(255,68,68,0.8)', 'rgba(255,255,255,0.95)'],
+        cyberpunk: ['rgba(255,0,128,0.9)', 'rgba(0,255,204,0.9)', 'rgba(255,255,255,0.95)'],
+        ocean: ['rgba(0,229,176,0.9)', 'rgba(0,153,255,0.9)', 'rgba(255,255,255,0.9)']
+      }[theme] || ['rgba(0,204,255,0.8)', 'rgba(255,255,255,0.95)'];
+
+      for (let i = 0; i < count; i++) {
+        const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.45;
+        const speed = Math.random() * 5.5 + 3.5;
+        particles.push({
+          x, y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          rot: Math.random() * Math.PI * 2,
+          vrot: (Math.random() - 0.5) * 0.28,
+          size: Math.random() * 11 + 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          life: 1.0,
+          decay: Math.random() * 0.035 + 0.025
+        });
+      }
+
+      shockwaves.push({
+        x, y,
+        radius: 6,
+        maxRadius: 85,
+        opacity: 0.8,
+        color: colors[0],
+        strokeWidth: 2.2
+      });
+
+      startLoop();
+    };
+
+    window.triggerCanvasUIThemeEffect = function (theme, x, y) {
+      if (x === undefined) x = window.innerWidth / 2;
+      if (y === undefined) y = 50;
+
+      activeThemeFX = {
+        theme: theme,
+        time: 0,
+        maxTime: 26,
+        x: x,
+        y: y
+      };
+
+      const particleCount = theme === 'batman' ? 30 : 20;
+      for (let i = 0; i < particleCount; i++) {
+        const angle = (Math.PI * 2 * i) / particleCount + (Math.random() - 0.5) * 0.4;
+        const speed = Math.random() * 8 + 4;
+        let color = '#00ccff';
+        if (theme === 'batman') color = i % 2 === 0 ? 'rgba(255,233,25,0.95)' : 'rgba(30,30,30,0.9)';
+        else if (theme === 'ocean') color = i % 2 === 0 ? 'rgba(0,229,176,0.9)' : 'rgba(0,153,255,0.9)';
+        else if (theme === 'cyberpunk') color = i % 2 === 0 ? 'rgba(255,0,128,0.9)' : 'rgba(0,255,204,0.9)';
+        else if (theme === 'light') color = i % 2 === 0 ? 'rgba(0,85,204,0.85)' : 'rgba(119,34,204,0.85)';
+        else color = i % 2 === 0 ? 'rgba(0,204,255,0.9)' : 'rgba(136,85,255,0.9)';
+
+        particles.push({
+          x, y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          rot: Math.random() * Math.PI * 2,
+          vrot: (Math.random() - 0.5) * 0.35,
+          size: Math.random() * 14 + 6,
+          color: color,
+          life: 1.0,
+          decay: Math.random() * 0.035 + 0.025
+        });
+      }
+
+      startLoop();
+    };
+
+    // Global tactile click delegator
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('.download-btn, .modal-dl-card, .btn-primary, .side-tag, .side-fmt-btn, .theme-icon-btn, .header-clear-btn');
+      if (btn && !btn.classList.contains('theme-opt')) {
+        window.triggerCanvasUIButtonShatter(e.clientX, e.clientY);
+      }
+    });
+
+    function renderLoop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Shockwaves
+      for (let i = shockwaves.length - 1; i >= 0; i--) {
+        const sw = shockwaves[i];
+        if (sw.radius > 0) {
+          ctx.save();
+          if (sw.dashed) ctx.setLineDash([6, 5]);
+          ctx.beginPath();
+          ctx.arc(sw.x, sw.y, sw.radius, 0, Math.PI * 2);
+          ctx.strokeStyle = sw.color;
+          ctx.globalAlpha = sw.opacity;
+          ctx.lineWidth = sw.strokeWidth;
+          ctx.stroke();
+          ctx.restore();
+        }
+        sw.radius += 4.8;
+        sw.opacity *= 0.94;
+        if (sw.radius >= sw.maxRadius || sw.opacity <= 0.02) {
+          shockwaves.splice(i, 1);
+        }
+      }
+
+      // Shards
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= 0.96;
+        p.vy *= 0.96;
+        p.rot += p.vrot;
+        p.life -= p.decay;
+
+        if (p.life <= 0) {
+          particles.splice(i, 1);
+          continue;
+        }
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.globalAlpha = p.life;
+
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.moveTo(-p.size * 0.5, p.size * 0.5);
+        ctx.lineTo(p.size * 0.8, -p.size * 0.2);
+        ctx.lineTo(p.size * 0.2, -p.size * 0.7);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.strokeStyle = 'rgba(255,255,255,0.65)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // Fullscreen Theme Transitions
+      if (activeThemeFX) {
+        activeThemeFX.time++;
+        const progress = activeThemeFX.time / activeThemeFX.maxTime;
+        const alpha = 1 - progress;
+        const t = activeThemeFX.theme;
+        const ox = activeThemeFX.x;
+        const oy = activeThemeFX.y;
+
+        ctx.save();
+        if (t === 'cyberpunk') {
+          ctx.globalAlpha = alpha * 0.75;
+          for (let s = 0; s < 10; s++) {
+            const sy = (oy + (s * 40) + activeThemeFX.time * 16) % canvas.height;
+            const sh = Math.random() * 5 + 3;
+            ctx.fillStyle = s % 2 === 0 ? 'rgba(255,0,128,0.75)' : 'rgba(0,255,204,0.75)';
+            ctx.fillRect(0, sy, canvas.width, sh);
+          }
+        } else if (t === 'batman') {
+          ctx.globalAlpha = alpha * 0.85;
+          ctx.strokeStyle = '#FFE919';
+          ctx.lineWidth = 3.5;
+          for (let j = 0; j < 5; j++) {
+            ctx.beginPath();
+            const startX = (canvas.width / 5) * j;
+            ctx.moveTo(startX, 0);
+            ctx.lineTo(startX + (Math.sin(activeThemeFX.time + j) * 80) + 120, canvas.height * 0.5);
+            ctx.lineTo(startX + (Math.cos(activeThemeFX.time + j) * 120) + 240, canvas.height);
+            ctx.stroke();
+          }
+          ctx.beginPath();
+          ctx.arc(ox, oy, activeThemeFX.time * 55, 0, Math.PI * 2);
+          ctx.strokeStyle = '#ff3333';
+          ctx.lineWidth = 4;
+          ctx.stroke();
+        } else if (t === 'ocean') {
+          ctx.globalAlpha = alpha * 0.75;
+          for (let w = 0; w < 4; w++) {
+            ctx.fillStyle = w % 2 === 0 ? 'rgba(0,229,176,0.22)' : 'rgba(0,153,255,0.22)';
+            ctx.beginPath();
+            const waveBaseY = ((activeThemeFX.time * 30 + w * (canvas.height / 3.5)) % (canvas.height + 150)) - 50;
+            ctx.moveTo(0, waveBaseY);
+            for (let wx = 0; wx <= canvas.width; wx += 40) {
+              const wy = waveBaseY + Math.sin(wx * 0.012 + activeThemeFX.time * 0.3 + w) * 28;
+              ctx.lineTo(wx, wy);
+            }
+            ctx.lineTo(canvas.width, canvas.height);
+            ctx.lineTo(0, canvas.height);
+            ctx.closePath();
+            ctx.fill();
+          }
+          ctx.strokeStyle = 'rgba(0,229,176,0.85)';
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.arc(ox, oy, activeThemeFX.time * 48, 0, Math.PI * 2);
+          ctx.stroke();
+        } else if (t === 'light') {
+          ctx.globalAlpha = alpha * 0.65;
+          const flare = ctx.createRadialGradient(ox, oy, 10, ox, oy, activeThemeFX.time * 65);
+          flare.addColorStop(0, 'rgba(255,255,255,0.85)');
+          flare.addColorStop(0.4, 'rgba(180,215,255,0.45)');
+          flare.addColorStop(1, 'rgba(255,255,255,0)');
+          ctx.fillStyle = flare;
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          ctx.strokeStyle = 'rgba(0,85,204,0.7)';
+          ctx.lineWidth = 3.5;
+          ctx.beginPath();
+          ctx.arc(ox, oy, activeThemeFX.time * 50, 0, Math.PI * 2);
+          ctx.stroke();
+        } else {
+          // Dark
+          ctx.globalAlpha = alpha * 0.65;
+          ctx.strokeStyle = 'rgba(0,204,255,0.8)';
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.arc(ox, oy, activeThemeFX.time * 50, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        if (activeThemeFX.time >= activeThemeFX.maxTime) {
+          activeThemeFX = null;
+        }
+      }
+
+      if (particles.length > 0 || shockwaves.length > 0 || activeThemeFX !== null) {
+        requestAnimationFrame(renderLoop);
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        isRunning = false;
+      }
+    }
   })();
 
   /* --------------------------------------------------------------------------
@@ -251,36 +757,63 @@
   })();
 
   /* --------------------------------------------------------------------------
-     3. 3D CARD TILT (RAF Throttled)
+     3. HOLOGRAPHIC FOIL & 3D TILT (Pokemon Cards CSS style)
      -------------------------------------------------------------------------- */
-  window.applyTilt = function(selector) {
-    if (window.matchMedia('(hover: none)').matches) return;
-    document.querySelectorAll(selector).forEach(card => {
-      if (card.dataset.tiltInit) return;
-      card.dataset.tiltInit = 'true';
-      let tiltRaf = null;
+  function initHoloCards(targetSelector) {
+    if (window.matchMedia && window.matchMedia('(hover: none)').matches) return;
+    const selector = targetSelector || '.holo-card';
+    const cards = document.querySelectorAll(`${selector}:not([data-holo-active])`);
+    cards.forEach(card => {
+      card.setAttribute('data-holo-active', 'true');
+      let rafId = null;
 
-      card.addEventListener('mouseenter', () => card.style.transition = 'transform 0.1s linear');
-      card.addEventListener('mousemove', e => {
-        if (tiltRaf) return;
-        tiltRaf = requestAnimationFrame(() => {
-          const r = card.getBoundingClientRect();
-          const x = (e.clientX - r.left) / r.width - 0.5;
-          const y = (e.clientY - r.top) / r.height - 0.5;
-          card.style.transform = `perspective(700px) rotateX(${y * -7}deg) rotateY(${x * 7}deg) translateY(-5px)`;
-          tiltRaf = null;
+      function onMouseMove(e) {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+
+        const px = (x * 100).toFixed(1);
+        const py = (y * 100).toFixed(1);
+        const dx = x - 0.5;
+        const dy = y - 0.5;
+
+        // Subtle tilt angles (max ~10 deg)
+        const rotX = (dy * -10).toFixed(2);
+        const rotY = (dx * 10).toFixed(2);
+        const angle = (Math.atan2(dy, dx) * (180 / Math.PI) + 90).toFixed(1);
+        const foilX = (50 + dx * 60).toFixed(1);
+        const foilY = (50 + dy * 60).toFixed(1);
+
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          card.style.setProperty('--pointer-x', `${px}%`);
+          card.style.setProperty('--pointer-y', `${py}%`);
+          card.style.setProperty('--foil-x', `${foilX}%`);
+          card.style.setProperty('--foil-y', `${foilY}%`);
+          card.style.setProperty('--angle', `${angle}deg`);
+          card.style.setProperty('--holo-opacity', '1');
+          card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-6px) translateZ(8px)`;
         });
-      });
-      card.addEventListener('mouseleave', () => {
-        if (tiltRaf) {
-          cancelAnimationFrame(tiltRaf);
-          tiltRaf = null;
-        }
-        card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      }
+
+      function onMouseEnter() {
+        card.style.transition = 'transform 0.12s ease-out, border-color 0.3s ease, box-shadow 0.3s ease';
+      }
+
+      function onMouseLeave() {
+        if (rafId) cancelAnimationFrame(rafId);
+        card.style.transition = 'transform 0.65s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.38s ease, box-shadow 0.38s ease';
+        card.style.setProperty('--holo-opacity', '0');
         card.style.transform = '';
-      });
+      }
+
+      card.addEventListener('mouseenter', onMouseEnter);
+      card.addEventListener('mousemove', onMouseMove);
+      card.addEventListener('mouseleave', onMouseLeave);
     });
-  };
+  }
+  window.initHoloCards = initHoloCards;
+  window.applyTilt = initHoloCards;
 
   /* --------------------------------------------------------------------------
      4. 5-THEME ENGINE
@@ -305,7 +838,12 @@
     pop.addEventListener('click', e => e.stopPropagation());
 
     opts.forEach(opt => {
-      opt.addEventListener('click', () => {
+      opt.addEventListener('click', (e) => {
+        const ox = e.clientX || window.innerWidth / 2;
+        const oy = e.clientY || 50;
+        if (typeof window.triggerCanvasUIThemeEffect === 'function') {
+          window.triggerCanvasUIThemeEffect(opt.dataset.theme, ox, oy);
+        }
         applyTheme(opt.dataset.theme, true);
         pop.classList.remove('open');
       });
@@ -1114,8 +1652,22 @@
 
   function createBookCard(book) {
     const card = document.createElement('article');
-    card.className = 'book-card';
+    const isSeries = Boolean(book.series && book.series.id);
+    card.className = `book-card holo-card${isSeries ? ' holo-gold' : ''}`;
     card.dataset.id = book.id;
+
+    let titleStyle = '';
+    let titleEnStyle = '';
+    if (typeof Pretext !== 'undefined') {
+      const prepTitle = Pretext.prepare(book.title.trim(), '700 15px "Hind Siliguri", "Space Grotesk", sans-serif');
+      const balancedTitleW = Pretext.balance(prepTitle, 220, 20);
+      if (balancedTitleW > 0) titleStyle = ` style="max-width:${balancedTitleW}px;"`;
+
+      if (book.title_en) {
+        const fitEnSize = Pretext.fitText(book.title_en.trim(), 200, 11, 9);
+        titleEnStyle = ` style="font-size:${fitEnSize}px;"`;
+      }
+    }
 
     const seriesHtml = (book.series && book.series.id)
       ? `<a href="series/${encodeURIComponent(book.series.id)}.html" target="_blank" class="series-tag" title="Open ${escapeHtml(book.series.name_en || '')} Series Universe" onclick="event.stopPropagation();">${escapeHtml(book.series.name_bn)}</a>`
@@ -1155,8 +1707,8 @@
         </div>
       </div>
       <div class="book-info">
-        <h3 class="book-title" title="${escapeHtml(book.title)}">${escapeHtml(book.title)}</h3>
-        <span class="book-title-en" title="${escapeHtml(book.title_en)}">${escapeHtml(book.title_en)}</span>
+        <h3 class="book-title" title="${escapeHtml(book.title)}"${titleStyle}>${escapeHtml(book.title)}</h3>
+        <span class="book-title-en" title="${escapeHtml(book.title_en)}"${titleEnStyle}>${escapeHtml(book.title_en)}</span>
         <div class="book-author" title="${escapeHtml(book.author)} (${escapeHtml(book.author_en)})">
           ${escapeHtml(book.author)}
         </div>
@@ -1332,6 +1884,19 @@
     state.activeBookId = book.id;
     updateUrlParams();
     document.title = `${book.title} (${book.author}) | Bibyutatsu BookStore`;
+
+    // Tactile Canvas UI Shatter & Spark Dust on book open
+    if (typeof window.triggerCanvasUIButtonShatter === 'function') {
+      window.triggerCanvasUIButtonShatter(window.innerWidth / 2, window.innerHeight / 2);
+    }
+    const modalCover = elements.modalBody.querySelector('.modal-cover-wrap');
+    if (modalCover) {
+      modalCover.classList.add('holo-card');
+      if (book.series && book.series.id) modalCover.classList.add('holo-gold');
+    }
+    if (typeof window.initHoloCards === 'function') {
+      window.initHoloCards();
+    }
 
     if (window.applyMagnetic) {
       window.applyMagnetic('.modal-dl-card, .modal-close');

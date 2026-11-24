@@ -104,7 +104,7 @@
   <!-- Libraries: Three.js for Ambient Particle Canvas -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3.2">
 </head>
 <body>
 
@@ -117,6 +117,9 @@
 
   <!-- Ambient Particle Canvas -->
   <canvas id="hero-canvas"></canvas>
+
+  <!-- Tactile Canvas UI Layer (Zero-Idle CPU Shaders & Shatter Effects) -->
+  <canvas id="canvas-ui-layer"></canvas>
 
   <!-- Global Sticky Bookstore Header -->
   <header class="store-header" id="nav">
@@ -428,6 +431,6 @@
   </footer>
 
   <script src="assets/vendor/minisearch.min.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=3.2"></script>
 </body>
 </html>

@@ -257,6 +257,17 @@ body.c-click #cursor-ring { width: 22px; height: 22px; opacity: 1; }
   transition: opacity 0.6s;
 }
 
+/* Tactile Canvas UI Layer (Zero-Idle CPU Shaders & Shatter Effects) */
+#canvas-ui-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9998;
+  pointer-events: none;
+}
+
 /* === GLOBAL STICKY HEADER === */
 .store-header {
   position: fixed;
@@ -937,6 +948,158 @@ body.c-click #cursor-ring { width: 22px; height: 22px; opacity: 1; }
   border-color: var(--border-hover);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), var(--glow);
   transform: translateY(-6px);
+}
+
+/* ── Holographic Foil & 3D Tilt Glare (Pokemon Cards CSS style) ── */
+.holo-card {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --foil-x: 50%;
+  --foil-y: 50%;
+  --angle: 135deg;
+  --holo-opacity: 0;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  perspective: 1000px;
+}
+
+/* Holographic Prismatic Rainbow Sheen */
+.holo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: var(--holo-opacity, 0);
+  transition: opacity 0.35s ease;
+  background-image: 
+    linear-gradient(
+      var(--angle, 135deg),
+      rgba(255, 0, 128, 0.38) 0%,
+      rgba(255, 136, 0, 0.38) 15%,
+      rgba(255, 230, 0, 0.38) 30%,
+      rgba(0, 230, 118, 0.38) 45%,
+      rgba(0, 180, 255, 0.38) 60%,
+      rgba(157, 0, 255, 0.38) 75%,
+      rgba(255, 0, 128, 0.38) 90%,
+      rgba(255, 230, 0, 0.38) 100%
+    ),
+    repeating-linear-gradient(
+      calc(var(--angle, 135deg) + 45deg),
+      rgba(255, 255, 255, 0.08) 0px,
+      rgba(255, 255, 255, 0.08) 2px,
+      transparent 2px,
+      transparent 7px
+    );
+  background-size: 220% 220%, 100% 100%;
+  background-position: var(--foil-x, 50%) var(--foil-y, 50%), 0 0;
+  mix-blend-mode: color-dodge;
+}
+
+/* Dynamic Specular Glare */
+.holo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: var(--holo-opacity, 0);
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    farthest-corner circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.22) 22%,
+    rgba(255, 255, 255, 0.05) 45%,
+    transparent 68%
+  );
+  mix-blend-mode: overlay;
+}
+
+/* Theme overrides */
+[data-theme="light"] .holo-card::before {
+  mix-blend-mode: overlay;
+  opacity: calc(var(--holo-opacity, 0) * 0.7);
+}
+
+[data-theme="batman"] .holo-card::before {
+  background-image: 
+    linear-gradient(
+      var(--angle, 135deg),
+      rgba(255, 233, 25, 0.45) 0%,
+      rgba(255, 60, 0, 0.35) 25%,
+      rgba(255, 233, 25, 0.45) 50%,
+      rgba(255, 60, 0, 0.35) 75%,
+      rgba(255, 233, 25, 0.45) 100%
+    ),
+    repeating-linear-gradient(
+      calc(var(--angle, 135deg) + 45deg),
+      rgba(255, 233, 25, 0.12) 0px,
+      rgba(255, 233, 25, 0.12) 2px,
+      transparent 2px,
+      transparent 7px
+    );
+}
+
+[data-theme="ocean"] .holo-card::before {
+  background-image: 
+    linear-gradient(
+      var(--angle, 135deg),
+      rgba(0, 229, 176, 0.45) 0%,
+      rgba(0, 153, 255, 0.4) 30%,
+      rgba(0, 229, 176, 0.45) 60%,
+      rgba(0, 153, 255, 0.4) 100%
+    ),
+    repeating-linear-gradient(
+      calc(var(--angle, 135deg) + 45deg),
+      rgba(0, 229, 176, 0.1) 0px,
+      rgba(0, 229, 176, 0.1) 2px,
+      transparent 7px
+    );
+}
+
+/* Gold Foil Variant for Iconic Bengali Series (Feluda, Byomkesh, Shonku) */
+.holo-card.holo-gold::before {
+  background-image: 
+    linear-gradient(
+      var(--angle, 135deg),
+      rgba(255, 215, 0, 0.48) 0%,
+      rgba(255, 170, 0, 0.42) 20%,
+      rgba(255, 235, 59, 0.5) 40%,
+      rgba(255, 152, 0, 0.45) 60%,
+      rgba(255, 215, 0, 0.48) 80%,
+      rgba(255, 193, 7, 0.5) 100%
+    ),
+    repeating-linear-gradient(
+      calc(var(--angle, 135deg) + 45deg),
+      rgba(255, 215, 0, 0.12) 0px,
+      rgba(255, 215, 0, 0.12) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+}
+
+/* Ensure card interactive elements stay clickable */
+.holo-card .card-actions,
+.holo-card .download-btn,
+.holo-card .details-btn,
+.holo-card .series-tag,
+.holo-card .badge-fmt,
+.holo-card a,
+.holo-card button {
+  position: relative;
+  z-index: 12;
+}
+
+@media (hover: none) {
+  .holo-card {
+    transform: none !important;
+  }
+  .holo-card::before, .holo-card::after {
+    display: none !important;
+  }
 }
 
 /* Realistic 3D Paperback Book Cover Wrap */
