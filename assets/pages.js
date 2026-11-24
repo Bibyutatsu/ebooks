@@ -358,12 +358,36 @@
     });
   }
 
+  /* --------------------------------------------------------------------------
+     7. FLOATING BACK-TO-TOP BUTTON
+     -------------------------------------------------------------------------- */
+  function initBackToTop() {
+    const bttBtn = document.getElementById('back-to-top-btn');
+    if (!bttBtn) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 350) {
+        bttBtn.classList.add('visible');
+      } else {
+        bttBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    bttBtn.addEventListener('click', (e) => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (typeof window.triggerCanvasUIButtonShatter === 'function') {
+        window.triggerCanvasUIButtonShatter(e.clientX, e.clientY);
+      }
+    });
+  }
+
   // DOM Ready Initializer
   function initAll() {
     initHoloCards();
     balanceHeadings();
     initSeriesProgress();
     initAuthorSearch();
+    initBackToTop();
   }
 
   if (document.readyState === 'loading') {

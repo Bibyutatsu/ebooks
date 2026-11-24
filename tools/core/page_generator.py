@@ -43,6 +43,40 @@ def get_format_color(fmt: str) -> str:
     return fmt_colors.get(fmt.lower(), "#828cc8")
 
 
+def render_subpage_footer(root_rel: str = "../") -> str:
+    """Generates the unified, rich bookstore footer with quick navigation links."""
+    return f"""
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-title">📚 Bibyutatsu BookStore</span>
+        <p>Open-access digital library for Bengali literature. High-speed direct downloads in Kindle KFX, EPUB, MOBI and PDF.</p>
+        <div class="footer-sublinks">
+          <a href="{root_rel}">🏠 Full Library (2,935 Books)</a>
+          <span class="sep">·</span>
+          <a href="{root_rel}series/">⚡ 15 Series Universes</a>
+          <span class="sep">·</span>
+          <a href="{root_rel}author/">✍️ 711 Authors</a>
+          <span class="sep">·</span>
+          <a href="{root_rel}sitemap.xml">🗺️ Sitemap XML</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Bibyutatsu/ebooks" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://bibyutatsu.github.io" target="_blank" rel="noopener">Author Portfolio ↗</a>
+        <a href="https://bibyutatsu.github.io/Blogs/" target="_blank" rel="noopener">Dev Blog ↗</a>
+      </div>
+      <div class="footer-copy">
+        © 2026 Bibhash Chandra Mitra. All works preserved for open educational & cultural access.
+      </div>
+    </div>
+  </footer>
+  <button id="back-to-top-btn" class="back-to-top-btn" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+"""
+
+
 SHARED_CSS = """
 :root {
   --bg: #06060f;
@@ -651,16 +685,7 @@ def render_book_page(book: dict, related_books: list[dict], author_slug: str = "
     ''' if related_html else ''}
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-links">
-        <a href="{root_rel}">Home</a>
-        <a href="{root_rel}author/{author_slug}.html">{author_bn} Books</a>
-        <a href="https://github.com/Bibyutatsu/ebooks" target="_blank" rel="noopener">GitHub Repository</a>
-      </div>
-      <div>Bibyutatsu BookStore — Dedicated to preserving and sharing Bengali digital literature.</div>
-    </div>
-  </footer>
+  {render_subpage_footer(root_rel)}
 </body>
 </html>
 """
@@ -836,11 +861,7 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div>Bibyutatsu BookStore — Free open-access Bengali literature digital library.</div>
-    </div>
-  </footer>
+  {render_subpage_footer(root_rel)}
 </body>
 </html>
 """
@@ -989,11 +1010,7 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div>Bibyutatsu BookStore — Dedicated to preserving Bengali literature.</div>
-    </div>
-  </footer>
+  {render_subpage_footer(root_rel)}
 </body>
 </html>
 """
@@ -1106,11 +1123,7 @@ def render_series_index_page(series_data: dict, root_rel: str = "../") -> str:
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div>Bibyutatsu BookStore — Dedicated to preserving Bengali digital literature.</div>
-    </div>
-  </footer>
+  {render_subpage_footer(root_rel)}
 </body>
 </html>
 """
@@ -1164,6 +1177,9 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
             <span class="badge" style="font-size: 0.75rem;">{cnt}</span>
           </a>
         """)
+
+    letters = ["All", "অ", "আ", "ই", "উ", "এ", "ক", "খ", "গ", "ঘ", "চ", "ছ", "জ", "ত", "দ", "ধ", "ন", "প", "ফ", "ব", "ভ", "ম", "য", "র", "ল", "শ", "স", "হ", "A-Z"]
+    letter_pills_html = "".join([f'<button type="button" class="letter-pill{" active" if l == "All" else ""}" data-letter="{l}">{l}</button>' for l in letters])
 
     schema_collection = {
         "@context": "https://schema.org",
@@ -1230,6 +1246,9 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
         Browse our comprehensive digital library catalogued by author. Search in Bengali or English.
       </p>
       <input type="text" id="author-search-input" placeholder="Search author by Bengali or English name (e.g. 'সতজিৎ', 'Humayun', 'Tagore')..." autocomplete="off" />
+      <div class="author-letter-bar" id="letter-bar">
+        {letter_pills_html}
+      </div>
     </div>
 
     <h2 class="section-heading"><span>⭐</span> Top Authors Spotlight</h2>
@@ -1243,23 +1262,34 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div>Bibyutatsu BookStore — Dedicated to preserving Bengali digital literature.</div>
-    </div>
-  </footer>
+  {render_subpage_footer(root_rel)}
 
   <script>
     const searchInput = document.getElementById('author-search-input');
     const items = document.querySelectorAll('.author-item');
     const countDisplay = document.getElementById('visible-author-count');
+    const letterPills = document.querySelectorAll('.letter-pill');
+    let currentLetter = 'All';
 
-    searchInput.addEventListener('input', (e) => {{
-      const q = e.target.value.toLowerCase().trim();
+    function filterAuthors() {{
+      const q = (searchInput.value || '').toLowerCase().trim();
       let visible = 0;
       items.forEach(item => {{
-        const name = item.getAttribute('data-name');
-        if (!q || name.includes(q)) {{
+        const nameBn = item.getAttribute('data-name-bn') || '';
+        const nameEn = item.getAttribute('data-name-en') || '';
+        const nameFull = item.getAttribute('data-name') || '';
+
+        let matchesSearch = !q || nameFull.includes(q);
+        let matchesLetter = true;
+        if (currentLetter === 'All') {{
+          matchesLetter = true;
+        }} else if (currentLetter === 'A-Z') {{
+          matchesLetter = /^[a-z]/i.test(nameEn);
+        }} else {{
+          matchesLetter = nameBn.startsWith(currentLetter);
+        }}
+
+        if (matchesSearch && matchesLetter) {{
           item.style.display = 'flex';
           visible++;
         }} else {{
@@ -1267,6 +1297,20 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
         }}
       }});
       if (countDisplay) countDisplay.textContent = visible;
+    }}
+
+    searchInput.addEventListener('input', filterAuthors);
+
+    letterPills.forEach(pill => {{
+      pill.addEventListener('click', (e) => {{
+        letterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentLetter = pill.dataset.letter;
+        filterAuthors();
+        if (typeof window.triggerCanvasUIButtonShatter === 'function') {{
+          window.triggerCanvasUIButtonShatter(e.clientX, e.clientY);
+        }}
+      }});
     }});
   </script>
 </body>

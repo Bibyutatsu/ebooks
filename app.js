@@ -1996,6 +1996,24 @@
       }
     });
 
+    // Floating Back to Top Button
+    const bttBtn = document.getElementById('back-to-top-btn');
+    if (bttBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 350) {
+          bttBtn.classList.add('visible');
+        } else {
+          bttBtn.classList.remove('visible');
+        }
+      }, { passive: true });
+      bttBtn.addEventListener('click', (e) => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (typeof window.triggerCanvasUIButtonShatter === 'function') {
+          window.triggerCanvasUIButtonShatter(e.clientX, e.clientY);
+        }
+      });
+    }
+
     // Browser back/forward navigation sync
     window.addEventListener('popstate', () => {
       parseUrlParams();
