@@ -578,17 +578,15 @@ def render_book_page(book: dict, related_books: list[dict], author_slug: str = "
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
-  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.3">
+  <script src="{root_rel}assets/pages.js?v=3.3" defer></script>
 
   {json_ld_scripts}
   {GA_SCRIPT}
-
-  <style>
-    {SHARED_CSS}
-  </style>
 </head>
 <body>
+  <canvas id="hero-canvas"></canvas>
   <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
@@ -807,13 +805,14 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
-  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.3">
+  <script src="{root_rel}assets/pages.js?v=3.3" defer></script>
   {json_ld}
   {GA_SCRIPT}
-  <style>{SHARED_CSS}</style>
 </head>
 <body>
+  <canvas id="hero-canvas"></canvas>
   <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
@@ -964,13 +963,14 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
-  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.3">
+  <script src="{root_rel}assets/pages.js?v=3.3" defer></script>
   {json_ld}
   {GA_SCRIPT}
-  <style>{SHARED_CSS}</style>
 </head>
 <body>
+  <canvas id="hero-canvas"></canvas>
   <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
@@ -1077,17 +1077,16 @@ def render_series_index_page(series_data: dict, root_rel: str = "../") -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
-  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.3">
+  <script src="{root_rel}assets/pages.js?v=3.3" defer></script>
   <script type="application/ld+json">
   {json.dumps(schema_collection, ensure_ascii=False, indent=2)}
   </script>
   {GA_SCRIPT}
-  <style>
-    {SHARED_CSS}
-  </style>
 </head>
 <body>
+  <canvas id="hero-canvas"></canvas>
   <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
@@ -1206,17 +1205,16 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
-  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.3">
+  <script src="{root_rel}assets/pages.js?v=3.3" defer></script>
   <script type="application/ld+json">
   {json.dumps(schema_collection, ensure_ascii=False, indent=2)}
   </script>
   {GA_SCRIPT}
-  <style>
-    {SHARED_CSS}
-  </style>
 </head>
 <body>
+  <canvas id="hero-canvas"></canvas>
   <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">

@@ -7,6 +7,7 @@
 :root, [data-theme="dark"] {
   --bg: #06060f;
   --surface: #0d0d1e;
+  --surface-glass: rgba(13, 13, 30, 0.75);
   --surface-2: #131326;
   --surface-hover: #1c1c36;
   --accent: #00ccff;
@@ -29,6 +30,7 @@
 [data-theme="light"] {
   --bg: #f5f6fa;
   --surface: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.82);
   --surface-2: #edeff6;
   --surface-hover: #e3e6f2;
   --accent: #0055cc;
@@ -49,6 +51,7 @@
 [data-theme="batman"] {
   --bg: #000000;
   --surface: #0a0a0a;
+  --surface-glass: rgba(10, 10, 10, 0.85);
   --surface-2: #141414;
   --surface-hover: #222222;
   --accent: #FFE919;
@@ -69,6 +72,7 @@
 [data-theme="cyberpunk"] {
   --bg: #06000e;
   --surface: #0f0020;
+  --surface-glass: rgba(15, 0, 32, 0.78);
   --surface-2: #180034;
   --surface-hover: #260050;
   --accent: #ff0080;
@@ -89,6 +93,7 @@
 [data-theme="ocean"] {
   --bg: #010d1a;
   --surface: #071a2e;
+  --surface-glass: rgba(7, 26, 46, 0.76);
   --surface-2: #0c2440;
   --surface-hover: #123258;
   --accent: #00e5b0;
@@ -110,18 +115,70 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Inter', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  position: relative;
 }
+
+[data-theme="dark"] body {
+  background-image: 
+    radial-gradient(ellipse 70% 50% at 15% -5%, rgba(0, 204, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 65% 50% at 85% 105%, rgba(138, 43, 226, 0.12) 0%, transparent 60%),
+    radial-gradient(circle 500px at 50% 35%, rgba(13, 13, 30, 0.75) 0%, transparent 80%);
+}
+
+[data-theme="light"] body {
+  background-image: 
+    radial-gradient(ellipse 75% 50% at 20% -5%, rgba(0, 85, 204, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 80% 105%, rgba(119, 34, 204, 0.07) 0%, transparent 60%);
+}
+
+[data-theme="batman"] body {
+  background-image: 
+    radial-gradient(ellipse 80% 40% at 50% -5%, rgba(255, 233, 25, 0.15) 0%, transparent 60%),
+    radial-gradient(circle 600px at 85% 90%, rgba(255, 51, 51, 0.08) 0%, transparent 60%);
+}
+
+[data-theme="cyberpunk"] body {
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 15% -10%, rgba(255, 0, 128, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 75% 50% at 85% 105%, rgba(0, 255, 204, 0.14) 0%, transparent 60%),
+    radial-gradient(circle 500px at 50% 50%, rgba(30, 0, 60, 0.5) 0%, transparent 75%);
+}
+
+[data-theme="ocean"] body {
+  background-image: 
+    radial-gradient(ellipse 85% 55% at 20% -10%, rgba(0, 229, 176, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 80% 105%, rgba(0, 153, 255, 0.13) 0%, transparent 60%);
+}
+
+.site-header, main, .site-footer {
+  position: relative;
+  z-index: 10;
+}
+
 a { color: var(--accent); text-decoration: none; transition: 0.2s ease; }
 a:hover { color: #5ce1e6; }
 .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+
+/* === AMBIENT THREE.JS CANVAS === */
+#hero-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
 
 /* === CANVAS UI LAYER === */
 #canvas-ui-layer {
@@ -342,7 +399,9 @@ a:hover { color: #5ce1e6; }
 }
 
 .cover-wrapper {
-  background: var(--surface);
+  background: var(--surface-glass, var(--surface));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px;
@@ -416,7 +475,9 @@ a:hover { color: #5ce1e6; }
 
 /* Download Box */
 .download-box {
-  background: var(--surface);
+  background: var(--surface-glass, var(--surface));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px;
@@ -532,7 +593,9 @@ a:hover { color: #5ce1e6; }
 
 /* === SERIES READING ORDER & TIMELINE === */
 .series-hero-wrap {
-  background: var(--surface);
+  background: var(--surface-glass, var(--surface));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 30px;
@@ -607,7 +670,9 @@ a:hover { color: #5ce1e6; }
 
 /* === AUTHOR AFFINITY & SEARCH === */
 .author-hero-wrap {
-  background: var(--surface);
+  background: var(--surface-glass, var(--surface));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 30px;
@@ -637,7 +702,9 @@ a:hover { color: #5ce1e6; }
   padding: 24px 0 60px;
 }
 .series-hub-card {
-  background: var(--surface);
+  background: var(--surface-glass, var(--surface));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px;
@@ -646,11 +713,12 @@ a:hover { color: #5ce1e6; }
   gap: 14px;
   transition: all 0.25s ease;
   text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 .series-hub-card:hover {
   border-color: var(--accent);
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
+  transform: translateY(-6px);
+  box-shadow: var(--glow), 0 14px 34px rgba(0, 0, 0, 0.4);
 }
 
 /* Footer */
