@@ -11,9 +11,12 @@
   <meta property="og:description" content="Complete reading order and free downloads for 23 books in the হিমু (Himu) series by হুমায়ূন আহমেদ । Humayun Ahmed in EPUB, Kindle KFX, MOBI &amp; PDF.">
   <meta property="og:type" content="books.series">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/series/himu.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -384,6 +387,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -391,6 +395,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../series/" class="nav-btn">All Series Universes →</a>
       </nav>
@@ -404,179 +411,293 @@ a:hover { color: #5ce1e6; }
       <span>হিমু</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
-      <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">হিমু Series</h1>
-      <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Himu · By হুমায়ূন আহমেদ । Humayun Ahmed (হুমায়ূন আহমেদ । Humayun Ahmed)</div>
-      <div class="badges-row">
-        <span class="badge series-badge" style="font-weight: 700;">
-          ⚡ 23 Books in Series
-        </span>
+    <div class="series-hero-wrap" data-series-id="himu">
+      <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 4px;">⚡ হিমু Series</h1>
+      <div style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 12px;">Himu · Creator: <strong style="color:var(--accent);">হুমায়ূন আহমেদ । Humayun Ahmed (হুমায়ূন আহমেদ । Humayun Ahmed)</strong></div>
+      <div class="series-stats-bar">
+        <span class="series-stat-pill">📚 23 Books in Series</span>
+        <span class="series-stat-pill" id="series-progress-count">0 / 23 Completed</span>
       </div>
     </div>
 
-    <h2 class="section-heading"><span>📚</span> Canonical Reading Order (23 Books)</h2>
-    <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+    <h2 class="section-heading"><span>📜</span> Canonical Reading Order (23 Books)</h2>
+    <div class="timeline-reading-grid">
       
-          <a href="../book/হমযন-আহমদ-humayun-ahmed-হম-সমগর-১-himu-samagra-1.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#1</div>
-            <img src="../assets/covers/হমযন-আহমদ-humayun-ahmed-হম-সমগর-১-himu-samagra-1.webp" alt="হিমু সমগ্র ১। Himu Samagra 1" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমু সমগ্র ১। Himu Samagra 1</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#1</span>
+              <button type="button" class="read-check-btn" data-book-id="হমযন-আহমদ-humayun-ahmed-হম-সমগর-১-himu-samagra-1">+ Mark Read</button>
+            </div>
+            <a href="../book/হমযন-আহমদ-humayun-ahmed-হম-সমগর-১-himu-samagra-1.html">
+              <img src="../assets/covers/হমযন-আহমদ-humayun-ahmed-হম-সমগর-১-himu-samagra-1.webp" alt="হিমু সমগ্র ১। Himu Samagra 1" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমু সমগ্র ১। Himu Samagra 1</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-angul-kata-jaglu.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#2</div>
-            <img src="../assets/covers/humayun-ahmed-angul-kata-jaglu.webp" alt="আঙুল কাটা জগলু" class="mini-cover" loading="lazy" />
-            <div class="mini-title">আঙুল কাটা জগলু</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#2</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-angul-kata-jaglu">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-angul-kata-jaglu.html">
+              <img src="../assets/covers/humayun-ahmed-angul-kata-jaglu.webp" alt="আঙুল কাটা জগলু" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">আঙুল কাটা জগলু</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-aj-himur-biye.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#3</div>
-            <img src="../assets/covers/humayun-ahmed-aj-himur-biye.webp" alt="আজ হিমুর বিয়ে" class="mini-cover" loading="lazy" />
-            <div class="mini-title">আজ হিমুর বিয়ে</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#3</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-aj-himur-biye">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-aj-himur-biye.html">
+              <img src="../assets/covers/humayun-ahmed-aj-himur-biye.webp" alt="আজ হিমুর বিয়ে" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">আজ হিমুর বিয়ে</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-ekjon-himu-koyoekti-jhinojhin-poka.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#4</div>
-            <img src="../assets/covers/humayun-ahmed-ekjon-himu-koyoekti-jhinojhin-poka.webp" alt="একজন হিমু কয়েকটি ঝিঁঝিঁ পোকা" class="mini-cover" loading="lazy" />
-            <div class="mini-title">একজন হিমু কয়েকটি ঝিঁঝিঁ পোকা</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#4</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-ekjon-himu-koyoekti-jhinojhin-poka">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-ekjon-himu-koyoekti-jhinojhin-poka.html">
+              <img src="../assets/covers/humayun-ahmed-ekjon-himu-koyoekti-jhinojhin-poka.webp" alt="একজন হিমু কয়েকটি ঝিঁঝিঁ পোকা" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">একজন হিমু কয়েকটি ঝিঁঝিঁ পোকা</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-ebng-himu.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#5</div>
-            <img src="../assets/covers/humayun-ahmed-ebng-himu.webp" alt="এবং হিমু" class="mini-cover" loading="lazy" />
-            <div class="mini-title">এবং হিমু</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#5</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-ebng-himu">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-ebng-himu.html">
+              <img src="../assets/covers/humayun-ahmed-ebng-himu.webp" alt="এবং হিমু" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">এবং হিমু</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-dorjar-opase.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#6</div>
-            <img src="../assets/covers/humayun-ahmed-dorjar-opase.webp" alt="দরজার ওপাশে" class="mini-cover" loading="lazy" />
-            <div class="mini-title">দরজার ওপাশে</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#6</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-dorjar-opase">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-dorjar-opase.html">
+              <img src="../assets/covers/humayun-ahmed-dorjar-opase.webp" alt="দরজার ওপাশে" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">দরজার ওপাশে</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-moyooraxee.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#7</div>
-            <img src="../assets/covers/humayun-ahmed-moyooraxee.webp" alt="ময়ূরাক্ষী" class="mini-cover" loading="lazy" />
-            <div class="mini-title">ময়ূরাক্ষী</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#7</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-moyooraxee">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-moyooraxee.html">
+              <img src="../assets/covers/humayun-ahmed-moyooraxee.webp" alt="ময়ূরাক্ষী" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">ময়ূরাক্ষী</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-hlud-himu-kalo-rjab.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#8</div>
-            <img src="../assets/covers/humayun-ahmed-hlud-himu-kalo-rjab.webp" alt="হলুদ হিমু কালো র‍্যাব" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হলুদ হিমু কালো র‍্যাব</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#8</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-hlud-himu-kalo-rjab">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-hlud-himu-kalo-rjab.html">
+              <img src="../assets/covers/humayun-ahmed-hlud-himu-kalo-rjab.webp" alt="হলুদ হিমু কালো র‍্যাব" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হলুদ হিমু কালো র‍্যাব</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himu.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#9</div>
-            <img src="../assets/covers/humayun-ahmed-himu.webp" alt="হিমু" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমু</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#9</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himu">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himu.html">
+              <img src="../assets/covers/humayun-ahmed-himu.webp" alt="হিমু" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমু</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himu-ebng-ekti-rasiyan-pri.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#10</div>
-            <img src="../assets/covers/humayun-ahmed-himu-ebng-ekti-rasiyan-pri.webp" alt="হিমু এবং একটি রাশিয়ান পরী" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমু এবং একটি রাশিয়ান পরী</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#10</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himu-ebng-ekti-rasiyan-pri">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himu-ebng-ekti-rasiyan-pri.html">
+              <img src="../assets/covers/humayun-ahmed-himu-ebng-ekti-rasiyan-pri.webp" alt="হিমু এবং একটি রাশিয়ান পরী" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমু এবং একটি রাশিয়ান পরী</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himu-ebng-harvard-ph-d-boltubhai.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#11</div>
-            <img src="../assets/covers/humayun-ahmed-himu-ebng-harvard-ph-d-boltubhai.webp" alt="হিমু এবং হার্ভার্ড Ph.D. বল্টুভাই" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমু এবং হার্ভার্ড Ph.D. বল্টুভাই</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#11</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himu-ebng-harvard-ph-d-boltubhai">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himu-ebng-harvard-ph-d-boltubhai.html">
+              <img src="../assets/covers/humayun-ahmed-himu-ebng-harvard-ph-d-boltubhai.webp" alt="হিমু এবং হার্ভার্ড Ph.D. বল্টুভাই" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমু এবং হার্ভার্ড Ph.D. বল্টুভাই</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himu-mama.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#12</div>
-            <img src="../assets/covers/humayun-ahmed-himu-mama.webp" alt="হিমু মামা" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমু মামা</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#12</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himu-mama">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himu-mama.html">
+              <img src="../assets/covers/humayun-ahmed-himu-mama.webp" alt="হিমু মামা" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমু মামা</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himu-somgr-1.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#13</div>
-            <img src="../assets/covers/humayun-ahmed-himu-somgr-1.webp" alt="হিমু সমগ্র-১" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমু সমগ্র-১</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#13</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himu-somgr-1">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himu-somgr-1.html">
+              <img src="../assets/covers/humayun-ahmed-himu-somgr-1.webp" alt="হিমু সমগ্র-১" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমু সমগ্র-১</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himu-samgr-2.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#14</div>
-            <img src="../assets/covers/humayun-ahmed-himu-samgr-2.webp" alt="হিমু সমগ্র-২" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমু সমগ্র-২</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#14</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himu-samgr-2">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himu-samgr-2.html">
+              <img src="../assets/covers/humayun-ahmed-himu-samgr-2.webp" alt="হিমু সমগ্র-২" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমু সমগ্র-২</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himur-ache-jal.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#15</div>
-            <img src="../assets/covers/humayun-ahmed-himur-ache-jal.webp" alt="হিমুর আছে জল" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমুর আছে জল</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#15</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himur-ache-jal">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himur-ache-jal.html">
+              <img src="../assets/covers/humayun-ahmed-himur-ache-jal.webp" alt="হিমুর আছে জল" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমুর আছে জল</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himur-ekant-saxatkar-o-anjany.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#16</div>
-            <img src="../assets/covers/humayun-ahmed-himur-ekant-saxatkar-o-anjany.webp" alt="হিমুর একান্ত সাক্ষাৎকার ও অন্যান্য" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমুর একান্ত সাক্ষাৎকার ও অন্যান্য</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#16</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himur-ekant-saxatkar-o-anjany">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himur-ekant-saxatkar-o-anjany.html">
+              <img src="../assets/covers/humayun-ahmed-himur-ekant-saxatkar-o-anjany.webp" alt="হিমুর একান্ত সাক্ষাৎকার ও অন্যান্য" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমুর একান্ত সাক্ষাৎকার ও অন্যান্য</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himur-dbiteey-prhr.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#17</div>
-            <img src="../assets/covers/humayun-ahmed-himur-dbiteey-prhr.webp" alt="হিমুর দ্বিতীয় প্রহর" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমুর দ্বিতীয় প্রহর</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#17</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himur-dbiteey-prhr">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himur-dbiteey-prhr.html">
+              <img src="../assets/covers/humayun-ahmed-himur-dbiteey-prhr.webp" alt="হিমুর দ্বিতীয় প্রহর" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমুর দ্বিতীয় প্রহর</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himur-nil-jochona.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#18</div>
-            <img src="../assets/covers/humayun-ahmed-himur-nil-jochona.webp" alt="হিমুর নীল জোছনা" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমুর নীল জোছনা</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#18</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himur-nil-jochona">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himur-nil-jochona.html">
+              <img src="../assets/covers/humayun-ahmed-himur-nil-jochona.webp" alt="হিমুর নীল জোছনা" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমুর নীল জোছনা</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himur-babar-kthamala.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#19</div>
-            <img src="../assets/covers/humayun-ahmed-himur-babar-kthamala.webp" alt="হিমুর বাবার কথামালা" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমুর বাবার কথামালা</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#19</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himur-babar-kthamala">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himur-babar-kthamala.html">
+              <img src="../assets/covers/humayun-ahmed-himur-babar-kthamala.webp" alt="হিমুর বাবার কথামালা" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমুর বাবার কথামালা</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himur-madhydupur.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#20</div>
-            <img src="../assets/covers/humayun-ahmed-himur-madhydupur.webp" alt="হিমুর মধ্যদুপুর" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমুর মধ্যদুপুর</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#20</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himur-madhydupur">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himur-madhydupur.html">
+              <img src="../assets/covers/humayun-ahmed-himur-madhydupur.webp" alt="হিমুর মধ্যদুপুর" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমুর মধ্যদুপুর</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himur-rupalee-ratri.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#21</div>
-            <img src="../assets/covers/humayun-ahmed-himur-rupalee-ratri.webp" alt="হিমুর রূপালী রাত্রি" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমুর রূপালী রাত্রি</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#21</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himur-rupalee-ratri">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himur-rupalee-ratri.html">
+              <img src="../assets/covers/humayun-ahmed-himur-rupalee-ratri.webp" alt="হিমুর রূপালী রাত্রি" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমুর রূপালী রাত্রি</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himur-hate-koyoekti-nilopdm.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#22</div>
-            <img src="../assets/covers/humayun-ahmed-himur-hate-koyoekti-nilopdm.webp" alt="হিমুর হাতে কয়েকটি নীলপদ্ম" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমুর হাতে কয়েকটি নীলপদ্ম</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#22</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himur-hate-koyoekti-nilopdm">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himur-hate-koyoekti-nilopdm.html">
+              <img src="../assets/covers/humayun-ahmed-himur-hate-koyoekti-nilopdm.webp" alt="হিমুর হাতে কয়েকটি নীলপদ্ম" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমুর হাতে কয়েকটি নীলপদ্ম</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-himu-rimande.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#23</div>
-            <img src="../assets/covers/humayun-ahmed-himu-rimande.webp" alt="হিমু রিমান্ডে" class="mini-cover" loading="lazy" />
-            <div class="mini-title">হিমু রিমান্ডে</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#23</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-himu-rimande">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-himu-rimande.html">
+              <img src="../assets/covers/humayun-ahmed-himu-rimande.webp" alt="হিমু রিমান্ডে" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">হিমু রিমান্ডে</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
     </div>
   </main>

@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Banglar Putul Shilpa O Tar Shilpira Prabir Sen / বাংলার পুতুল শিল্প ও তার শিল্পীরা - প্রবীর সেন (Banglar Putul Shilpa O Tar Shilpira Prabir Sen Bang...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/bangla-rare-books-banglar-putul-shilpa-o-tar-shilpira-prabir.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=bangla-rare-books-banglar-putul-shilpa-o-tar-shilpira-prabir" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/bangla-rare-books-banglar-putul-shilpa-o-tar-shilpira-prabir.webp" alt="Banglar Putul Shilpa O Tar Shilpira Prabir Sen / বাংলার পুতুল শিল্প ও তার শিল্পীরা - প্রবীর সেন - Bangla Rare Books" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/Banglar-Putul-Shilpa-O-Tar-Shilpira-PrabirSen/Banglar%20Putul%20Shilpa%20O%20Tar%20Shilpira%20-%20Prabir%20Sen.pdf" class="download-btn" download="Banglar Putul Shilpa O Tar Shilpira - Prabir Sen.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Banglar Putul Shilpa O Tar Shilpira - Prabir Sen.pdf','file_extension':'pdf','book_title':'Banglar Putul Shilpa O Tar Shilpira Prabir Sen / বাংলার পুতুল শিল্প ও তার শিল্পীরা - প্রবীর সেন'});">
+          <a href="https://archive.org/download/Banglar-Putul-Shilpa-O-Tar-Shilpira-PrabirSen/Banglar%20Putul%20Shilpa%20O%20Tar%20Shilpira%20-%20Prabir%20Sen.pdf" class="download-btn holo-card" download="Banglar Putul Shilpa O Tar Shilpira - Prabir Sen.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Banglar Putul Shilpa O Tar Shilpira - Prabir Sen.pdf','file_extension':'pdf','book_title':'Banglar Putul Shilpa O Tar Shilpira Prabir Sen / বাংলার পুতুল শিল্প ও তার শিল্পীরা - প্রবীর সেন'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/bangla-rare-books-prachin-bangla-patra-sankalan-surendranath.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-prachin-bangla-patra-sankalan-surendranath.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-prachin-bangla-patra-sankalan-surendranath.webp" alt="Prachin Bangla Patra Sankalan Surendranath Sen / প্রাচীন বাঙ্গালা পত্র সঙ্কলন - ডাক্তার সুরেন্দ্রনাথ সেন" class="mini-cover" loading="lazy" />
             <div class="mini-title">Prachin Bangla Patra Sankalan Surendranath Sen / প্রাচীন বাঙ্গালা পত্র সঙ্কলন - ডাক্তার সুরেন্দ্রনাথ সেন</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-kalikata-sekaler-o-ekaler-harisadhan-mukho.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-kalikata-sekaler-o-ekaler-harisadhan-mukho.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-kalikata-sekaler-o-ekaler-harisadhan-mukho.webp" alt="Kalikata Sekaler O Ekaler - Harisadhan Mukhopadhyay / কলিকাতা সেকালের ও একালের - হরিসাধন মুখোপাধ্যায়" class="mini-cover" loading="lazy" />
             <div class="mini-title">Kalikata Sekaler O Ekaler - Harisadhan Mukhopadhyay / কলিকাতা সেকালের ও একালের - হরিসাধন মুখোপাধ্যায়</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-koran-sharif-translated-by-bhai-girishchan.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-koran-sharif-translated-by-bhai-girishchan.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-koran-sharif-translated-by-bhai-girishchan.webp" alt="Koran Sharif - Translated by Bhai Girishchandra Sen / ভাই গিরিশচন্দ্র সেন কর্তৃক কোরান শরিফের বঙ্গানুবাদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">Koran Sharif - Translated by Bhai Girishchandra Sen / ভাই গিরিশচন্দ্র সেন কর্তৃক কোরান শরিফের বঙ্গানুবাদ</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-kalikatar-puratan-kahini-o-pratha-mahendra.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-kalikatar-puratan-kahini-o-pratha-mahendra.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-kalikatar-puratan-kahini-o-pratha-mahendra.webp" alt="Kalikatar Puratan Kahini O Pratha Mahendranath Dutta / কলিকাতার পুরাতন কাহিনী ও প্রথা - মহেন্দ্রনাথ দত্ত" class="mini-cover" loading="lazy" />
             <div class="mini-title">Kalikatar Puratan Kahini O Pratha Mahendranath Dutta / কলিকাতার পুরাতন কাহিনী ও প্রথা - মহেন্দ্রনাথ দত্ত</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-banglar-itihas-part-2-rakhaldas-bandyopadh.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-banglar-itihas-part-2-rakhaldas-bandyopadh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-banglar-itihas-part-2-rakhaldas-bandyopadh.webp" alt="Banglar Itihas Part 2 - Rakhaldas Bandyopadhyay / বাঙ্গালার ইতিহাস দ্বিতীয় খন্ড - রাখালদাস বন্দ্যোপাধ্যায়" class="mini-cover" loading="lazy" />
             <div class="mini-title">Banglar Itihas Part 2 - Rakhaldas Bandyopadhyay / বাঙ্গালার ইতিহাস দ্বিতীয় খন্ড - রাখালদাস বন্দ্যোপাধ্যায়</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-banglar-itihas-part-1-rakhaldas-bandyopadh.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-banglar-itihas-part-1-rakhaldas-bandyopadh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-banglar-itihas-part-1-rakhaldas-bandyopadh.webp" alt="Banglar Itihas Part 1 - Rakhaldas Bandyopadhyay / বাঙ্গালার ইতিহাস প্রথম খন্ড - রাখালদাস বন্দ্যোপাধ্যায়" class="mini-cover" loading="lazy" />
             <div class="mini-title">Banglar Itihas Part 1 - Rakhaldas Bandyopadhyay / বাঙ্গালার ইতিহাস প্রথম খন্ড - রাখালদাস বন্দ্যোপাধ্যায়</div>
             <div class="mini-author">Bangla Rare Books</div>

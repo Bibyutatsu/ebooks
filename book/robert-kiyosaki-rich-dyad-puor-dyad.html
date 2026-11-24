@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download রিচ ড্যাড পুওর ড্যাড (Rich Djad Puor Djad) by রবার্ট টি কিয়োসাকি (Robert Kiyosaki) free in EPUB. অনুবাদ (Translation), আত্মউন্নয়ন ও অর্থনীতি (Fina...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/robert-kiyosaki-rich-dyad-puor-dyad.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=robert-kiyosaki-rich-dyad-puor-dyad" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/robert-kiyosaki-rich-dyad-puor-dyad.webp" alt="রিচ ড্যাড পুওর ড্যাড - রবার্ট টি কিয়োসাকি" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2026</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-15/robert-kiyosaki-rich-dyad-puor-dyad.epub" class="download-btn" download="রিচ ড্যাড পুওর ড্যাড - রবার্ট টি কিয়োসাকি.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'রিচ ড্যাড পুওর ড্যাড - রবার্ট টি কিয়োসাকি.epub','file_extension':'epub','book_title':'রিচ ড্যাড পুওর ড্যাড'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-15/robert-kiyosaki-rich-dyad-puor-dyad.epub" class="download-btn holo-card" download="রিচ ড্যাড পুওর ড্যাড - রবার্ট টি কিয়োসাকি.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'রিচ ড্যাড পুওর ড্যাড - রবার্ট টি কিয়োসাকি.epub','file_extension':'epub','book_title':'রিচ ড্যাড পুওর ড্যাড'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/isaac-asimov-phaundesan-oyand-arth.html" class="mini-book-card">
+          <a href="../book/isaac-asimov-phaundesan-oyand-arth.html" class="mini-book-card holo-card">
             <img src="../assets/covers/isaac-asimov-phaundesan-oyand-arth.webp" alt="ফাউণ্ডেশন অ্যাণ্ড আর্থ" class="mini-cover" loading="lazy" />
             <div class="mini-title">ফাউণ্ডেশন অ্যাণ্ড আর্থ</div>
             <div class="mini-author">আইজাক আসিমভ</div>
           </a>
         
-          <a href="../book/keigo-higashino-dy-nem-ab-dj-gem-ij-aja-kidnyaping.html" class="mini-book-card">
+          <a href="../book/keigo-higashino-dy-nem-ab-dj-gem-ij-aja-kidnyaping.html" class="mini-book-card holo-card">
             <img src="../assets/covers/keigo-higashino-dy-nem-ab-dj-gem-ij-aja-kidnyaping.webp" alt="দ্য নেম অব দ্য গেম ইজ অ্যা কিডন্যাপিং" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্য নেম অব দ্য গেম ইজ অ্যা কিডন্যাপিং</div>
             <div class="mini-author">কেইগো হিগাশিনো</div>
           </a>
         
-          <a href="../book/agatha-christie-sparkling-sajaanaeed.html" class="mini-book-card">
+          <a href="../book/agatha-christie-sparkling-sajaanaeed.html" class="mini-book-card holo-card">
             <img src="../assets/covers/agatha-christie-sparkling-sajaanaeed.webp" alt="স্পার্কলিং সায়ানাইড" class="mini-cover" loading="lazy" />
             <div class="mini-title">স্পার্কলিং সায়ানাইড</div>
             <div class="mini-author">আগাথা ক্রিস্টি</div>
           </a>
         
-          <a href="../book/william-shakespeare-shekosopiyorer-chot-glp.html" class="mini-book-card">
+          <a href="../book/william-shakespeare-shekosopiyorer-chot-glp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/william-shakespeare-shekosopiyorer-chot-glp.webp" alt="শেকসপিয়রের ছোট গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">শেকসপিয়রের ছোট গল্প</div>
             <div class="mini-author">উইলিয়াম শেকসপিয়র</div>
           </a>
         
-          <a href="../book/wilbur-smith-rivar-gd.html" class="mini-book-card">
+          <a href="../book/wilbur-smith-rivar-gd.html" class="mini-book-card holo-card">
             <img src="../assets/covers/wilbur-smith-rivar-gd.webp" alt="রিভার গড" class="mini-cover" loading="lazy" />
             <div class="mini-title">রিভার গড</div>
             <div class="mini-author">উইলবার এডিসন স্মিথ</div>
           </a>
         
-          <a href="../book/agatha-christie-mardar-oyat-hyajelomur.html" class="mini-book-card">
+          <a href="../book/agatha-christie-mardar-oyat-hyajelomur.html" class="mini-book-card holo-card">
             <img src="../assets/covers/agatha-christie-mardar-oyat-hyajelomur.webp" alt="মার্ডার অ্যাট হ্যাজেলমুর" class="mini-cover" loading="lazy" />
             <div class="mini-title">মার্ডার অ্যাট হ্যাজেলমুর</div>
             <div class="mini-author">আগাথা ক্রিস্টি</div>

@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Sridhara Svami Gita Commentary (Sridhara Svami Gita Commentary) by অজ্ঞাত (Anonymous) free in PDF. ইন্টারনেট আর্কাইভ (Internet Archive), ক্লাসিক ও স...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-sridhara-svami-gita-commentary.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-sridhara-svami-gita-commentary" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-sridhara-svami-gita-commentary.webp" alt="Sridhara Svami Gita Commentary - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/SridharaSvamiGitaCommentary/Sridhara%20Svami%20Gita%20commentary.pdf" class="download-btn" download="Sridhara Svami Gita commentary.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Sridhara Svami Gita commentary.pdf','file_extension':'pdf','book_title':'Sridhara Svami Gita Commentary'});">
+          <a href="https://archive.org/download/SridharaSvamiGitaCommentary/Sridhara%20Svami%20Gita%20commentary.pdf" class="download-btn holo-card" download="Sridhara Svami Gita commentary.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Sridhara Svami Gita commentary.pdf','file_extension':'pdf','book_title':'Sridhara Svami Gita Commentary'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-srila-sridhara-svami-subodhini.html" class="mini-book-card">
+          <a href="../book/anonymous-srila-sridhara-svami-subodhini.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-srila-sridhara-svami-subodhini.webp" alt="Srila Sridhara Svami_Subodhini" class="mini-cover" loading="lazy" />
             <div class="mini-title">Srila Sridhara Svami_Subodhini</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-gita-bengali.html" class="mini-book-card">
+          <a href="../book/anonymous-gita-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-gita-bengali.webp" alt="Gita Bengali" class="mini-cover" loading="lazy" />
             <div class="mini-title">Gita Bengali</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-prema-samputa-with-commentary-and-chamatkara-chandrika.html" class="mini-book-card">
+          <a href="../book/anonymous-prema-samputa-with-commentary-and-chamatkara-chandrika.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-prema-samputa-with-commentary-and-chamatkara-chandrika.webp" alt="Prema-samputa (with Commentary) and Chamatkara-chandrika" class="mini-cover" loading="lazy" />
             <div class="mini-title">Prema-samputa (with Commentary) and Chamatkara-chandrika</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shreemodbhogbot-gita-isakn.html" class="mini-book-card">
+          <a href="../book/anonymous-shreemodbhogbot-gita-isakn.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shreemodbhogbot-gita-isakn.webp" alt="শ্রীমদ্ভগবত গীতা (ইসকন)" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীমদ্ভগবত গীতা (ইসকন)</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-gita-rahasya-of-bal-gangadhar-tilak-bengali-transl.html" class="mini-book-card">
+          <a href="../book/anonymous-gita-rahasya-of-bal-gangadhar-tilak-bengali-transl.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-gita-rahasya-of-bal-gangadhar-tilak-bengali-transl.webp" alt="Gita Rahasya Of Bal Gangadhar Tilak - Bengali Translation by Jyotirindranath Thakur" class="mini-cover" loading="lazy" />
             <div class="mini-title">Gita Rahasya Of Bal Gangadhar Tilak - Bengali Translation by Jyotirindranath Thakur</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shtjarth-prkas-dojanond-sorasbti.html" class="mini-book-card">
+          <a href="../book/anonymous-shtjarth-prkas-dojanond-sorasbti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shtjarth-prkas-dojanond-sorasbti.webp" alt="সত্যার্থ প্রকাশ দয়ানন্দ সরস্বতী" class="mini-cover" loading="lazy" />
             <div class="mini-title">সত্যার্থ প্রকাশ দয়ানন্দ সরস্বতী</div>
             <div class="mini-author">অজ্ঞাত</div>

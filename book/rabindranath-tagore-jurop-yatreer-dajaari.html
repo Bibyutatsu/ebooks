@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download য়ুরোপ-যাত্রীর ডায়ারি (Jouropo-Jatreer Dajoari) by রবীন্দ্রনাথ ঠাকুর (Rabindranath Tagore) free in EPUB. কবিতা ও নাটক (Poetry &amp;amp; Drama), ক্লাসিক...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/rabindranath-tagore-jurop-yatreer-dajaari.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -420,6 +423,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -427,6 +431,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=rabindranath-tagore-jurop-yatreer-dajaari" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -442,7 +449,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/rabindranath-tagore-jurop-yatreer-dajaari.webp" alt="য়ুরোপ-যাত্রীর ডায়ারি - রবীন্দ্রনাথ ঠাকুর" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2015</span>
@@ -472,7 +479,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/eboipotro/rabindranath_tagore/raw/master/প্রবন্ধ/য়ুরোপ-যাত্রীর_ডায়ারি.epub" class="download-btn" download="য়ুরোপ-যাত্রীর_ডায়ারি.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'য়ুরোপ-যাত্রীর_ডায়ারি.epub','file_extension':'epub','book_title':'য়ুরোপ-যাত্রীর ডায়ারি'});">
+          <a href="https://github.com/eboipotro/rabindranath_tagore/raw/master/প্রবন্ধ/য়ুরোপ-যাত্রীর_ডায়ারি.epub" class="download-btn holo-card" download="য়ুরোপ-যাত্রীর_ডায়ারি.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'য়ুরোপ-যাত্রীর_ডায়ারি.epub','file_extension':'epub','book_title':'য়ুরোপ-যাত্রীর ডায়ারি'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -518,37 +525,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/rabindranath-tagore-poshchimo-yatrir-dajaari.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-poshchimo-yatrir-dajaari.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-poshchimo-yatrir-dajaari.webp" alt="পশ্চিম-যাত্রীর ডায়ারি" class="mini-cover" loading="lazy" />
             <div class="mini-title">পশ্চিম-যাত্রীর ডায়ারি</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-byongkoutuk.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-byongkoutuk.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-byongkoutuk.webp" alt="ব্যঙ্গকৌতুক" class="mini-cover" loading="lazy" />
             <div class="mini-title">ব্যঙ্গকৌতুক</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-sahitjer-sbrup.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-sahitjer-sbrup.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-sahitjer-sbrup.webp" alt="সাহিত্যের স্বরূপ" class="mini-cover" loading="lazy" />
             <div class="mini-title">সাহিত্যের স্বরূপ</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-sahitjer-pthe.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-sahitjer-pthe.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-sahitjer-pthe.webp" alt="সাহিত্যের পথে" class="mini-cover" loading="lazy" />
             <div class="mini-title">সাহিত্যের পথে</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-samayik-sahitj-smalochna.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-samayik-sahitj-smalochna.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-samayik-sahitj-smalochna.webp" alt="সাময়িক সাহিত্য সমালোচনা" class="mini-cover" loading="lazy" />
             <div class="mini-title">সাময়িক সাহিত্য সমালোচনা</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-samayik-sarosanggrh.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-samayik-sarosanggrh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-samayik-sarosanggrh.webp" alt="সাময়িক সারসংগ্রহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">সাময়িক সারসংগ্রহ</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>

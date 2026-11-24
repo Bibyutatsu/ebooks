@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download হরিপুরা কংগ্রেস অধিবেশনের পরে সুভাষচন্দ্র বসুর বক্তৃতা (Horipura Kongogres Odhibeshoner Pore Subhashochondr Bosur Boktrita) by সুভাষচন্দ্র বসু (Subh...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/subhas-chandra-bose-hripura-kangogres-odhibeshner-pre-subhas.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=subhas-chandra-bose-hripura-kangogres-odhibeshner-pre-subhas" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/subhas-chandra-bose-hripura-kangogres-odhibeshner-pre-subhas.webp" alt="হরিপুরা কংগ্রেস অধিবেশনের পরে সুভাষচন্দ্র বসুর বক্তৃতা - সুভাষচন্দ্র বসু" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: ১৯৩৮</span>
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-33/subhas-chandra-bose-hripura-kangogres-odhibeshner-pre-subhashchandr-bsur-baktrita.epub" class="download-btn" download="সুভাষচন্দ্র বসু - হরিপুরা কংগ্রেস অধিবেশনের পরে সুভাষচন্দ্র বসুর বক্তৃতা (১৯৩৮).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সুভাষচন্দ্র বসু - হরিপুরা কংগ্রেস অধিবেশনের পরে সুভাষচন্দ্র বসুর বক্তৃতা (১৯৩৮).epub','file_extension':'epub','book_title':'হরিপুরা কংগ্রেস অধিবেশনের পরে সুভাষচন্দ্র বসুর বক্তৃতা'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-33/subhas-chandra-bose-hripura-kangogres-odhibeshner-pre-subhashchandr-bsur-baktrita.epub" class="download-btn holo-card" download="সুভাষচন্দ্র বসু - হরিপুরা কংগ্রেস অধিবেশনের পরে সুভাষচন্দ্র বসুর বক্তৃতা (১৯৩৮).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সুভাষচন্দ্র বসু - হরিপুরা কংগ্রেস অধিবেশনের পরে সুভাষচন্দ্র বসুর বক্তৃতা (১৯৩৮).epub','file_extension':'epub','book_title':'হরিপুরা কংগ্রেস অধিবেশনের পরে সুভাষচন্দ্র বসুর বক্তৃতা'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -517,13 +524,13 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/subhas-chandra-bose-dilli-chalo.html" class="mini-book-card">
+          <a href="../book/subhas-chandra-bose-dilli-chalo.html" class="mini-book-card holo-card">
             <img src="../assets/covers/subhas-chandra-bose-dilli-chalo.webp" alt="দিল্লী চলো" class="mini-cover" loading="lazy" />
             <div class="mini-title">দিল্লী চলো</div>
             <div class="mini-author">সুভাষচন্দ্র বসু</div>
           </a>
         
-          <a href="../book/subhas-chandra-bose-taruner-sbapn.html" class="mini-book-card">
+          <a href="../book/subhas-chandra-bose-taruner-sbapn.html" class="mini-book-card holo-card">
             <img src="../assets/covers/subhas-chandra-bose-taruner-sbapn.webp" alt="তরুণের স্বপ্ন" class="mini-cover" loading="lazy" />
             <div class="mini-title">তরুণের স্বপ্ন</div>
             <div class="mini-author">সুভাষচন্দ্র বসু</div>

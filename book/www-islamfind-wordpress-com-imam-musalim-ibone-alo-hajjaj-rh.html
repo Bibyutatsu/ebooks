@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download ইমাম মুসলীম ইবনে আল-হাজ্জাজ রহ. এর বই সমূহ। (Eemam Musoleem Eebone Alo-Hajjaj Roh Er Boee Somooho) by www.islamfind.wordpress.com (Www Islamfind Wor...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/www-islamfind-wordpress-com-imam-musalim-ibone-alo-hajjaj-rh.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -423,6 +426,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -430,6 +434,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=www-islamfind-wordpress-com-imam-musalim-ibone-alo-hajjaj-rh" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -445,7 +452,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/www-islamfind-wordpress-com-imam-musalim-ibone-alo-hajjaj-rh.webp" alt="ইমাম মুসলীম ইবনে আল-হাজ্জাজ রহ. এর বই সমূহ। - www.islamfind.wordpress.com" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -475,7 +482,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/i-muslim/Sahih%20Muslim%20Sharif%20part-01.pdf" class="download-btn" download="Sahih Muslim Sharif part-01.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Sahih Muslim Sharif part-01.pdf','file_extension':'pdf','book_title':'ইমাম মুসলীম ইবনে আল-হাজ্জাজ রহ. এর বই সমূহ।'});">
+          <a href="https://archive.org/download/i-muslim/Sahih%20Muslim%20Sharif%20part-01.pdf" class="download-btn holo-card" download="Sahih Muslim Sharif part-01.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Sahih Muslim Sharif part-01.pdf','file_extension':'pdf','book_title':'ইমাম মুসলীম ইবনে আল-হাজ্জাজ রহ. এর বই সমূহ।'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -521,37 +528,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/www-islamfind-wordpress-com-imam-bukhari-rahh-er-bi-shmuh.html" class="mini-book-card">
+          <a href="../book/www-islamfind-wordpress-com-imam-bukhari-rahh-er-bi-shmuh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/www-islamfind-wordpress-com-imam-bukhari-rahh-er-bi-shmuh.webp" alt="ইমাম বুখারী রহঃ এর বই সমূহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইমাম বুখারী রহঃ এর বই সমূহ</div>
             <div class="mini-author">www.islamfind.wordpress.com</div>
           </a>
         
-          <a href="../book/www-islamfind-wordpress-com-imam-abu-hanifa-noman-ibone-sabi.html" class="mini-book-card">
+          <a href="../book/www-islamfind-wordpress-com-imam-abu-hanifa-noman-ibone-sabi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/www-islamfind-wordpress-com-imam-abu-hanifa-noman-ibone-sabi.webp" alt="ইমাম আবু হানিফা নোমান ইবনে সাবিত রহ. এর বই সমূহ।" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইমাম আবু হানিফা নোমান ইবনে সাবিত রহ. এর বই সমূহ।</div>
             <div class="mini-author">www.islamfind.wordpress.com</div>
           </a>
         
-          <a href="../book/www-islamfind-wordpress-com-tafseer-pabolikeshn-kmiti-haite.html" class="mini-book-card">
+          <a href="../book/www-islamfind-wordpress-com-tafseer-pabolikeshn-kmiti-haite.html" class="mini-book-card holo-card">
             <img src="../assets/covers/www-islamfind-wordpress-com-tafseer-pabolikeshn-kmiti-haite.webp" alt="তাফসীর পাবলিকেশন কমিটি হইতে প্রকাশিত হাফেয ইমামুদ্দিন ইবনু কাসীর কর্তৃক রচিত তাফসীর ইবনে কাসীর" class="mini-cover" loading="lazy" />
             <div class="mini-title">তাফসীর পাবলিকেশন কমিটি হইতে প্রকাশিত হাফেয ইমামুদ্দিন ইবনু কাসীর কর্তৃক রচিত তাফসীর ইবনে কাসীর</div>
             <div class="mini-author">www.islamfind.wordpress.com</div>
           </a>
         
-          <a href="../book/www-islamfind-wordpress-com-fikhul-hadis-o-guljare-sunnat-pdf.html" class="mini-book-card">
+          <a href="../book/www-islamfind-wordpress-com-fikhul-hadis-o-guljare-sunnat-pdf.html" class="mini-book-card holo-card">
             <img src="../assets/covers/www-islamfind-wordpress-com-fikhul-hadis-o-guljare-sunnat-pdf.webp" alt="ফিকহুল হাদীস ও গুলজারে সুন্নত PDF" class="mini-cover" loading="lazy" />
             <div class="mini-title">ফিকহুল হাদীস ও গুলজারে সুন্নত PDF</div>
             <div class="mini-author">www.islamfind.wordpress.com</div>
           </a>
         
-          <a href="../book/anonymous-imam-gajjali-rh-er-bi.html" class="mini-book-card">
+          <a href="../book/anonymous-imam-gajjali-rh-er-bi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-imam-gajjali-rh-er-bi.webp" alt="ঈমাম গাজ্জালী (রঃ) এর বই" class="mini-cover" loading="lazy" />
             <div class="mini-title">ঈমাম গাজ্জালী (রঃ) এর বই</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-shbpner-bjakhya-allama-ibone-sirin-rahh.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-shbpner-bjakhya-allama-ibone-sirin-rahh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-shbpner-bjakhya-allama-ibone-sirin-rahh.webp" alt="স্বপ্নের ব্যাখ্যা (আল্লামা ইবনে শিরীন রহঃ)" class="mini-cover" loading="lazy" />
             <div class="mini-title">স্বপ্নের ব্যাখ্যা (আল্লামা ইবনে শিরীন রহঃ)</div>
             <div class="mini-author">azharmea@icloud.com</div>

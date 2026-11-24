@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 10 Bengali ebooks by সৈয়দ শামসুল হক (Soijd Shamshul Hk) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/soijd-shamshul-hk.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>সৈয়দ শামসুল হক</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">সৈয়দ শামসুল হক</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Soijd Shamshul Hk</div>
       <div class="badges-row">
@@ -449,61 +456,61 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (10)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/soijad-shamshul-hok-achintj-purnima.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-achintj-purnima.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-achintj-purnima.webp" alt="অচিন্ত্য পূর্ণিমা" class="mini-cover" loading="lazy" />
             <div class="mini-title">অচিন্ত্য পূর্ণিমা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/soijad-shamshul-hok-achena.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-achena.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-achena.webp" alt="অচেনা" class="mini-cover" loading="lazy" />
             <div class="mini-title">অচেনা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/soijad-shamshul-hok-anupam-din.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-anupam-din.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-anupam-din.webp" alt="অনুপম দিন" class="mini-cover" loading="lazy" />
             <div class="mini-title">অনুপম দিন</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/soijad-shamshul-hok-ek-mhilar-chabi.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-ek-mhilar-chabi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-ek-mhilar-chabi.webp" alt="এক মহিলার ছবি" class="mini-cover" loading="lazy" />
             <div class="mini-title">এক মহিলার ছবি</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/soijad-shamshul-hok-kojaekti-manuser-sonali-joubn.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-kojaekti-manuser-sonali-joubn.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-kojaekti-manuser-sonali-joubn.webp" alt="কয়েকটি মানুষের সোনালি যৌবন" class="mini-cover" loading="lazy" />
             <div class="mini-title">কয়েকটি মানুষের সোনালি যৌবন</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/soijad-shamshul-hok-khelaram-khele-ja.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-khelaram-khele-ja.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-khelaram-khele-ja.webp" alt="খেলারাম খেলে যা" class="mini-cover" loading="lazy" />
             <div class="mini-title">খেলারাম খেলে যা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/soijad-shamshul-hok-nisiddh-loban.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-nisiddh-loban.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-nisiddh-loban.webp" alt="নিষিদ্ধ লোবান" class="mini-cover" loading="lazy" />
             <div class="mini-title">নিষিদ্ধ লোবান</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/soijad-shamshul-hok-mhasoonye-pran-mastar.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-mhasoonye-pran-mastar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-mhasoonye-pran-mastar.webp" alt="মহাশূন্যে পরান মাস্টার" class="mini-cover" loading="lazy" />
             <div class="mini-title">মহাশূন্যে পরান মাস্টার</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/soijad-shamshul-hok-roktgolap.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-roktgolap.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-roktgolap.webp" alt="রক্তগোলাপ" class="mini-cover" loading="lazy" />
             <div class="mini-title">রক্তগোলাপ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/soijad-shamshul-hok-shimana-chhadoije.html" class="mini-book-card">
+          <a href="../book/soijad-shamshul-hok-shimana-chhadoije.html" class="mini-book-card holo-card">
             <img src="../assets/covers/soijad-shamshul-hok-shimana-chhadoije.webp" alt="সীমানা ছাড়িয়ে" class="mini-cover" loading="lazy" />
             <div class="mini-title">সীমানা ছাড়িয়ে</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>

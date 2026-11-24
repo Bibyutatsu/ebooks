@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download দ্য হাউস হোয়ার আই ডাইড ওয়ান্স (Dj Haus Hojoar Aee Daeed Ojoans) by কেইগো হিগাশিনো (Keigo Higashino) free in EPUB. অনুবাদ (Translation), কেইগো হিগা...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/keigo-higashino-dy-haus-hoyoar-ai-daid-oyans.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=keigo-higashino-dy-haus-hoyoar-ai-daid-oyans" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/keigo-higashino-dy-haus-hoyoar-ai-daid-oyans.webp" alt="দ্য হাউস হোয়ার আই ডাইড ওয়ান্স - কেইগো হিগাশিনো" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2025</span>
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-07/keigo-higashino-dy-haus-hoyoar-ai-daid-oyans.epub" class="download-btn" download="দ্য হাউস হোয়ার আই ডাইড ওয়ান্স - কেইগো হিগাশিনো.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'দ্য হাউস হোয়ার আই ডাইড ওয়ান্স - কেইগো হিগাশিনো.epub','file_extension':'epub','book_title':'দ্য হাউস হোয়ার আই ডাইড ওয়ান্স'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-07/keigo-higashino-dy-haus-hoyoar-ai-daid-oyans.epub" class="download-btn holo-card" download="দ্য হাউস হোয়ার আই ডাইড ওয়ান্স - কেইগো হিগাশিনো.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'দ্য হাউস হোয়ার আই ডাইড ওয়ান্স - কেইগো হিগাশিনো.epub','file_extension':'epub','book_title':'দ্য হাউস হোয়ার আই ডাইড ওয়ান্স'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/keigo-higashino-dy-red-fingar.html" class="mini-book-card">
+          <a href="../book/keigo-higashino-dy-red-fingar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/keigo-higashino-dy-red-fingar.webp" alt="দ্য রেড ফিঙ্গার" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্য রেড ফিঙ্গার</div>
             <div class="mini-author">কেইগো হিগাশিনো</div>
           </a>
         
-          <a href="../book/keigo-higashino-dy-miraklsh-ob-dj-namijoa-jenarel-stor.html" class="mini-book-card">
+          <a href="../book/keigo-higashino-dy-miraklsh-ob-dj-namijoa-jenarel-stor.html" class="mini-book-card holo-card">
             <img src="../assets/covers/keigo-higashino-dy-miraklsh-ob-dj-namijoa-jenarel-stor.webp" alt="দ্য মিরাকলস অব দ্য নামিয়া জেনারেল স্টোর" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্য মিরাকলস অব দ্য নামিয়া জেনারেল স্টোর</div>
             <div class="mini-author">কেইগো হিগাশিনো</div>
           </a>
         
-          <a href="../book/keigo-higashino-dy-dibhosn-ab-shashpekt-eks.html" class="mini-book-card">
+          <a href="../book/keigo-higashino-dy-dibhosn-ab-shashpekt-eks.html" class="mini-book-card holo-card">
             <img src="../assets/covers/keigo-higashino-dy-dibhosn-ab-shashpekt-eks.webp" alt="দ্য ডিভোশন অব সাসপেক্ট এক্স" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্য ডিভোশন অব সাসপেক্ট এক্স</div>
             <div class="mini-author">কেইগো হিগাশিনো</div>
           </a>
         
-          <a href="../book/keigo-higashino-dy-nem-ab-dj-gem-ij-aja-kidnyaping.html" class="mini-book-card">
+          <a href="../book/keigo-higashino-dy-nem-ab-dj-gem-ij-aja-kidnyaping.html" class="mini-book-card holo-card">
             <img src="../assets/covers/keigo-higashino-dy-nem-ab-dj-gem-ij-aja-kidnyaping.webp" alt="দ্য নেম অব দ্য গেম ইজ অ্যা কিডন্যাপিং" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্য নেম অব দ্য গেম ইজ অ্যা কিডন্যাপিং</div>
             <div class="mini-author">কেইগো হিগাশিনো</div>
           </a>
         
-          <a href="../book/keigo-higashino-sjaloveshn-aph-a-seeent.html" class="mini-book-card">
+          <a href="../book/keigo-higashino-sjaloveshn-aph-a-seeent.html" class="mini-book-card holo-card">
             <img src="../assets/covers/keigo-higashino-sjaloveshn-aph-a-seeent.webp" alt="স্যালভেশন অফ আ সেইন্ট" class="mini-cover" loading="lazy" />
             <div class="mini-title">স্যালভেশন অফ আ সেইন্ট</div>
             <div class="mini-author">কেইগো হিগাশিনো</div>
           </a>
         
-          <a href="../book/keigo-higashino-myalis.html" class="mini-book-card">
+          <a href="../book/keigo-higashino-myalis.html" class="mini-book-card holo-card">
             <img src="../assets/covers/keigo-higashino-myalis.webp" alt="ম্যালিস" class="mini-cover" loading="lazy" />
             <div class="mini-title">ম্যালিস</div>
             <div class="mini-author">কেইগো হিগাশিনো</div>

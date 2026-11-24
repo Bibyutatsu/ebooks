@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Kathasaritsagara by Somadeva Bhatta / সোমদেব ভট্ট রচিত কথাসরিৎসাগর (Kathasaritsagara By Somadeva Bhatta Somodeb Bhott Rochit Kothasoritosagor) by Ba...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/bangla-rare-books-kathasaritsagara-by-somadeva-bhatta-somdeb.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=bangla-rare-books-kathasaritsagara-by-somadeva-bhatta-somdeb" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/bangla-rare-books-kathasaritsagara-by-somadeva-bhatta-somdeb.webp" alt="Kathasaritsagara by Somadeva Bhatta / সোমদেব ভট্ট রচিত কথাসরিৎসাগর - Bangla Rare Books" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/Kathasaritsagara-Somadeva-Bhatta/Kathasaritsagara%20-%20Somadeva%20Bhatta.epub" class="download-btn" download="Kathasaritsagara - Somadeva Bhatta.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Kathasaritsagara - Somadeva Bhatta.epub','file_extension':'epub','book_title':'Kathasaritsagara by Somadeva Bhatta / সোমদেব ভট্ট রচিত কথাসরিৎসাগর'});">
+          <a href="https://archive.org/download/Kathasaritsagara-Somadeva-Bhatta/Kathasaritsagara%20-%20Somadeva%20Bhatta.epub" class="download-btn holo-card" download="Kathasaritsagara - Somadeva Bhatta.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Kathasaritsagara - Somadeva Bhatta.epub','file_extension':'epub','book_title':'Kathasaritsagara by Somadeva Bhatta / সোমদেব ভট্ট রচিত কথাসরিৎসাগর'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/bangla-rare-books-din-dupre-by-lila-majumdar-din-dupure-lila-mjumodar.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-din-dupre-by-lila-majumdar-din-dupure-lila-mjumodar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-din-dupre-by-lila-majumdar-din-dupure-lila-mjumodar.webp" alt="Din Dupre By Lila Majumdar / দিন দুপুরে - লীলা মজুমদার" class="mini-cover" loading="lazy" />
             <div class="mini-title">Din Dupre By Lila Majumdar / দিন দুপুরে - লীলা মজুমদার</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-upendrakishore-ray-chowdhury-by-lila-majum.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-upendrakishore-ray-chowdhury-by-lila-majum.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-upendrakishore-ray-chowdhury-by-lila-majum.webp" alt="Upendrakishore Ray Chowdhury By Lila Majumdar / উপেন্দ্রকিশোর রায়চৌধুরী (জাতীয় জীবনী গ্রন্থমালা) - লীলা মজুমদার" class="mini-cover" loading="lazy" />
             <div class="mini-title">Upendrakishore Ray Chowdhury By Lila Majumdar / উপেন্দ্রকিশোর রায়চৌধুরী (জাতীয় জীবনী গ্রন্থমালা) - লীলা মজুমদার</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-koran-sharif-translated-by-bhai-girishchan.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-koran-sharif-translated-by-bhai-girishchan.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-koran-sharif-translated-by-bhai-girishchan.webp" alt="Koran Sharif - Translated by Bhai Girishchandra Sen / ভাই গিরিশচন্দ্র সেন কর্তৃক কোরান শরিফের বঙ্গানুবাদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">Koran Sharif - Translated by Bhai Girishchandra Sen / ভাই গিরিশচন্দ্র সেন কর্তৃক কোরান শরিফের বঙ্গানুবাদ</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-uddharanpurer-ghat-abadhut-uddharnapurer-g.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-uddharanpurer-ghat-abadhut-uddharnapurer-g.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-uddharanpurer-ghat-abadhut-uddharnapurer-g.webp" alt="Uddharanpurer Ghat - Abadhut / উদ্ধারণপুরের ঘাট - অবধূত" class="mini-cover" loading="lazy" />
             <div class="mini-title">Uddharanpurer Ghat - Abadhut / উদ্ধারণপুরের ঘাট - অবধূত</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-thagi-sripantha-thgee-sreepanth.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-thagi-sripantha-thgee-sreepanth.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-thagi-sripantha-thgee-sreepanth.webp" alt="Thagi - Sripantha / ঠগী - শ্রীপান্থ" class="mini-cover" loading="lazy" />
             <div class="mini-title">Thagi - Sripantha / ঠগী - শ্রীপান্থ</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-sammohan-bidya-professor-rajendranath-rudr.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-sammohan-bidya-professor-rajendranath-rudr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-sammohan-bidya-professor-rajendranath-rudr.webp" alt="Sammohan Bidya Professor - Rajendranath Rudra / সম্মোহন বিদ্যা - রাজেন্দ্রনাথ রুদ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">Sammohan Bidya Professor - Rajendranath Rudra / সম্মোহন বিদ্যা - রাজেন্দ্রনাথ রুদ্র</div>
             <div class="mini-author">Bangla Rare Books</div>

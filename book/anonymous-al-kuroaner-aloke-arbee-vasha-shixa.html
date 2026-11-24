@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download আল কুরআনের আলোকে আরবী ভাষা শিক্ষা (Al Kuroaner Aloke Arobee Bhasha Shiksha) by অজ্ঞাত (Anonymous) free in PDF. bangla book quran arbi, ইন্টারনেট আর্...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-al-kuroaner-aloke-arbee-vasha-shixa.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-al-kuroaner-aloke-arbee-vasha-shixa" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-al-kuroaner-aloke-arbee-vasha-shixa.webp" alt="আল কুরআনের আলোকে আরবী ভাষা শিক্ষা - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/kabirulmongla_gmail/%E0%A6%86%E0%A6%B2-%E0%A6%95%E0%A7%81%E0%A6%B0%E0%A6%86%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%E0%A7%8B%E0%A6%95%E0%A7%87%20%E0%A6%86%E0%A6%B0%E0%A6%AC%E0%A7%80%20%E0%A6%AD%E0%A6%BE%E0%A6%B7%E0%A6%BE%20%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE.pdf" class="download-btn" download="আল-কুরআনের আলোকে আরবী ভাষা শিক্ষা.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'আল-কুরআনের আলোকে আরবী ভাষা শিক্ষা.pdf','file_extension':'pdf','book_title':'আল কুরআনের আলোকে আরবী ভাষা শিক্ষা'});">
+          <a href="https://archive.org/download/kabirulmongla_gmail/%E0%A6%86%E0%A6%B2-%E0%A6%95%E0%A7%81%E0%A6%B0%E0%A6%86%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%E0%A7%8B%E0%A6%95%E0%A7%87%20%E0%A6%86%E0%A6%B0%E0%A6%AC%E0%A7%80%20%E0%A6%AD%E0%A6%BE%E0%A6%B7%E0%A6%BE%20%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE.pdf" class="download-btn holo-card" download="আল-কুরআনের আলোকে আরবী ভাষা শিক্ষা.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'আল-কুরআনের আলোকে আরবী ভাষা শিক্ষা.pdf','file_extension':'pdf','book_title':'আল কুরআনের আলোকে আরবী ভাষা শিক্ষা'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-karobalar-sixa.html" class="mini-book-card">
+          <a href="../book/anonymous-karobalar-sixa.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-karobalar-sixa.webp" alt="কারবালার শিক্ষা" class="mini-cover" loading="lazy" />
             <div class="mini-title">কারবালার শিক্ষা</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-al-bidaya-wan-nihaya.html" class="mini-book-card">
+          <a href="../book/anonymous-al-bidaya-wan-nihaya.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-al-bidaya-wan-nihaya.webp" alt="al bidaya wan nihaya" class="mini-cover" loading="lazy" />
             <div class="mini-title">al bidaya wan nihaya</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-doinndin-arabee-kothopokthon.html" class="mini-book-card">
+          <a href="../book/anonymous-doinndin-arabee-kothopokthon.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-doinndin-arabee-kothopokthon.webp" alt="দৈনন্দিন আরবী কথোপকথন" class="mini-cover" loading="lazy" />
             <div class="mini-title">দৈনন্দিন আরবী কথোপকথন</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-al-fikohul-akbar.html" class="mini-book-card">
+          <a href="../book/anonymous-al-fikohul-akbar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-al-fikohul-akbar.webp" alt="আল ফিকহুল আকবার" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল ফিকহুল আকবার</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-al-kuranul-krim-bangla-onubad.html" class="mini-book-card">
+          <a href="../book/anonymous-al-kuranul-krim-bangla-onubad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-al-kuranul-krim-bangla-onubad.webp" alt="আল কুরআনুল করীম ( বাংলা অনুবাদ )" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল কুরআনুল করীম ( বাংলা অনুবাদ )</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-upanishad-by-atul-chandra-sen-et-al-bengali-translation.html" class="mini-book-card">
+          <a href="../book/anonymous-upanishad-by-atul-chandra-sen-et-al-bengali-translation.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-upanishad-by-atul-chandra-sen-et-al-bengali-translation.webp" alt="Upanishad by Atul Chandra Sen et al. (Bengali translation)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Upanishad by Atul Chandra Sen et al. (Bengali translation)</div>
             <div class="mini-author">অজ্ঞাত</div>

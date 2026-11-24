@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 14 Bengali ebooks by বঙ্কিমচন্দ্র চট্টোপাধ্যায় (Bankim Chandra Chattopadhyay) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/bankim-chandra-chattopadhyay.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>বঙ্কিমচন্দ্র চট্টোপাধ্যায়</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">বঙ্কিমচন্দ্র চট্টোপাধ্যায়</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Bankim Chandra Chattopadhyay</div>
       <div class="badges-row">
@@ -449,85 +456,85 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (14)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/bankim-chandra-chattopadhyay-kapalkundla.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-kapalkundla.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-kapalkundla.webp" alt="কপালকুণ্ডলা" class="mini-cover" loading="lazy" />
             <div class="mini-title">কপালকুণ্ডলা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-durgesonondini.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-durgesonondini.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-durgesonondini.webp" alt="দুর্গেশনন্দিনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">দুর্গেশনন্দিনী</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-debi-choudhurani.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-debi-choudhurani.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-debi-choudhurani.webp" alt="দেবী চৌধুরাণী" class="mini-cover" loading="lazy" />
             <div class="mini-title">দেবী চৌধুরাণী</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-anondmth.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-anondmth.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-anondmth.webp" alt="আনন্দমঠ" class="mini-cover" loading="lazy" />
             <div class="mini-title">আনন্দমঠ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-indira.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-indira.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-indira.webp" alt="ইন্দিরা" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইন্দিরা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-biggoanorhosj.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-biggoanorhosj.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-biggoanorhosj.webp" alt="বিজ্ঞানরহস্য" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিজ্ঞানরহস্য</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-mrinalini.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-mrinalini.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-mrinalini.webp" alt="মৃণালিনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">মৃণালিনী</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-raya-deenobondhu-mitr-bahadurer-jibani.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-raya-deenobondhu-mitr-bahadurer-jibani.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-raya-deenobondhu-mitr-bahadurer-jibani.webp" alt="রায় দীনবন্ধু মিত্র বাহাদুরের জীবনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">রায় দীনবন্ধু মিত্র বাহাদুরের জীবনী</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-komlakant.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-komlakant.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-komlakant.webp" alt="কমলাকান্ত" class="mini-cover" loading="lazy" />
             <div class="mini-title">কমলাকান্ত</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-krishnkanter-uil.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-krishnkanter-uil.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-krishnkanter-uil.webp" alt="কৃষ্ণকান্তের উইল" class="mini-cover" loading="lazy" />
             <div class="mini-title">কৃষ্ণকান্তের উইল</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-durgeshnandini-durgesonondini.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-durgeshnandini-durgesonondini.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-durgeshnandini-durgesonondini.webp" alt="Durgeshnandini দুর্গেশনন্দিনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">Durgeshnandini দুর্গেশনন্দিনী</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-kapalkundala-bankim-chandra-cha.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-kapalkundala-bankim-chandra-cha.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-kapalkundala-bankim-chandra-cha.webp" alt="Kapalkundala Bankim Chandra Chattopadhyay কপালকুন্ডলা বঙ্কিমচন্দ্র চট্টোপাধ্যায়" class="mini-cover" loading="lazy" />
             <div class="mini-title">Kapalkundala Bankim Chandra Chattopadhyay কপালকুন্ডলা বঙ্কিমচন্দ্র চট্টোপাধ্যায়</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-rajsingha-bankim-chandra-chatto.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-rajsingha-bankim-chandra-chatto.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-rajsingha-bankim-chandra-chatto.webp" alt="Rajsingha Bankim Chandra Chattopadhyay রাজসিংহ বঙ্কিমচন্দ্র চট্টোপাধ্যায়" class="mini-cover" loading="lazy" />
             <div class="mini-title">Rajsingha Bankim Chandra Chattopadhyay রাজসিংহ বঙ্কিমচন্দ্র চট্টোপাধ্যায়</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-anabda-math-bankim-chandra-chat.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-anabda-math-bankim-chandra-chat.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-anabda-math-bankim-chandra-chat.webp" alt="Anabda Math Bankim Chandra Chattopadhyay (আনন্দমঠ (১৮৮২) বঙ্কিমচন্দ্র চট্টোপাধ্যায়)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Anabda Math Bankim Chandra Chattopadhyay (আনন্দমঠ (১৮৮২) বঙ্কিমচন্দ্র চট্টোপাধ্যায়)</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>

@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download নিতু আর তার বন্ধুরা (Nitu Ar Tar Bondhura) by মুহম্মদ জাফর ইকবাল (Muhammed Zafar Iqbal) free in KFX. কিশোর সাহিত্য (Young Adult), সায়েন্স ফিকশন (Sci...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/muhammed-zafar-iqbal-nitu-ar-tar-bndhura.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=muhammed-zafar-iqbal-nitu-ar-tar-bndhura" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/muhammed-zafar-iqbal-nitu-ar-tar-bndhura.webp" alt="নিতু আর তার বন্ধুরা - মুহম্মদ জাফর ইকবাল" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-14/muhammed-zafar-iqbal-nitu-ar-tar-bndhura.kfx" class="download-btn" download="নিতু আর তার বন্ধুরা - মুহম্মদ জাফর ইকবাল.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নিতু আর তার বন্ধুরা - মুহম্মদ জাফর ইকবাল.kfx','file_extension':'kfx','book_title':'নিতু আর তার বন্ধুরা'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-14/muhammed-zafar-iqbal-nitu-ar-tar-bndhura.kfx" class="download-btn holo-card" download="নিতু আর তার বন্ধুরা - মুহম্মদ জাফর ইকবাল.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নিতু আর তার বন্ধুরা - মুহম্মদ জাফর ইকবাল.kfx','file_extension':'kfx','book_title':'নিতু আর তার বন্ধুরা'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/muhammed-zafar-iqbal-aro-ektukhani-bijnan.html" class="mini-book-card">
+          <a href="../book/muhammed-zafar-iqbal-aro-ektukhani-bijnan.html" class="mini-book-card holo-card">
             <img src="../assets/covers/muhammed-zafar-iqbal-aro-ektukhani-bijnan.webp" alt="আরো একটুখানি বিজ্ঞান" class="mini-cover" loading="lazy" />
             <div class="mini-title">আরো একটুখানি বিজ্ঞান</div>
             <div class="mini-author">মুহম্মদ জাফর ইকবাল</div>
           </a>
         
-          <a href="../book/muhammed-zafar-iqbal-saiklon.html" class="mini-book-card">
+          <a href="../book/muhammed-zafar-iqbal-saiklon.html" class="mini-book-card holo-card">
             <img src="../assets/covers/muhammed-zafar-iqbal-saiklon.webp" alt="সাইক্লোন" class="mini-cover" loading="lazy" />
             <div class="mini-title">সাইক্লোন</div>
             <div class="mini-author">মুহম্মদ জাফর ইকবাল</div>
           </a>
         
-          <a href="../book/muhammed-zafar-iqbal-roop-rupali.html" class="mini-book-card">
+          <a href="../book/muhammed-zafar-iqbal-roop-rupali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/muhammed-zafar-iqbal-roop-rupali.webp" alt="রূপ-রূপালী" class="mini-cover" loading="lazy" />
             <div class="mini-title">রূপ-রূপালী</div>
             <div class="mini-author">মুহম্মদ জাফর ইকবাল</div>
           </a>
         
-          <a href="../book/muhammed-zafar-iqbal-rasa.html" class="mini-book-card">
+          <a href="../book/muhammed-zafar-iqbal-rasa.html" class="mini-book-card holo-card">
             <img src="../assets/covers/muhammed-zafar-iqbal-rasa.webp" alt="রাশা" class="mini-cover" loading="lazy" />
             <div class="mini-title">রাশা</div>
             <div class="mini-author">মুহম্মদ জাফর ইকবাল</div>
           </a>
         
-          <a href="../book/muhammed-zafar-iqbal-ratuler-rat-ratuler-din.html" class="mini-book-card">
+          <a href="../book/muhammed-zafar-iqbal-ratuler-rat-ratuler-din.html" class="mini-book-card holo-card">
             <img src="../assets/covers/muhammed-zafar-iqbal-ratuler-rat-ratuler-din.webp" alt="রাতুলের রাত রাতুলের দিন" class="mini-cover" loading="lazy" />
             <div class="mini-title">রাতুলের রাত রাতুলের দিন</div>
             <div class="mini-author">মুহম্মদ জাফর ইকবাল</div>
           </a>
         
-          <a href="../book/muhammed-zafar-iqbal-vooter-bachcha-solajaman.html" class="mini-book-card">
+          <a href="../book/muhammed-zafar-iqbal-vooter-bachcha-solajaman.html" class="mini-book-card holo-card">
             <img src="../assets/covers/muhammed-zafar-iqbal-vooter-bachcha-solajaman.webp" alt="ভূতের বাচ্চা সোলায়মান" class="mini-cover" loading="lazy" />
             <div class="mini-title">ভূতের বাচ্চা সোলায়মান</div>
             <div class="mini-author">মুহম্মদ জাফর ইকবাল</div>

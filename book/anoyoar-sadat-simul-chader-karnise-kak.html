@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download ছাদের কার্ণিশে কাক (Chhader Karnishe Kak) by আনোয়ার সাদাত শিমুল (Anoyoar Sadat Simul) free in EPUB. উপন্যাস ও সাহিত্য (General Fiction) Bengali lit...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anoyoar-sadat-simul-chader-karnise-kak.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -417,6 +420,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -424,6 +428,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anoyoar-sadat-simul-chader-karnise-kak" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -439,7 +446,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anoyoar-sadat-simul-chader-karnise-kak.webp" alt="ছাদের কার্ণিশে কাক - আনোয়ার সাদাত শিমুল" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2012</span>
@@ -469,7 +476,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/eboipotro/boidweep/raw/master/Books/ছাদের_কার্ণিশে_কাক.epub" class="download-btn" download="ছাদের_কার্ণিশে_কাক.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ছাদের_কার্ণিশে_কাক.epub','file_extension':'epub','book_title':'ছাদের কার্ণিশে কাক'});">
+          <a href="https://github.com/eboipotro/boidweep/raw/master/Books/ছাদের_কার্ণিশে_কাক.epub" class="download-btn holo-card" download="ছাদের_কার্ণিশে_কাক.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ছাদের_কার্ণিশে_কাক.epub','file_extension':'epub','book_title':'ছাদের কার্ণিশে কাক'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -515,37 +522,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anoyoar-sadat-simul-banojoat-golp.html" class="mini-book-card">
+          <a href="../book/anoyoar-sadat-simul-banojoat-golp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anoyoar-sadat-simul-banojoat-golp.webp" alt="বানোয়াট গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">বানোয়াট গল্প</div>
             <div class="mini-author">আনোয়ার সাদাত শিমুল</div>
           </a>
         
-          <a href="../book/ana-frank-ana-frank-er-dajeri.html" class="mini-book-card">
+          <a href="../book/ana-frank-ana-frank-er-dajeri.html" class="mini-book-card holo-card">
             <img src="../assets/covers/ana-frank-ana-frank-er-dajeri.webp" alt="আনা ফ্রাঙ্ক এর ডায়েরি" class="mini-cover" loading="lazy" />
             <div class="mini-title">আনা ফ্রাঙ্ক এর ডায়েরি</div>
             <div class="mini-author">আনা ফ্রাঙ্ক</div>
           </a>
         
-          <a href="../book/akobr-ali-khan-purano-shei-diner-kotha.html" class="mini-book-card">
+          <a href="../book/akobr-ali-khan-purano-shei-diner-kotha.html" class="mini-book-card holo-card">
             <img src="../assets/covers/akobr-ali-khan-purano-shei-diner-kotha.webp" alt="পুরানো সেই দিনের কথা" class="mini-cover" loading="lazy" />
             <div class="mini-title">পুরানো সেই দিনের কথা</div>
             <div class="mini-author">আকবর আলি খান</div>
           </a>
         
-          <a href="../book/atul-sur-varter-bibaher-itihash.html" class="mini-book-card">
+          <a href="../book/atul-sur-varter-bibaher-itihash.html" class="mini-book-card holo-card">
             <img src="../assets/covers/atul-sur-varter-bibaher-itihash.webp" alt="ভারতের বিবাহের ইতিহাস" class="mini-cover" loading="lazy" />
             <div class="mini-title">ভারতের বিবাহের ইতিহাস</div>
             <div class="mini-author">অতুল সুর</div>
           </a>
         
-          <a href="../book/obaneendrnath-thakur-xirer-putul.html" class="mini-book-card">
+          <a href="../book/obaneendrnath-thakur-xirer-putul.html" class="mini-book-card holo-card">
             <img src="../assets/covers/obaneendrnath-thakur-xirer-putul.webp" alt="ক্ষীরের পুতুল" class="mini-cover" loading="lazy" />
             <div class="mini-title">ক্ষীরের পুতুল</div>
             <div class="mini-author">অবনীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/avisek-chottopadhjajo-mrit-jjotsnar-ratri.html" class="mini-book-card">
+          <a href="../book/avisek-chottopadhjajo-mrit-jjotsnar-ratri.html" class="mini-book-card holo-card">
             <img src="../assets/covers/avisek-chottopadhjajo-mrit-jjotsnar-ratri.webp" alt="মৃত জ্যোৎস্নার রাত্রি" class="mini-cover" loading="lazy" />
             <div class="mini-title">মৃত জ্যোৎস্নার রাত্রি</div>
             <div class="mini-author">অভিষেক চট্টোপাধ্যায়</div>

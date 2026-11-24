@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download বিবিধ (Bibidh) by সুকুমার রায় (Sukumar Ray) free in EPUB. কবিতা (Poetry), কিশোর সাহিত্য (Young Adult), প্রবন্ধ (Essays), রম্যরচনা (Humor) Bengali l...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/sukumar-ray-bibidh.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -420,6 +423,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -427,6 +431,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=sukumar-ray-bibidh" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -442,7 +449,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/sukumar-ray-bibidh.webp" alt="বিবিধ - সুকুমার রায়" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2015</span>
@@ -472,7 +479,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/eboipotro/sukumar_ray/raw/master/প্রবন্ধ/বিবিধ.epub" class="download-btn" download="বিবিধ.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'বিবিধ.epub','file_extension':'epub','book_title':'বিবিধ'});">
+          <a href="https://github.com/eboipotro/sukumar_ray/raw/master/প্রবন্ধ/বিবিধ.epub" class="download-btn holo-card" download="বিবিধ.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'বিবিধ.epub','file_extension':'epub','book_title':'বিবিধ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -518,37 +525,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/sukumar-ray-jeebojontu.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-jeebojontu.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-jeebojontu.webp" alt="জীবজন্তু" class="mini-cover" loading="lazy" />
             <div class="mini-title">জীবজন্তু</div>
             <div class="mini-author">সুকুমার রায়</div>
           </a>
         
-          <a href="../book/sukumar-ray-jeebnee.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-jeebnee.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-jeebnee.webp" alt="জীবনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">জীবনী</div>
             <div class="mini-author">সুকুমার রায়</div>
           </a>
         
-          <a href="../book/sukumar-ray-desa-bidesher-glp.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-desa-bidesher-glp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-desa-bidesher-glp.webp" alt="দেশ-বিদেশের গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">দেশ-বিদেশের গল্প</div>
             <div class="mini-author">সুকুমার রায়</div>
           </a>
         
-          <a href="../book/sukumar-ray-pagola-dasu.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-pagola-dasu.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-pagola-dasu.webp" alt="পাগলা দাশু" class="mini-cover" loading="lazy" />
             <div class="mini-title">পাগলা দাশু</div>
             <div class="mini-author">সুকুমার রায়</div>
           </a>
         
-          <a href="../book/sukumar-ray-abol-tabol.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-abol-tabol.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-abol-tabol.webp" alt="আবোল তাবোল" class="mini-cover" loading="lazy" />
             <div class="mini-title">আবোল তাবোল</div>
             <div class="mini-author">সুকুমার রায়</div>
           </a>
         
-          <a href="../book/sukumar-ray-sukumar-ray-glp-smgr.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-sukumar-ray-glp-smgr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-sukumar-ray-glp-smgr.webp" alt="সুকুমার রায় গল্প সমগ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">সুকুমার রায় গল্প সমগ্র</div>
             <div class="mini-author">সুকুমার রায়</div>

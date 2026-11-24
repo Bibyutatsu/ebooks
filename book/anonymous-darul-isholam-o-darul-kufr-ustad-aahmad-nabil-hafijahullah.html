@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download দারুল ইসলাম ও দারুল কুফর - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ (Darul Eesolam O Darul Kuphor - Ustad Ahomad Nabil Haphijahullah) by অজ্ঞাত (Anonymous) ...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-darul-isholam-o-darul-kufr-ustad-aahmad-nabil-hafijahullah.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-darul-isholam-o-darul-kufr-ustad-aahmad-nabil-hafijahullah" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-darul-isholam-o-darul-kufr-ustad-aahmad-nabil-hafijahullah.webp" alt="দারুল ইসলাম ও দারুল কুফর - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/DarulIslamODarulKufr/DarulIslamODarulKufr.pdf" class="download-btn" download="DarulIslamODarulKufr.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'DarulIslamODarulKufr.pdf','file_extension':'pdf','book_title':'দারুল ইসলাম ও দারুল কুফর - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ'});">
+          <a href="https://archive.org/download/DarulIslamODarulKufr/DarulIslamODarulKufr.pdf" class="download-btn holo-card" download="DarulIslamODarulKufr.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'DarulIslamODarulKufr.pdf','file_extension':'pdf','book_title':'দারুল ইসলাম ও দারুল কুফর - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-murotad-htjar-bidhan-ustad-aahmad-nabil-hafijahullah.html" class="mini-book-card">
+          <a href="../book/anonymous-murotad-htjar-bidhan-ustad-aahmad-nabil-hafijahullah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-murotad-htjar-bidhan-ustad-aahmad-nabil-hafijahullah.webp" alt="মুরতাদ হত্যার বিধান - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">মুরতাদ হত্যার বিধান - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-jihader-pther-pthikader-prti-kichu-nibedan-ustad-a.html" class="mini-book-card">
+          <a href="../book/anonymous-jihader-pther-pthikader-prti-kichu-nibedan-ustad-a.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-jihader-pther-pthikader-prti-kichu-nibedan-ustad-a.webp" alt="জিহাদের পথের পথিকদের প্রতি কিছু নিবেদন-উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">জিহাদের পথের পথিকদের প্রতি কিছু নিবেদন-উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-ora-kader-ejenda-bastbayn-krache-ustad-aahmad-nabi.html" class="mini-book-card">
+          <a href="../book/anonymous-ora-kader-ejenda-bastbayn-krache-ustad-aahmad-nabi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-ora-kader-ejenda-bastbayn-krache-ustad-aahmad-nabi.webp" alt="ওরা কাদের এজেণ্ডা বাস্তবায়ন করছে?- উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">ওরা কাদের এজেণ্ডা বাস্তবায়ন করছে?- উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-aallahr-bdtb-o-mhttb-ustad-aahmad-yakarija-hafijahullah.html" class="mini-book-card">
+          <a href="../book/anonymous-aallahr-bdtb-o-mhttb-ustad-aahmad-yakarija-hafijahullah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-aallahr-bdtb-o-mhttb-ustad-aahmad-yakarija-hafijahullah.webp" alt="আল্লাহর বড়ত্ব ও মহত্ত্ব - উস্তাদ আহমাদ যাকারিয়া হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল্লাহর বড়ত্ব ও মহত্ত্ব - উস্তাদ আহমাদ যাকারিয়া হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-kuroan-telaojoater-gurutb-o-ramjaner-prstuti-ustad.html" class="mini-book-card">
+          <a href="../book/anonymous-kuroan-telaojoater-gurutb-o-ramjaner-prstuti-ustad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-kuroan-telaojoater-gurutb-o-ramjaner-prstuti-ustad.webp" alt="কুরআন তেলাওয়াতের গুরুত্ব ও রমজানের প্রস্তুতি - উস্তাদ আহমাদ যাকারিয়া হাফিযাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">কুরআন তেলাওয়াতের গুরুত্ব ও রমজানের প্রস্তুতি - উস্তাদ আহমাদ যাকারিয়া হাফিযাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-ustad-allauddin-khan-o-amra-2018.html" class="mini-book-card">
+          <a href="../book/anonymous-ustad-allauddin-khan-o-amra-2018.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-ustad-allauddin-khan-o-amra-2018.webp" alt="Ustad Allauddin Khan O Amra 2018" class="mini-cover" loading="lazy" />
             <div class="mini-title">Ustad Allauddin Khan O Amra 2018</div>
             <div class="mini-author">অজ্ঞাত</div>

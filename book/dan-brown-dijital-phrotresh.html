@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download ডিজিটাল ফরট্রেস (Dijital Phorotres) by ড্যান ব্রাউন (Dan Brown) free in EPUB. অনুবাদ (Translation), থ্রিলার ও গোয়েন্দা (Mystery &amp;amp; Thriller) Beng...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/dan-brown-dijital-phrotresh.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=dan-brown-dijital-phrotresh" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/dan-brown-dijital-phrotresh.webp" alt="ডিজিটাল ফরট্রেস - ড্যান ব্রাউন" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2025</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-09/dan-brown-dijital-phrotresh.epub" class="download-btn" download="ডিজিটাল ফরট্রেস - ড্যান ব্রাউন.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ডিজিটাল ফরট্রেস - ড্যান ব্রাউন.epub','file_extension':'epub','book_title':'ডিজিটাল ফরট্রেস'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-09/dan-brown-dijital-phrotresh.epub" class="download-btn holo-card" download="ডিজিটাল ফরট্রেস - ড্যান ব্রাউন.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ডিজিটাল ফরট্রেস - ড্যান ব্রাউন.epub','file_extension':'epub','book_title':'ডিজিটাল ফরট্রেস'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/dan-brown-disepason-poyoent.html" class="mini-book-card">
+          <a href="../book/dan-brown-disepason-poyoent.html" class="mini-book-card holo-card">
             <img src="../assets/covers/dan-brown-disepason-poyoent.webp" alt="ডিসেপশন পয়েন্ট" class="mini-cover" loading="lazy" />
             <div class="mini-title">ডিসেপশন পয়েন্ট</div>
             <div class="mini-author">ড্যান ব্রাউন</div>
           </a>
         
-          <a href="../book/dan-brown-inofarno.html" class="mini-book-card">
+          <a href="../book/dan-brown-inofarno.html" class="mini-book-card holo-card">
             <img src="../assets/covers/dan-brown-inofarno.webp" alt="ইনফার্নো" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইনফার্নো</div>
             <div class="mini-author">ড্যান ব্রাউন</div>
           </a>
         
-          <a href="../book/dan-brown-dya-lost-simbl.html" class="mini-book-card">
+          <a href="../book/dan-brown-dya-lost-simbl.html" class="mini-book-card holo-card">
             <img src="../assets/covers/dan-brown-dya-lost-simbl.webp" alt="দ্যা লস্ট সিম্বল" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্যা লস্ট সিম্বল</div>
             <div class="mini-author">ড্যান ব্রাউন</div>
           </a>
         
-          <a href="../book/dan-brown-dy-da-vinchi-kod.html" class="mini-book-card">
+          <a href="../book/dan-brown-dy-da-vinchi-kod.html" class="mini-book-card holo-card">
             <img src="../assets/covers/dan-brown-dy-da-vinchi-kod.webp" alt="দ্য দা ভিঞ্চি কোড" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্য দা ভিঞ্চি কোড</div>
             <div class="mini-author">ড্যান ব্রাউন</div>
           </a>
         
-          <a href="../book/dan-brown-arijin.html" class="mini-book-card">
+          <a href="../book/dan-brown-arijin.html" class="mini-book-card holo-card">
             <img src="../assets/covers/dan-brown-arijin.webp" alt="অরিজিন" class="mini-cover" loading="lazy" />
             <div class="mini-title">অরিজিন</div>
             <div class="mini-author">ড্যান ব্রাউন</div>
           </a>
         
-          <a href="../book/dan-brown-enjels-end-demns.html" class="mini-book-card">
+          <a href="../book/dan-brown-enjels-end-demns.html" class="mini-book-card holo-card">
             <img src="../assets/covers/dan-brown-enjels-end-demns.webp" alt="এঞ্জেলস এন্ড ডেমনস" class="mini-cover" loading="lazy" />
             <div class="mini-title">এঞ্জেলস এন্ড ডেমনস</div>
             <div class="mini-author">ড্যান ব্রাউন</div>

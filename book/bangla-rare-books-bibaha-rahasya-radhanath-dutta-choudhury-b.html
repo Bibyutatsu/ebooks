@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Bibaha Rahasya Radhanath Dutta Choudhury / বিবাহ রহস্য - শ্রী রাধানাথ দত্ত চৌধুরী (Bibaha Rahasya Radhanath Dutta Choudhury Bibah Rohosj - Shree Rad...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/bangla-rare-books-bibaha-rahasya-radhanath-dutta-choudhury-b.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=bangla-rare-books-bibaha-rahasya-radhanath-dutta-choudhury-b" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/bangla-rare-books-bibaha-rahasya-radhanath-dutta-choudhury-b.webp" alt="Bibaha Rahasya Radhanath Dutta Choudhury / বিবাহ রহস্য - শ্রী রাধানাথ দত্ত চৌধুরী - Bangla Rare Books" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/Bibaha-Rahasya-Radhanath-Dutta-Choudhury/Bibaha-Rahasya-Radhanath%20Dutta%20Choudhury.epub" class="download-btn" download="Bibaha-Rahasya-Radhanath Dutta Choudhury.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Bibaha-Rahasya-Radhanath Dutta Choudhury.epub','file_extension':'epub','book_title':'Bibaha Rahasya Radhanath Dutta Choudhury / বিবাহ রহস্য - শ্রী রাধানাথ দত্ত চৌধুরী'});">
+          <a href="https://archive.org/download/Bibaha-Rahasya-Radhanath-Dutta-Choudhury/Bibaha-Rahasya-Radhanath%20Dutta%20Choudhury.epub" class="download-btn holo-card" download="Bibaha-Rahasya-Radhanath Dutta Choudhury.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Bibaha-Rahasya-Radhanath Dutta Choudhury.epub','file_extension':'epub','book_title':'Bibaha Rahasya Radhanath Dutta Choudhury / বিবাহ রহস্য - শ্রী রাধানাথ দত্ত চৌধুরী'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/bangla-rare-books-kalikatar-puratan-kahini-o-pratha-mahendra.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-kalikatar-puratan-kahini-o-pratha-mahendra.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-kalikatar-puratan-kahini-o-pratha-mahendra.webp" alt="Kalikatar Puratan Kahini O Pratha Mahendranath Dutta / কলিকাতার পুরাতন কাহিনী ও প্রথা - মহেন্দ্রনাথ দত্ত" class="mini-cover" loading="lazy" />
             <div class="mini-title">Kalikatar Puratan Kahini O Pratha Mahendranath Dutta / কলিকাতার পুরাতন কাহিনী ও প্রথা - মহেন্দ্রনাথ দত্ত</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-jibanmrita-rahasya-panchkari-dey-jibanmrit.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-jibanmrita-rahasya-panchkari-dey-jibanmrit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-jibanmrita-rahasya-panchkari-dey-jibanmrit.webp" alt="Jibanmrita Rahasya - Panchkari Dey / জীবন্মৃত রহস্য - পাঁচকড়ি দে" class="mini-cover" loading="lazy" />
             <div class="mini-title">Jibanmrita Rahasya - Panchkari Dey / জীবন্মৃত রহস্য - পাঁচকড়ি দে</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-aloukik-rahasya-year-2-অলকক-রহসয-দবতয-বরষ-১৩১৭.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-aloukik-rahasya-year-2-অলকক-রহসয-দবতয-বরষ-১৩১৭.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-aloukik-rahasya-year-2-অলকক-রহসয-দবতয-বরষ-১৩১৭.webp" alt="Aloukik Rahasya Year 2/ অলৌকিক রহস্য - দ্বিতীয় বর্ষ ১৩১৭" class="mini-cover" loading="lazy" />
             <div class="mini-title">Aloukik Rahasya Year 2/ অলৌকিক রহস্য - দ্বিতীয় বর্ষ ১৩১৭</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-hatemtai-hatematai-sri-odhorchandr-mitr-kr.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-hatemtai-hatematai-sri-odhorchandr-mitr-kr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-hatemtai-hatematai-sri-odhorchandr-mitr-kr.webp" alt="Hatemtai / হাতেমতাই - শ্রী অধরচন্দ্র মিত্র কর্ত্তৃক সম্পাদিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">Hatemtai / হাতেমতাই - শ্রী অধরচন্দ্র মিত্র কর্ত্তৃক সম্পাদিত</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-mahanirban-tanra-sri-shyamacharan-kabiratn.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-mahanirban-tanra-sri-shyamacharan-kabiratn.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-mahanirban-tanra-sri-shyamacharan-kabiratn.webp" alt="Mahanirban Tanra - Sri Shyamacharan Kabiratna / মহানির্ব্বাণ তন্ত্র - শ্রী শ্যামাচরণ কবিরত্ন" class="mini-cover" loading="lazy" />
             <div class="mini-title">Mahanirban Tanra - Sri Shyamacharan Kabiratna / মহানির্ব্বাণ তন্ত্র - শ্রী শ্যামাচরণ কবিরত্ন</div>
             <div class="mini-author">Bangla Rare Books</div>
           </a>
         
-          <a href="../book/bangla-rare-books-aloukik-rahasya-year-4-অলকক-রহসয-চতরথ-বরষ.html" class="mini-book-card">
+          <a href="../book/bangla-rare-books-aloukik-rahasya-year-4-অলকক-রহসয-চতরথ-বরষ.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bangla-rare-books-aloukik-rahasya-year-4-অলকক-রহসয-চতরথ-বরষ.webp" alt="Aloukik Rahasya Year 4 / অলৌকিক রহস্য চতুর্থ বর্ষ ১৩১৯ বঙ্গাব্দ - শ্রীক্ষীরোদপ্রসাদ বিদ্যবিনোদ সম্পাদিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">Aloukik Rahasya Year 4 / অলৌকিক রহস্য চতুর্থ বর্ষ ১৩১৯ বঙ্গাব্দ - শ্রীক্ষীরোদপ্রসাদ বিদ্যবিনোদ সম্পাদিত</div>
             <div class="mini-author">Bangla Rare Books</div>

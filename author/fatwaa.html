@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 11 Bengali ebooks by fatwaa (Fatwaa) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/fatwaa.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>fatwaa</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">fatwaa</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Fatwaa</div>
       <div class="badges-row">
@@ -449,67 +456,67 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (11)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/fatwaa-gazwatul-hind-f.html" class="mini-book-card">
+          <a href="../book/fatwaa-gazwatul-hind-f.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-gazwatul-hind-f.webp" alt="Gazwatul Hind F" class="mini-cover" loading="lazy" />
             <div class="mini-title">Gazwatul Hind F</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-antodhormiyo.html" class="mini-book-card">
+          <a href="../book/fatwaa-antodhormiyo.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-antodhormiyo.webp" alt="antodhormiyo" class="mini-cover" loading="lazy" />
             <div class="mini-title">antodhormiyo</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-thanovi-rh-19-12.html" class="mini-book-card">
+          <a href="../book/fatwaa-thanovi-rh-19-12.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-thanovi-rh-19-12.webp" alt="thanovi_rh-19-12" class="mini-cover" loading="lazy" />
             <div class="mini-title">thanovi_rh-19-12</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-fatwaa137.html" class="mini-book-card">
+          <a href="../book/fatwaa-fatwaa137.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-fatwaa137.webp" alt="fatwaa137" class="mini-cover" loading="lazy" />
             <div class="mini-title">fatwaa137</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-tofanol-aqsa-f.html" class="mini-book-card">
+          <a href="../book/fatwaa-tofanol-aqsa-f.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-tofanol-aqsa-f.webp" alt="Tofanol Aqsa F" class="mini-cover" loading="lazy" />
             <div class="mini-title">Tofanol Aqsa F</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-fatwaa141.html" class="mini-book-card">
+          <a href="../book/fatwaa-fatwaa141.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-fatwaa141.webp" alt="fatwaa141" class="mini-cover" loading="lazy" />
             <div class="mini-title">fatwaa141</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-fatwaa139.html" class="mini-book-card">
+          <a href="../book/fatwaa-fatwaa139.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-fatwaa139.webp" alt="fatwaa139" class="mini-cover" loading="lazy" />
             <div class="mini-title">fatwaa139</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-fatwaa132.html" class="mini-book-card">
+          <a href="../book/fatwaa-fatwaa132.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-fatwaa132.webp" alt="fatwaa132" class="mini-cover" loading="lazy" />
             <div class="mini-title">fatwaa132</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-fatwaa144.html" class="mini-book-card">
+          <a href="../book/fatwaa-fatwaa144.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-fatwaa144.webp" alt="fatwaa144" class="mini-cover" loading="lazy" />
             <div class="mini-title">fatwaa144</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-fatwaa140.html" class="mini-book-card">
+          <a href="../book/fatwaa-fatwaa140.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-fatwaa140.webp" alt="fatwaa140" class="mini-cover" loading="lazy" />
             <div class="mini-title">fatwaa140</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/fatwaa-fatwaa153.html" class="mini-book-card">
+          <a href="../book/fatwaa-fatwaa153.html" class="mini-book-card holo-card">
             <img src="../assets/covers/fatwaa-fatwaa153.webp" alt="fatwaa153" class="mini-cover" loading="lazy" />
             <div class="mini-title">fatwaa153</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>

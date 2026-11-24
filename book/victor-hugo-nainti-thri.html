@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download নাইন্টি থ্রি (Naeenti Thri) by ভিক্টর হুগো (Victor Hugo) free in EPUB, KFX. অনুবাদ (Translation), ক্লাসিক ও সাহিত্য (Classics) Bengali literature di...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/victor-hugo-nainti-thri.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=victor-hugo-nainti-thri" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/victor-hugo-nainti-thri.webp" alt="নাইন্টি থ্রি - ভিক্টর হুগো" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-13/victor-hugo-nainti-thri.epub" class="download-btn" download="নাইন্টি থ্রি - ভিক্টর হুগো.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নাইন্টি থ্রি - ভিক্টর হুগো.epub','file_extension':'epub','book_title':'নাইন্টি থ্রি'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-13/victor-hugo-nainti-thri.epub" class="download-btn holo-card" download="নাইন্টি থ্রি - ভিক্টর হুগো.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নাইন্টি থ্রি - ভিক্টর হুগো.epub','file_extension':'epub','book_title':'নাইন্টি থ্রি'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -481,7 +488,7 @@ a:hover { color: #5ce1e6; }
             <span class="dl-icon">⬇</span>
           </a>
         
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-13/victor-hugo-nainti-thri.kfx" class="download-btn" download="নাইন্টি থ্রি - ভিক্টর হুগো.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নাইন্টি থ্রি - ভিক্টর হুগো.kfx','file_extension':'kfx','book_title':'নাইন্টি থ্রি'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-13/victor-hugo-nainti-thri.kfx" class="download-btn holo-card" download="নাইন্টি থ্রি - ভিক্টর হুগো.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নাইন্টি থ্রি - ভিক্টর হুগো.kfx','file_extension':'kfx','book_title':'নাইন্টি থ্রি'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -527,37 +534,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/victor-hugo-le-mijarebl.html" class="mini-book-card">
+          <a href="../book/victor-hugo-le-mijarebl.html" class="mini-book-card holo-card">
             <img src="../assets/covers/victor-hugo-le-mijarebl.webp" alt="লে মিজারেবল" class="mini-cover" loading="lazy" />
             <div class="mini-title">লে মিজারেবল</div>
             <div class="mini-author">ভিক্টর হুগো</div>
           </a>
         
-          <a href="../book/victor-hugo-dy-mjan-hu-lafos.html" class="mini-book-card">
+          <a href="../book/victor-hugo-dy-mjan-hu-lafos.html" class="mini-book-card holo-card">
             <img src="../assets/covers/victor-hugo-dy-mjan-hu-lafos.webp" alt="দ্য ম্যান হু লাফস" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্য ম্যান হু লাফস</div>
             <div class="mini-author">ভিক্টর হুগো</div>
           </a>
         
-          <a href="../book/victor-hugo-toylarsh-abh-dj-see.html" class="mini-book-card">
+          <a href="../book/victor-hugo-toylarsh-abh-dj-see.html" class="mini-book-card holo-card">
             <img src="../assets/covers/victor-hugo-toylarsh-abh-dj-see.webp" alt="টয়লার্স অভ দ্য সী" class="mini-cover" loading="lazy" />
             <div class="mini-title">টয়লার্স অভ দ্য সী</div>
             <div class="mini-author">ভিক্টর হুগো</div>
           </a>
         
-          <a href="../book/charles-dickens-e-tel-tyu-sitij.html" class="mini-book-card">
+          <a href="../book/charles-dickens-e-tel-tyu-sitij.html" class="mini-book-card holo-card">
             <img src="../assets/covers/charles-dickens-e-tel-tyu-sitij.webp" alt="এ টেল ট্যু সিটীজ" class="mini-cover" loading="lazy" />
             <div class="mini-title">এ টেল ট্যু সিটীজ</div>
             <div class="mini-author">চার্লস ডিকেন্স</div>
           </a>
         
-          <a href="../book/charles-dickens-alivar-tuisht.html" class="mini-book-card">
+          <a href="../book/charles-dickens-alivar-tuisht.html" class="mini-book-card holo-card">
             <img src="../assets/covers/charles-dickens-alivar-tuisht.webp" alt="অলিভার টুইস্ট" class="mini-cover" loading="lazy" />
             <div class="mini-title">অলিভার টুইস্ট</div>
             <div class="mini-author">চার্লস ডিকেন্স</div>
           </a>
         
-          <a href="../book/charles-dickens-nikolas-niklobi.html" class="mini-book-card">
+          <a href="../book/charles-dickens-nikolas-niklobi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/charles-dickens-nikolas-niklobi.webp" alt="নিকোলাস নিকলবি" class="mini-cover" loading="lazy" />
             <div class="mini-title">নিকোলাস নিকলবি</div>
             <div class="mini-author">চার্লস ডিকেন্স</div>

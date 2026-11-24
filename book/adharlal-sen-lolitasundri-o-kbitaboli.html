@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download ললিতাসুন্দরী ও কবিতাবলী (Lolitasundree O Kobitabolee) by অধরলাল সেন (Adharlal Sen) free in EPUB. কবিতা ও কাব্য (Poetry), ক্লাসিক (Classics) Bengali ...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/adharlal-sen-lolitasundri-o-kbitaboli.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=adharlal-sen-lolitasundri-o-kbitaboli" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/adharlal-sen-lolitasundri-o-kbitaboli.webp" alt="ললিতাসুন্দরী ও কবিতাবলী - অধরলাল সেন" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: ১৮৭৮</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-31/adharlal-sen-lolitasundri-o-kbitaboli.epub" class="download-btn" download="অধরলাল সেন - ললিতাসুন্দরী ও কবিতাবলী (১৮৭৮).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অধরলাল সেন - ললিতাসুন্দরী ও কবিতাবলী (১৮৭৮).epub','file_extension':'epub','book_title':'ললিতাসুন্দরী ও কবিতাবলী'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-31/adharlal-sen-lolitasundri-o-kbitaboli.epub" class="download-btn holo-card" download="অধরলাল সেন - ললিতাসুন্দরী ও কবিতাবলী (১৮৭৮).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অধরলাল সেন - ললিতাসুন্দরী ও কবিতাবলী (১৮৭৮).epub','file_extension':'epub','book_title':'ললিতাসুন্দরী ও কবিতাবলী'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/kanchanmala-bandyopadhyay-guchch.html" class="mini-book-card">
+          <a href="../book/kanchanmala-bandyopadhyay-guchch.html" class="mini-book-card holo-card">
             <img src="../assets/covers/kanchanmala-bandyopadhyay-guchch.webp" alt="গুচ্ছ" class="mini-cover" loading="lazy" />
             <div class="mini-title">গুচ্ছ</div>
             <div class="mini-author">কাঞ্চনমালা বন্দ্যোপাধ্যায়</div>
           </a>
         
-          <a href="../book/krishnakishore-bandyopadhyay-kobitakushumanjli.html" class="mini-book-card">
+          <a href="../book/krishnakishore-bandyopadhyay-kobitakushumanjli.html" class="mini-book-card holo-card">
             <img src="../assets/covers/krishnakishore-bandyopadhyay-kobitakushumanjli.webp" alt="কবিতাকুসুমাঞ্জলি" class="mini-cover" loading="lazy" />
             <div class="mini-title">কবিতাকুসুমাঞ্জলি</div>
             <div class="mini-author">কৃষ্ণকিশোর বন্দ্যোপাধ্যায়</div>
           </a>
         
-          <a href="../book/panchanan-bhattacharya-streesbadheenota-o-streesixa.html" class="mini-book-card">
+          <a href="../book/panchanan-bhattacharya-streesbadheenota-o-streesixa.html" class="mini-book-card holo-card">
             <img src="../assets/covers/panchanan-bhattacharya-streesbadheenota-o-streesixa.webp" alt="স্ত্রীস্বাধীনতা ও স্ত্রীশিক্ষা" class="mini-cover" loading="lazy" />
             <div class="mini-title">স্ত্রীস্বাধীনতা ও স্ত্রীশিক্ষা</div>
             <div class="mini-author">পঞ্চানন ভট্টাচার্য</div>
           </a>
         
-          <a href="../book/bileshwar-gorai-megh-dhaka-alo.html" class="mini-book-card">
+          <a href="../book/bileshwar-gorai-megh-dhaka-alo.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bileshwar-gorai-megh-dhaka-alo.webp" alt="মেঘ ঢাকা আলো" class="mini-cover" loading="lazy" />
             <div class="mini-title">মেঘ ঢাকা আলো</div>
             <div class="mini-author">বিলেশ্বর গড়াই</div>
           </a>
         
-          <a href="../book/bhupendra-chandra-chakraborty-rajmala.html" class="mini-book-card">
+          <a href="../book/bhupendra-chandra-chakraborty-rajmala.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bhupendra-chandra-chakraborty-rajmala.webp" alt="রাজমালা" class="mini-cover" loading="lazy" />
             <div class="mini-title">রাজমালা</div>
             <div class="mini-author">ভূপেন্দ্রচন্দ্র চক্রবর্তী</div>
           </a>
         
-          <a href="../book/prafullaranjan-ray-biplbee-subhashchandr.html" class="mini-book-card">
+          <a href="../book/prafullaranjan-ray-biplbee-subhashchandr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/prafullaranjan-ray-biplbee-subhashchandr.webp" alt="বিপ্লবী সুভাষচন্দ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিপ্লবী সুভাষচন্দ্র</div>
             <div class="mini-author">প্রফুল্লরঞ্জন রায়</div>

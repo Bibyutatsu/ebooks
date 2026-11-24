@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download ইসলামিক ফটোগ্রাফী সমূহ (Eesolamik Photographee Somooh) by অজ্ঞাত (Anonymous) free in PDF. ইন্টারনেট আর্কাইভ (Internet Archive), ইসলামিক ফটোগ্রাফী সম...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-ishalamik-phtografi-shmuh.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-ishalamik-phtografi-shmuh" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-ishalamik-phtografi-shmuh.webp" alt="ইসলামিক ফটোগ্রাফী সমূহ - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/ISLAMICWALLPAPER_201607/______%20_________%20______%20______.pdf" class="download-btn" download="______ _________ ______ ______.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'______ _________ ______ ______.pdf','file_extension':'pdf','book_title':'ইসলামিক ফটোগ্রাফী সমূহ'});">
+          <a href="https://archive.org/download/ISLAMICWALLPAPER_201607/______%20_________%20______%20______.pdf" class="download-btn holo-card" download="______ _________ ______ ______.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'______ _________ ______ ______.pdf','file_extension':'pdf','book_title':'ইসলামিক ফটোগ্রাফী সমূহ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-saeejed-abul-ala-maodudi-boi-somuh.html" class="mini-book-card">
+          <a href="../book/anonymous-saeejed-abul-ala-maodudi-boi-somuh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-saeejed-abul-ala-maodudi-boi-somuh.webp" alt="সাইয়েদ আবুল আ’লা মওদুদী : বই সমূহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">সাইয়েদ আবুল আ’লা মওদুদী : বই সমূহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-vrant-bi-shmuh.html" class="mini-book-card">
+          <a href="../book/anonymous-vrant-bi-shmuh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-vrant-bi-shmuh.webp" alt="ভ্রান্ত বই সমূহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">ভ্রান্ত বই সমূহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-ishlamik-boishomuh.html" class="mini-book-card">
+          <a href="../book/anonymous-ishlamik-boishomuh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-ishlamik-boishomuh.webp" alt="ইসলামিক বইসমূহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইসলামিক বইসমূহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-ishlamik-boishomuh-2.html" class="mini-book-card">
+          <a href="../book/anonymous-ishlamik-boishomuh-2.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-ishlamik-boishomuh-2.webp" alt="ইসলামিক বইসমূহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইসলামিক বইসমূহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shtjarth-prkas-dojanond-sorasbti.html" class="mini-book-card">
+          <a href="../book/anonymous-shtjarth-prkas-dojanond-sorasbti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shtjarth-prkas-dojanond-sorasbti.webp" alt="সত্যার্থ প্রকাশ দয়ানন্দ সরস্বতী" class="mini-cover" loading="lazy" />
             <div class="mini-title">সত্যার্থ প্রকাশ দয়ানন্দ সরস্বতী</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour.html" class="mini-book-card">
+          <a href="../book/anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour.webp" alt="বাংলাদেশ শ্রম বিধিমালা ২০১৫ (সংশোধনী ২০২২ইং সহ) | Bangladesh Labour Rules 2015 (Amendment 2022 included) | BARE ACT" class="mini-cover" loading="lazy" />
             <div class="mini-title">বাংলাদেশ শ্রম বিধিমালা ২০১৫ (সংশোধনী ২০২২ইং সহ) | Bangladesh Labour Rules 2015 (Amendment 2022 included) | BARE ACT</div>
             <div class="mini-author">অজ্ঞাত</div>

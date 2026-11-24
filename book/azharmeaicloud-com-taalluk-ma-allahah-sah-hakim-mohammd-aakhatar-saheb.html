@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download তাআল্লুক মা,আল্লাহঃ শাহ্ হাকীম মোহাম্মদ আখতার সাহেব। (Taalluk Ma Allahoh Shah Hakeem Mohammod Akhotar Sahebo) by azharmea@icloud.com (Azharmea@Iclou...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/azharmeaicloud-com-taalluk-ma-allahah-sah-hakim-mohammd-aakhatar-saheb.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -423,6 +426,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -430,6 +434,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=azharmeaicloud-com-taalluk-ma-allahah-sah-hakim-mohammd-aakhatar-saheb" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -445,7 +452,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/azharmeaicloud-com-taalluk-ma-allahah-sah-hakim-mohammd-aakhatar-saheb.webp" alt="তাআল্লুক মা,আল্লাহঃ শাহ্ হাকীম মোহাম্মদ আখতার সাহেব। - azharmea@icloud.com" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -475,7 +482,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/www.eelm.weebly.com_201704/TaallokMaaAllah.pdf" class="download-btn" download="TaallokMaaAllah.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'TaallokMaaAllah.pdf','file_extension':'pdf','book_title':'তাআল্লুক মা,আল্লাহঃ শাহ্ হাকীম মোহাম্মদ আখতার সাহেব।'});">
+          <a href="https://archive.org/download/www.eelm.weebly.com_201704/TaallokMaaAllah.pdf" class="download-btn holo-card" download="TaallokMaaAllah.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'TaallokMaaAllah.pdf','file_extension':'pdf','book_title':'তাআল্লুক মা,আল্লাহঃ শাহ্ হাকীম মোহাম্মদ আখতার সাহেব।'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -521,37 +528,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/azharmeaicloud-com-atmar-byadhi-o-prtikar-hojart-maolana-sah.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-atmar-byadhi-o-prtikar-hojart-maolana-sah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-atmar-byadhi-o-prtikar-hojart-maolana-sah.webp" alt="আত্মার ব্যাধি ও প্রতিকার : হজরত মাওলানা শাহ হাকিম মোহাম্মদ আখতার" class="mini-cover" loading="lazy" />
             <div class="mini-title">আত্মার ব্যাধি ও প্রতিকার : হজরত মাওলানা শাহ হাকিম মোহাম্মদ আখতার</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-tinoti-mooloniti-o-tar-prmanoponji-pdf.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-tinoti-mooloniti-o-tar-prmanoponji-pdf.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-tinoti-mooloniti-o-tar-prmanoponji-pdf.webp" alt="তিনটি মূলনীতি ও তার প্রমাণপঞ্জি PDF" class="mini-cover" loading="lazy" />
             <div class="mini-title">তিনটি মূলনীতি ও তার প্রমাণপঞ্জি PDF</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-kitab-eeslahee-khutubata-lekhk-mufatee-tb.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-kitab-eeslahee-khutubata-lekhk-mufatee-tb.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-kitab-eeslahee-khutubata-lekhk-mufatee-tb.webp" alt="কিতাব ইসলাহী খুতুবাত। লেখক মুফতী ত্বাকী উসমানী। single page" class="mini-cover" loading="lazy" />
             <div class="mini-title">কিতাব ইসলাহী খুতুবাত। লেখক মুফতী ত্বাকী উসমানী। single page</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-ahkame-yindegi-chturth-songoskrn-with-ine.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-ahkame-yindegi-chturth-songoskrn-with-ine.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-ahkame-yindegi-chturth-songoskrn-with-ine.webp" alt="আহকামে যিন্দেগী চতুর্থ সংস্করণ With Ineractive Link মাওলানা মোহাম্মদ হেমায়েত উদ্দীন" class="mini-cover" loading="lazy" />
             <div class="mini-title">আহকামে যিন্দেগী চতুর্থ সংস্করণ With Ineractive Link মাওলানা মোহাম্মদ হেমায়েত উদ্দীন</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-kuroan-o-tafseer.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-kuroan-o-tafseer.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-kuroan-o-tafseer.webp" alt="কুরআন ও তাফসীর" class="mini-cover" loading="lazy" />
             <div class="mini-title">কুরআন ও তাফসীর</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-bih-muntakhab-hadis-lekhakoh-maolana-muha.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-bih-muntakhab-hadis-lekhakoh-maolana-muha.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-bih-muntakhab-hadis-lekhakoh-maolana-muha.webp" alt="বইঃ মুন্তাখাব হাদীস লেখকঃ মাওলানা মুহাম্মদ ইউসুফ কান্ধলভী রহ. প্রকাশকঃ দারুল কিতাব Muntakhab Hadith Maulana Yousuf Kandolvi( RA)" class="mini-cover" loading="lazy" />
             <div class="mini-title">বইঃ মুন্তাখাব হাদীস লেখকঃ মাওলানা মুহাম্মদ ইউসুফ কান্ধলভী রহ. প্রকাশকঃ দারুল কিতাব Muntakhab Hadith Maulana Yousuf Kandolvi( RA)</div>
             <div class="mini-author">azharmea@icloud.com</div>

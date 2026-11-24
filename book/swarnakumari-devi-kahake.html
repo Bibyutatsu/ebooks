@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download কাহাকে? (Kahake) by স্বর্ণকুমারী দেবী (Swarnakumari Devi) free in EPUB. উপন্যাস (Novel), ঐতিহাসিক উপন্যাস (Historical Fiction), ক্লাসিক ও নাটক (Dram...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/swarnakumari-devi-kahake.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -420,6 +423,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -427,6 +431,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=swarnakumari-devi-kahake" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -442,7 +449,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/swarnakumari-devi-kahake.webp" alt="কাহাকে? - স্বর্ণকুমারী দেবী" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: ১৮৯৮</span>
@@ -472,7 +479,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-33/swarnakumari-devi-kahake.epub" class="download-btn" download="স্বর্ণকুমারী দেবী - কাহাকে? (১৮৯৮).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'স্বর্ণকুমারী দেবী - কাহাকে? (১৮৯৮).epub','file_extension':'epub','book_title':'কাহাকে?'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-33/swarnakumari-devi-kahake.epub" class="download-btn holo-card" download="স্বর্ণকুমারী দেবী - কাহাকে? (১৮৯৮).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'স্বর্ণকুমারী দেবী - কাহাকে? (১৮৯৮).epub','file_extension':'epub','book_title':'কাহাকে?'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -518,37 +525,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/bankim-chandra-chattopadhyay-debi-choudhurani.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-debi-choudhurani.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-debi-choudhurani.webp" alt="দেবী চৌধুরাণী" class="mini-cover" loading="lazy" />
             <div class="mini-title">দেবী চৌধুরাণী</div>
             <div class="mini-author">বঙ্কিমচন্দ্র চট্টোপাধ্যায়</div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-krishnkanter-uil.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-krishnkanter-uil.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-krishnkanter-uil.webp" alt="কৃষ্ণকান্তের উইল" class="mini-cover" loading="lazy" />
             <div class="mini-title">কৃষ্ণকান্তের উইল</div>
             <div class="mini-author">বঙ্কিমচন্দ্র চট্টোপাধ্যায়</div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-biggoanorhosj.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-biggoanorhosj.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-biggoanorhosj.webp" alt="বিজ্ঞানরহস্য" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিজ্ঞানরহস্য</div>
             <div class="mini-author">বঙ্কিমচন্দ্র চট্টোপাধ্যায়</div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-anondmth.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-anondmth.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-anondmth.webp" alt="আনন্দমঠ" class="mini-cover" loading="lazy" />
             <div class="mini-title">আনন্দমঠ</div>
             <div class="mini-author">বঙ্কিমচন্দ্র চট্টোপাধ্যায়</div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-raya-deenobondhu-mitr-bahadurer-jibani.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-raya-deenobondhu-mitr-bahadurer-jibani.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-raya-deenobondhu-mitr-bahadurer-jibani.webp" alt="রায় দীনবন্ধু মিত্র বাহাদুরের জীবনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">রায় দীনবন্ধু মিত্র বাহাদুরের জীবনী</div>
             <div class="mini-author">বঙ্কিমচন্দ্র চট্টোপাধ্যায়</div>
           </a>
         
-          <a href="../book/bankim-chandra-chattopadhyay-mrinalini.html" class="mini-book-card">
+          <a href="../book/bankim-chandra-chattopadhyay-mrinalini.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bankim-chandra-chattopadhyay-mrinalini.webp" alt="মৃণালিনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">মৃণালিনী</div>
             <div class="mini-author">বঙ্কিমচন্দ্র চট্টোপাধ্যায়</div>

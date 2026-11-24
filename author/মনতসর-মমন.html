@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 2 Bengali ebooks by মুনতাসীর মামুন (মুনতাসীর মামুন) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/মনতসর-মমন.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>মুনতাসীর মামুন</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">মুনতাসীর মামুন</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">মুনতাসীর মামুন</div>
       <div class="badges-row">
@@ -449,13 +456,13 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (2)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/মনতসর-মমন-rajakarer-mn-m-khnd-muntasir-mamun.html" class="mini-book-card">
+          <a href="../book/মনতসর-মমন-rajakarer-mn-m-khnd-muntasir-mamun.html" class="mini-book-card holo-card">
             <img src="../assets/covers/মনতসর-মমন-rajakarer-mn-m-khnd-muntasir-mamun.webp" alt="রাজাকারের মন - ১ম খণ্ড - মুনতাসীর মামুন" class="mini-cover" loading="lazy" />
             <div class="mini-title">রাজাকারের মন - ১ম খণ্ড - মুনতাসীর মামুন</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/মনতসর-মমন-pakistanider-dristite-ekattar-muntasir-mamun-o-mhi.html" class="mini-book-card">
+          <a href="../book/মনতসর-মমন-pakistanider-dristite-ekattar-muntasir-mamun-o-mhi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/মনতসর-মমন-pakistanider-dristite-ekattar-muntasir-mamun-o-mhi.webp" alt="পাকিস্তানীদের দৃষ্টিতে একাত্তর - মুনতাসীর মামুন ও মহিউদ্দিন আহমেদ সম্পাদিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">পাকিস্তানীদের দৃষ্টিতে একাত্তর - মুনতাসীর মামুন ও মহিউদ্দিন আহমেদ সম্পাদিত</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>

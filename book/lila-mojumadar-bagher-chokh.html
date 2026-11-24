@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download বাঘের চোখ (Bagher Chokh) by লীলা মজুমদার (Lila Mjumdar) free in KFX, EPUB. উপন্যাস ও সাহিত্য (General Fiction) Bengali literature digital edition on...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/lila-mojumadar-bagher-chokh.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -417,6 +420,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -424,6 +428,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=lila-mojumadar-bagher-chokh" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -439,7 +446,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/lila-mojumadar-bagher-chokh.webp" alt="বাঘের চোখ - লীলা মজুমদার" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -469,7 +476,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-16/lila-mojumadar-bagher-chokh.kfx" class="download-btn" download="বাঘের চোখ - লীলা মজুমদার.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'বাঘের চোখ - লীলা মজুমদার.kfx','file_extension':'kfx','book_title':'বাঘের চোখ'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-16/lila-mojumadar-bagher-chokh.kfx" class="download-btn holo-card" download="বাঘের চোখ - লীলা মজুমদার.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'বাঘের চোখ - লীলা মজুমদার.kfx','file_extension':'kfx','book_title':'বাঘের চোখ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -480,7 +487,7 @@ a:hover { color: #5ce1e6; }
             <span class="dl-icon">⬇</span>
           </a>
         
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-16/lila-mojumadar-bagher-chokh.epub" class="download-btn" download="বাঘের চোখ - লীলা মজুমদার.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'বাঘের চোখ - লীলা মজুমদার.epub','file_extension':'epub','book_title':'বাঘের চোখ'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-16/lila-mojumadar-bagher-chokh.epub" class="download-btn holo-card" download="বাঘের চোখ - লীলা মজুমদার.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'বাঘের চোখ - লীলা মজুমদার.epub','file_extension':'epub','book_title':'বাঘের চোখ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -526,37 +533,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/lila-mojumadar-bedaler-boi.html" class="mini-book-card">
+          <a href="../book/lila-mojumadar-bedaler-boi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/lila-mojumadar-bedaler-boi.webp" alt="বেড়ালের বই" class="mini-cover" loading="lazy" />
             <div class="mini-title">বেড়ালের বই</div>
             <div class="mini-author">লীলা মজুমদার</div>
           </a>
         
-          <a href="../book/lila-mojumadar-podipiseer-barmibaks.html" class="mini-book-card">
+          <a href="../book/lila-mojumadar-podipiseer-barmibaks.html" class="mini-book-card holo-card">
             <img src="../assets/covers/lila-mojumadar-podipiseer-barmibaks.webp" alt="পদিপিসীর বর্মিবাক্স" class="mini-cover" loading="lazy" />
             <div class="mini-title">পদিপিসীর বর্মিবাক্স</div>
             <div class="mini-author">লীলা মজুমদার</div>
           </a>
         
-          <a href="../book/lila-mojumadar-din-dupure.html" class="mini-book-card">
+          <a href="../book/lila-mojumadar-din-dupure.html" class="mini-book-card holo-card">
             <img src="../assets/covers/lila-mojumadar-din-dupure.webp" alt="দিন দুপুরে" class="mini-cover" loading="lazy" />
             <div class="mini-title">দিন দুপুরে</div>
             <div class="mini-author">লীলা মজুমদার</div>
           </a>
         
-          <a href="../book/lila-mojumadar-tang-ling.html" class="mini-book-card">
+          <a href="../book/lila-mojumadar-tang-ling.html" class="mini-book-card holo-card">
             <img src="../assets/covers/lila-mojumadar-tang-ling.webp" alt="টং লিং" class="mini-cover" loading="lazy" />
             <div class="mini-title">টং লিং</div>
             <div class="mini-author">লীলা মজুমদার</div>
           </a>
         
-          <a href="../book/lila-mojumadar-gupir-guptkhata.html" class="mini-book-card">
+          <a href="../book/lila-mojumadar-gupir-guptkhata.html" class="mini-book-card holo-card">
             <img src="../assets/covers/lila-mojumadar-gupir-guptkhata.webp" alt="গুপির গুপ্তখাতা" class="mini-cover" loading="lazy" />
             <div class="mini-title">গুপির গুপ্তখাতা</div>
             <div class="mini-author">লীলা মজুমদার</div>
           </a>
         
-          <a href="../book/lila-mojumadar-bdjinather-bdai.html" class="mini-book-card">
+          <a href="../book/lila-mojumadar-bdjinather-bdai.html" class="mini-book-card holo-card">
             <img src="../assets/covers/lila-mojumadar-bdjinather-bdai.webp" alt="বদ্যিনাথের বড়ি" class="mini-cover" loading="lazy" />
             <div class="mini-title">বদ্যিনাথের বড়ি</div>
             <div class="mini-author">লীলা মজুমদার</div>

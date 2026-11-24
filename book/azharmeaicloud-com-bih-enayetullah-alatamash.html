@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download বইঃ এনায়েতুল্লাহ আলতামাশ (Boeeh Enajoetullah Alotamash) by azharmea@icloud.com (Azharmea@Icloud Com) free in PDF. altamash, banglaboi, islami book,...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/azharmeaicloud-com-bih-enayetullah-alatamash.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -423,6 +426,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -430,6 +434,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=azharmeaicloud-com-bih-enayetullah-alatamash" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -445,7 +452,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/azharmeaicloud-com-bih-enayetullah-alatamash.webp" alt="বইঃ এনায়েতুল্লাহ আলতামাশ - azharmea@icloud.com" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -475,7 +482,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/islamfind-altamash/Andalusiar-Shomudro-Shoikote.pdf" class="download-btn" download="Andalusiar-Shomudro-Shoikote.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Andalusiar-Shomudro-Shoikote.pdf','file_extension':'pdf','book_title':'বইঃ এনায়েতুল্লাহ আলতামাশ'});">
+          <a href="https://archive.org/download/islamfind-altamash/Andalusiar-Shomudro-Shoikote.pdf" class="download-btn holo-card" download="Andalusiar-Shomudro-Shoikote.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Andalusiar-Shomudro-Shoikote.pdf','file_extension':'pdf','book_title':'বইঃ এনায়েতুল্লাহ আলতামাশ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -521,37 +528,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/azharmeaicloud-com-shbpner-bjakhya-allama-ibone-sirin-rahh.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-shbpner-bjakhya-allama-ibone-sirin-rahh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-shbpner-bjakhya-allama-ibone-sirin-rahh.webp" alt="স্বপ্নের ব্যাখ্যা (আল্লামা ইবনে শিরীন রহঃ)" class="mini-cover" loading="lazy" />
             <div class="mini-title">স্বপ্নের ব্যাখ্যা (আল্লামা ইবনে শিরীন রহঃ)</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-al-kuroaner-aloke-arbi-vasha-shixa.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-al-kuroaner-aloke-arbi-vasha-shixa.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-al-kuroaner-aloke-arbi-vasha-shixa.webp" alt="আল – কুরআনের আলোকে আরবি ভাষা শিক্ষা" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল – কুরআনের আলোকে আরবি ভাষা শিক্ষা</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-dolilosh-namayer-masajel-bardhit-songoskrn.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-dolilosh-namayer-masajel-bardhit-songoskrn.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-dolilosh-namayer-masajel-bardhit-songoskrn.webp" alt="দলিলসহ নামাযের মাসায়েল (বর্ধিত সংস্করণ)" class="mini-cover" loading="lazy" />
             <div class="mini-title">দলিলসহ নামাযের মাসায়েল (বর্ধিত সংস্করণ)</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-ahkame-yindegi-chturth-songoskrn-with-ine.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-ahkame-yindegi-chturth-songoskrn-with-ine.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-ahkame-yindegi-chturth-songoskrn-with-ine.webp" alt="আহকামে যিন্দেগী চতুর্থ সংস্করণ With Ineractive Link মাওলানা মোহাম্মদ হেমায়েত উদ্দীন" class="mini-cover" loading="lazy" />
             <div class="mini-title">আহকামে যিন্দেগী চতুর্থ সংস্করণ With Ineractive Link মাওলানা মোহাম্মদ হেমায়েত উদ্দীন</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-tinoti-mooloniti-o-tar-prmanoponji-pdf.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-tinoti-mooloniti-o-tar-prmanoponji-pdf.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-tinoti-mooloniti-o-tar-prmanoponji-pdf.webp" alt="তিনটি মূলনীতি ও তার প্রমাণপঞ্জি PDF" class="mini-cover" loading="lazy" />
             <div class="mini-title">তিনটি মূলনীতি ও তার প্রমাণপঞ্জি PDF</div>
             <div class="mini-author">azharmea@icloud.com</div>
           </a>
         
-          <a href="../book/azharmeaicloud-com-kitab-eeslahee-khutubata-lekhk-mufatee-tb.html" class="mini-book-card">
+          <a href="../book/azharmeaicloud-com-kitab-eeslahee-khutubata-lekhk-mufatee-tb.html" class="mini-book-card holo-card">
             <img src="../assets/covers/azharmeaicloud-com-kitab-eeslahee-khutubata-lekhk-mufatee-tb.webp" alt="কিতাব ইসলাহী খুতুবাত। লেখক মুফতী ত্বাকী উসমানী। single page" class="mini-cover" loading="lazy" />
             <div class="mini-title">কিতাব ইসলাহী খুতুবাত। লেখক মুফতী ত্বাকী উসমানী। single page</div>
             <div class="mini-author">azharmea@icloud.com</div>

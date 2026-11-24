@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download যারা আমেরিকার সাহায্য করে তাদের কুফরীর সুস্পষ্ট প্রমাণ - শাইখ নাসির ইবনে হামদ আল-ফাহদ (ফাক্কাল্লাহু আসরাহ) (Jara Amerikar Sahajj Kore Tader Kuphoree...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-jara-amerikar-shahayy-kre-tader-kupharir-suspsht-p.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-jara-amerikar-shahayy-kre-tader-kupharir-suspsht-p" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-jara-amerikar-shahayy-kre-tader-kupharir-suspsht-p.webp" alt="যারা আমেরিকার সাহায্য করে তাদের কুফরীর সুস্পষ্ট প্রমাণ - শাইখ নাসির ইবনে হামদ আল-ফাহদ (ফাক্কাল্লাহু আসরাহ) - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/jaraamerikakesahajjokore/JaraAmerikakeSahajjoKore.pdf" class="download-btn" download="JaraAmerikakeSahajjoKore.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'JaraAmerikakeSahajjoKore.pdf','file_extension':'pdf','book_title':'যারা আমেরিকার সাহায্য করে তাদের কুফরীর সুস্পষ্ট প্রমাণ - শাইখ নাসির ইবনে হামদ আল-ফাহদ (ফাক্কাল্লাহু আসরাহ)'});">
+          <a href="https://archive.org/download/jaraamerikakesahajjokore/JaraAmerikakeSahajjoKore.pdf" class="download-btn holo-card" download="JaraAmerikakeSahajjoKore.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'JaraAmerikakeSahajjoKore.pdf','file_extension':'pdf','book_title':'যারা আমেরিকার সাহায্য করে তাদের কুফরীর সুস্পষ্ট প্রমাণ - শাইখ নাসির ইবনে হামদ আল-ফাহদ (ফাক্কাল্লাহু আসরাহ)'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-aallahr-ayaber-bhoy-o-rohomater-asar-gurutb-maolan.html" class="mini-book-card">
+          <a href="../book/anonymous-aallahr-ayaber-bhoy-o-rohomater-asar-gurutb-maolan.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-aallahr-ayaber-bhoy-o-rohomater-asar-gurutb-maolan.webp" alt="আল্লাহর আযাবের ভয় ও রহমতের আশার গুরুত্ব - মাওলানা সালেহ মাহমুদ হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল্লাহর আযাবের ভয় ও রহমতের আশার গুরুত্ব - মাওলানা সালেহ মাহমুদ হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-tajokija-mjliser-ooddeshy-maolana-saleh-mahamud-hafijahullah.html" class="mini-book-card">
+          <a href="../book/anonymous-tajokija-mjliser-ooddeshy-maolana-saleh-mahamud-hafijahullah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-tajokija-mjliser-ooddeshy-maolana-saleh-mahamud-hafijahullah.webp" alt="তাযকিয়া মজলিসের উদ্দেশ্য - মাওলানা সালেহ মাহমুদ হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">তাযকিয়া মজলিসের উদ্দেশ্য - মাওলানা সালেহ মাহমুদ হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-nofsh-er-kumontrna-theke-banchar-oopaj-maolana-sal.html" class="mini-book-card">
+          <a href="../book/anonymous-nofsh-er-kumontrna-theke-banchar-oopaj-maolana-sal.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-nofsh-er-kumontrna-theke-banchar-oopaj-maolana-sal.webp" alt="নফস এর কুমন্ত্রণা থেকে বাঁচার উপায় - মাওলানা সালেহ মাহমুদ হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">নফস এর কুমন্ত্রণা থেকে বাঁচার উপায় - মাওলানা সালেহ মাহমুদ হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-dbiner-shthik-bujh-kivabe-arjan-krabo-maolana-sale.html" class="mini-book-card">
+          <a href="../book/anonymous-dbiner-shthik-bujh-kivabe-arjan-krabo-maolana-sale.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-dbiner-shthik-bujh-kivabe-arjan-krabo-maolana-sale.webp" alt="দ্বীনের সঠিক বুঝ কিভাবে অর্জন করবো? - মাওলানা সালেহ মাহমুদ হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্বীনের সঠিক বুঝ কিভাবে অর্জন করবো? - মাওলানা সালেহ মাহমুদ হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-2022-2023-ইসলমক-বই-পরব-৬.html" class="mini-book-card">
+          <a href="../book/anonymous-2022-2023-ইসলমক-বই-পরব-৬.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-2022-2023-ইসলমক-বই-পরব-৬.webp" alt="2022-2023 ইসলামিক বই - পর্ব ৬" class="mini-cover" loading="lazy" />
             <div class="mini-title">2022-2023 ইসলামিক বই - পর্ব ৬</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-2020-2023-ইসলমক-বই-পরব-৫.html" class="mini-book-card">
+          <a href="../book/anonymous-2020-2023-ইসলমক-বই-পরব-৫.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-2020-2023-ইসলমক-বই-পরব-৫.webp" alt="2020-2023 ইসলামিক বই - পর্ব ৫" class="mini-cover" loading="lazy" />
             <div class="mini-title">2020-2023 ইসলামিক বই - পর্ব ৫</div>
             <div class="mini-author">অজ্ঞাত</div>

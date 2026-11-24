@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 18 Bengali ebooks by সুকুমার রায় (Sukumar Ray) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/sukumar-ray.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>সুকুমার রায়</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">সুকুমার রায়</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Sukumar Ray</div>
       <div class="badges-row">
@@ -449,109 +456,109 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (18)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/sukumar-ray-abol-tabol.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-abol-tabol.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-abol-tabol.webp" alt="আবোল তাবোল" class="mini-cover" loading="lazy" />
             <div class="mini-title">আবোল তাবোল</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-desa-bidesher-glp.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-desa-bidesher-glp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-desa-bidesher-glp.webp" alt="দেশ-বিদেশের গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">দেশ-বিদেশের গল্প</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-pagola-dasu.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-pagola-dasu.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-pagola-dasu.webp" alt="পাগলা দাশু" class="mini-cover" loading="lazy" />
             <div class="mini-title">পাগলা দাশু</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-sukumar-ray-glp-smgr.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-sukumar-ray-glp-smgr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-sukumar-ray-glp-smgr.webp" alt="সুকুমার রায় গল্প সমগ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">সুকুমার রায় গল্প সমগ্র</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-h-y-b-r-l.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-h-y-b-r-l.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-h-y-b-r-l.webp" alt="হ য ব র ল" class="mini-cover" loading="lazy" />
             <div class="mini-title">হ য ব র ল</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-onjanj-kbita.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-onjanj-kbita.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-onjanj-kbita.webp" alt="অন্যান্য কবিতা" class="mini-cover" loading="lazy" />
             <div class="mini-title">অন্যান্য কবিতা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-anjany-galp.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-anjany-galp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-anjany-galp.webp" alt="অন্যান্য গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">অন্যান্য গল্প</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-abak-jlpan.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-abak-jlpan.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-abak-jlpan.webp" alt="অবাক জলপান" class="mini-cover" loading="lazy" />
             <div class="mini-title">অবাক জলপান</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-khai-khai.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-khai-khai.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-khai-khai.webp" alt="খাই খাই" class="mini-cover" loading="lazy" />
             <div class="mini-title">খাই খাই</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-jeebojontu.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-jeebojontu.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-jeebojontu.webp" alt="জীবজন্তু" class="mini-cover" loading="lazy" />
             <div class="mini-title">জীবজন্তু</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-jeebnee.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-jeebnee.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-jeebnee.webp" alt="জীবনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">জীবনী</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-jhalapala.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-jhalapala.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-jhalapala.webp" alt="ঝালাপালা" class="mini-cover" loading="lazy" />
             <div class="mini-title">ঝালাপালা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-bohurupi.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-bohurupi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-bohurupi.webp" alt="বহুরূপী" class="mini-cover" loading="lazy" />
             <div class="mini-title">বহুরূপী</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-bibidh.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-bibidh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-bibidh.webp" alt="বিবিধ" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিবিধ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-vabuk-shva.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-vabuk-shva.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-vabuk-shva.webp" alt="ভাবুক সভা" class="mini-cover" loading="lazy" />
             <div class="mini-title">ভাবুক সভা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-mama-go.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-mama-go.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-mama-go.webp" alt="মামা গো!" class="mini-cover" loading="lazy" />
             <div class="mini-title">মামা গো!</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-lokkhmner-sktisel.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-lokkhmner-sktisel.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-lokkhmner-sktisel.webp" alt="লক্ষ্মণের শক্তিশেল" class="mini-cover" loading="lazy" />
             <div class="mini-title">লক্ষ্মণের শক্তিশেল</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sukumar-ray-hingsuti.html" class="mini-book-card">
+          <a href="../book/sukumar-ray-hingsuti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sukumar-ray-hingsuti.webp" alt="হিংসুটি" class="mini-cover" loading="lazy" />
             <div class="mini-title">হিংসুটি</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>

@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 9 Bengali ebooks by নারায়ণ গঙ্গোপাধ্যায় (Narayan Gangopadhyay) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/narayan-gangopadhyay.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>নারায়ণ গঙ্গোপাধ্যায়</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">নারায়ণ গঙ্গোপাধ্যায়</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Narayan Gangopadhyay</div>
       <div class="badges-row">
@@ -449,55 +456,55 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (9)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/narayan-gangopadhyay-andhkarer-agantuk.html" class="mini-book-card">
+          <a href="../book/narayan-gangopadhyay-andhkarer-agantuk.html" class="mini-book-card holo-card">
             <img src="../assets/covers/narayan-gangopadhyay-andhkarer-agantuk.webp" alt="অন্ধকারের আগন্তুক" class="mini-cover" loading="lazy" />
             <div class="mini-title">অন্ধকারের আগন্তুক</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/narayan-gangopadhyay-kmbl-niruddes-tenida.html" class="mini-book-card">
+          <a href="../book/narayan-gangopadhyay-kmbl-niruddes-tenida.html" class="mini-book-card holo-card">
             <img src="../assets/covers/narayan-gangopadhyay-kmbl-niruddes-tenida.webp" alt="কম্বল নিরুদ্দেশ (টেনিদা)" class="mini-cover" loading="lazy" />
             <div class="mini-title">কম্বল নিরুদ্দেশ (টেনিদা)</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/narayan-gangopadhyay-charmoorti.html" class="mini-book-card">
+          <a href="../book/narayan-gangopadhyay-charmoorti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/narayan-gangopadhyay-charmoorti.webp" alt="চারমূর্তি" class="mini-cover" loading="lazy" />
             <div class="mini-title">চারমূর্তি</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/narayan-gangopadhyay-jhau-banglor-rahsy-tenida.html" class="mini-book-card">
+          <a href="../book/narayan-gangopadhyay-jhau-banglor-rahsy-tenida.html" class="mini-book-card holo-card">
             <img src="../assets/covers/narayan-gangopadhyay-jhau-banglor-rahsy-tenida.webp" alt="ঝাউ বাংলোর রহস্য (টেনিদা)" class="mini-cover" loading="lazy" />
             <div class="mini-title">ঝাউ বাংলোর রহস্য (টেনিদা)</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/narayan-gangopadhyay-tenida-ar-siddhughotk.html" class="mini-book-card">
+          <a href="../book/narayan-gangopadhyay-tenida-ar-siddhughotk.html" class="mini-book-card holo-card">
             <img src="../assets/covers/narayan-gangopadhyay-tenida-ar-siddhughotk.webp" alt="টেনিদা আর সিদ্ধুঘোটক" class="mini-cover" loading="lazy" />
             <div class="mini-title">টেনিদা আর সিদ্ধুঘোটক</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/narayan-gangopadhyay-tenida-smgr.html" class="mini-book-card">
+          <a href="../book/narayan-gangopadhyay-tenida-smgr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/narayan-gangopadhyay-tenida-smgr.webp" alt="টেনিদা সমগ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">টেনিদা সমগ্র</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/narayan-gangopadhyay-tenidar-aviyan.html" class="mini-book-card">
+          <a href="../book/narayan-gangopadhyay-tenidar-aviyan.html" class="mini-book-card holo-card">
             <img src="../assets/covers/narayan-gangopadhyay-tenidar-aviyan.webp" alt="টেনিদার অভিযান" class="mini-cover" loading="lazy" />
             <div class="mini-title">টেনিদার অভিযান</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">MOBI</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/narayan-gangopadhyay-tenidar-glp.html" class="mini-book-card">
+          <a href="../book/narayan-gangopadhyay-tenidar-glp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/narayan-gangopadhyay-tenidar-glp.webp" alt="টেনিদার গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">টেনিদার গল্প</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/narayan-gangopadhyay-narayon-gongopadhyajoer-golpsmogr.html" class="mini-book-card">
+          <a href="../book/narayan-gangopadhyay-narayon-gongopadhyajoer-golpsmogr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/narayan-gangopadhyay-narayon-gongopadhyajoer-golpsmogr.webp" alt="নারায়ণ গঙ্গোপাধ্যায়ের গল্পসমগ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">নারায়ণ গঙ্গোপাধ্যায়ের গল্পসমগ্র</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>

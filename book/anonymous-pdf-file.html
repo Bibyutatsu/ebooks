@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Pdf file (Pdf File) by অজ্ঞাত (Anonymous) free in PDF. ইন্টারনেট আর্কাইভ (Internet Archive), ক্লাসিক ও সাহিত্য (Classics) Bengali literature digital...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-pdf-file.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-pdf-file" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-pdf-file.webp" alt="Pdf file - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2021</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/pdf-file_202108/3G%20%E0%A6%A8%E0%A7%87%E0%A6%9F%E0%A6%93%E0%A7%9F%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%95%20%E0%A6%A4%E0%A7%88%E0%A6%B0%E0%A7%80%20%E0%A6%95%E0%A6%B0%E0%A7%81%E0%A6%A8.pdf" class="download-btn" download="3G নেটওয়ার্ক তৈরী করুন.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'3G নেটওয়ার্ক তৈরী করুন.pdf','file_extension':'pdf','book_title':'Pdf file'});">
+          <a href="https://archive.org/download/pdf-file_202108/3G%20%E0%A6%A8%E0%A7%87%E0%A6%9F%E0%A6%93%E0%A7%9F%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%95%20%E0%A6%A4%E0%A7%88%E0%A6%B0%E0%A7%80%20%E0%A6%95%E0%A6%B0%E0%A7%81%E0%A6%A8.pdf" class="download-btn holo-card" download="3G নেটওয়ার্ক তৈরী করুন.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'3G নেটওয়ার্ক তৈরী করুন.pdf','file_extension':'pdf','book_title':'Pdf file'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-yojbayam-nilmani-das-pdf-14102021-132213.html" class="mini-book-card">
+          <a href="../book/anonymous-yojbayam-nilmani-das-pdf-14102021-132213.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-yojbayam-nilmani-das-pdf-14102021-132213.webp" alt="Yojbayam Nilmani Das PDF 14102021 132213" class="mini-cover" loading="lazy" />
             <div class="mini-title">Yojbayam Nilmani Das PDF 14102021 132213</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-real-history-of-bangladesh-pdf-collection.html" class="mini-book-card">
+          <a href="../book/anonymous-real-history-of-bangladesh-pdf-collection.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-real-history-of-bangladesh-pdf-collection.webp" alt="Real History of Bangladesh (PDF Collection)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Real History of Bangladesh (PDF Collection)</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-pdf-word-important-রমযন-মসর-৩০-আসর-শইখ-মহমমদ-ইবন-স.html" class="mini-book-card">
+          <a href="../book/anonymous-pdf-word-important-রমযন-মসর-৩০-আসর-শইখ-মহমমদ-ইবন-স.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-pdf-word-important-রমযন-মসর-৩০-আসর-শইখ-মহমমদ-ইবন-স.webp" alt="PDF &amp; Word | Important | রমযান মাসের ৩০ আসর-শাইখ মুহাম্মাদ ইবনে সালেহ আল উসাইমিন রহ." class="mini-cover" loading="lazy" />
             <div class="mini-title">PDF &amp; Word | Important | রমযান মাসের ৩০ আসর-শাইখ মুহাম্মাদ ইবনে সালেহ আল উসাইমিন রহ.</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shtjarth-prkas-dojanond-sorasbti.html" class="mini-book-card">
+          <a href="../book/anonymous-shtjarth-prkas-dojanond-sorasbti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shtjarth-prkas-dojanond-sorasbti.webp" alt="সত্যার্থ প্রকাশ দয়ানন্দ সরস্বতী" class="mini-cover" loading="lazy" />
             <div class="mini-title">সত্যার্থ প্রকাশ দয়ানন্দ সরস্বতী</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour.html" class="mini-book-card">
+          <a href="../book/anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour.webp" alt="বাংলাদেশ শ্রম বিধিমালা ২০১৫ (সংশোধনী ২০২২ইং সহ) | Bangladesh Labour Rules 2015 (Amendment 2022 included) | BARE ACT" class="mini-cover" loading="lazy" />
             <div class="mini-title">বাংলাদেশ শ্রম বিধিমালা ২০১৫ (সংশোধনী ২০২২ইং সহ) | Bangladesh Labour Rules 2015 (Amendment 2022 included) | BARE ACT</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-prema-bhakti-chandrika-bengali-sanskrit.html" class="mini-book-card">
+          <a href="../book/anonymous-prema-bhakti-chandrika-bengali-sanskrit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-prema-bhakti-chandrika-bengali-sanskrit.webp" alt="Prema Bhakti Chandrika (Bengali-Sanskrit)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Prema Bhakti Chandrika (Bengali-Sanskrit)</div>
             <div class="mini-author">অজ্ঞাত</div>

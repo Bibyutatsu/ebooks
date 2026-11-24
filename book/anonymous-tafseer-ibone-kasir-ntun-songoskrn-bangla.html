@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download তাফসীর ইবনে কাসির ( নতুন সংস্করণ বাংলা ) (Taphoseer Eebone Kasir Notun Songoskoron Bangola) by অজ্ঞাত (Anonymous) free in EPUB. ইন্টারনেট আর্কাইভ (I...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-tafseer-ibone-kasir-ntun-songoskrn-bangla.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-tafseer-ibone-kasir-ntun-songoskrn-bangla" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-tafseer-ibone-kasir-ntun-songoskrn-bangla.webp" alt="তাফসীর ইবনে কাসির ( নতুন সংস্করণ বাংলা ) - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/TafseerIbnKathirRevisedEdition/Tafseer%20Ibn%20Kathir%20Revised%20Edition%2012th-13th%20Part.epub" class="download-btn" download="Tafseer Ibn Kathir Revised Edition 12th-13th Part.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Tafseer Ibn Kathir Revised Edition 12th-13th Part.epub','file_extension':'epub','book_title':'তাফসীর ইবনে কাসির ( নতুন সংস্করণ বাংলা )'});">
+          <a href="https://archive.org/download/TafseerIbnKathirRevisedEdition/Tafseer%20Ibn%20Kathir%20Revised%20Edition%2012th-13th%20Part.epub" class="download-btn holo-card" download="Tafseer Ibn Kathir Revised Edition 12th-13th Part.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Tafseer Ibn Kathir Revised Edition 12th-13th Part.epub','file_extension':'epub','book_title':'তাফসীর ইবনে কাসির ( নতুন সংস্করণ বাংলা )'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-al-kuranul-krim-bangla-onubad.html" class="mini-book-card">
+          <a href="../book/anonymous-al-kuranul-krim-bangla-onubad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-al-kuranul-krim-bangla-onubad.webp" alt="আল কুরআনুল করীম ( বাংলা অনুবাদ )" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল কুরআনুল করীম ( বাংলা অনুবাদ )</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-ar-raheequl-makhtoom-bangla-ar-rahikul-makhatum-ba.html" class="mini-book-card">
+          <a href="../book/anonymous-ar-raheequl-makhtoom-bangla-ar-rahikul-makhatum-ba.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-ar-raheequl-makhtoom-bangla-ar-rahikul-makhatum-ba.webp" alt="Ar Raheequl Makhtoom Bangla - আর রাহীকুল মাখতুম বাংলা অনুবাদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">Ar Raheequl Makhtoom Bangla - আর রাহীকুল মাখতুম বাংলা অনুবাদ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-bangla-grnthshmuher-brnanukrmik-talika-ebong-dauna.html" class="mini-book-card">
+          <a href="../book/anonymous-bangla-grnthshmuher-brnanukrmik-talika-ebong-dauna.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-bangla-grnthshmuher-brnanukrmik-talika-ebong-dauna.webp" alt="বাংলা গ্রন্থসমূহের বর্ণানুক্রমিক তালিকা এবং ডাউনলোডের লিংক" class="mini-cover" loading="lazy" />
             <div class="mini-title">বাংলা গ্রন্থসমূহের বর্ণানুক্রমিক তালিকা এবং ডাউনলোডের লিংক</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-bangla-grnthshmuher-brnanukrmik-talika-ebang-dauna.html" class="mini-book-card">
+          <a href="../book/anonymous-bangla-grnthshmuher-brnanukrmik-talika-ebang-dauna.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-bangla-grnthshmuher-brnanukrmik-talika-ebang-dauna.webp" alt="বাংলা গ্রন্থসমূহের বর্ণানুক্রমিক তালিকা এবং ডাউনলোডের লিংক- A" class="mini-cover" loading="lazy" />
             <div class="mini-title">বাংলা গ্রন্থসমূহের বর্ণানুক্রমিক তালিকা এবং ডাউনলোডের লিংক- A</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-dalayoelul-khajrat-allama-aboo-abadullah-mohammd-i.html" class="mini-book-card">
+          <a href="../book/anonymous-dalayoelul-khajrat-allama-aboo-abadullah-mohammd-i.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-dalayoelul-khajrat-allama-aboo-abadullah-mohammd-i.webp" alt="দালায়েলুল খায়রাত আল্লামা আবূ আবদুল্লাহ মোহাম্মদ ইবনে সুলায়মান যাজুলী رحمة الله عليه" class="mini-cover" loading="lazy" />
             <div class="mini-title">দালায়েলুল খায়রাত আল্লামা আবূ আবদুল্লাহ মোহাম্মদ ইবনে সুলায়মান যাজুলী رحمة الله عليه</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-19th-may-2016-prthm-alo-uposagoreeya-songoskrn.html" class="mini-book-card">
+          <a href="../book/anonymous-19th-may-2016-prthm-alo-uposagoreeya-songoskrn.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-19th-may-2016-prthm-alo-uposagoreeya-songoskrn.webp" alt="19th May, 2016 প্রথম আলো উপসাগরীয় সংস্করণ" class="mini-cover" loading="lazy" />
             <div class="mini-title">19th May, 2016 প্রথম আলো উপসাগরীয় সংস্করণ</div>
             <div class="mini-author">অজ্ঞাত</div>

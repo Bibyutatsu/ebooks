@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Bengali Indrajal Comics V 20 N 24 Oporajeyo Betal (Bengali Indrajal Comics V 20 N 24 Oporajeyo Betal) by অজ্ঞাত (Anonymous) free in EPUB. ইন্টারনেট ...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-bengali-indrajal-comics-v-20-n-24-oporajeyo-betal.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-bengali-indrajal-comics-v-20-n-24-oporajeyo-betal" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-bengali-indrajal-comics-v-20-n-24-oporajeyo-betal.webp" alt="Bengali Indrajal Comics V 20 N 24 Oporajeyo Betal - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/bengaliindrajalcomicsv20n24oporajeyobetal/Bengali%20Indrajal%20Comics-V20N24%20-%20Oporajeyo%20Betal.epub" class="download-btn" download="Bengali Indrajal Comics-V20N24 - Oporajeyo Betal.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Bengali Indrajal Comics-V20N24 - Oporajeyo Betal.epub','file_extension':'epub','book_title':'Bengali Indrajal Comics V 20 N 24 Oporajeyo Betal'});">
+          <a href="https://archive.org/download/bengaliindrajalcomicsv20n24oporajeyobetal/Bengali%20Indrajal%20Comics-V20N24%20-%20Oporajeyo%20Betal.epub" class="download-btn holo-card" download="Bengali Indrajal Comics-V20N24 - Oporajeyo Betal.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Bengali Indrajal Comics-V20N24 - Oporajeyo Betal.epub','file_extension':'epub','book_title':'Bengali Indrajal Comics V 20 N 24 Oporajeyo Betal'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-gita-bengali.html" class="mini-book-card">
+          <a href="../book/anonymous-gita-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-gita-bengali.webp" alt="Gita Bengali" class="mini-cover" loading="lazy" />
             <div class="mini-title">Gita Bengali</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-bhakti-sarvasvam-bengali.html" class="mini-book-card">
+          <a href="../book/anonymous-bhakti-sarvasvam-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-bhakti-sarvasvam-bengali.webp" alt="Bhakti Sarvasvam (Bengali)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Bhakti Sarvasvam (Bengali)</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-tintin-comic-bengali.html" class="mini-book-card">
+          <a href="../book/anonymous-tintin-comic-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-tintin-comic-bengali.webp" alt="Tintin comic Bengali" class="mini-cover" loading="lazy" />
             <div class="mini-title">Tintin comic Bengali</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-desi-hot-comics.html" class="mini-book-card">
+          <a href="../book/anonymous-desi-hot-comics.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-desi-hot-comics.webp" alt="Desi hot comics" class="mini-cover" loading="lazy" />
             <div class="mini-title">Desi hot comics</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-chandamama-bengali-all.html" class="mini-book-card">
+          <a href="../book/anonymous-chandamama-bengali-all.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-chandamama-bengali-all.webp" alt="Chandamama Bengali All" class="mini-cover" loading="lazy" />
             <div class="mini-title">Chandamama Bengali All</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-krishnamayi-shri-radha-bengali.html" class="mini-book-card">
+          <a href="../book/anonymous-krishnamayi-shri-radha-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-krishnamayi-shri-radha-bengali.webp" alt="Krishnamayi Shri Radha (Bengali)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Krishnamayi Shri Radha (Bengali)</div>
             <div class="mini-author">অজ্ঞাত</div>

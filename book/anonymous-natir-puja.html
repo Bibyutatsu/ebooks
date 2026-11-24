@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download নটীর পূজা (Noteer Pooja) by অজ্ঞাত (Anonymous) free in EPUB. ক্লাসিক ও সাহিত্য (Classics) Bengali literature digital edition on Bibyutatsu BookStore.">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-natir-puja.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -417,6 +420,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -424,6 +428,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-natir-puja" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -439,7 +446,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-natir-puja.webp" alt="নটীর পূজা - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: ১৯৩২</span>
@@ -469,7 +476,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-31/anonymous-natir-puja.epub" class="download-btn" download="অজ্ঞাত - নটীর পূজা  (১৯৩২).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অজ্ঞাত - নটীর পূজা  (১৯৩২).epub','file_extension':'epub','book_title':'নটীর পূজা'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-31/anonymous-natir-puja.epub" class="download-btn holo-card" download="অজ্ঞাত - নটীর পূজা  (১৯৩২).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অজ্ঞাত - নটীর পূজা  (১৯৩২).epub','file_extension':'epub','book_title':'নটীর পূজা'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -515,37 +522,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-santir-sbapxe.html" class="mini-book-card">
+          <a href="../book/anonymous-santir-sbapxe.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-santir-sbapxe.webp" alt="শান্তির স্বপক্ষে" class="mini-cover" loading="lazy" />
             <div class="mini-title">শান্তির স্বপক্ষে</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-prhlad.html" class="mini-book-card">
+          <a href="../book/anonymous-prhlad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-prhlad.webp" alt="প্রহ্লাদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">প্রহ্লাদ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-istahar.html" class="mini-book-card">
+          <a href="../book/anonymous-istahar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-istahar.webp" alt="ইস্তাহার" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইস্তাহার</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-rashkeli.html" class="mini-book-card">
+          <a href="../book/anonymous-rashkeli.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-rashkeli.webp" alt="রসকেলী" class="mini-cover" loading="lazy" />
             <div class="mini-title">রসকেলী</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-matri-sneh-o-is-stuti.html" class="mini-book-card">
+          <a href="../book/anonymous-matri-sneh-o-is-stuti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-matri-sneh-o-is-stuti.webp" alt="মাতৃ-স্নেহ ও ঈশ-স্তুতি" class="mini-cover" loading="lazy" />
             <div class="mini-title">মাতৃ-স্নেহ ও ঈশ-স্তুতি</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-hindujati-tahar-borttaman-ovab-o-tahar-krttbj.html" class="mini-book-card">
+          <a href="../book/anonymous-hindujati-tahar-borttaman-ovab-o-tahar-krttbj.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-hindujati-tahar-borttaman-ovab-o-tahar-krttbj.webp" alt="হিন্দুজাতি; তাহার বর্ত্তমান অভাব ও তাহার কর্ত্তব্য" class="mini-cover" loading="lazy" />
             <div class="mini-title">হিন্দুজাতি; তাহার বর্ত্তমান অভাব ও তাহার কর্ত্তব্য</div>
             <div class="mini-author">অজ্ঞাত</div>

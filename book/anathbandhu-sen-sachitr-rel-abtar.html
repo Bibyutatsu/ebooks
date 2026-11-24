@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download সচিত্র রেল অবতার (Sochitr Rel Obotar) by অনাথবন্ধু সেন (Anathbandhu Sen) free in EPUB. ক্লাসিক (Classics), রম্য ও বিবিধ (Humor &amp;amp; Satire) Bengali...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anathbandhu-sen-sachitr-rel-abtar.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anathbandhu-sen-sachitr-rel-abtar" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anathbandhu-sen-sachitr-rel-abtar.webp" alt="সচিত্র রেল অবতার - অনাথবন্ধু সেন" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: ১৯১৩</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-31/anathbandhu-sen-sachitr-rel-abtar.epub" class="download-btn" download="অনাথবন্ধু সেন - সচিত্র রেল অবতার (১৯১৩).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অনাথবন্ধু সেন - সচিত্র রেল অবতার (১৯১৩).epub','file_extension':'epub','book_title':'সচিত্র রেল অবতার'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-31/anathbandhu-sen-sachitr-rel-abtar.epub" class="download-btn holo-card" download="অনাথবন্ধু সেন - সচিত্র রেল অবতার (১৯১৩).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অনাথবন্ধু সেন - সচিত্র রেল অবতার (১৯১৩).epub','file_extension':'epub','book_title':'সচিত্র রেল অবতার'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/bhupendra-chandra-chakraborty-rajmala.html" class="mini-book-card">
+          <a href="../book/bhupendra-chandra-chakraborty-rajmala.html" class="mini-book-card holo-card">
             <img src="../assets/covers/bhupendra-chandra-chakraborty-rajmala.webp" alt="রাজমালা" class="mini-cover" loading="lazy" />
             <div class="mini-title">রাজমালা</div>
             <div class="mini-author">ভূপেন্দ্রচন্দ্র চক্রবর্তী</div>
           </a>
         
-          <a href="../book/prafullaranjan-ray-biplbee-subhashchandr.html" class="mini-book-card">
+          <a href="../book/prafullaranjan-ray-biplbee-subhashchandr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/prafullaranjan-ray-biplbee-subhashchandr.webp" alt="বিপ্লবী সুভাষচন্দ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিপ্লবী সুভাষচন্দ্র</div>
             <div class="mini-author">প্রফুল্লরঞ্জন রায়</div>
           </a>
         
-          <a href="../book/manindranath-singha-basntika.html" class="mini-book-card">
+          <a href="../book/manindranath-singha-basntika.html" class="mini-book-card holo-card">
             <img src="../assets/covers/manindranath-singha-basntika.webp" alt="বাসন্তিকা" class="mini-cover" loading="lazy" />
             <div class="mini-title">বাসন্তিকা</div>
             <div class="mini-author">মণীন্দ্রনাথ সিংহ</div>
           </a>
         
-          <a href="../book/krishnadas-acharya-choudhury-ingit.html" class="mini-book-card">
+          <a href="../book/krishnadas-acharya-choudhury-ingit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/krishnadas-acharya-choudhury-ingit.webp" alt="ইঙ্গিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইঙ্গিত</div>
             <div class="mini-author">কৃষ্ণদাস আচার্য্য চৌধুরী</div>
           </a>
         
-          <a href="../book/sarojnath-mukhopadhyay-shreeshreekrishnkali-podaboli.html" class="mini-book-card">
+          <a href="../book/sarojnath-mukhopadhyay-shreeshreekrishnkali-podaboli.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarojnath-mukhopadhyay-shreeshreekrishnkali-podaboli.webp" alt="শ্রীশ্রীকৃষ্ণকালী-পদাবলী" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীশ্রীকৃষ্ণকালী-পদাবলী</div>
             <div class="mini-author">সরোজনাথ মুখোপাধ্যায়</div>
           </a>
         
-          <a href="../book/gurubandhu-bhattacharya-pnchratr.html" class="mini-book-card">
+          <a href="../book/gurubandhu-bhattacharya-pnchratr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/gurubandhu-bhattacharya-pnchratr.webp" alt="পঞ্চরাত্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">পঞ্চরাত্র</div>
             <div class="mini-author">গুরুবন্ধু ভট্টাচার্য্য</div>

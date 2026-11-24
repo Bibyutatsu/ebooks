@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Sri Narottama Vilasa (Bengali Text Only) (Sri Narottama Vilasa Bengali Text Only) by অজ্ঞাত (Anonymous) free in EPUB. ইন্টারনেট আর্কাইভ (Internet Ar...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-sri-narottama-vilasa-bengali-text-only.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-sri-narottama-vilasa-bengali-text-only" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-sri-narottama-vilasa-bengali-text-only.webp" alt="Sri Narottama Vilasa (Bengali Text Only) - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2018</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/narottama_vilasa/narottama_vilasa.epub" class="download-btn" download="narottama_vilasa.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'narottama_vilasa.epub','file_extension':'epub','book_title':'Sri Narottama Vilasa (Bengali Text Only)'});">
+          <a href="https://archive.org/download/narottama_vilasa/narottama_vilasa.epub" class="download-btn holo-card" download="narottama_vilasa.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'narottama_vilasa.epub','file_extension':'epub','book_title':'Sri Narottama Vilasa (Bengali Text Only)'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-nityananda-charitamrita-bengali-text-only.html" class="mini-book-card">
+          <a href="../book/anonymous-nityananda-charitamrita-bengali-text-only.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-nityananda-charitamrita-bengali-text-only.webp" alt="Nityananda Charitamrita (Bengali Text Only)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Nityananda Charitamrita (Bengali Text Only)</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-gita-bengali.html" class="mini-book-card">
+          <a href="../book/anonymous-gita-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-gita-bengali.webp" alt="Gita Bengali" class="mini-cover" loading="lazy" />
             <div class="mini-title">Gita Bengali</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-bhakti-sarvasvam-bengali.html" class="mini-book-card">
+          <a href="../book/anonymous-bhakti-sarvasvam-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-bhakti-sarvasvam-bengali.webp" alt="Bhakti Sarvasvam (Bengali)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Bhakti Sarvasvam (Bengali)</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-tintin-comic-bengali.html" class="mini-book-card">
+          <a href="../book/anonymous-tintin-comic-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-tintin-comic-bengali.webp" alt="Tintin comic Bengali" class="mini-cover" loading="lazy" />
             <div class="mini-title">Tintin comic Bengali</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-sri-sri-rudra-chandi-bengali-शर-रदर-चणड-sri-sri-rudr-chndi.html" class="mini-book-card">
+          <a href="../book/anonymous-sri-sri-rudra-chandi-bengali-शर-रदर-चणड-sri-sri-rudr-chndi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-sri-sri-rudra-chandi-bengali-शर-रदर-चणड-sri-sri-rudr-chndi.webp" alt="Sri Sri Rudra Chandi (Bengali) / श्री रुद्र-चण्डी / শ্রী শ্রী রুদ্র চণ্ডী" class="mini-cover" loading="lazy" />
             <div class="mini-title">Sri Sri Rudra Chandi (Bengali) / श्री रुद्र-चण्डी / শ্রী শ্রী রুদ্র চণ্ডী</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-chandamama-bengali-all.html" class="mini-book-card">
+          <a href="../book/anonymous-chandamama-bengali-all.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-chandamama-bengali-all.webp" alt="Chandamama Bengali All" class="mini-cover" loading="lazy" />
             <div class="mini-title">Chandamama Bengali All</div>
             <div class="mini-author">অজ্ঞাত</div>

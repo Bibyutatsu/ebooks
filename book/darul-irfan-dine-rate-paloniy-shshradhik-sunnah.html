@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download দিনে রাতে পালনীয় সহস্রাধিক সুন্নাহ (Dine Rate Paloneejo Sohosradhik Sunnah) by Darul Irfan (Darul Irfan) free in PDF. DarulIrfan, Sunnah, ইন্টারনেট...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/darul-irfan-dine-rate-paloniy-shshradhik-sunnah.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -420,6 +423,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -427,6 +431,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=darul-irfan-dine-rate-paloniy-shshradhik-sunnah" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -442,7 +449,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/darul-irfan-dine-rate-paloniy-shshradhik-sunnah.webp" alt="দিনে রাতে পালনীয় সহস্রাধিক সুন্নাহ - Darul Irfan" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -472,7 +479,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/DarulIrfan8/1000%20Sunnah.pdf" class="download-btn" download="1000 Sunnah.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'1000 Sunnah.pdf','file_extension':'pdf','book_title':'দিনে রাতে পালনীয় সহস্রাধিক সুন্নাহ'});">
+          <a href="https://archive.org/download/DarulIrfan8/1000%20Sunnah.pdf" class="download-btn holo-card" download="1000 Sunnah.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'1000 Sunnah.pdf','file_extension':'pdf','book_title':'দিনে রাতে পালনীয় সহস্রাধিক সুন্নাহ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -518,37 +525,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/darul-irfan-sura-fatihar-tafseer.html" class="mini-book-card">
+          <a href="../book/darul-irfan-sura-fatihar-tafseer.html" class="mini-book-card holo-card">
             <img src="../assets/covers/darul-irfan-sura-fatihar-tafseer.webp" alt="সূরা ফাতিহার তাফসীর" class="mini-cover" loading="lazy" />
             <div class="mini-title">সূরা ফাতিহার তাফসীর</div>
             <div class="mini-author">Darul Irfan</div>
           </a>
         
-          <a href="../book/darul-irfan-taphoseerniti-imam-ibone-taimija-rahh.html" class="mini-book-card">
+          <a href="../book/darul-irfan-taphoseerniti-imam-ibone-taimija-rahh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/darul-irfan-taphoseerniti-imam-ibone-taimija-rahh.webp" alt="তাফসীরনীতি - ইমাম ইবনে তাইমিয়া রহঃ" class="mini-cover" loading="lazy" />
             <div class="mini-title">তাফসীরনীতি - ইমাম ইবনে তাইমিয়া রহঃ</div>
             <div class="mini-author">Darul Irfan</div>
           </a>
         
-          <a href="../book/darul-irfan-oommahr-netader-prjoojoniy-gunabli.html" class="mini-book-card">
+          <a href="../book/darul-irfan-oommahr-netader-prjoojoniy-gunabli.html" class="mini-book-card holo-card">
             <img src="../assets/covers/darul-irfan-oommahr-netader-prjoojoniy-gunabli.webp" alt="উম্মাহর নেতাদের প্রয়োজনীয় গুণাবলী" class="mini-cover" loading="lazy" />
             <div class="mini-title">উম্মাহর নেতাদের প্রয়োজনীয় গুণাবলী</div>
             <div class="mini-author">Darul Irfan</div>
           </a>
         
-          <a href="../book/darul-irfan-antrik-taoba.html" class="mini-book-card">
+          <a href="../book/darul-irfan-antrik-taoba.html" class="mini-book-card holo-card">
             <img src="../assets/covers/darul-irfan-antrik-taoba.webp" alt="আন্তরিক তাওবা" class="mini-cover" loading="lazy" />
             <div class="mini-title">আন্তরিক তাওবা</div>
             <div class="mini-author">Darul Irfan</div>
           </a>
         
-          <a href="../book/darul-irfan-la-ilaha-illallah.html" class="mini-book-card">
+          <a href="../book/darul-irfan-la-ilaha-illallah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/darul-irfan-la-ilaha-illallah.webp" alt="লা ইলাহা ইল্লাল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">লা ইলাহা ইল্লাল্লাহ</div>
             <div class="mini-author">Darul Irfan</div>
           </a>
         
-          <a href="../book/darul-irfan-isholam-binastkari-bishojo.html" class="mini-book-card">
+          <a href="../book/darul-irfan-isholam-binastkari-bishojo.html" class="mini-book-card holo-card">
             <img src="../assets/covers/darul-irfan-isholam-binastkari-bishojo.webp" alt="ইসলাম বিনষ্টকারী বিষয়" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইসলাম বিনষ্টকারী বিষয়</div>
             <div class="mini-author">Darul Irfan</div>

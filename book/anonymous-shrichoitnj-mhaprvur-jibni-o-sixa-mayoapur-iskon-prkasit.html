@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download শ্রীচৈতন্য মহাপ্রভুর জীবনী ও শিক্ষা- মায়াপুর ইসকন প্রকাশিত (Shreechoitonj Mohaprbhur Jeebonee O Shikkha- Majoapur Eesokon Prkashit) by অজ্ঞাত (Anon...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-shrichoitnj-mhaprvur-jibni-o-sixa-mayoapur-iskon-prkasit.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-shrichoitnj-mhaprvur-jibni-o-sixa-mayoapur-iskon-prkasit" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-shrichoitnj-mhaprvur-jibni-o-sixa-mayoapur-iskon-prkasit.webp" alt="শ্রীচৈতন্য মহাপ্রভুর জীবনী ও শিক্ষা- মায়াপুর ইসকন প্রকাশিত - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/20201025_20201025_0033/%E0%A6%B6%E0%A7%8D%E0%A6%B0%E0%A7%80%E0%A6%9A%E0%A7%88%E0%A6%A4%E0%A6%A8%E0%A7%8D%E0%A6%AF%20%E0%A6%AE%E0%A6%B9%E0%A6%BE%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AD%E0%A7%81%E0%A6%B0%20%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8%E0%A7%80%20%E0%A6%93%20%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%20%E0%A6%AE%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%AA%E0%A7%81%E0%A6%B0%20%E0%A6%87%E0%A6%B8%E0%A6%95%E0%A6%A8%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B6%E0%A6%BF%E0%A6%A4.pdf" class="download-btn" download="শ্রীচৈতন্য মহাপ্রভুর জীবনী ও শিক্ষা- মায়াপুর ইসকন প্রকাশিত.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'শ্রীচৈতন্য মহাপ্রভুর জীবনী ও শিক্ষা- মায়াপুর ইসকন প্রকাশিত.pdf','file_extension':'pdf','book_title':'শ্রীচৈতন্য মহাপ্রভুর জীবনী ও শিক্ষা- মায়াপুর ইসকন প্রকাশিত'});">
+          <a href="https://archive.org/download/20201025_20201025_0033/%E0%A6%B6%E0%A7%8D%E0%A6%B0%E0%A7%80%E0%A6%9A%E0%A7%88%E0%A6%A4%E0%A6%A8%E0%A7%8D%E0%A6%AF%20%E0%A6%AE%E0%A6%B9%E0%A6%BE%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AD%E0%A7%81%E0%A6%B0%20%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8%E0%A7%80%20%E0%A6%93%20%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%20%E0%A6%AE%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%AA%E0%A7%81%E0%A6%B0%20%E0%A6%87%E0%A6%B8%E0%A6%95%E0%A6%A8%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B6%E0%A6%BF%E0%A6%A4.pdf" class="download-btn holo-card" download="শ্রীচৈতন্য মহাপ্রভুর জীবনী ও শিক্ষা- মায়াপুর ইসকন প্রকাশিত.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'শ্রীচৈতন্য মহাপ্রভুর জীবনী ও শিক্ষা- মায়াপুর ইসকন প্রকাশিত.pdf','file_extension':'pdf','book_title':'শ্রীচৈতন্য মহাপ্রভুর জীবনী ও শিক্ষা- মায়াপুর ইসকন প্রকাশিত'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-boishnb-slokabali-mayoapur-iskon-prkasit.html" class="mini-book-card">
+          <a href="../book/anonymous-boishnb-slokabali-mayoapur-iskon-prkasit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-boishnb-slokabali-mayoapur-iskon-prkasit.webp" alt="বৈষ্ণব শ্লোকাবলী- মায়াপুর ইসকন প্রকাশিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">বৈষ্ণব শ্লোকাবলী- মায়াপুর ইসকন প্রকাশিত</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-namahtt-porichoy-majoapur-iskon-prkasit.html" class="mini-book-card">
+          <a href="../book/anonymous-namahtt-porichoy-majoapur-iskon-prkasit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-namahtt-porichoy-majoapur-iskon-prkasit.webp" alt="নামহট্ট পরিচয়- মায়াপুর ইসকন প্রকাশিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">নামহট্ট পরিচয়- মায়াপুর ইসকন প্রকাশিত</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-eeshoponishad-mayoapur-isakn-prkasit.html" class="mini-book-card">
+          <a href="../book/anonymous-eeshoponishad-mayoapur-isakn-prkasit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-eeshoponishad-mayoapur-isakn-prkasit.webp" alt="ঈশোপনিষদ- ২- মায়াপুর ইসকন প্রকাশিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">ঈশোপনিষদ- ২- মায়াপুর ইসকন প্রকাশিত</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shreemodbhogobad-gita-mahatmj-mayoapur-isakn-prkasit.html" class="mini-book-card">
+          <a href="../book/anonymous-shreemodbhogobad-gita-mahatmj-mayoapur-isakn-prkasit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shreemodbhogobad-gita-mahatmj-mayoapur-isakn-prkasit.webp" alt="শ্রীমদ্ভগবদ্ গীতা মাহাত্ম্য- মায়াপুর ইসকন প্রকাশিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীমদ্ভগবদ্ গীতা মাহাত্ম্য- মায়াপুর ইসকন প্রকাশিত</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-prsn-koruno-uttr-pabeno-mayoapur-isakn-prkasit.html" class="mini-book-card">
+          <a href="../book/anonymous-prsn-koruno-uttr-pabeno-mayoapur-isakn-prkasit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-prsn-koruno-uttr-pabeno-mayoapur-isakn-prkasit.webp" alt="প্রশ্ন করুন-উত্তর পাবেন- মায়াপুর ইসকন প্রকাশিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">প্রশ্ন করুন-উত্তর পাবেন- মায়াপুর ইসকন প্রকাশিত</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-murtipoojar-rohosj-dhaka-isakn-prkasit.html" class="mini-book-card">
+          <a href="../book/anonymous-murtipoojar-rohosj-dhaka-isakn-prkasit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-murtipoojar-rohosj-dhaka-isakn-prkasit.webp" alt="মূর্তিপূজার রহস্য- ঢাকা ইসকন প্রকাশিত" class="mini-cover" loading="lazy" />
             <div class="mini-title">মূর্তিপূজার রহস্য- ঢাকা ইসকন প্রকাশিত</div>
             <div class="mini-author">অজ্ঞাত</div>

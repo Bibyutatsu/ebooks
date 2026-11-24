@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download The New Testament of Our Lord and Saviour Jesus Christ : in the Bengálí language (The New Testament Of Our Lord And Saviour Jesus Christ In The Beng...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-the-new-testament-of-our-lord-and-saviour-jesus-ch.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-the-new-testament-of-our-lord-and-saviour-jesus-ch" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-the-new-testament-of-our-lord-and-saviour-jesus-ch.webp" alt="The New Testament of Our Lord and Saviour Jesus Christ : in the Bengálí language - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 1847</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/newtestamentofou00calc/newtestamentofou00calc.epub" class="download-btn" download="newtestamentofou00calc.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'newtestamentofou00calc.epub','file_extension':'epub','book_title':'The New Testament of Our Lord and Saviour Jesus Christ : in the Bengálí language'});">
+          <a href="https://archive.org/download/newtestamentofou00calc/newtestamentofou00calc.epub" class="download-btn holo-card" download="newtestamentofou00calc.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'newtestamentofou00calc.epub','file_extension':'epub','book_title':'The New Testament of Our Lord and Saviour Jesus Christ : in the Bengálí language'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-the-holy-bible-containing-old-and-new-testaments-i.html" class="mini-book-card">
+          <a href="../book/anonymous-the-holy-bible-containing-old-and-new-testaments-i.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-the-holy-bible-containing-old-and-new-testaments-i.webp" alt="The Holy Bible : containing Old and New Testaments in the Bengali language" class="mini-cover" loading="lazy" />
             <div class="mini-title">The Holy Bible : containing Old and New Testaments in the Bengali language</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-the-holy-bible-containing-the-old-and-new-testamen.html" class="mini-book-card">
+          <a href="../book/anonymous-the-holy-bible-containing-the-old-and-new-testamen.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-the-holy-bible-containing-the-old-and-new-testamen.webp" alt="The Holy Bible, containing the Old and New Testaments in the Benga&#x27;li&#x27; language" class="mini-cover" loading="lazy" />
             <div class="mini-title">The Holy Bible, containing the Old and New Testaments in the Benga&#x27;li&#x27; language</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-hymns-for-the-church-in-bengal.html" class="mini-book-card">
+          <a href="../book/anonymous-hymns-for-the-church-in-bengal.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-hymns-for-the-church-in-bengal.webp" alt="Hymns for the church in Bengal ..." class="mini-cover" loading="lazy" />
             <div class="mini-title">Hymns for the church in Bengal ...</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-initiator-is-the-aggressor.html" class="mini-book-card">
+          <a href="../book/anonymous-initiator-is-the-aggressor.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-initiator-is-the-aggressor.webp" alt="Initiator Is The Aggressor" class="mini-cover" loading="lazy" />
             <div class="mini-title">Initiator Is The Aggressor</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-prema-samputa-with-commentary-and-chamatkara-chandrika.html" class="mini-book-card">
+          <a href="../book/anonymous-prema-samputa-with-commentary-and-chamatkara-chandrika.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-prema-samputa-with-commentary-and-chamatkara-chandrika.webp" alt="Prema-samputa (with Commentary) and Chamatkara-chandrika" class="mini-cover" loading="lazy" />
             <div class="mini-title">Prema-samputa (with Commentary) and Chamatkara-chandrika</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-ebooks-of-allama-nasiruddin-al-albani.html" class="mini-book-card">
+          <a href="../book/anonymous-ebooks-of-allama-nasiruddin-al-albani.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-ebooks-of-allama-nasiruddin-al-albani.webp" alt="ebooks of Allama Nasiruddin al-Albani" class="mini-cover" loading="lazy" />
             <div class="mini-title">ebooks of Allama Nasiruddin al-Albani</div>
             <div class="mini-author">অজ্ঞাত</div>

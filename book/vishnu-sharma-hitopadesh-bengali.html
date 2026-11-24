@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Hitopadesh Bengali (Hitopadesh Bengali) by Vishnu Sharma (Vishnu Sharma) free in EPUB. ইন্টারনেট আর্কাইভ (Internet Archive), উপন্যাস ও সাহিত্য (Gene...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/vishnu-sharma-hitopadesh-bengali.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=vishnu-sharma-hitopadesh-bengali" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/vishnu-sharma-hitopadesh-bengali.webp" alt="Hitopadesh Bengali - Vishnu Sharma" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2013</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/hitopadeshbangla/hitopadesh_bengali.epub" class="download-btn" download="hitopadesh_bengali.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'hitopadesh_bengali.epub','file_extension':'epub','book_title':'Hitopadesh Bengali'});">
+          <a href="https://archive.org/download/hitopadeshbangla/hitopadesh_bengali.epub" class="download-btn holo-card" download="hitopadesh_bengali.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'hitopadesh_bengali.epub','file_extension':'epub','book_title':'Hitopadesh Bengali'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/swami-samarpanananda-gita-talks-in-bengali.html" class="mini-book-card">
+          <a href="../book/swami-samarpanananda-gita-talks-in-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/swami-samarpanananda-gita-talks-in-bengali.webp" alt="Gita -Talks in Bengali" class="mini-cover" loading="lazy" />
             <div class="mini-title">Gita -Talks in Bengali</div>
             <div class="mini-author">Swami Samarpanananda</div>
           </a>
         
-          <a href="../book/swami-samarpanananda-mundaka-upanishad-talks-in-bengali.html" class="mini-book-card">
+          <a href="../book/swami-samarpanananda-mundaka-upanishad-talks-in-bengali.html" class="mini-book-card holo-card">
             <img src="../assets/covers/swami-samarpanananda-mundaka-upanishad-talks-in-bengali.webp" alt="Mundaka Upanishad -- Talks in Bengali" class="mini-cover" loading="lazy" />
             <div class="mini-title">Mundaka Upanishad -- Talks in Bengali</div>
             <div class="mini-author">Swami Samarpanananda</div>
           </a>
         
-          <a href="../book/jpnmuslim-quran-in-bengali-king-fahads-publication-pdf.html" class="mini-book-card">
+          <a href="../book/jpnmuslim-quran-in-bengali-king-fahads-publication-pdf.html" class="mini-book-card holo-card">
             <img src="../assets/covers/jpnmuslim-quran-in-bengali-king-fahads-publication-pdf.webp" alt="Quran in Bengali (King Fahad&#x27;s Publication) pdf" class="mini-cover" loading="lazy" />
             <div class="mini-title">Quran in Bengali (King Fahad&#x27;s Publication) pdf</div>
             <div class="mini-author">JpnMuslim</div>
           </a>
         
-          <a href="../book/british-and-foreign-bible-society-calcutta-auxiliary-the-hol.html" class="mini-book-card">
+          <a href="../book/british-and-foreign-bible-society-calcutta-auxiliary-the-hol.html" class="mini-book-card holo-card">
             <img src="../assets/covers/british-and-foreign-bible-society-calcutta-auxiliary-the-hol.webp" alt="The Holy Bible in Bengali : containing the Old and New Testaments" class="mini-cover" loading="lazy" />
             <div class="mini-title">The Holy Bible in Bengali : containing the Old and New Testaments</div>
             <div class="mini-author">British and Foreign Bible Society. Calcutta Auxiliary</div>
           </a>
         
-          <a href="../book/misakat-shoreef-adhunik-prkasoni-kortrik-prkasit-misakat-sar.html" class="mini-book-card">
+          <a href="../book/misakat-shoreef-adhunik-prkasoni-kortrik-prkasit-misakat-sar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/misakat-shoreef-adhunik-prkasoni-kortrik-prkasit-misakat-sar.webp" alt="মিশকাত শরীফ ২য় খন্ড" class="mini-cover" loading="lazy" />
             <div class="mini-title">মিশকাত শরীফ ২য় খন্ড</div>
             <div class="mini-author">মিশকাত শরীফ। আধুনিক প্রকাশনী কর্তৃক প্রকাশিত</div>
           </a>
         
-          <a href="../book/eelma-behroj-ilma-behrouj-ami-podmja-ami-padmaja.html" class="mini-book-card">
+          <a href="../book/eelma-behroj-ilma-behrouj-ami-podmja-ami-padmaja.html" class="mini-book-card holo-card">
             <img src="../assets/covers/eelma-behroj-ilma-behrouj-ami-podmja-ami-padmaja.webp" alt="আমি পদ্মজা | Ami Padmaja" class="mini-cover" loading="lazy" />
             <div class="mini-title">আমি পদ্মজা | Ami Padmaja</div>
             <div class="mini-author">ইলমা বেহরোজ Ilma Behrouj</div>

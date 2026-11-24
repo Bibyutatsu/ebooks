@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download বিশেষ দ্রষ্টব্য (Bishesh Drshtbj) by সুনীল গঙ্গোপাধ্যায় (Sunil Gangopadhyay) free in KFX. উপন্যাস (Novel), কবিতা (Poetry), থ্রিলার ও গোয়েন্দা (Myst...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/sunil-gangopadhyay-bises-drshtbj.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=sunil-gangopadhyay-bises-drshtbj" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/sunil-gangopadhyay-bises-drshtbj.webp" alt="বিশেষ দ্রষ্টব্য - সুনীল গঙ্গোপাধ্যায়" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-22/sunil-gangopadhyay-bises-drshtbj.kfx" class="download-btn" download="বিশেষ দ্রষ্টব্য - সুনীল গঙ্গোপাধ্যায়.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'বিশেষ দ্রষ্টব্য - সুনীল গঙ্গোপাধ্যায়.kfx','file_extension':'kfx','book_title':'বিশেষ দ্রষ্টব্য'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-22/sunil-gangopadhyay-bises-drshtbj.kfx" class="download-btn holo-card" download="বিশেষ দ্রষ্টব্য - সুনীল গঙ্গোপাধ্যায়.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'বিশেষ দ্রষ্টব্য - সুনীল গঙ্গোপাধ্যায়.kfx','file_extension':'kfx','book_title':'বিশেষ দ্রষ্টব্য'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/sunil-gangopadhyay-sonali-duhkh.html" class="mini-book-card">
+          <a href="../book/sunil-gangopadhyay-sonali-duhkh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sunil-gangopadhyay-sonali-duhkh.webp" alt="সোনালী দুঃখ" class="mini-cover" loading="lazy" />
             <div class="mini-title">সোনালী দুঃখ</div>
             <div class="mini-author">সুনীল গঙ্গোপাধ্যায়</div>
           </a>
         
-          <a href="../book/sunil-gangopadhyay-niruddeser-dese.html" class="mini-book-card">
+          <a href="../book/sunil-gangopadhyay-niruddeser-dese.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sunil-gangopadhyay-niruddeser-dese.webp" alt="নিরুদ্দেশের দেশে" class="mini-cover" loading="lazy" />
             <div class="mini-title">নিরুদ্দেশের দেশে</div>
             <div class="mini-author">সুনীল গঙ্গোপাধ্যায়</div>
           </a>
         
-          <a href="../book/sunil-gangopadhyay-nihosang-smrat.html" class="mini-book-card">
+          <a href="../book/sunil-gangopadhyay-nihosang-smrat.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sunil-gangopadhyay-nihosang-smrat.webp" alt="নিঃসঙ্গ সম্রাট" class="mini-cover" loading="lazy" />
             <div class="mini-title">নিঃসঙ্গ সম্রাট</div>
             <div class="mini-author">সুনীল গঙ্গোপাধ্যায়</div>
           </a>
         
-          <a href="../book/sunil-gangopadhyay-udasi-rajkumar.html" class="mini-book-card">
+          <a href="../book/sunil-gangopadhyay-udasi-rajkumar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sunil-gangopadhyay-udasi-rajkumar.webp" alt="উদাসী রাজকুমার" class="mini-cover" loading="lazy" />
             <div class="mini-title">উদাসী রাজকুমার</div>
             <div class="mini-author">সুনীল গঙ্গোপাধ্যায়</div>
           </a>
         
-          <a href="../book/sunil-gangopadhyay-smritir-shhr.html" class="mini-book-card">
+          <a href="../book/sunil-gangopadhyay-smritir-shhr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sunil-gangopadhyay-smritir-shhr.webp" alt="স্মৃতির শহর" class="mini-cover" loading="lazy" />
             <div class="mini-title">স্মৃতির শহর</div>
             <div class="mini-author">সুনীল গঙ্গোপাধ্যায়</div>
           </a>
         
-          <a href="../book/sunil-gangopadhyay-shei-somojo.html" class="mini-book-card">
+          <a href="../book/sunil-gangopadhyay-shei-somojo.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sunil-gangopadhyay-shei-somojo.webp" alt="সেই সময়" class="mini-cover" loading="lazy" />
             <div class="mini-title">সেই সময়</div>
             <div class="mini-author">সুনীল গঙ্গোপাধ্যায়</div>

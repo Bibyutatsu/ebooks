@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download অরূপরতন (Orooporoton) by রবীন্দ্রনাথ ঠাকুর (Rabindranath Tagore) free in EPUB. কবিতা ও নাটক (Poetry &amp;amp; Drama), ক্লাসিক ও সাহিত্য (Classics), ছোটগ...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/rabindranath-tagore-orooporoton.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -420,6 +423,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -427,6 +431,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=rabindranath-tagore-orooporoton" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -442,7 +449,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/rabindranath-tagore-orooporoton.webp" alt="অরূপরতন - রবীন্দ্রনাথ ঠাকুর" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2015</span>
@@ -472,7 +479,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/eboipotro/rabindranath_tagore/raw/master/নাটক/অরূপরতন.epub" class="download-btn" download="অরূপরতন.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অরূপরতন.epub','file_extension':'epub','book_title':'অরূপরতন'});">
+          <a href="https://github.com/eboipotro/rabindranath_tagore/raw/master/নাটক/অরূপরতন.epub" class="download-btn holo-card" download="অরূপরতন.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অরূপরতন.epub','file_extension':'epub','book_title':'অরূপরতন'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -518,37 +525,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/rabindranath-tagore-roktokarbi.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-roktokarbi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-roktokarbi.webp" alt="রক্তকরবী" class="mini-cover" loading="lazy" />
             <div class="mini-title">রক্তকরবী</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-godoay-gald.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-godoay-gald.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-godoay-gald.webp" alt="গোড়ায় গলদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">গোড়ায় গলদ</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-grihprbesh.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-grihprbesh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-grihprbesh.webp" alt="গৃহপ্রবেশ" class="mini-cover" loading="lazy" />
             <div class="mini-title">গৃহপ্রবেশ</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-guru.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-guru.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-guru.webp" alt="গুরু" class="mini-cover" loading="lazy" />
             <div class="mini-title">গুরু</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-kaler-yatra.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-kaler-yatra.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-kaler-yatra.webp" alt="কালের যাত্রা" class="mini-cover" loading="lazy" />
             <div class="mini-title">কালের যাত্রা</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-kalomrigoya.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-kalomrigoya.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-kalomrigoya.webp" alt="কালমৃগয়া" class="mini-cover" loading="lazy" />
             <div class="mini-title">কালমৃগয়া</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>

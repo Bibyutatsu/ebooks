@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Sharhe Miate Amel Bangla (Sharhe Miate Amel Bangla) by অজ্ঞাত (Anonymous) free in PDF. ইন্টারনেট আর্কাইভ (Internet Archive), ক্লাসিক ও সাহিত্য (Clas...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-sharhe-miate-amel-bangla.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-sharhe-miate-amel-bangla" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-sharhe-miate-amel-bangla.webp" alt="Sharhe Miate Amel Bangla - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/SharheMiateAmelBangla/Sharhe%20Miate%20Amel%20Bangla.pdf" class="download-btn" download="Sharhe Miate Amel Bangla.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Sharhe Miate Amel Bangla.pdf','file_extension':'pdf','book_title':'Sharhe Miate Amel Bangla'});">
+          <a href="https://archive.org/download/SharheMiateAmelBangla/Sharhe%20Miate%20Amel%20Bangla.pdf" class="download-btn holo-card" download="Sharhe Miate Amel Bangla.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Sharhe Miate Amel Bangla.pdf','file_extension':'pdf','book_title':'Sharhe Miate Amel Bangla'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-sharhe-jami-bangla.html" class="mini-book-card">
+          <a href="../book/anonymous-sharhe-jami-bangla.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-sharhe-jami-bangla.webp" alt="Sharhe Jami Bangla" class="mini-cover" loading="lazy" />
             <div class="mini-title">Sharhe Jami Bangla</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-sharhe-ushulush-shashi-bangla.html" class="mini-book-card">
+          <a href="../book/anonymous-sharhe-ushulush-shashi-bangla.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-sharhe-ushulush-shashi-bangla.webp" alt="Sharhe Ushulush Shashi Bangla" class="mini-cover" loading="lazy" />
             <div class="mini-title">Sharhe Ushulush Shashi Bangla</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-anwarul-manar-sharhe-nurul-anwar-bangla.html" class="mini-book-card">
+          <a href="../book/anonymous-anwarul-manar-sharhe-nurul-anwar-bangla.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-anwarul-manar-sharhe-nurul-anwar-bangla.webp" alt="Anwarul Manar Sharhe Nurul Anwar Bangla" class="mini-cover" loading="lazy" />
             <div class="mini-title">Anwarul Manar Sharhe Nurul Anwar Bangla</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-gulista-bangla.html" class="mini-book-card">
+          <a href="../book/anonymous-gulista-bangla.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-gulista-bangla.webp" alt="Gulista Bangla" class="mini-cover" loading="lazy" />
             <div class="mini-title">Gulista Bangla</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-bangla-sahitto.html" class="mini-book-card">
+          <a href="../book/anonymous-bangla-sahitto.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-bangla-sahitto.webp" alt="Bangla Sahitto" class="mini-cover" loading="lazy" />
             <div class="mini-title">Bangla Sahitto</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-adhunik-bangla-ovidhan.html" class="mini-book-card">
+          <a href="../book/anonymous-adhunik-bangla-ovidhan.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-adhunik-bangla-ovidhan.webp" alt="adhunik_bangla_ovidhan" class="mini-cover" loading="lazy" />
             <div class="mini-title">adhunik_bangla_ovidhan</div>
             <div class="mini-author">অজ্ঞাত</div>

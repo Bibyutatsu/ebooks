@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download উস্তাদ আবু আনওয়ার আল হিন্দি হাফিজাহুল্লাহ আর্কাইভ (Ustad Abu Anoojoar Al Hindi Haphijahullah Arkaeebh) by অজ্ঞাত (Anonymous) free in PDF. abu anwar...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-ustad-abu-anooyoar-al-hindi-hafijahullah-arkaeev.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -423,6 +426,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -430,6 +434,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-ustad-abu-anooyoar-al-hindi-hafijahullah-arkaeev" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -445,7 +452,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-ustad-abu-anooyoar-al-hindi-hafijahullah-arkaeev.webp" alt="উস্তাদ আবু আনওয়ার আল হিন্দি হাফিজাহুল্লাহ আর্কাইভ - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -475,7 +482,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/4gwandaq/4GWandAQ.pdf" class="download-btn" download="4GWandAQ.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'4GWandAQ.pdf','file_extension':'pdf','book_title':'উস্তাদ আবু আনওয়ার আল হিন্দি হাফিজাহুল্লাহ আর্কাইভ'});">
+          <a href="https://archive.org/download/4gwandaq/4GWandAQ.pdf" class="download-btn holo-card" download="4GWandAQ.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'4GWandAQ.pdf','file_extension':'pdf','book_title':'উস্তাদ আবু আনওয়ার আল হিন্দি হাফিজাহুল্লাহ আর্কাইভ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -521,37 +528,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-ustad-khubaib-aahmad-hafijahullah-arkaeeva.html" class="mini-book-card">
+          <a href="../book/anonymous-ustad-khubaib-aahmad-hafijahullah-arkaeeva.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-ustad-khubaib-aahmad-hafijahullah-arkaeeva.webp" alt="“উস্তাদ খুবাইব আহমাদ হাফিজাহুল্লাহ আর্কাইভ”" class="mini-cover" loading="lazy" />
             <div class="mini-title">“উস্তাদ খুবাইব আহমাদ হাফিজাহুল্লাহ আর্কাইভ”</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-dawater-usul-ustad-usama-mahmud-hafijahullah.html" class="mini-book-card">
+          <a href="../book/anonymous-dawater-usul-ustad-usama-mahmud-hafijahullah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-dawater-usul-ustad-usama-mahmud-hafijahullah.webp" alt="Dawater Usul Ustad Usama Mahmud Hafijahullah" class="mini-cover" loading="lazy" />
             <div class="mini-title">Dawater Usul Ustad Usama Mahmud Hafijahullah</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-murotad-htjar-bidhan-ustad-aahmad-nabil-hafijahullah.html" class="mini-book-card">
+          <a href="../book/anonymous-murotad-htjar-bidhan-ustad-aahmad-nabil-hafijahullah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-murotad-htjar-bidhan-ustad-aahmad-nabil-hafijahullah.webp" alt="মুরতাদ হত্যার বিধান - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">মুরতাদ হত্যার বিধান - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-aallahr-bdtb-o-mhttb-ustad-aahmad-yakarija-hafijahullah.html" class="mini-book-card">
+          <a href="../book/anonymous-aallahr-bdtb-o-mhttb-ustad-aahmad-yakarija-hafijahullah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-aallahr-bdtb-o-mhttb-ustad-aahmad-yakarija-hafijahullah.webp" alt="আল্লাহর বড়ত্ব ও মহত্ত্ব - উস্তাদ আহমাদ যাকারিয়া হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল্লাহর বড়ত্ব ও মহত্ত্ব - উস্তাদ আহমাদ যাকারিয়া হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-darul-isholam-o-darul-kufr-ustad-aahmad-nabil-hafijahullah.html" class="mini-book-card">
+          <a href="../book/anonymous-darul-isholam-o-darul-kufr-ustad-aahmad-nabil-hafijahullah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-darul-isholam-o-darul-kufr-ustad-aahmad-nabil-hafijahullah.webp" alt="দারুল ইসলাম ও দারুল কুফর - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">দারুল ইসলাম ও দারুল কুফর - উস্তাদ আহমাদ নাবিল হাফিজাহুল্লাহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-doja-muminer-hatijar-ustad-aahmad-yakarija-hafijah.html" class="mini-book-card">
+          <a href="../book/anonymous-doja-muminer-hatijar-ustad-aahmad-yakarija-hafijah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-doja-muminer-hatijar-ustad-aahmad-yakarija-hafijah.webp" alt="‘দোয়া’- মুমিনের হাতিয়ার - উস্তাদ আহমাদ যাকারিয়া হাফিযাহুল্লাহ. Doa Muminer Srestho Ostro" class="mini-cover" loading="lazy" />
             <div class="mini-title">‘দোয়া’- মুমিনের হাতিয়ার - উস্তাদ আহমাদ যাকারিয়া হাফিযাহুল্লাহ. Doa Muminer Srestho Ostro</div>
             <div class="mini-author">অজ্ঞাত</div>

@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download তাফসীরে ফী যিলালিল কুরআন (১০ম খণ্ড) সাইয়েদ কুতুব শহীদ (Taphoseere Phee Jilalil Kuroan M Khond Saeejoed Kutub Shoheed) by অজ্ঞাত (Anonymous) free in...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-taphasire-phi-yilalil-kuroan-m-khand-saiyaed-kutub-shheed.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-taphasire-phi-yilalil-kuroan-m-khand-saiyaed-kutub-shheed" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-taphasire-phi-yilalil-kuroan-m-khand-saiyaed-kutub-shheed.webp" alt="তাফসীরে ফী যিলালিল কুরআন (১০ম খণ্ড) সাইয়েদ কুতুব শহীদ - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/info_iscalibrary_20161227/%E0%A6%A4%E0%A6%BE%E0%A6%AB%E0%A6%B8%E0%A7%80%E0%A6%B0%E0%A7%87%20%E0%A6%AB%E0%A7%80%20%E0%A6%AF%E0%A6%BF%E0%A6%B2%E0%A6%BE%E0%A6%B2%E0%A6%BF%E0%A6%B2%20%E0%A6%95%E0%A7%81%E0%A6%B0%E0%A6%86%E0%A6%A8%20%28%E0%A6%86%E0%A6%AE%E0%A6%AA%E0%A6%BE%E0%A6%B0%E0%A6%BE%29-%20%E0%A6%B8%E0%A6%BE%E0%A6%87%E0%A7%9F%E0%A7%87%E0%A6%A6%20%E0%A6%95%E0%A7%81%E0%A6%A4%E0%A7%81%E0%A6%AC%20%E0%A6%B6%E0%A6%B9%E0%A7%80%E0%A6%A6.pdf" class="download-btn" download="তাফসীরে ফী যিলালিল কুরআন (আমপারা)- সাইয়েদ কুতুব শহীদ.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'তাফসীরে ফী যিলালিল কুরআন (আমপারা)- সাইয়েদ কুতুব শহীদ.pdf','file_extension':'pdf','book_title':'তাফসীরে ফী যিলালিল কুরআন (১০ম খণ্ড) সাইয়েদ কুতুব শহীদ'});">
+          <a href="https://archive.org/download/info_iscalibrary_20161227/%E0%A6%A4%E0%A6%BE%E0%A6%AB%E0%A6%B8%E0%A7%80%E0%A6%B0%E0%A7%87%20%E0%A6%AB%E0%A7%80%20%E0%A6%AF%E0%A6%BF%E0%A6%B2%E0%A6%BE%E0%A6%B2%E0%A6%BF%E0%A6%B2%20%E0%A6%95%E0%A7%81%E0%A6%B0%E0%A6%86%E0%A6%A8%20%28%E0%A6%86%E0%A6%AE%E0%A6%AA%E0%A6%BE%E0%A6%B0%E0%A6%BE%29-%20%E0%A6%B8%E0%A6%BE%E0%A6%87%E0%A7%9F%E0%A7%87%E0%A6%A6%20%E0%A6%95%E0%A7%81%E0%A6%A4%E0%A7%81%E0%A6%AC%20%E0%A6%B6%E0%A6%B9%E0%A7%80%E0%A6%A6.pdf" class="download-btn holo-card" download="তাফসীরে ফী যিলালিল কুরআন (আমপারা)- সাইয়েদ কুতুব শহীদ.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'তাফসীরে ফী যিলালিল কুরআন (আমপারা)- সাইয়েদ কুতুব শহীদ.pdf','file_extension':'pdf','book_title':'তাফসীরে ফী যিলালিল কুরআন (১০ম খণ্ড) সাইয়েদ কুতুব শহীদ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-muhtaram-eelam-o-jihad-bhaiyer-rochona-samgr-m-khnd.html" class="mini-book-card">
+          <a href="../book/anonymous-muhtaram-eelam-o-jihad-bhaiyer-rochona-samgr-m-khnd.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-muhtaram-eelam-o-jihad-bhaiyer-rochona-samgr-m-khnd.webp" alt="মুহতারাম ইলম ও জিহাদ ভাইয়ের রচনা সমগ্র ১ম খন্ড" class="mini-cover" loading="lazy" />
             <div class="mini-title">মুহতারাম ইলম ও জিহাদ ভাইয়ের রচনা সমগ্র ১ম খন্ড</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shreemodbhagabotm-m-skandh.html" class="mini-book-card">
+          <a href="../book/anonymous-shreemodbhagabotm-m-skandh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shreemodbhagabotm-m-skandh.webp" alt="শ্রীমদ্ভাগবতম ১ম স্কন্ধ" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীমদ্ভাগবতম ১ম স্কন্ধ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-tafshire-tabari-sorif.html" class="mini-book-card">
+          <a href="../book/anonymous-tafshire-tabari-sorif.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-tafshire-tabari-sorif.webp" alt="তাফসীরে তাবারী শরীফ" class="mini-cover" loading="lazy" />
             <div class="mini-title">তাফসীরে তাবারী শরীফ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-saeejed-abul-ala-maodudi-boi-somuh.html" class="mini-book-card">
+          <a href="../book/anonymous-saeejed-abul-ala-maodudi-boi-somuh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-saeejed-abul-ala-maodudi-boi-somuh.webp" alt="সাইয়েদ আবুল আ’লা মওদুদী : বই সমূহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">সাইয়েদ আবুল আ’লা মওদুদী : বই সমূহ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shreemodbhagabotm-m-theke-s-skandh-bnganubad.html" class="mini-book-card">
+          <a href="../book/anonymous-shreemodbhagabotm-m-theke-s-skandh-bnganubad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shreemodbhagabotm-m-theke-s-skandh-bnganubad.webp" alt="শ্রীমদ্ভাগবতম (১ম থেকে ১২শ স্কন্ধ)- বঙ্গানুবাদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীমদ্ভাগবতম (১ম থেকে ১২শ স্কন্ধ)- বঙ্গানুবাদ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shreegoudoeey-boishnb-jibon-y-khnd-srihoridas-das.html" class="mini-book-card">
+          <a href="../book/anonymous-shreegoudoeey-boishnb-jibon-y-khnd-srihoridas-das.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shreegoudoeey-boishnb-jibon-y-khnd-srihoridas-das.webp" alt="শ্রীগৌড়ীয় বৈষ্ণব জীবন (২য় খণ্ড)- শ্রীহরিদাস দাস" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীগৌড়ীয় বৈষ্ণব জীবন (২য় খণ্ড)- শ্রীহরিদাস দাস</div>
             <div class="mini-author">অজ্ঞাত</div>

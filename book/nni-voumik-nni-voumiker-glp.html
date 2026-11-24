@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download ননী ভৌমিকের গল্প (Nonee Bhoumiker Golp) by ননী ভৌমিক (Nni Voumik) free in KFX, EPUB. উপন্যাস ও সাহিত্য (General Fiction) Bengali literature digital ...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/nni-voumik-nni-voumiker-glp.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -417,6 +420,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -424,6 +428,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=nni-voumik-nni-voumiker-glp" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -439,7 +446,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/nni-voumik-nni-voumiker-glp.webp" alt="ননী ভৌমিকের গল্প - ননী ভৌমিক" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 0101</span>
@@ -469,7 +476,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-09/nni-voumik-nni-voumiker-glp.kfx" class="download-btn" download="ননী ভৌমিকের গল্প - ননী ভৌমিক.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ননী ভৌমিকের গল্প - ননী ভৌমিক.kfx','file_extension':'kfx','book_title':'ননী ভৌমিকের গল্প'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-09/nni-voumik-nni-voumiker-glp.kfx" class="download-btn holo-card" download="ননী ভৌমিকের গল্প - ননী ভৌমিক.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ননী ভৌমিকের গল্প - ননী ভৌমিক.kfx','file_extension':'kfx','book_title':'ননী ভৌমিকের গল্প'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -480,7 +487,7 @@ a:hover { color: #5ce1e6; }
             <span class="dl-icon">⬇</span>
           </a>
         
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-09/nni-voumik-nni-voumiker-glp.epub" class="download-btn" download="ননী ভৌমিকের গল্প - ননী ভৌমিক.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ননী ভৌমিকের গল্প - ননী ভৌমিক.epub','file_extension':'epub','book_title':'ননী ভৌমিকের গল্প'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-09/nni-voumik-nni-voumiker-glp.epub" class="download-btn holo-card" download="ননী ভৌমিকের গল্প - ননী ভৌমিক.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ননী ভৌমিকের গল্প - ননী ভৌমিক.epub','file_extension':'epub','book_title':'ননী ভৌমিকের গল্প'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -526,37 +533,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anish-das-apu-prithibir-sera-voutik-glp.html" class="mini-book-card">
+          <a href="../book/anish-das-apu-prithibir-sera-voutik-glp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-das-apu-prithibir-sera-voutik-glp.webp" alt="পৃথিবীর সেরা ভৌতিক গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">পৃথিবীর সেরা ভৌতিক গল্প</div>
             <div class="mini-author">অনীশ দাস অপু</div>
           </a>
         
-          <a href="../book/anish-das-apu-prithibir-sera-thrilar-glp.html" class="mini-book-card">
+          <a href="../book/anish-das-apu-prithibir-sera-thrilar-glp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-das-apu-prithibir-sera-thrilar-glp.webp" alt="পৃথিবীর সেরা থ্রিলার গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">পৃথিবীর সেরা থ্রিলার গল্প</div>
             <div class="mini-author">অনীশ দাস অপু</div>
           </a>
         
-          <a href="../book/ana-frank-ana-frank-er-dajeri.html" class="mini-book-card">
+          <a href="../book/ana-frank-ana-frank-er-dajeri.html" class="mini-book-card holo-card">
             <img src="../assets/covers/ana-frank-ana-frank-er-dajeri.webp" alt="আনা ফ্রাঙ্ক এর ডায়েরি" class="mini-cover" loading="lazy" />
             <div class="mini-title">আনা ফ্রাঙ্ক এর ডায়েরি</div>
             <div class="mini-author">আনা ফ্রাঙ্ক</div>
           </a>
         
-          <a href="../book/akobr-ali-khan-purano-shei-diner-kotha.html" class="mini-book-card">
+          <a href="../book/akobr-ali-khan-purano-shei-diner-kotha.html" class="mini-book-card holo-card">
             <img src="../assets/covers/akobr-ali-khan-purano-shei-diner-kotha.webp" alt="পুরানো সেই দিনের কথা" class="mini-cover" loading="lazy" />
             <div class="mini-title">পুরানো সেই দিনের কথা</div>
             <div class="mini-author">আকবর আলি খান</div>
           </a>
         
-          <a href="../book/atul-sur-varter-bibaher-itihash.html" class="mini-book-card">
+          <a href="../book/atul-sur-varter-bibaher-itihash.html" class="mini-book-card holo-card">
             <img src="../assets/covers/atul-sur-varter-bibaher-itihash.webp" alt="ভারতের বিবাহের ইতিহাস" class="mini-cover" loading="lazy" />
             <div class="mini-title">ভারতের বিবাহের ইতিহাস</div>
             <div class="mini-author">অতুল সুর</div>
           </a>
         
-          <a href="../book/obaneendrnath-thakur-xirer-putul.html" class="mini-book-card">
+          <a href="../book/obaneendrnath-thakur-xirer-putul.html" class="mini-book-card holo-card">
             <img src="../assets/covers/obaneendrnath-thakur-xirer-putul.webp" alt="ক্ষীরের পুতুল" class="mini-cover" loading="lazy" />
             <div class="mini-title">ক্ষীরের পুতুল</div>
             <div class="mini-author">অবনীন্দ্রনাথ ঠাকুর</div>

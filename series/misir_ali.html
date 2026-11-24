@@ -11,9 +11,12 @@
   <meta property="og:description" content="Complete reading order and free downloads for 14 books in the মিসির আলি (Misir Ali) series by হুমায়ূন আহমেদ in EPUB, Kindle KFX, MOBI &amp; PDF.">
   <meta property="og:type" content="books.series">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/series/misir_ali.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -384,6 +387,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -391,6 +395,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../series/" class="nav-btn">All Series Universes →</a>
       </nav>
@@ -404,116 +411,185 @@ a:hover { color: #5ce1e6; }
       <span>মিসির আলি</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
-      <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">মিসির আলি Series</h1>
-      <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Misir Ali · By হুমায়ূন আহমেদ (Humayun Ahmed)</div>
-      <div class="badges-row">
-        <span class="badge series-badge" style="font-weight: 700;">
-          ⚡ 14 Books in Series
-        </span>
+    <div class="series-hero-wrap" data-series-id="misir_ali">
+      <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 4px;">⚡ মিসির আলি Series</h1>
+      <div style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 12px;">Misir Ali · Creator: <strong style="color:var(--accent);">হুমায়ূন আহমেদ (Humayun Ahmed)</strong></div>
+      <div class="series-stats-bar">
+        <span class="series-stat-pill">📚 14 Books in Series</span>
+        <span class="series-stat-pill" id="series-progress-count">0 / 14 Completed</span>
       </div>
     </div>
 
-    <h2 class="section-heading"><span>📚</span> Canonical Reading Order (14 Books)</h2>
-    <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+    <h2 class="section-heading"><span>📜</span> Canonical Reading Order (14 Books)</h2>
+    <div class="timeline-reading-grid">
       
-          <a href="../book/humayun-ahmed-misir-ali-amnibas.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#1</div>
-            <img src="../assets/covers/humayun-ahmed-misir-ali-amnibas.webp" alt="মিসির আলি অমনিবাস" class="mini-cover" loading="lazy" />
-            <div class="mini-title">মিসির আলি অমনিবাস</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#1</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-misir-ali-amnibas">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-misir-ali-amnibas.html">
+              <img src="../assets/covers/humayun-ahmed-misir-ali-amnibas.webp" alt="মিসির আলি অমনিবাস" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">মিসির আলি অমনিবাস</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-anish.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#2</div>
-            <img src="../assets/covers/humayun-ahmed-anish.webp" alt="অনীশ" class="mini-cover" loading="lazy" />
-            <div class="mini-title">অনীশ</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#2</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-anish">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-anish.html">
+              <img src="../assets/covers/humayun-ahmed-anish.webp" alt="অনীশ" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">অনীশ</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-onjavubon.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#3</div>
-            <img src="../assets/covers/humayun-ahmed-onjavubon.webp" alt="অন্যভুবন" class="mini-cover" loading="lazy" />
-            <div class="mini-title">অন্যভুবন</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#3</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-onjavubon">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-onjavubon.html">
+              <img src="../assets/covers/humayun-ahmed-onjavubon.webp" alt="অন্যভুবন" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">অন্যভুবন</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-amii-misir-ali.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#4</div>
-            <img src="../assets/covers/humayun-ahmed-amii-misir-ali.webp" alt="আমিই মিসির আলি" class="mini-cover" loading="lazy" />
-            <div class="mini-title">আমিই মিসির আলি</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#4</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-amii-misir-ali">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-amii-misir-ali.html">
+              <img src="../assets/covers/humayun-ahmed-amii-misir-ali.webp" alt="আমিই মিসির আলি" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">আমিই মিসির আলি</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-kuhk.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#5</div>
-            <img src="../assets/covers/humayun-ahmed-kuhk.webp" alt="কুহক" class="mini-cover" loading="lazy" />
-            <div class="mini-title">কুহক</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#5</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-kuhk">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-kuhk.html">
+              <img src="../assets/covers/humayun-ahmed-kuhk.webp" alt="কুহক" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">কুহক</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-debi.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#6</div>
-            <img src="../assets/covers/humayun-ahmed-debi.webp" alt="দেবী" class="mini-cover" loading="lazy" />
-            <div class="mini-title">দেবী</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#6</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-debi">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-debi.html">
+              <img src="../assets/covers/humayun-ahmed-debi.webp" alt="দেবী" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">দেবী</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-nisithinee.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#7</div>
-            <img src="../assets/covers/humayun-ahmed-nisithinee.webp" alt="নিশীথিনী" class="mini-cover" loading="lazy" />
-            <div class="mini-title">নিশীথিনী</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#7</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-nisithinee">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-nisithinee.html">
+              <img src="../assets/covers/humayun-ahmed-nisithinee.webp" alt="নিশীথিনী" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">নিশীথিনী</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-baghabandi-misir-ali.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#8</div>
-            <img src="../assets/covers/humayun-ahmed-baghabandi-misir-ali.webp" alt="বাঘবন্দি মিসির আলি" class="mini-cover" loading="lazy" />
-            <div class="mini-title">বাঘবন্দি মিসির আলি</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#8</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-baghabandi-misir-ali">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-baghabandi-misir-ali.html">
+              <img src="../assets/covers/humayun-ahmed-baghabandi-misir-ali.webp" alt="বাঘবন্দি মিসির আলি" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">বাঘবন্দি মিসির আলি</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-bipd.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#9</div>
-            <img src="../assets/covers/humayun-ahmed-bipd.webp" alt="বিপদ" class="mini-cover" loading="lazy" />
-            <div class="mini-title">বিপদ</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#9</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-bipd">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-bipd.html">
+              <img src="../assets/covers/humayun-ahmed-bipd.webp" alt="বিপদ" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">বিপদ</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-brihonnla.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#10</div>
-            <img src="../assets/covers/humayun-ahmed-brihonnla.webp" alt="বৃহন্নলা" class="mini-cover" loading="lazy" />
-            <div class="mini-title">বৃহন্নলা</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#10</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-brihonnla">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-brihonnla.html">
+              <img src="../assets/covers/humayun-ahmed-brihonnla.webp" alt="বৃহন্নলা" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">বৃহন্নলা</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-misir-ali-unsolved.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#11</div>
-            <img src="../assets/covers/humayun-ahmed-misir-ali-unsolved.webp" alt="মিসির আলি UNSOLVED" class="mini-cover" loading="lazy" />
-            <div class="mini-title">মিসির আলি UNSOLVED</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#11</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-misir-ali-unsolved">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-misir-ali-unsolved.html">
+              <img src="../assets/covers/humayun-ahmed-misir-ali-unsolved.webp" alt="মিসির আলি UNSOLVED" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">মিসির আলি UNSOLVED</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-misir-ali-aaponi-kothajo.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#12</div>
-            <img src="../assets/covers/humayun-ahmed-misir-ali-aaponi-kothajo.webp" alt="মিসির আলি আপনি কোথায়" class="mini-cover" loading="lazy" />
-            <div class="mini-title">মিসির আলি আপনি কোথায়</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#12</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-misir-ali-aaponi-kothajo">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-misir-ali-aaponi-kothajo.html">
+              <img src="../assets/covers/humayun-ahmed-misir-ali-aaponi-kothajo.webp" alt="মিসির আলি আপনি কোথায়" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">মিসির আলি আপনি কোথায়</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-misir-alir-omimangosit-rahsy.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#13</div>
-            <img src="../assets/covers/humayun-ahmed-misir-alir-omimangosit-rahsy.webp" alt="মিসির আলির অমিমাংসিত রহস্য" class="mini-cover" loading="lazy" />
-            <div class="mini-title">মিসির আলির অমিমাংসিত রহস্য</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#13</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-misir-alir-omimangosit-rahsy">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-misir-alir-omimangosit-rahsy.html">
+              <img src="../assets/covers/humayun-ahmed-misir-alir-omimangosit-rahsy.webp" alt="মিসির আলির অমিমাংসিত রহস্য" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">মিসির আলির অমিমাংসিত রহস্য</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/humayun-ahmed-misir-alir-chashama.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#14</div>
-            <img src="../assets/covers/humayun-ahmed-misir-alir-chashama.webp" alt="মিসির আলির চশমা" class="mini-cover" loading="lazy" />
-            <div class="mini-title">মিসির আলির চশমা</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#14</span>
+              <button type="button" class="read-check-btn" data-book-id="humayun-ahmed-misir-alir-chashama">+ Mark Read</button>
+            </div>
+            <a href="../book/humayun-ahmed-misir-alir-chashama.html">
+              <img src="../assets/covers/humayun-ahmed-misir-alir-chashama.webp" alt="মিসির আলির চশমা" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">মিসির আলির চশমা</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
     </div>
   </main>

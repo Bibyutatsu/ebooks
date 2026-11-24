@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download শাহ উয়ালিউল্লাহ মুহাদ্দিসে দেহলভী এর বই (Shah Ujoaliullah Muhaddise Deholobhee Er Boee) by অজ্ঞাত (Anonymous) free in EPUB. ইন্টারনেট আর্কাইভ (Inte...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-sah-uyoaliullah-muhaddise-deholovi-er-bi.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-sah-uyoaliullah-muhaddise-deholovi-er-bi" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-sah-uyoaliullah-muhaddise-deholovi-er-bi.webp" alt="শাহ উয়ালিউল্লাহ মুহাদ্দিসে দেহলভী এর বই - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/shaholiullahdeholovi/%E0%A6%AE%E0%A6%A4%E0%A6%AC%E0%A6%BF%E0%A6%B0%E0%A7%8B%E0%A6%A7%20%E0%A6%AA%E0%A7%82%E0%A6%B0%E0%A7%8D%E0%A6%A3%20%E0%A6%AC%E0%A6%BF%E0%A6%B7%E0%A7%9F%E0%A7%87%20%E0%A6%B8%E0%A6%A0%E0%A6%BF%E0%A6%95%20%E0%A6%AA%E0%A6%A8%E0%A7%8D%E0%A6%A5%E0%A6%BE%20%E0%A6%85%E0%A6%AC%E0%A6%B2%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%89%E0%A6%AA%E0%A6%BE%E0%A7%9F%20%E2%80%93%20%E0%A6%B6%E0%A6%BE%E0%A6%B9%20%E0%A6%85%E0%A6%B2%E0%A6%BF%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A6%BE%E0%A6%B9%20%E0%A6%A6%E0%A7%87%E0%A6%B9%E0%A6%B2%E0%A6%AC%E0%A7%80.epub" class="download-btn" download="মতবিরোধ পূর্ণ বিষয়ে সঠিক পন্থা অবলম্বনের উপায় – শাহ অলিউল্লাহ দেহলবী.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'মতবিরোধ পূর্ণ বিষয়ে সঠিক পন্থা অবলম্বনের উপায় – শাহ অলিউল্লাহ দেহলবী.epub','file_extension':'epub','book_title':'শাহ উয়ালিউল্লাহ মুহাদ্দিসে দেহলভী এর বই'});">
+          <a href="https://archive.org/download/shaholiullahdeholovi/%E0%A6%AE%E0%A6%A4%E0%A6%AC%E0%A6%BF%E0%A6%B0%E0%A7%8B%E0%A6%A7%20%E0%A6%AA%E0%A7%82%E0%A6%B0%E0%A7%8D%E0%A6%A3%20%E0%A6%AC%E0%A6%BF%E0%A6%B7%E0%A7%9F%E0%A7%87%20%E0%A6%B8%E0%A6%A0%E0%A6%BF%E0%A6%95%20%E0%A6%AA%E0%A6%A8%E0%A7%8D%E0%A6%A5%E0%A6%BE%20%E0%A6%85%E0%A6%AC%E0%A6%B2%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%89%E0%A6%AA%E0%A6%BE%E0%A7%9F%20%E2%80%93%20%E0%A6%B6%E0%A6%BE%E0%A6%B9%20%E0%A6%85%E0%A6%B2%E0%A6%BF%E0%A6%89%E0%A6%B2%E0%A7%8D%E0%A6%B2%E0%A6%BE%E0%A6%B9%20%E0%A6%A6%E0%A7%87%E0%A6%B9%E0%A6%B2%E0%A6%AC%E0%A7%80.epub" class="download-btn holo-card" download="মতবিরোধ পূর্ণ বিষয়ে সঠিক পন্থা অবলম্বনের উপায় – শাহ অলিউল্লাহ দেহলবী.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'মতবিরোধ পূর্ণ বিষয়ে সঠিক পন্থা অবলম্বনের উপায় – শাহ অলিউল্লাহ দেহলবী.epub','file_extension':'epub','book_title':'শাহ উয়ালিউল্লাহ মুহাদ্দিসে দেহলভী এর বই'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-mujaphaphr-bin-muhshin-er-bi.html" class="mini-book-card">
+          <a href="../book/anonymous-mujaphaphr-bin-muhshin-er-bi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-mujaphaphr-bin-muhshin-er-bi.webp" alt="মুযাফফর বিন মুহসিন এর বই" class="mini-cover" loading="lazy" />
             <div class="mini-title">মুযাফফর বিন মুহসিন এর বই</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-sunil-gongopadhjayaer-bee.html" class="mini-book-card">
+          <a href="../book/anonymous-sunil-gongopadhjayaer-bee.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-sunil-gongopadhjayaer-bee.webp" alt="সুনীল গঙ্গোপাধ্যায়ের বই" class="mini-cover" loading="lazy" />
             <div class="mini-title">সুনীল গঙ্গোপাধ্যায়ের বই</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shrijat-bondjopadhyajoer-bee.html" class="mini-book-card">
+          <a href="../book/anonymous-shrijat-bondjopadhyajoer-bee.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shrijat-bondjopadhyajoer-bee.webp" alt="শ্রীজাত বন্দ্যপাধ্যায়ের বই" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীজাত বন্দ্যপাধ্যায়ের বই</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-utpol-kumar-bosur-bee.html" class="mini-book-card">
+          <a href="../book/anonymous-utpol-kumar-bosur-bee.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-utpol-kumar-bosur-bee.webp" alt="উৎপল কুমার বসুর বই" class="mini-cover" loading="lazy" />
             <div class="mini-title">উৎপল কুমার বসুর বই</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-oprakrit-krishnprsad-rannar-bee.html" class="mini-book-card">
+          <a href="../book/anonymous-oprakrit-krishnprsad-rannar-bee.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-oprakrit-krishnprsad-rannar-bee.webp" alt="অপ্রাকৃত কৃষ্ণপ্রসাদ (রান্নার বই)" class="mini-cover" loading="lazy" />
             <div class="mini-title">অপ্রাকৃত কৃষ্ণপ্রসাদ (রান্নার বই)</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-delojar-hosen-saeedi-saheber-boi.html" class="mini-book-card">
+          <a href="../book/anonymous-delojar-hosen-saeedi-saheber-boi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-delojar-hosen-saeedi-saheber-boi.webp" alt="দেলোয়ার হোসেন সাঈদী সাহেবের বই" class="mini-cover" loading="lazy" />
             <div class="mini-title">দেলোয়ার হোসেন সাঈদী সাহেবের বই</div>
             <div class="mini-author">অজ্ঞাত</div>

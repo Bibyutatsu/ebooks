@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 24 Bengali ebooks by শরৎচন্দ্র চট্টোপাধ্যায় (Sarat Chandra Chattopadhyay) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/sarat-chandra-chattopadhyay.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>শরৎচন্দ্র চট্টোপাধ্যায়</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">শরৎচন্দ্র চট্টোপাধ্যায়</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Sarat Chandra Chattopadhyay</div>
       <div class="badges-row">
@@ -449,145 +456,145 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (24)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/sarat-chandra-chattopadhyay-grihdah.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-grihdah.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-grihdah.webp" alt="গৃহদাহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">গৃহদাহ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-charitrheen.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-charitrheen.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-charitrheen.webp" alt="চরিত্রহীন" class="mini-cover" loading="lazy" />
             <div class="mini-title">চরিত্রহীন</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-dtta.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-dtta.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-dtta.webp" alt="দত্তা" class="mini-cover" loading="lazy" />
             <div class="mini-title">দত্তা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-debdas.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-debdas.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-debdas.webp" alt="দেবদাস" class="mini-cover" loading="lazy" />
             <div class="mini-title">দেবদাস</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-pther-dabi.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-pther-dabi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-pther-dabi.webp" alt="পথের দাবী" class="mini-cover" loading="lazy" />
             <div class="mini-title">পথের দাবী</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-parinita.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-parinita.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-parinita.webp" alt="পরিণীতা" class="mini-cover" loading="lazy" />
             <div class="mini-title">পরিণীতা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-shart-glp-smgr.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-shart-glp-smgr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-shart-glp-smgr.webp" alt="শরৎ গল্প সমগ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">শরৎ গল্প সমগ্র</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-niskriti.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-niskriti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-niskriti.webp" alt="নিষ্কৃতি" class="mini-cover" loading="lazy" />
             <div class="mini-title">নিষ্কৃতি</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-polli-samaj.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-polli-samaj.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-polli-samaj.webp" alt="পল্লী-সমাজ" class="mini-cover" loading="lazy" />
             <div class="mini-title">পল্লী-সমাজ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-bddidi-shoratochndr-chottopadhyayo.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-bddidi-shoratochndr-chottopadhyayo.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-bddidi-shoratochndr-chottopadhyayo.webp" alt="বড়দিদি (শরৎচন্দ্র চট্টোপাধ্যায়)" class="mini-cover" loading="lazy" />
             <div class="mini-title">বড়দিদি (শরৎচন্দ্র চট্টোপাধ্যায়)</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-srikant.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-srikant.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-srikant.webp" alt="শ্রীকান্ত" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীকান্ত</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-dena-paona.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-dena-paona.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-dena-paona.webp" alt="দেনা-পাওনা" class="mini-cover" loading="lazy" />
             <div class="mini-title">দেনা-পাওনা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-ponditomsai.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-ponditomsai.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-ponditomsai.webp" alt="পণ্ডিতমশাই" class="mini-cover" loading="lazy" />
             <div class="mini-title">পণ্ডিতমশাই</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-polleeshmaj.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-polleeshmaj.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-polleeshmaj.webp" alt="পল্লীসমাজ" class="mini-cover" loading="lazy" />
             <div class="mini-title">পল্লীসমাজ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-bamuner-meye.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-bamuner-meye.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-bamuner-meye.webp" alt="বামুনের মেয়ে" class="mini-cover" loading="lazy" />
             <div class="mini-title">বামুনের মেয়ে</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-biprdas.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-biprdas.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-biprdas.webp" alt="বিপ্রদাস" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিপ্রদাস</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-birajbou.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-birajbou.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-birajbou.webp" alt="বিরাজবৌ" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিরাজবৌ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-boikunther-uil.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-boikunther-uil.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-boikunther-uil.webp" alt="বৈকুন্ঠের উইল" class="mini-cover" loading="lazy" />
             <div class="mini-title">বৈকুন্ঠের উইল</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-bdodidi.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-bdodidi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-bdodidi.webp" alt="বড়দিদি" class="mini-cover" loading="lazy" />
             <div class="mini-title">বড়দিদি</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-shes-prsn.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-shes-prsn.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-shes-prsn.webp" alt="শেষ প্রশ্ন" class="mini-cover" loading="lazy" />
             <div class="mini-title">শেষ প্রশ্ন</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-sreekant-m-prb.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-sreekant-m-prb.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-sreekant-m-prb.webp" alt="শ্রীকান্ত - ১ম পর্ব" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীকান্ত - ১ম পর্ব</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-sreekant-ya-prb.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-sreekant-ya-prb.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-sreekant-ya-prb.webp" alt="শ্রীকান্ত - ২য় পর্ব" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীকান্ত - ২য় পর্ব</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-sreekant-ya-prb-2.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-sreekant-ya-prb-2.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-sreekant-ya-prb-2.webp" alt="শ্রীকান্ত - ৩য় পর্ব" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীকান্ত - ৩য় পর্ব</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/sarat-chandra-chattopadhyay-sreekant-rth-prb.html" class="mini-book-card">
+          <a href="../book/sarat-chandra-chattopadhyay-sreekant-rth-prb.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sarat-chandra-chattopadhyay-sreekant-rth-prb.webp" alt="শ্রীকান্ত - ৪র্থ পর্ব" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীকান্ত - ৪র্থ পর্ব</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>

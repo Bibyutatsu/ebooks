@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download অপেক্ষায় opekkha by humayun ahmed (Opekkhajo Opekkha By Humayun Ahmed) by হুমায়ূন আহমেদ (Humayun Ahmed) free in EPUB. ইন্টারনেট আর্কাইভ (Internet A...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/humayun-ahmed-opekkhaj-opekkha-by-humayun-ahmed.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -420,6 +423,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -427,6 +431,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=humayun-ahmed-opekkhaj-opekkha-by-humayun-ahmed" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -442,7 +449,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/humayun-ahmed-opekkhaj-opekkha-by-humayun-ahmed.webp" alt="অপেক্ষায় opekkha by humayun ahmed - হুমায়ূন আহমেদ" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -472,7 +479,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/opekkha-by-humayun-ahmed-pdf/6ff3b90d-b160-4f99-a532-5f4043ed6947.epub" class="download-btn" download="6ff3b90d-b160-4f99-a532-5f4043ed6947.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'6ff3b90d-b160-4f99-a532-5f4043ed6947.epub','file_extension':'epub','book_title':'অপেক্ষায় opekkha by humayun ahmed'});">
+          <a href="https://archive.org/download/opekkha-by-humayun-ahmed-pdf/6ff3b90d-b160-4f99-a532-5f4043ed6947.epub" class="download-btn holo-card" download="6ff3b90d-b160-4f99-a532-5f4043ed6947.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'6ff3b90d-b160-4f99-a532-5f4043ed6947.epub','file_extension':'epub','book_title':'অপেক্ষায় opekkha by humayun ahmed'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -518,37 +525,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/humayun-ahmed-misir-ali-amnibas.html" class="mini-book-card">
+          <a href="../book/humayun-ahmed-misir-ali-amnibas.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-ahmed-misir-ali-amnibas.webp" alt="মিসির আলি অমনিবাস" class="mini-cover" loading="lazy" />
             <div class="mini-title">মিসির আলি অমনিবাস</div>
             <div class="mini-author">হুমায়ূন আহমেদ</div>
           </a>
         
-          <a href="../book/humayun-ahmed-badshah-namdar.html" class="mini-book-card">
+          <a href="../book/humayun-ahmed-badshah-namdar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-ahmed-badshah-namdar.webp" alt="Badshah Namdar" class="mini-cover" loading="lazy" />
             <div class="mini-title">Badshah Namdar</div>
             <div class="mini-author">হুমায়ূন আহমেদ</div>
           </a>
         
-          <a href="../book/humayun-ahmed-opexa.html" class="mini-book-card">
+          <a href="../book/humayun-ahmed-opexa.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-ahmed-opexa.webp" alt="অপেক্ষা" class="mini-cover" loading="lazy" />
             <div class="mini-title">অপেক্ষা</div>
             <div class="mini-author">হুমায়ূন আহমেদ</div>
           </a>
         
-          <a href="../book/humayun-ahmed-himu-rimande.html" class="mini-book-card">
+          <a href="../book/humayun-ahmed-himu-rimande.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-ahmed-himu-rimande.webp" alt="হিমু রিমান্ডে" class="mini-cover" loading="lazy" />
             <div class="mini-title">হিমু রিমান্ডে</div>
             <div class="mini-author">হুমায়ূন আহমেদ</div>
           </a>
         
-          <a href="../book/humayun-ahmed-shayensh-phikashn-smgr.html" class="mini-book-card">
+          <a href="../book/humayun-ahmed-shayensh-phikashn-smgr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-ahmed-shayensh-phikashn-smgr.webp" alt="সায়েন্স ফিকশন সমগ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">সায়েন্স ফিকশন সমগ্র</div>
             <div class="mini-author">হুমায়ূন আহমেদ</div>
           </a>
         
-          <a href="../book/humayun-ahmed-nil-aprajita.html" class="mini-book-card">
+          <a href="../book/humayun-ahmed-nil-aprajita.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-ahmed-nil-aprajita.webp" alt="নীল অপরাজিতা" class="mini-cover" loading="lazy" />
             <div class="mini-title">নীল অপরাজিতা</div>
             <div class="mini-author">হুমায়ূন আহমেদ</div>

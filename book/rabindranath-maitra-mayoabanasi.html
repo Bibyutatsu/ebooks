@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download মায়াবাঁশী (Majoabanoshee) by রবীন্দ্রনাথ মৈত্র (Rabindranath Maitra) free in EPUB. উপন্যাস (Novel), নাটক ও রম্যরচনা (Drama &amp;amp; Comedy) Bengali li...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/rabindranath-maitra-mayoabanasi.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=rabindranath-maitra-mayoabanasi" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/rabindranath-maitra-mayoabanasi.webp" alt="মায়াবাঁশী - রবীন্দ্রনাথ মৈত্র" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: ১৯১১</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-33/rabindranath-maitra-mayoabanasi.epub" class="download-btn" download="রবীন্দ্রনাথ মৈত্র - মায়াবাঁশী (১৯১১).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'রবীন্দ্রনাথ মৈত্র - মায়াবাঁশী (১৯১১).epub','file_extension':'epub','book_title':'মায়াবাঁশী'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-33/rabindranath-maitra-mayoabanasi.epub" class="download-btn holo-card" download="রবীন্দ্রনাথ মৈত্র - মায়াবাঁশী (১৯১১).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'রবীন্দ্রনাথ মৈত্র - মায়াবাঁশী (১৯১১).epub','file_extension':'epub','book_title':'মায়াবাঁশী'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/ashapurna-debi-sinodoi-vanga-onk.html" class="mini-book-card">
+          <a href="../book/ashapurna-debi-sinodoi-vanga-onk.html" class="mini-book-card holo-card">
             <img src="../assets/covers/ashapurna-debi-sinodoi-vanga-onk.webp" alt="সিঁড়ি ভাঙা অঙ্ক" class="mini-cover" loading="lazy" />
             <div class="mini-title">সিঁড়ি ভাঙা অঙ্ক</div>
             <div class="mini-author">আশাপূর্ণা দেবী</div>
           </a>
         
-          <a href="../book/taslima-nasrin-nast-mejer-nast-gdy.html" class="mini-book-card">
+          <a href="../book/taslima-nasrin-nast-mejer-nast-gdy.html" class="mini-book-card holo-card">
             <img src="../assets/covers/taslima-nasrin-nast-mejer-nast-gdy.webp" alt="নষ্ট মেয়ের নষ্ট গদ্য" class="mini-cover" loading="lazy" />
             <div class="mini-title">নষ্ট মেয়ের নষ্ট গদ্য</div>
             <div class="mini-author">তসলিমা নাসরিন</div>
           </a>
         
-          <a href="../book/zahir-raihan-trishna.html" class="mini-book-card">
+          <a href="../book/zahir-raihan-trishna.html" class="mini-book-card holo-card">
             <img src="../assets/covers/zahir-raihan-trishna.webp" alt="তৃষ্ণা" class="mini-cover" loading="lazy" />
             <div class="mini-title">তৃষ্ণা</div>
             <div class="mini-author">জহির রায়হান</div>
           </a>
         
-          <a href="../book/atin-bandyopadhyay-neelakanth-pakhir-khonje.html" class="mini-book-card">
+          <a href="../book/atin-bandyopadhyay-neelakanth-pakhir-khonje.html" class="mini-book-card holo-card">
             <img src="../assets/covers/atin-bandyopadhyay-neelakanth-pakhir-khonje.webp" alt="নীলকণ্ঠ পাখির খোঁজে" class="mini-cover" loading="lazy" />
             <div class="mini-title">নীলকণ্ঠ পাখির খোঁজে</div>
             <div class="mini-author">অতীন বন্দ্যোপাধ্যায়</div>
           </a>
         
-          <a href="../book/atin-bandyopadhyay-oloukik-jalajan.html" class="mini-book-card">
+          <a href="../book/atin-bandyopadhyay-oloukik-jalajan.html" class="mini-book-card holo-card">
             <img src="../assets/covers/atin-bandyopadhyay-oloukik-jalajan.webp" alt="অলৌকিক জলযান" class="mini-cover" loading="lazy" />
             <div class="mini-title">অলৌকিক জলযান</div>
             <div class="mini-author">অতীন বন্দ্যোপাধ্যায়</div>
           </a>
         
-          <a href="../book/zahir-raihan-hajar-bochhr-dhare.html" class="mini-book-card">
+          <a href="../book/zahir-raihan-hajar-bochhr-dhare.html" class="mini-book-card holo-card">
             <img src="../assets/covers/zahir-raihan-hajar-bochhr-dhare.webp" alt="হাজার বছর ধরে" class="mini-cover" loading="lazy" />
             <div class="mini-title">হাজার বছর ধরে</div>
             <div class="mini-author">জহির রায়হান</div>

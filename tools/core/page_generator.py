@@ -415,7 +415,7 @@ def render_book_page(book: dict, related_books: list[dict], author_slug: str = "
         total_size += f_info.get("size_bytes", 0)
         fmt_color = get_format_color(fmt)
         dl_buttons_html.append(f"""
-          <a href="{escape_txt(dl_url)}" class="download-btn" download="{escape_txt(filename)}" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{{'file_name':'{escape_txt(filename)}','file_extension':'{fmt}','book_title':'{escape_txt(title_bn)}'}});">
+          <a href="{escape_txt(dl_url)}" class="download-btn holo-card" download="{escape_txt(filename)}" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{{'file_name':'{escape_txt(filename)}','file_extension':'{fmt}','book_title':'{escape_txt(title_bn)}'}});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: {fmt_color}22; color: {fmt_color}; border: 1px solid {fmt_color}44;">{fmt.upper()}</span>
               <div>
@@ -435,7 +435,7 @@ def render_book_page(book: dict, related_books: list[dict], author_slug: str = "
         r_cover = r.get("cover")
         r_cover_img = f'<img src="{root_rel}{r_cover}" alt="{r_title}" class="mini-cover" loading="lazy" />' if r_cover else '<div class="mini-cover" style="display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.7rem;">No Cover</div>'
         related_html.append(f"""
-          <a href="{root_rel}book/{r['id']}.html" class="mini-book-card">
+          <a href="{root_rel}book/{r['id']}.html" class="mini-book-card holo-card">
             {r_cover_img}
             <div class="mini-title">{r_title}</div>
             <div class="mini-author">{r_author}</div>
@@ -540,9 +540,12 @@ def render_book_page(book: dict, related_books: list[dict], author_slug: str = "
   <meta name="twitter:description" content="{escape_txt(meta_desc)}">
   <meta name="twitter:image" content="{cover_url_abs}">
 
+  <script>(function(){{var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
+  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
 
   {json_ld_scripts}
   {GA_SCRIPT}
@@ -552,6 +555,7 @@ def render_book_page(book: dict, related_books: list[dict], author_slug: str = "
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="{root_rel}" class="brand">
@@ -559,6 +563,9 @@ def render_book_page(book: dict, related_books: list[dict], author_slug: str = "
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="{root_rel}" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="{root_rel}?book={b_id}" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -574,7 +581,7 @@ def render_book_page(book: dict, related_books: list[dict], author_slug: str = "
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card{' holo-gold' if series_obj else ''}">
         {cover_img_html}
         <div class="badges-row" style="justify-content:center;">
           {f'<span class="badge">Published: {year}</span>' if year else ''}
@@ -681,7 +688,7 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
         b_cover_img = f'<img src="{root_rel}{b_cover}" alt="{b_title}" class="mini-cover" loading="lazy" />' if b_cover else '<div class="mini-cover" style="display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.75rem;">No Cover</div>'
         fmts = "".join(f'<span class="badge" style="font-size:0.65rem;padding:2px 5px;">{f.upper()}</span>' for f in b.get("formats", {}).keys())
         cards_html.append(f"""
-          <a href="{root_rel}book/{b_id}.html" class="mini-book-card">
+          <a href="{root_rel}book/{b_id}.html" class="mini-book-card holo-card">
             {b_cover_img}
             <div class="mini-title">{b_title}</div>
             <div class="badges-row" style="margin-top:auto;">{fmts}</div>
@@ -771,14 +778,18 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
   <meta property="og:description" content="{escape_txt(meta_desc)}">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="{canonical_url}">
+  <script>(function(){{var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
+  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
   {json_ld}
   {GA_SCRIPT}
   <style>{SHARED_CSS}</style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="{root_rel}" class="brand">
@@ -786,6 +797,9 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="{root_rel}" class="nav-btn">← Back to Full Library</a>
         <a href="{root_rel}author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -799,7 +813,7 @@ def render_author_page(author_info: dict, books: list[dict], root_rel: str = "..
       <span>{name_bn}</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">{name_bn}</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">{name_en}</div>
       <div class="badges-row">
@@ -853,12 +867,17 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
         b_cover_img = f'<img src="{root_rel}{b_cover}" alt="{b_title}" class="mini-cover" loading="lazy" />' if b_cover else '<div class="mini-cover" style="display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.75rem;">No Cover</div>'
         fmts = "".join(f'<span class="badge" style="font-size:0.65rem;padding:2px 5px;">{f.upper()}</span>' for f in b.get("formats", {}).keys())
         cards_html.append(f"""
-          <a href="{root_rel}book/{b_id}.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#{idx}</div>
-            {b_cover_img}
-            <div class="mini-title">{b_title}</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#{idx}</span>
+              <button type="button" class="read-check-btn" data-book-id="{b_id}">+ Mark Read</button>
+            </div>
+            <a href="{root_rel}book/{b_id}.html">
+              {b_cover_img}
+              <div class="mini-title" style="margin-top:6px;">{b_title}</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;">{fmts}</div>
-          </a>
+          </div>
         """)
 
     schema_series = {
@@ -920,14 +939,18 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
   <meta property="og:description" content="{escape_txt(meta_desc)}">
   <meta property="og:type" content="books.series">
   <meta property="og:url" content="{canonical_url}">
+  <script>(function(){{var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
+  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
   {json_ld}
   {GA_SCRIPT}
   <style>{SHARED_CSS}</style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="{root_rel}" class="brand">
@@ -935,6 +958,9 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="{root_rel}" class="nav-btn">← Back to Full Library</a>
         <a href="{root_rel}series/" class="nav-btn">All Series Universes →</a>
       </nav>
@@ -948,18 +974,17 @@ def render_series_page(series_info: dict, books: list[dict], root_rel: str = "..
       <span>{name_bn}</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
-      <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">{name_bn} Series</h1>
-      <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">{name_en} · By {author_bn} ({author_en})</div>
-      <div class="badges-row">
-        <span class="badge series-badge" style="font-weight: 700;">
-          ⚡ {total_books} Books in Series
-        </span>
+    <div class="series-hero-wrap" data-series-id="{slug}">
+      <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 4px;">⚡ {name_bn} Series</h1>
+      <div style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 12px;">{name_en} · Creator: <strong style="color:var(--accent);">{author_bn} ({author_en})</strong></div>
+      <div class="series-stats-bar">
+        <span class="series-stat-pill">📚 {total_books} Books in Series</span>
+        <span class="series-stat-pill" id="series-progress-count">0 / {total_books} Completed</span>
       </div>
     </div>
 
-    <h2 class="section-heading"><span>📚</span> Canonical Reading Order ({total_books} Books)</h2>
-    <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+    <h2 class="section-heading"><span>📜</span> Canonical Reading Order ({total_books} Books)</h2>
+    <div class="timeline-reading-grid">
       {"".join(cards_html)}
     </div>
   </main>
@@ -994,7 +1019,7 @@ def render_series_index_page(series_data: dict, root_rel: str = "../") -> str:
         genres = ", ".join(list(s.get("genres", {}).keys())[:2])
 
         cards_html.append(f"""
-          <a href="{s_slug}.html" class="series-hub-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px; display: flex; flex-direction: column; gap: 12px; transition: all 0.25s ease;">
+          <a href="{s_slug}.html" class="series-hub-card holo-card holo-gold">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
               <div>
                 <h2 style="font-size: 1.4rem; color: var(--heading); margin-bottom: 4px;">{s_bn}</h2>
@@ -1031,24 +1056,22 @@ def render_series_index_page(series_data: dict, root_rel: str = "../") -> str:
   <meta property="og:description" content="{escape_txt(meta_desc)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{canonical_url}">
+  <script>(function(){{var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
+  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
   <script type="application/ld+json">
   {json.dumps(schema_collection, ensure_ascii=False, indent=2)}
   </script>
   {GA_SCRIPT}
   <style>
     {SHARED_CSS}
-    .series-hub-card:hover {{
-      background: var(--surface-hover) !important;
-      border-color: var(--accent) !important;
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }}
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="{root_rel}" class="brand">
@@ -1056,6 +1079,9 @@ def render_series_index_page(series_data: dict, root_rel: str = "../") -> str:
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="{root_rel}" class="nav-btn">← Back to Full Library</a>
         <a href="{root_rel}author/" class="nav-btn">Authors Directory →</a>
       </nav>
@@ -1075,7 +1101,7 @@ def render_series_index_page(series_data: dict, root_rel: str = "../") -> str:
       </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+    <div class="series-bento-grid">
       {"".join(cards_html)}
     </div>
   </main>
@@ -1112,7 +1138,7 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
         a_en = escape_txt(a["name_en"])
         cnt = a["total_books"]
         top_spotlight_html.append(f"""
-          <a href="{a_slug}.html" class="top-author-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 6px; transition: all 0.2s ease;">
+          <a href="{a_slug}.html" class="top-author-card holo-card holo-gold" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 6px; transition: all 0.2s ease;">
             <div style="font-weight: 700; color: var(--heading); font-size: 1.05rem;">{a_bn}</div>
             <div style="font-size: 0.85rem; color: var(--text-muted);">{a_en}</div>
             <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 8px;">
@@ -1130,7 +1156,7 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
         a_en = escape_txt(a["name_en"])
         cnt = a["total_books"]
         all_list_html.append(f"""
-          <a href="{a_slug}.html" class="author-item" data-name="{a_bn.lower()} {a_en.lower()}" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--heading); text-decoration: none;">
+          <a href="{a_slug}.html" class="author-item author-dir-card holo-card" data-name="{a_bn.lower()} {a_en.lower()}" data-name-bn="{a_bn.lower()}" data-name-en="{a_en.lower()}" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--heading); text-decoration: none;">
             <div>
               <span style="font-weight: 600;">{a_bn}</span>
               <span style="color: var(--text-muted); font-size: 0.85rem; margin-left: 8px;">({a_en})</span>
@@ -1160,43 +1186,22 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
   <meta property="og:description" content="{escape_txt(meta_desc)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{canonical_url}">
+  <script>(function(){{var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{root_rel}assets/pages.css?v=3.2">
+  <script src="{root_rel}assets/pages.js?v=3.2" defer></script>
   <script type="application/ld+json">
   {json.dumps(schema_collection, ensure_ascii=False, indent=2)}
   </script>
   {GA_SCRIPT}
   <style>
     {SHARED_CSS}
-    .top-author-card:hover {{
-      background: var(--surface-hover) !important;
-      border-color: var(--accent) !important;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }}
-    .author-item:hover {{
-      background: var(--surface-hover) !important;
-      border-color: var(--accent) !important;
-    }}
-    #author-search-input {{
-      width: 100%;
-      padding: 14px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      color: var(--heading);
-      font-size: 1rem;
-      outline: none;
-      transition: 0.2s ease;
-    }}
-    #author-search-input:focus {{
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(0, 204, 255, 0.15);
-    }}
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="{root_rel}" class="brand">
@@ -1204,6 +1209,9 @@ def render_author_index_page(authors_data: dict, root_rel: str = "../") -> str:
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="{root_rel}" class="nav-btn">← Back to Full Library</a>
         <a href="{root_rel}series/" class="nav-btn">Series Universes →</a>
       </nav>

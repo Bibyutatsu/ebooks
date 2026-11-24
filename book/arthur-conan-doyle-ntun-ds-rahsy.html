@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download নতুন দশ রহস্য (Notun Dosh Rohosj) by স্যার আর্থার কোনান ডয়েল (Arthur Conan Doyle) free in KFX, EPUB. অনুবাদ (Translation), থ্রিলার ও গোয়েন্দা (Myste...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/arthur-conan-doyle-ntun-ds-rahsy.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=arthur-conan-doyle-ntun-ds-rahsy" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/arthur-conan-doyle-ntun-ds-rahsy.webp" alt="নতুন দশ রহস্য - স্যার আর্থার কোনান ডয়েল" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-24/arthur-conan-doyle-ntun-ds-rahsy.kfx" class="download-btn" download="নতুন দশ রহস্য - স্যার আর্থার কোনান ডয়েল.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নতুন দশ রহস্য - স্যার আর্থার কোনান ডয়েল.kfx','file_extension':'kfx','book_title':'নতুন দশ রহস্য'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-24/arthur-conan-doyle-ntun-ds-rahsy.kfx" class="download-btn holo-card" download="নতুন দশ রহস্য - স্যার আর্থার কোনান ডয়েল.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নতুন দশ রহস্য - স্যার আর্থার কোনান ডয়েল.kfx','file_extension':'kfx','book_title':'নতুন দশ রহস্য'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -481,7 +488,7 @@ a:hover { color: #5ce1e6; }
             <span class="dl-icon">⬇</span>
           </a>
         
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-24/arthur-conan-doyle-ntun-ds-rahsy.epub" class="download-btn" download="নতুন দশ রহস্য - স্যার আর্থার কোনান ডয়েল.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নতুন দশ রহস্য - স্যার আর্থার কোনান ডয়েল.epub','file_extension':'epub','book_title':'নতুন দশ রহস্য'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-24/arthur-conan-doyle-ntun-ds-rahsy.epub" class="download-btn holo-card" download="নতুন দশ রহস্য - স্যার আর্থার কোনান ডয়েল.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নতুন দশ রহস্য - স্যার আর্থার কোনান ডয়েল.epub','file_extension':'epub','book_title':'নতুন দশ রহস্য'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -527,37 +534,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/arthur-conan-doyle-ntun-bis-rahsy.html" class="mini-book-card">
+          <a href="../book/arthur-conan-doyle-ntun-bis-rahsy.html" class="mini-book-card holo-card">
             <img src="../assets/covers/arthur-conan-doyle-ntun-bis-rahsy.webp" alt="নতুন বিশ রহস্য" class="mini-cover" loading="lazy" />
             <div class="mini-title">নতুন বিশ রহস্য</div>
             <div class="mini-author">স্যার আর্থার কোনান ডয়েল</div>
           </a>
         
-          <a href="../book/arthur-conan-doyle-bisakt-vookhnd.html" class="mini-book-card">
+          <a href="../book/arthur-conan-doyle-bisakt-vookhnd.html" class="mini-book-card holo-card">
             <img src="../assets/covers/arthur-conan-doyle-bisakt-vookhnd.webp" alt="বিষাক্ত ভূখণ্ড" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিষাক্ত ভূখণ্ড</div>
             <div class="mini-author">স্যার আর্থার কোনান ডয়েল</div>
           </a>
         
-          <a href="../book/arthur-conan-doyle-kujasar-dese.html" class="mini-book-card">
+          <a href="../book/arthur-conan-doyle-kujasar-dese.html" class="mini-book-card holo-card">
             <img src="../assets/covers/arthur-conan-doyle-kujasar-dese.webp" alt="কুয়াশার দেশে" class="mini-cover" loading="lazy" />
             <div class="mini-title">কুয়াশার দেশে</div>
             <div class="mini-author">স্যার আর্থার কোনান ডয়েল</div>
           </a>
         
-          <a href="../book/arthur-conan-doyle-sarlak-homsh-smgr-2.html" class="mini-book-card">
+          <a href="../book/arthur-conan-doyle-sarlak-homsh-smgr-2.html" class="mini-book-card holo-card">
             <img src="../assets/covers/arthur-conan-doyle-sarlak-homsh-smgr-2.webp" alt="শার্লক হোমস সমগ্র ২" class="mini-cover" loading="lazy" />
             <div class="mini-title">শার্লক হোমস সমগ্র ২</div>
             <div class="mini-author">স্যার আর্থার কোনান ডয়েল</div>
           </a>
         
-          <a href="../book/arthur-conan-doyle-sarlak-homsh-smgr-1.html" class="mini-book-card">
+          <a href="../book/arthur-conan-doyle-sarlak-homsh-smgr-1.html" class="mini-book-card holo-card">
             <img src="../assets/covers/arthur-conan-doyle-sarlak-homsh-smgr-1.webp" alt="শার্লক হোমস সমগ্র ১" class="mini-cover" loading="lazy" />
             <div class="mini-title">শার্লক হোমস সমগ্র ১</div>
             <div class="mini-author">স্যার আর্থার কোনান ডয়েল</div>
           </a>
         
-          <a href="../book/arthur-conan-doyle-harano-prithibi.html" class="mini-book-card">
+          <a href="../book/arthur-conan-doyle-harano-prithibi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/arthur-conan-doyle-harano-prithibi.webp" alt="হারানো পৃথিবী" class="mini-cover" loading="lazy" />
             <div class="mini-title">হারানো পৃথিবী</div>
             <div class="mini-author">স্যার আর্থার কোনান ডয়েল</div>

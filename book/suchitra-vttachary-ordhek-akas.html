@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download অর্ধেক আকাশ (Ordhek Akash) by সুচিত্রা ভট্টাচার্য (Suchitra Vttacharj) free in EPUB, KFX. উপন্যাস ও সাহিত্য (General Fiction) Bengali literature dig...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/suchitra-vttachary-ordhek-akas.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -417,6 +420,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -424,6 +428,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=suchitra-vttachary-ordhek-akas" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -439,7 +446,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/suchitra-vttachary-ordhek-akas.webp" alt="অর্ধেক আকাশ - সুচিত্রা ভট্টাচার্য" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2024</span>
@@ -469,7 +476,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-21/suchitra-vttachary-ordhek-akas.epub" class="download-btn" download="অর্ধেক আকাশ - সুচিত্রা ভট্টাচার্য.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অর্ধেক আকাশ - সুচিত্রা ভট্টাচার্য.epub','file_extension':'epub','book_title':'অর্ধেক আকাশ'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-21/suchitra-vttachary-ordhek-akas.epub" class="download-btn holo-card" download="অর্ধেক আকাশ - সুচিত্রা ভট্টাচার্য.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অর্ধেক আকাশ - সুচিত্রা ভট্টাচার্য.epub','file_extension':'epub','book_title':'অর্ধেক আকাশ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -480,7 +487,7 @@ a:hover { color: #5ce1e6; }
             <span class="dl-icon">⬇</span>
           </a>
         
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-21/suchitra-vttachary-ordhek-akas.kfx" class="download-btn" download="অর্ধেক আকাশ - সুচিত্রা ভট্টাচার্য.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অর্ধেক আকাশ - সুচিত্রা ভট্টাচার্য.kfx','file_extension':'kfx','book_title':'অর্ধেক আকাশ'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-21/suchitra-vttachary-ordhek-akas.kfx" class="download-btn holo-card" download="অর্ধেক আকাশ - সুচিত্রা ভট্টাচার্য.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'অর্ধেক আকাশ - সুচিত্রা ভট্টাচার্য.kfx','file_extension':'kfx','book_title':'অর্ধেক আকাশ'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -526,37 +533,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/suchitra-vttachary-mitinmasi-smgr.html" class="mini-book-card">
+          <a href="../book/suchitra-vttachary-mitinmasi-smgr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/suchitra-vttachary-mitinmasi-smgr.webp" alt="মিতিনমাসি সমগ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">মিতিনমাসি সমগ্র</div>
             <div class="mini-author">সুচিত্রা ভট্টাচার্য</div>
           </a>
         
-          <a href="../book/suchitra-vttachary-ajonamohl.html" class="mini-book-card">
+          <a href="../book/suchitra-vttachary-ajonamohl.html" class="mini-book-card holo-card">
             <img src="../assets/covers/suchitra-vttachary-ajonamohl.webp" alt="আয়নামহল" class="mini-cover" loading="lazy" />
             <div class="mini-title">আয়নামহল</div>
             <div class="mini-author">সুচিত্রা ভট্টাচার্য</div>
           </a>
         
-          <a href="../book/suchitra-vttachary-olik-sukh.html" class="mini-book-card">
+          <a href="../book/suchitra-vttachary-olik-sukh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/suchitra-vttachary-olik-sukh.webp" alt="অলীক সুখ" class="mini-cover" loading="lazy" />
             <div class="mini-title">অলীক সুখ</div>
             <div class="mini-author">সুচিত্রা ভট্টাচার্য</div>
           </a>
         
-          <a href="../book/suchitra-vttachary-anj-bashont.html" class="mini-book-card">
+          <a href="../book/suchitra-vttachary-anj-bashont.html" class="mini-book-card holo-card">
             <img src="../assets/covers/suchitra-vttachary-anj-bashont.webp" alt="অন্য বসন্ত" class="mini-cover" loading="lazy" />
             <div class="mini-title">অন্য বসন্ত</div>
             <div class="mini-author">সুচিত্রা ভট্টাচার্য</div>
           </a>
         
-          <a href="../book/avisek-chottopadhjajo-mrit-jjotsnar-ratri.html" class="mini-book-card">
+          <a href="../book/avisek-chottopadhjajo-mrit-jjotsnar-ratri.html" class="mini-book-card holo-card">
             <img src="../assets/covers/avisek-chottopadhjajo-mrit-jjotsnar-ratri.webp" alt="মৃত জ্যোৎস্নার রাত্রি" class="mini-cover" loading="lazy" />
             <div class="mini-title">মৃত জ্যোৎস্নার রাত্রি</div>
             <div class="mini-author">অভিষেক চট্টোপাধ্যায়</div>
           </a>
         
-          <a href="../book/anil-bisbas-fjasibad.html" class="mini-book-card">
+          <a href="../book/anil-bisbas-fjasibad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anil-bisbas-fjasibad.webp" alt="ফ্যাসিবাদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">ফ্যাসিবাদ</div>
             <div class="mini-author">অনিল বিশ্বাস</div>

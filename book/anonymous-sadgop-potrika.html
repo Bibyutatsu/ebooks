@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download সদ্গোপ পত্রিকা (Sodgop Potrika) by অজ্ঞাত (Anonymous) free in PDF. ইন্টারনেট আর্কাইভ (Internet Archive), ক্লাসিক ও সাহিত্য (Classics) Bengali litera...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-sadgop-potrika.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-sadgop-potrika" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-sadgop-potrika.webp" alt="সদ্গোপ পত্রিকা - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 1932</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/20210429_20210429_1551/%E0%A6%B8%E0%A6%A6%E0%A7%8D%E0%A6%97%E0%A7%8B%E0%A6%AA%20%E0%A6%AA%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%BE.pdf" class="download-btn" download="সদ্গোপ পত্রিকা.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সদ্গোপ পত্রিকা.pdf','file_extension':'pdf','book_title':'সদ্গোপ পত্রিকা'});">
+          <a href="https://archive.org/download/20210429_20210429_1551/%E0%A6%B8%E0%A6%A6%E0%A7%8D%E0%A6%97%E0%A7%8B%E0%A6%AA%20%E0%A6%AA%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%BE.pdf" class="download-btn holo-card" download="সদ্গোপ পত্রিকা.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সদ্গোপ পত্রিকা.pdf','file_extension':'pdf','book_title':'সদ্গোপ পত্রিকা'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-prtimah-sahity-smalochoni-masik-potrika.html" class="mini-book-card">
+          <a href="../book/anonymous-prtimah-sahity-smalochoni-masik-potrika.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-prtimah-sahity-smalochoni-masik-potrika.webp" alt="প্রতিমাঃ সাহিত্য সমালোচনী মাসিক পত্রিকা" class="mini-cover" loading="lazy" />
             <div class="mini-title">প্রতিমাঃ সাহিত্য সমালোচনী মাসিক পত্রিকা</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-jajdeb-o-shrichoitnj-mohaprvuh-masik-patrika.html" class="mini-book-card">
+          <a href="../book/anonymous-jajdeb-o-shrichoitnj-mohaprvuh-masik-patrika.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-jajdeb-o-shrichoitnj-mohaprvuh-masik-patrika.webp" alt="জয়দেব ও শ্রীচৈতন্য মহাপ্রভুঃ মাসিক পত্রিকা" class="mini-cover" loading="lazy" />
             <div class="mini-title">জয়দেব ও শ্রীচৈতন্য মহাপ্রভুঃ মাসিক পত্রিকা</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shrichoitnj-bani-potrika-sal-parjnt-srichoitny-gou.html" class="mini-book-card">
+          <a href="../book/anonymous-shrichoitnj-bani-potrika-sal-parjnt-srichoitny-gou.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shrichoitnj-bani-potrika-sal-parjnt-srichoitny-gou.webp" alt="শ্রীচৈতন্য বাণী পত্রিকা (১৯৬১-২০০১ সাল পর্যন্ত)-শ্রীচৈতন্য গৌড়ীয় মঠ" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রীচৈতন্য বাণী পত্রিকা (১৯৬১-২০০১ সাল পর্যন্ত)-শ্রীচৈতন্য গৌড়ীয় মঠ</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shtjarth-prkas-dojanond-sorasbti.html" class="mini-book-card">
+          <a href="../book/anonymous-shtjarth-prkas-dojanond-sorasbti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shtjarth-prkas-dojanond-sorasbti.webp" alt="সত্যার্থ প্রকাশ দয়ানন্দ সরস্বতী" class="mini-cover" loading="lazy" />
             <div class="mini-title">সত্যার্থ প্রকাশ দয়ানন্দ সরস্বতী</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour.html" class="mini-book-card">
+          <a href="../book/anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-বলদশ-শরম-বধমল-২০১৫-সশধন-২০২২ই-সহ-bangladesh-labour.webp" alt="বাংলাদেশ শ্রম বিধিমালা ২০১৫ (সংশোধনী ২০২২ইং সহ) | Bangladesh Labour Rules 2015 (Amendment 2022 included) | BARE ACT" class="mini-cover" loading="lazy" />
             <div class="mini-title">বাংলাদেশ শ্রম বিধিমালা ২০১৫ (সংশোধনী ২০২২ইং সহ) | Bangladesh Labour Rules 2015 (Amendment 2022 included) | BARE ACT</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-prema-bhakti-chandrika-bengali-sanskrit.html" class="mini-book-card">
+          <a href="../book/anonymous-prema-bhakti-chandrika-bengali-sanskrit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-prema-bhakti-chandrika-bengali-sanskrit.webp" alt="Prema Bhakti Chandrika (Bengali-Sanskrit)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Prema Bhakti Chandrika (Bengali-Sanskrit)</div>
             <div class="mini-author">অজ্ঞাত</div>

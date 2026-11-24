@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download ফিরিঙ্গি ঠগি (Phiringi Thogi) by হিমাদ্রিকিশোর দাশগুপ্ত (Himadrikishore Dasgupta) free in EPUB. অ্যাডভেঞ্চার (Adventure), ঐতিহাসিক থ্রিলার (Historic...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/himadrikishore-dasgupta-firingi-thgi.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=himadrikishore-dasgupta-firingi-thgi" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/himadrikishore-dasgupta-firingi-thgi.webp" alt="ফিরিঙ্গি ঠগি - হিমাদ্রিকিশোর দাশগুপ্ত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2025</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-24/himadrikishore-dasgupta-firingi-thgi.epub" class="download-btn" download="ফিরিঙ্গি ঠগি - হিমাদ্রিকিশোর দাশগুপ.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ফিরিঙ্গি ঠগি - হিমাদ্রিকিশোর দাশগুপ.epub','file_extension':'epub','book_title':'ফিরিঙ্গি ঠগি'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-24/himadrikishore-dasgupta-firingi-thgi.epub" class="download-btn holo-card" download="ফিরিঙ্গি ঠগি - হিমাদ্রিকিশোর দাশগুপ.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ফিরিঙ্গি ঠগি - হিমাদ্রিকিশোর দাশগুপ.epub','file_extension':'epub','book_title':'ফিরিঙ্গি ঠগি'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/himadrikishore-dasgupta-mritjur-gndh-misti.html" class="mini-book-card">
+          <a href="../book/himadrikishore-dasgupta-mritjur-gndh-misti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/himadrikishore-dasgupta-mritjur-gndh-misti.webp" alt="মৃত্যুর গন্ধ মিষ্টি" class="mini-cover" loading="lazy" />
             <div class="mini-title">মৃত্যুর গন্ধ মিষ্টি</div>
             <div class="mini-author">হিমাদ্রিকিশোর দাশগুপ্ত</div>
           </a>
         
-          <a href="../book/himadrikishore-dasgupta-ojadaven4.html" class="mini-book-card">
+          <a href="../book/himadrikishore-dasgupta-ojadaven4.html" class="mini-book-card holo-card">
             <img src="../assets/covers/himadrikishore-dasgupta-ojadaven4.webp" alt="অ্যাডভেন৪" class="mini-cover" loading="lazy" />
             <div class="mini-title">অ্যাডভেন৪</div>
             <div class="mini-author">হিমাদ্রিকিশোর দাশগুপ্ত</div>
           </a>
         
-          <a href="../book/himadrikishore-dasgupta-khajurah-shundri.html" class="mini-book-card">
+          <a href="../book/himadrikishore-dasgupta-khajurah-shundri.html" class="mini-book-card holo-card">
             <img src="../assets/covers/himadrikishore-dasgupta-khajurah-shundri.webp" alt="খাজুরাহ সুন্দরী" class="mini-cover" loading="lazy" />
             <div class="mini-title">খাজুরাহ সুন্দরী</div>
             <div class="mini-author">হিমাদ্রিকিশোর দাশগুপ্ত</div>
           </a>
         
-          <a href="../book/himadrikishore-dasgupta-anodhar-rater-bandhu.html" class="mini-book-card">
+          <a href="../book/himadrikishore-dasgupta-anodhar-rater-bandhu.html" class="mini-book-card holo-card">
             <img src="../assets/covers/himadrikishore-dasgupta-anodhar-rater-bandhu.webp" alt="আঁধার রাতের বন্ধু" class="mini-cover" loading="lazy" />
             <div class="mini-title">আঁধার রাতের বন্ধু</div>
             <div class="mini-author">হিমাদ্রিকিশোর দাশগুপ্ত</div>
           </a>
         
-          <a href="../book/himadrikishore-dasgupta-bhojongkr-sbikarokti.html" class="mini-book-card">
+          <a href="../book/himadrikishore-dasgupta-bhojongkr-sbikarokti.html" class="mini-book-card holo-card">
             <img src="../assets/covers/himadrikishore-dasgupta-bhojongkr-sbikarokti.webp" alt="ভয়ংকর স্বীকারোক্তি" class="mini-cover" loading="lazy" />
             <div class="mini-title">ভয়ংকর স্বীকারোক্তি</div>
             <div class="mini-author">হিমাদ্রিকিশোর দাশগুপ্ত</div>
           </a>
         
-          <a href="../book/himadrikishore-dasgupta-ojadovenchar-bhojongkr.html" class="mini-book-card">
+          <a href="../book/himadrikishore-dasgupta-ojadovenchar-bhojongkr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/himadrikishore-dasgupta-ojadovenchar-bhojongkr.webp" alt="অ্যাডভেঞ্চার ভয়ংকর" class="mini-cover" loading="lazy" />
             <div class="mini-title">অ্যাডভেঞ্চার ভয়ংকর</div>
             <div class="mini-author">হিমাদ্রিকিশোর দাশগুপ্ত</div>

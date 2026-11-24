@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Gitanjali ( 1914) Rabindranath Tagore (Gitanjali 1914 Rabindranath Tagore) by রবীন্দ্রনাথ ঠাকুর (Rabindranath Tagore) free in EPUB. ইন্টারনেট আর্কাই...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/rabindranath-tagore-gitanjali-1914-rabindranath-tagore.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -420,6 +423,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -427,6 +431,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=rabindranath-tagore-gitanjali-1914-rabindranath-tagore" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -442,7 +449,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/rabindranath-tagore-gitanjali-1914-rabindranath-tagore.webp" alt="Gitanjali ( 1914) Rabindranath Tagore - রবীন্দ্রনাথ ঠাকুর" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 1914</span>
@@ -472,7 +479,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/Gitanjali1914RabindranathTagore/Gitanjali%20%281914%29%20Rabindranath%20Tagore.epub" class="download-btn" download="Gitanjali (1914) Rabindranath Tagore.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Gitanjali (1914) Rabindranath Tagore.epub','file_extension':'epub','book_title':'Gitanjali ( 1914) Rabindranath Tagore'});">
+          <a href="https://archive.org/download/Gitanjali1914RabindranathTagore/Gitanjali%20%281914%29%20Rabindranath%20Tagore.epub" class="download-btn holo-card" download="Gitanjali (1914) Rabindranath Tagore.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'Gitanjali (1914) Rabindranath Tagore.epub','file_extension':'epub','book_title':'Gitanjali ( 1914) Rabindranath Tagore'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -518,37 +525,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/rabindranath-tagore-chelebela-rabindrnath-thakur-chelebela-r.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-chelebela-rabindrnath-thakur-chelebela-r.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-chelebela-rabindrnath-thakur-chelebela-r.webp" alt="ছেলেবেলা রবীন্দ্রনাথ ঠাকুর chelebela Rabindranath Tagore" class="mini-cover" loading="lazy" />
             <div class="mini-title">ছেলেবেলা রবীন্দ্রনাথ ঠাকুর chelebela Rabindranath Tagore</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-shishu-bholanath-rabindranath-tagore-sis.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-shishu-bholanath-rabindranath-tagore-sis.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-shishu-bholanath-rabindranath-tagore-sis.webp" alt="Shishu Bholanath Rabindranath Tagore ( শিশু ভোলানাথ - রবীন্দ্রনাথ ঠাকুর)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Shishu Bholanath Rabindranath Tagore ( শিশু ভোলানাথ - রবীন্দ্রনাথ ঠাকুর)</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-sahaj-path-part-4.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-sahaj-path-part-4.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-sahaj-path-part-4.webp" alt="Sahaj Path part 4" class="mini-cover" loading="lazy" />
             <div class="mini-title">Sahaj Path part 4</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-punshch-punascha.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-punshch-punascha.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-punshch-punascha.webp" alt="পুনশ্চ Punascha" class="mini-cover" loading="lazy" />
             <div class="mini-title">পুনশ্চ Punascha</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-gitabitan-akhanda-geetobitan-okhond.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-gitabitan-akhanda-geetobitan-okhond.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-gitabitan-akhanda-geetobitan-okhond.webp" alt="Gitabitan ( Akhanda)/ গীতবিতান ( অখন্ড)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Gitabitan ( Akhanda)/ গীতবিতান ( অখন্ড)</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>
           </a>
         
-          <a href="../book/rabindranath-tagore-katha-o-kahini.html" class="mini-book-card">
+          <a href="../book/rabindranath-tagore-katha-o-kahini.html" class="mini-book-card holo-card">
             <img src="../assets/covers/rabindranath-tagore-katha-o-kahini.webp" alt="Katha O Kahini" class="mini-cover" loading="lazy" />
             <div class="mini-title">Katha O Kahini</div>
             <div class="mini-author">রবীন্দ্রনাথ ঠাকুর</div>

@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download রকম রকম (Rokom Rokom) by প্রিয়নাথ মুখোপাধ্যায় (Priyanath Mukhopadhyay) free in EPUB. অপরাধ ও ক্রাইম (Crime &amp;amp; True Crime), ক্লাসিক (Classics), ...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/priyanath-mukhopadhyay-rkm-rkm.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=priyanath-mukhopadhyay-rkm-rkm" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/priyanath-mukhopadhyay-rkm-rkm.webp" alt="রকম রকম - প্রিয়নাথ মুখোপাধ্যায়" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: ১৮৯৮</span>
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-32/priyanath-mukhopadhyay-rkm-rkm.epub" class="download-btn" download="প্রিয়নাথ মুখোপাধ্যায় - রকম রকম (১৮৯৮).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'প্রিয়নাথ মুখোপাধ্যায় - রকম রকম (১৮৯৮).epub','file_extension':'epub','book_title':'রকম রকম'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-32/priyanath-mukhopadhyay-rkm-rkm.epub" class="download-btn holo-card" download="প্রিয়নাথ মুখোপাধ্যায় - রকম রকম (১৮৯৮).epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'প্রিয়নাথ মুখোপাধ্যায় - রকম রকম (১৮৯৮).epub','file_extension':'epub','book_title':'রকম রকম'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/priyanath-mukhopadhyay-vuter-bichar.html" class="mini-book-card">
+          <a href="../book/priyanath-mukhopadhyay-vuter-bichar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/priyanath-mukhopadhyay-vuter-bichar.webp" alt="ভূতের বিচার" class="mini-cover" loading="lazy" />
             <div class="mini-title">ভূতের বিচার</div>
             <div class="mini-author">প্রিয়নাথ মুখোপাধ্যায়</div>
           </a>
         
-          <a href="../book/priyanath-mukhopadhyay-chabi.html" class="mini-book-card">
+          <a href="../book/priyanath-mukhopadhyay-chabi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/priyanath-mukhopadhyay-chabi.webp" alt="ছবি" class="mini-cover" loading="lazy" />
             <div class="mini-title">ছবি</div>
             <div class="mini-author">প্রিয়নাথ মুখোপাধ্যায়</div>
           </a>
         
-          <a href="../book/priyanath-mukhopadhyay-churn-prtima.html" class="mini-book-card">
+          <a href="../book/priyanath-mukhopadhyay-churn-prtima.html" class="mini-book-card holo-card">
             <img src="../assets/covers/priyanath-mukhopadhyay-churn-prtima.webp" alt="চূর্ণ প্রতিমা" class="mini-cover" loading="lazy" />
             <div class="mini-title">চূর্ণ প্রতিমা</div>
             <div class="mini-author">প্রিয়নাথ মুখোপাধ্যায়</div>
           </a>
         
-          <a href="../book/priyanath-mukhopadhyay-motiyaa-bibi.html" class="mini-book-card">
+          <a href="../book/priyanath-mukhopadhyay-motiyaa-bibi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/priyanath-mukhopadhyay-motiyaa-bibi.webp" alt="মতিয়া বিবি" class="mini-cover" loading="lazy" />
             <div class="mini-title">মতিয়া বিবি</div>
             <div class="mini-author">প্রিয়নাথ মুখোপাধ্যায়</div>
           </a>
         
-          <a href="../book/priyanath-mukhopadhyay-daye-khun.html" class="mini-book-card">
+          <a href="../book/priyanath-mukhopadhyay-daye-khun.html" class="mini-book-card holo-card">
             <img src="../assets/covers/priyanath-mukhopadhyay-daye-khun.webp" alt="দায়ে খুন" class="mini-cover" loading="lazy" />
             <div class="mini-title">দায়ে খুন</div>
             <div class="mini-author">প্রিয়নাথ মুখোপাধ্যায়</div>
           </a>
         
-          <a href="../book/priyanath-mukhopadhyay-ubhaja-sonkt.html" class="mini-book-card">
+          <a href="../book/priyanath-mukhopadhyay-ubhaja-sonkt.html" class="mini-book-card holo-card">
             <img src="../assets/covers/priyanath-mukhopadhyay-ubhaja-sonkt.webp" alt="উভয় সঙ্কট" class="mini-cover" loading="lazy" />
             <div class="mini-title">উভয় সঙ্কট</div>
             <div class="mini-author">প্রিয়নাথ মুখোপাধ্যায়</div>

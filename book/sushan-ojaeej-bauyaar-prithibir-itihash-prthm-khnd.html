@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download পৃথিবীর ইতিহাস (প্রথম খণ্ড) (Prithibeer Eetihas Prthom Khond) by সুসান ওয়াইজ বাউয়ার (Sushan Ojaeej Baoojar) free in KFX, EPUB. উপন্যাস ও সাহিত্য (...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/sushan-ojaeej-bauyaar-prithibir-itihash-prthm-khnd.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -417,6 +420,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -424,6 +428,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=sushan-ojaeej-bauyaar-prithibir-itihash-prthm-khnd" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -439,7 +446,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/sushan-ojaeej-bauyaar-prithibir-itihash-prthm-khnd.webp" alt="পৃথিবীর ইতিহাস (প্রথম খণ্ড) - সুসান ওয়াইজ বাউয়ার" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2024</span>
@@ -469,7 +476,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-22/sushan-ojaeej-bauyaar-prithibir-itihash-prthm-khnd.kfx" class="download-btn" download="পৃথিবীর ইতিহাস ১ - সুসান ওয়াইজ বাউয়ার.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'পৃথিবীর ইতিহাস ১ - সুসান ওয়াইজ বাউয়ার.kfx','file_extension':'kfx','book_title':'পৃথিবীর ইতিহাস (প্রথম খণ্ড)'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-22/sushan-ojaeej-bauyaar-prithibir-itihash-prthm-khnd.kfx" class="download-btn holo-card" download="পৃথিবীর ইতিহাস ১ - সুসান ওয়াইজ বাউয়ার.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'পৃথিবীর ইতিহাস ১ - সুসান ওয়াইজ বাউয়ার.kfx','file_extension':'kfx','book_title':'পৃথিবীর ইতিহাস (প্রথম খণ্ড)'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -480,7 +487,7 @@ a:hover { color: #5ce1e6; }
             <span class="dl-icon">⬇</span>
           </a>
         
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-22/sushan-ojaeej-bauyaar-prithibir-itihash-prthm-khnd.epub" class="download-btn" download="পৃথিবীর ইতিহাস ১ - সুসান ওয়াইজ বাউয়ার.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'পৃথিবীর ইতিহাস ১ - সুসান ওয়াইজ বাউয়ার.epub','file_extension':'epub','book_title':'পৃথিবীর ইতিহাস (প্রথম খণ্ড)'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-22/sushan-ojaeej-bauyaar-prithibir-itihash-prthm-khnd.epub" class="download-btn holo-card" download="পৃথিবীর ইতিহাস ১ - সুসান ওয়াইজ বাউয়ার.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'পৃথিবীর ইতিহাস ১ - সুসান ওয়াইজ বাউয়ার.epub','file_extension':'epub','book_title':'পৃথিবীর ইতিহাস (প্রথম খণ্ড)'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -526,37 +533,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/sushan-ojaeej-bauyaar-prithibir-itihash-dbitijo-khnd.html" class="mini-book-card">
+          <a href="../book/sushan-ojaeej-bauyaar-prithibir-itihash-dbitijo-khnd.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sushan-ojaeej-bauyaar-prithibir-itihash-dbitijo-khnd.webp" alt="পৃথিবীর ইতিহাস -দ্বিতীয় খণ্ড" class="mini-cover" loading="lazy" />
             <div class="mini-title">পৃথিবীর ইতিহাস -দ্বিতীয় খণ্ড</div>
             <div class="mini-author">সুসান ওয়াইজ বাউয়ার</div>
           </a>
         
-          <a href="../book/atul-sur-varter-bibaher-itihash.html" class="mini-book-card">
+          <a href="../book/atul-sur-varter-bibaher-itihash.html" class="mini-book-card holo-card">
             <img src="../assets/covers/atul-sur-varter-bibaher-itihash.webp" alt="ভারতের বিবাহের ইতিহাস" class="mini-cover" loading="lazy" />
             <div class="mini-title">ভারতের বিবাহের ইতিহাস</div>
             <div class="mini-author">অতুল সুর</div>
           </a>
         
-          <a href="../book/anish-das-apu-prithibir-sera-voutik-glp.html" class="mini-book-card">
+          <a href="../book/anish-das-apu-prithibir-sera-voutik-glp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-das-apu-prithibir-sera-voutik-glp.webp" alt="পৃথিবীর সেরা ভৌতিক গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">পৃথিবীর সেরা ভৌতিক গল্প</div>
             <div class="mini-author">অনীশ দাস অপু</div>
           </a>
         
-          <a href="../book/anish-das-apu-prithibir-sera-thrilar-glp.html" class="mini-book-card">
+          <a href="../book/anish-das-apu-prithibir-sera-thrilar-glp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-das-apu-prithibir-sera-thrilar-glp.webp" alt="পৃথিবীর সেরা থ্রিলার গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">পৃথিবীর সেরা থ্রিলার গল্প</div>
             <div class="mini-author">অনীশ দাস অপু</div>
           </a>
         
-          <a href="../book/avisek-chottopadhjajo-mrit-jjotsnar-ratri.html" class="mini-book-card">
+          <a href="../book/avisek-chottopadhjajo-mrit-jjotsnar-ratri.html" class="mini-book-card holo-card">
             <img src="../assets/covers/avisek-chottopadhjajo-mrit-jjotsnar-ratri.webp" alt="মৃত জ্যোৎস্নার রাত্রি" class="mini-cover" loading="lazy" />
             <div class="mini-title">মৃত জ্যোৎস্নার রাত্রি</div>
             <div class="mini-author">অভিষেক চট্টোপাধ্যায়</div>
           </a>
         
-          <a href="../book/anil-bisbas-fjasibad.html" class="mini-book-card">
+          <a href="../book/anil-bisbas-fjasibad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anil-bisbas-fjasibad.webp" alt="ফ্যাসিবাদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">ফ্যাসিবাদ</div>
             <div class="mini-author">অনিল বিশ্বাস</div>

@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 12 Bengali ebooks by অনীশ দেব (Anish Deb) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/anish-deb.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>অনীশ দেব</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">অনীশ দেব</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Anish Deb</div>
       <div class="badges-row">
@@ -449,73 +456,73 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (12)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/anish-deb-ami-pisach.html" class="mini-book-card">
+          <a href="../book/anish-deb-ami-pisach.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-ami-pisach.webp" alt="আমি পিশাচ" class="mini-cover" loading="lazy" />
             <div class="mini-title">আমি পিশাচ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/anish-deb-goyenda-esiji-smgr.html" class="mini-book-card">
+          <a href="../book/anish-deb-goyenda-esiji-smgr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-goyenda-esiji-smgr.webp" alt="গোয়েন্দা এসিজি সমগ্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">গোয়েন্দা এসিজি সমগ্র</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/anish-deb-dat-km-rahsy.html" class="mini-book-card">
+          <a href="../book/anish-deb-dat-km-rahsy.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-dat-km-rahsy.webp" alt="ডট কম রহস্য" class="mini-cover" loading="lazy" />
             <div class="mini-title">ডট কম রহস্য</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/anish-deb-tumi-pisach.html" class="mini-book-card">
+          <a href="../book/anish-deb-tumi-pisach.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-tumi-pisach.webp" alt="তুমি পিশাচ" class="mini-cover" loading="lazy" />
             <div class="mini-title">তুমি পিশাচ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/anish-deb-teees-ghnta-sat-minit.html" class="mini-book-card">
+          <a href="../book/anish-deb-teees-ghnta-sat-minit.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-teees-ghnta-sat-minit.webp" alt="তেইশ ঘণ্টা ষাট মিনিট" class="mini-cover" loading="lazy" />
             <div class="mini-title">তেইশ ঘণ্টা ষাট মিনিট</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/anish-deb-dekha-jaj-na-sona-yaj.html" class="mini-book-card">
+          <a href="../book/anish-deb-dekha-jaj-na-sona-yaj.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-dekha-jaj-na-sona-yaj.webp" alt="দেখা যায় না, শোনা যায়" class="mini-cover" loading="lazy" />
             <div class="mini-title">দেখা যায় না, শোনা যায়</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/anish-deb-prtighat.html" class="mini-book-card">
+          <a href="../book/anish-deb-prtighat.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-prtighat.webp" alt="প্রতিঘাত" class="mini-cover" loading="lazy" />
             <div class="mini-title">প্রতিঘাত</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/anish-deb-bajrogolap.html" class="mini-book-card">
+          <a href="../book/anish-deb-bajrogolap.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-bajrogolap.webp" alt="বজ্রগোলাপ" class="mini-cover" loading="lazy" />
             <div class="mini-title">বজ্রগোলাপ</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/anish-deb-baroti-rahsy-oopnjas.html" class="mini-book-card">
+          <a href="../book/anish-deb-baroti-rahsy-oopnjas.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-baroti-rahsy-oopnjas.webp" alt="বারোটি রহস্য উপন্যাস" class="mini-cover" loading="lazy" />
             <div class="mini-title">বারোটি রহস্য উপন্যাস</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/anish-deb-badoitaj-keu-jeyao-na.html" class="mini-book-card">
+          <a href="../book/anish-deb-badoitaj-keu-jeyao-na.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-badoitaj-keu-jeyao-na.webp" alt="বাড়িটায় কেউ যেয়ো না" class="mini-cover" loading="lazy" />
             <div class="mini-title">বাড়িটায় কেউ যেয়ো না</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/anish-deb-vutonather-dajeri.html" class="mini-book-card">
+          <a href="../book/anish-deb-vutonather-dajeri.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-vutonather-dajeri.webp" alt="ভূতনাথের ডায়েরি" class="mini-cover" loading="lazy" />
             <div class="mini-title">ভূতনাথের ডায়েরি</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/anish-deb-sori-rang-nambar.html" class="mini-book-card">
+          <a href="../book/anish-deb-sori-rang-nambar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anish-deb-sori-rang-nambar.webp" alt="সরি, রং নাম্বার" class="mini-cover" loading="lazy" />
             <div class="mini-title">সরি, রং নাম্বার</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>

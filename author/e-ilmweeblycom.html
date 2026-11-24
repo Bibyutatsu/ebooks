@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 7 Bengali ebooks by e-ilm.weebly.com (E-Ilm.Weebly.Com) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/e-ilmweeblycom.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>e-ilm.weebly.com</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">e-ilm.weebly.com</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">E-Ilm.Weebly.Com</div>
       <div class="badges-row">
@@ -449,43 +456,43 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (7)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/e-ilmweeblycom-urdu-01.html" class="mini-book-card">
+          <a href="../book/e-ilmweeblycom-urdu-01.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-ilmweeblycom-urdu-01.webp" alt="Urdu 01" class="mini-cover" loading="lazy" />
             <div class="mini-title">Urdu 01</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/e-ilmweeblycom-maududi-bad.html" class="mini-book-card">
+          <a href="../book/e-ilmweeblycom-maududi-bad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-ilmweeblycom-maududi-bad.webp" alt="Maududi Bad" class="mini-cover" loading="lazy" />
             <div class="mini-title">Maududi Bad</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/e-ilmweeblycom-rowza.html" class="mini-book-card">
+          <a href="../book/e-ilmweeblycom-rowza.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-ilmweeblycom-rowza.webp" alt="Rowza" class="mini-cover" loading="lazy" />
             <div class="mini-title">Rowza</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/e-ilmweeblycom-talimul-islam.html" class="mini-book-card">
+          <a href="../book/e-ilmweeblycom-talimul-islam.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-ilmweeblycom-talimul-islam.webp" alt="Talimul Islam" class="mini-cover" loading="lazy" />
             <div class="mini-title">Talimul Islam</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/e-ilmweeblycom-nuzhatul-kari.html" class="mini-book-card">
+          <a href="../book/e-ilmweeblycom-nuzhatul-kari.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-ilmweeblycom-nuzhatul-kari.webp" alt="Nuzhatul Kari" class="mini-cover" loading="lazy" />
             <div class="mini-title">Nuzhatul Kari</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/e-ilmweeblycom-urdu-03.html" class="mini-book-card">
+          <a href="../book/e-ilmweeblycom-urdu-03.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-ilmweeblycom-urdu-03.webp" alt="Urdu 03" class="mini-cover" loading="lazy" />
             <div class="mini-title">Urdu 03</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>
           </a>
         
-          <a href="../book/e-ilmweeblycom-urdu-02.html" class="mini-book-card">
+          <a href="../book/e-ilmweeblycom-urdu-02.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-ilmweeblycom-urdu-02.webp" alt="Urdu 02" class="mini-cover" loading="lazy" />
             <div class="mini-title">Urdu 02</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">PDF</span></div>

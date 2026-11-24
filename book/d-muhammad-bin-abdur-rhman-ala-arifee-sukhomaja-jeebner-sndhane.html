@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download সুখময় জীবনের সন্ধানে (Sukhomojo Jeeboner Sondhane) by ড. মুহাম্মাদ বিন আব্দুর রহমান আল-আরিফী (D Muhammad Bin Abdur Rhman Ala-Arifee) free in EPUB. ...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/d-muhammad-bin-abdur-rhman-ala-arifee-sukhomaja-jeebner-sndhane.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=d-muhammad-bin-abdur-rhman-ala-arifee-sukhomaja-jeebner-sndhane" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/d-muhammad-bin-abdur-rhman-ala-arifee-sukhomaja-jeebner-sndhane.webp" alt="সুখময় জীবনের সন্ধানে - ড. মুহাম্মাদ বিন আব্দুর রহমান আল-আরিফী" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2021</span>
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/20210616_20210616_1800/%E0%A6%B8%E0%A7%81%E0%A6%96%E0%A6%AE%E0%A6%AF%E0%A6%BC%20%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%B8%E0%A6%A8%E0%A7%8D%E0%A6%A7%E0%A6%BE%E0%A6%A8%E0%A7%87%20-%20%E0%A6%A1.%20%E0%A6%AE%E0%A7%81%E0%A6%B9%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AE%E0%A6%BE%E0%A6%A6%20%E0%A6%AC%E0%A6%BF%E0%A6%A8%20%E0%A6%86%E0%A6%AC%E0%A7%8D%E0%A6%A6%E0%A7%81%E0%A6%B0%20%E0%A6%B0%E0%A6%B9%E0%A6%AE%E0%A6%BE%E0%A6%A8%20%E0%A6%86%E0%A6%B2-%E0%A6%86%E0%A6%B0%E0%A6%BF%E0%A6%AB%E0%A7%80.epub" class="download-btn" download="সুখময় জীবনের সন্ধানে - ড. মুহাম্মাদ বিন আব্দুর রহমান আল-আরিফী.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সুখময় জীবনের সন্ধানে - ড. মুহাম্মাদ বিন আব্দুর রহমান আল-আরিফী.epub','file_extension':'epub','book_title':'সুখময় জীবনের সন্ধানে'});">
+          <a href="https://archive.org/download/20210616_20210616_1800/%E0%A6%B8%E0%A7%81%E0%A6%96%E0%A6%AE%E0%A6%AF%E0%A6%BC%20%E0%A6%9C%E0%A7%80%E0%A6%AC%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%B8%E0%A6%A8%E0%A7%8D%E0%A6%A7%E0%A6%BE%E0%A6%A8%E0%A7%87%20-%20%E0%A6%A1.%20%E0%A6%AE%E0%A7%81%E0%A6%B9%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AE%E0%A6%BE%E0%A6%A6%20%E0%A6%AC%E0%A6%BF%E0%A6%A8%20%E0%A6%86%E0%A6%AC%E0%A7%8D%E0%A6%A6%E0%A7%81%E0%A6%B0%20%E0%A6%B0%E0%A6%B9%E0%A6%AE%E0%A6%BE%E0%A6%A8%20%E0%A6%86%E0%A6%B2-%E0%A6%86%E0%A6%B0%E0%A6%BF%E0%A6%AB%E0%A7%80.epub" class="download-btn holo-card" download="সুখময় জীবনের সন্ধানে - ড. মুহাম্মাদ বিন আব্দুর রহমান আল-আরিফী.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সুখময় জীবনের সন্ধানে - ড. মুহাম্মাদ বিন আব্দুর রহমান আল-আরিফী.epub','file_extension':'epub','book_title':'সুখময় জীবনের সন্ধানে'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -517,37 +524,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/sah-oyaalioollah-muhaddise-dehlabhi-rahh-hujjatullahil-baligah-m-khand.html" class="mini-book-card">
+          <a href="../book/sah-oyaalioollah-muhaddise-dehlabhi-rahh-hujjatullahil-baligah-m-khand.html" class="mini-book-card holo-card">
             <img src="../assets/covers/sah-oyaalioollah-muhaddise-dehlabhi-rahh-hujjatullahil-baligah-m-khand.webp" alt="হুজ্জাতুল্লাহিল বালিগাহ ১ম খন্ড" class="mini-cover" loading="lazy" />
             <div class="mini-title">হুজ্জাতুল্লাহিল বালিগাহ ১ম খন্ড</div>
             <div class="mini-author">শাহ ওয়ালিউল্লাহ মুহাদ্দিসে দেহলভী (রহঃ)</div>
           </a>
         
-          <a href="../book/abdul-hamid-faijee-shbar-cheyae-besi.html" class="mini-book-card">
+          <a href="../book/abdul-hamid-faijee-shbar-cheyae-besi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/abdul-hamid-faijee-shbar-cheyae-besi.webp" alt="সবার চেয়ে বেশি" class="mini-cover" loading="lazy" />
             <div class="mini-title">সবার চেয়ে বেশি</div>
             <div class="mini-author">আব্দুল হামীদ ফাইযী</div>
           </a>
         
-          <a href="../book/abdul-mannan-talib-bangaladese-isholam.html" class="mini-book-card">
+          <a href="../book/abdul-mannan-talib-bangaladese-isholam.html" class="mini-book-card holo-card">
             <img src="../assets/covers/abdul-mannan-talib-bangaladese-isholam.webp" alt="বাংলাদেশে ইসলাম" class="mini-cover" loading="lazy" />
             <div class="mini-title">বাংলাদেশে ইসলাম</div>
             <div class="mini-author">আবদুল মান্নান তালিব</div>
           </a>
         
-          <a href="../book/d-khondkar-abdullah-jahangir-khutabatul-isholam.html" class="mini-book-card">
+          <a href="../book/d-khondkar-abdullah-jahangir-khutabatul-isholam.html" class="mini-book-card holo-card">
             <img src="../assets/covers/d-khondkar-abdullah-jahangir-khutabatul-isholam.webp" alt="খুতবাতুল ইসলাম" class="mini-cover" loading="lazy" />
             <div class="mini-title">খুতবাতুল ইসলাম</div>
             <div class="mini-author">ড. খোন্দকার আব্দুল্লাহ জাহাঙ্গীর</div>
           </a>
         
-          <a href="../book/abdur-rajyak-bin-eeushuf-ke-bd-kshtigrst.html" class="mini-book-card">
+          <a href="../book/abdur-rajyak-bin-eeushuf-ke-bd-kshtigrst.html" class="mini-book-card holo-card">
             <img src="../assets/covers/abdur-rajyak-bin-eeushuf-ke-bd-kshtigrst.webp" alt="কে বড় ক্ষতিগ্রস্ত" class="mini-cover" loading="lazy" />
             <div class="mini-title">কে বড় ক্ষতিগ্রস্ত</div>
             <div class="mini-author">আব্দুর রাযযাক বিন ইউসুফ</div>
           </a>
         
-          <a href="../book/saikh-muhammad-eebn-saleh-aal-usaeemeen-kitabul-ilm.html" class="mini-book-card">
+          <a href="../book/saikh-muhammad-eebn-saleh-aal-usaeemeen-kitabul-ilm.html" class="mini-book-card holo-card">
             <img src="../assets/covers/saikh-muhammad-eebn-saleh-aal-usaeemeen-kitabul-ilm.webp" alt="কিতাবুল ইলম" class="mini-cover" loading="lazy" />
             <div class="mini-title">কিতাবুল ইলম</div>
             <div class="mini-author">শাইখ মুহাম্মাদ ইবন সালেহ আল-উসাইমীন</div>

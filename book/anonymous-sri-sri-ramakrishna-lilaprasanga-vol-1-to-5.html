@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Sri Sri Ramakrishna Lilaprasanga Vol 1 to 5 (Sri Sri Ramakrishna Lilaprasanga Vol 1 To 5) by অজ্ঞাত (Anonymous) free in EPUB. ইন্টারনেট আর্কাইভ (Int...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-sri-sri-ramakrishna-lilaprasanga-vol-1-to-5.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-sri-sri-ramakrishna-lilaprasanga-vol-1-to-5" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-sri-sri-ramakrishna-lilaprasanga-vol-1-to-5.webp" alt="Sri Sri Ramakrishna Lilaprasanga Vol 1 to 5 - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/RamakrishnaLilaprasangaAll/01.Sri%20Ramakrishna%20Lilaprasanga-1.epub" class="download-btn" download="01.Sri Ramakrishna Lilaprasanga-1.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'01.Sri Ramakrishna Lilaprasanga-1.epub','file_extension':'epub','book_title':'Sri Sri Ramakrishna Lilaprasanga Vol 1 to 5'});">
+          <a href="https://archive.org/download/RamakrishnaLilaprasangaAll/01.Sri%20Ramakrishna%20Lilaprasanga-1.epub" class="download-btn holo-card" download="01.Sri Ramakrishna Lilaprasanga-1.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'01.Sri Ramakrishna Lilaprasanga-1.epub','file_extension':'epub','book_title':'Sri Sri Ramakrishna Lilaprasanga Vol 1 to 5'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-tapobhumi-narmada-vol-1.html" class="mini-book-card">
+          <a href="../book/anonymous-tapobhumi-narmada-vol-1.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-tapobhumi-narmada-vol-1.webp" alt="Tapobhumi Narmada Vol 1" class="mini-cover" loading="lazy" />
             <div class="mini-title">Tapobhumi Narmada Vol 1</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-sri-ramakrishna-kathamrita-akhanda.html" class="mini-book-card">
+          <a href="../book/anonymous-sri-ramakrishna-kathamrita-akhanda.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-sri-ramakrishna-kathamrita-akhanda.webp" alt="Sri Ramakrishna Kathamrita ( Akhanda)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Sri Ramakrishna Kathamrita ( Akhanda)</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shikhya-barta-vol-1-2.html" class="mini-book-card">
+          <a href="../book/anonymous-shikhya-barta-vol-1-2.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shikhya-barta-vol-1-2.webp" alt="Shikhya Barta Vol 1 &amp; 2" class="mini-cover" loading="lazy" />
             <div class="mini-title">Shikhya Barta Vol 1 &amp; 2</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-anushruti-volume-1.html" class="mini-book-card">
+          <a href="../book/anonymous-anushruti-volume-1.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-anushruti-volume-1.webp" alt="Anushruti Volume 1" class="mini-cover" loading="lazy" />
             <div class="mini-title">Anushruti Volume 1</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-samsad-bengali-to-english-dictionary.html" class="mini-book-card">
+          <a href="../book/anonymous-samsad-bengali-to-english-dictionary.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-samsad-bengali-to-english-dictionary.webp" alt="samsad_bengali_to_english_dictionary" class="mini-cover" loading="lazy" />
             <div class="mini-title">samsad_bengali_to_english_dictionary</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-shri-shri-mayer-padaprante-vol-1-4.html" class="mini-book-card">
+          <a href="../book/anonymous-shri-shri-mayer-padaprante-vol-1-4.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-shri-shri-mayer-padaprante-vol-1-4.webp" alt="Shri Shri Mayer Padaprante Vol 1-4" class="mini-cover" loading="lazy" />
             <div class="mini-title">Shri Shri Mayer Padaprante Vol 1-4</div>
             <div class="mini-author">অজ্ঞাত</div>

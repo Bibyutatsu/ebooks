@@ -11,9 +11,12 @@
   <meta property="og:description" content="Complete reading order and free downloads for 11 books in the ফেলুদা (Feluda) series by সত্যজিৎ রায় in EPUB, Kindle KFX, MOBI &amp; PDF.">
   <meta property="og:type" content="books.series">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/series/feluda.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -384,6 +387,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -391,6 +395,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../series/" class="nav-btn">All Series Universes →</a>
       </nav>
@@ -404,95 +411,149 @@ a:hover { color: #5ce1e6; }
       <span>ফেলুদা</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
-      <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">ফেলুদা Series</h1>
-      <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">Feluda · By সত্যজিৎ রায় (Satyajit Ray)</div>
-      <div class="badges-row">
-        <span class="badge series-badge" style="font-weight: 700;">
-          ⚡ 11 Books in Series
-        </span>
+    <div class="series-hero-wrap" data-series-id="feluda">
+      <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 4px;">⚡ ফেলুদা Series</h1>
+      <div style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 12px;">Feluda · Creator: <strong style="color:var(--accent);">সত্যজিৎ রায় (Satyajit Ray)</strong></div>
+      <div class="series-stats-bar">
+        <span class="series-stat-pill">📚 11 Books in Series</span>
+        <span class="series-stat-pill" id="series-progress-count">0 / 11 Completed</span>
       </div>
     </div>
 
-    <h2 class="section-heading"><span>📚</span> Canonical Reading Order (11 Books)</h2>
-    <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+    <h2 class="section-heading"><span>📜</span> Canonical Reading Order (11 Books)</h2>
+    <div class="timeline-reading-grid">
       
-          <a href="../book/satyajit-ray-feluda-shomogro-part-4.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#1</div>
-            <img src="../assets/covers/satyajit-ray-feluda-shomogro-part-4.webp" alt="Feluda Shomogro Part 4" class="mini-cover" loading="lazy" />
-            <div class="mini-title">Feluda Shomogro Part 4</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#1</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-feluda-shomogro-part-4">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-feluda-shomogro-part-4.html">
+              <img src="../assets/covers/satyajit-ray-feluda-shomogro-part-4.webp" alt="Feluda Shomogro Part 4" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">Feluda Shomogro Part 4</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/চরনতন-ভণডর-feluda-bee-o-komiks-songokoln.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#2</div>
-            <img src="../assets/covers/চরনতন-ভণডর-feluda-bee-o-komiks-songokoln.webp" alt="ফেলুদা বই ও কমিক্স সংকলন" class="mini-cover" loading="lazy" />
-            <div class="mini-title">ফেলুদা বই ও কমিক্স সংকলন</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#2</span>
+              <button type="button" class="read-check-btn" data-book-id="চরনতন-ভণডর-feluda-bee-o-komiks-songokoln">+ Mark Read</button>
+            </div>
+            <a href="../book/চরনতন-ভণডর-feluda-bee-o-komiks-songokoln.html">
+              <img src="../assets/covers/চরনতন-ভণডর-feluda-bee-o-komiks-songokoln.webp" alt="ফেলুদা বই ও কমিক্স সংকলন" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">ফেলুদা বই ও কমিক্স সংকলন</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/satyajit-ray-lndne-feluda.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#3</div>
-            <img src="../assets/covers/satyajit-ray-lndne-feluda.webp" alt="লন্ডনে ফেলুদা" class="mini-cover" loading="lazy" />
-            <div class="mini-title">লন্ডনে ফেলুদা</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#3</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-lndne-feluda">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-lndne-feluda.html">
+              <img src="../assets/covers/satyajit-ray-lndne-feluda.webp" alt="লন্ডনে ফেলুদা" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">লন্ডনে ফেলুদা</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/satyajit-ray-gorsthane-sabodhan.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#4</div>
-            <img src="../assets/covers/satyajit-ray-gorsthane-sabodhan.webp" alt="গোরস্থানে সাবধান" class="mini-cover" loading="lazy" />
-            <div class="mini-title">গোরস্থানে সাবধান</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#4</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-gorsthane-sabodhan">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-gorsthane-sabodhan.html">
+              <img src="../assets/covers/satyajit-ray-gorsthane-sabodhan.webp" alt="গোরস্থানে সাবধান" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">গোরস্থানে সাবধান</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/satyajit-ray-chhinnomstar-ovisap.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#5</div>
-            <img src="../assets/covers/satyajit-ray-chhinnomstar-ovisap.webp" alt="ছিন্নমস্তার অভিশাপ" class="mini-cover" loading="lazy" />
-            <div class="mini-title">ছিন্নমস্তার অভিশাপ</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#5</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-chhinnomstar-ovisap">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-chhinnomstar-ovisap.html">
+              <img src="../assets/covers/satyajit-ray-chhinnomstar-ovisap.webp" alt="ছিন্নমস্তার অভিশাপ" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">ছিন্নমস্তার অভিশাপ</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/satyajit-ray-tintoretor-jeesu.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#6</div>
-            <img src="../assets/covers/satyajit-ray-tintoretor-jeesu.webp" alt="টিনটোরেটোর যীশু" class="mini-cover" loading="lazy" />
-            <div class="mini-title">টিনটোরেটোর যীশু</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#6</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-tintoretor-jeesu">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-tintoretor-jeesu.html">
+              <img src="../assets/covers/satyajit-ray-tintoretor-jeesu.webp" alt="টিনটোরেটোর যীশু" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">টিনটোরেটোর যীশু</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/satyajit-ray-dabal-feluda.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#7</div>
-            <img src="../assets/covers/satyajit-ray-dabal-feluda.webp" alt="ডবল ফেলুদা" class="mini-cover" loading="lazy" />
-            <div class="mini-title">ডবল ফেলুদা</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#7</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-dabal-feluda">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-dabal-feluda.html">
+              <img src="../assets/covers/satyajit-ray-dabal-feluda.webp" alt="ডবল ফেলুদা" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">ডবল ফেলুদা</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/satyajit-ray-feluda-end-kong.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#8</div>
-            <img src="../assets/covers/satyajit-ray-feluda-end-kong.webp" alt="ফেলুদা এণ্ড কোং" class="mini-cover" loading="lazy" />
-            <div class="mini-title">ফেলুদা এণ্ড কোং</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#8</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-feluda-end-kong">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-feluda-end-kong.html">
+              <img src="../assets/covers/satyajit-ray-feluda-end-kong.webp" alt="ফেলুদা এণ্ড কোং" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">ফেলুদা এণ্ড কোং</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/satyajit-ray-feludar-goyoendagiri.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#9</div>
-            <img src="../assets/covers/satyajit-ray-feludar-goyoendagiri.webp" alt="ফেলুদার গোয়েন্দাগিরি" class="mini-cover" loading="lazy" />
-            <div class="mini-title">ফেলুদার গোয়েন্দাগিরি</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#9</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-feludar-goyoendagiri">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-feludar-goyoendagiri.html">
+              <img src="../assets/covers/satyajit-ray-feludar-goyoendagiri.webp" alt="ফেলুদার গোয়েন্দাগিরি" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">ফেলুদার গোয়েন্দাগিরি</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
-          <a href="../book/satyajit-ray-badosahee-aangoti.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#10</div>
-            <img src="../assets/covers/satyajit-ray-badosahee-aangoti.webp" alt="বাদশাহী আংটি" class="mini-cover" loading="lazy" />
-            <div class="mini-title">বাদশাহী আংটি</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#10</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-badosahee-aangoti">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-badosahee-aangoti.html">
+              <img src="../assets/covers/satyajit-ray-badosahee-aangoti.webp" alt="বাদশাহী আংটি" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">বাদশাহী আংটি</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
-          </a>
+          </div>
         
-          <a href="../book/satyajit-ray-sonar-kella.html" class="mini-book-card">
-            <div style="font-size:0.75rem;font-weight:700;color:var(--accent);">#11</div>
-            <img src="../assets/covers/satyajit-ray-sonar-kella.webp" alt="সোনার কেল্লা" class="mini-cover" loading="lazy" />
-            <div class="mini-title">সোনার কেল্লা</div>
+          <div class="reading-order-card holo-card holo-gold">
+            <div class="order-badge-row">
+              <span class="order-num">#11</span>
+              <button type="button" class="read-check-btn" data-book-id="satyajit-ray-sonar-kella">+ Mark Read</button>
+            </div>
+            <a href="../book/satyajit-ray-sonar-kella.html">
+              <img src="../assets/covers/satyajit-ray-sonar-kella.webp" alt="সোনার কেল্লা" class="mini-cover" loading="lazy" />
+              <div class="mini-title" style="margin-top:6px;">সোনার কেল্লা</div>
+            </a>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
-          </a>
+          </div>
         
     </div>
   </main>

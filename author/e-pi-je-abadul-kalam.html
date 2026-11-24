@@ -11,9 +11,12 @@
   <meta property="og:description" content="Free high-speed download of 6 Bengali ebooks by এ. পি. জে. আবদুল কালাম (E Pi Je Abadul Kalam) in EPUB, Kindle KFX, MOBI &amp; PDF formats.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://bibyutatsu.github.io/ebooks/author/e-pi-je-abadul-kalam.html">
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
   
     <script type="application/ld+json">
     {
@@ -389,6 +392,7 @@ a:hover { color: #5ce1e6; }
 </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -396,6 +400,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library</a>
         <a href="../author/" class="nav-btn">All Authors Directory →</a>
       </nav>
@@ -409,7 +416,7 @@ a:hover { color: #5ce1e6; }
       <span>এ. পি. জে. আবদুল কালাম</span>
     </div>
 
-    <div style="margin-bottom: 30px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+    <div class="author-hero-wrap">
       <h1 style="font-size: 2.2rem; color: var(--heading); margin-bottom: 6px;">এ. পি. জে. আবদুল কালাম</h1>
       <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 14px;">E Pi Je Abadul Kalam</div>
       <div class="badges-row">
@@ -449,37 +456,37 @@ a:hover { color: #5ce1e6; }
     <h2 class="section-heading"><span>📖</span> Available Books (6)</h2>
     <div class="related-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
       
-          <a href="../book/e-pi-je-abdul-kalam-eeganaited-mainds.html" class="mini-book-card">
+          <a href="../book/e-pi-je-abdul-kalam-eeganaited-mainds.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-pi-je-abdul-kalam-eeganaited-mainds.webp" alt="ইগনাইটেড মাইন্ডস" class="mini-cover" loading="lazy" />
             <div class="mini-title">ইগনাইটেড মাইন্ডস</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/e-pi-je-abdul-kalam-uttorna-sreshthtber-pthe-sakle.html" class="mini-book-card">
+          <a href="../book/e-pi-je-abdul-kalam-uttorna-sreshthtber-pthe-sakle.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-pi-je-abdul-kalam-uttorna-sreshthtber-pthe-sakle.webp" alt="উত্তরণ- শ্রেষ্ঠত্বের পথে সকলে" class="mini-cover" loading="lazy" />
             <div class="mini-title">উত্তরণ- শ্রেষ্ঠত্বের পথে সকলে</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/e-pi-je-abdul-kalam-tarning-pojentos.html" class="mini-book-card">
+          <a href="../book/e-pi-je-abdul-kalam-tarning-pojentos.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-pi-je-abdul-kalam-tarning-pojentos.webp" alt="টার্নিং পয়েন্টস" class="mini-cover" loading="lazy" />
             <div class="mini-title">টার্নিং পয়েন্টস</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>
           </a>
         
-          <a href="../book/e-pi-je-abdul-kalam-mai-jarni.html" class="mini-book-card">
+          <a href="../book/e-pi-je-abdul-kalam-mai-jarni.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-pi-je-abdul-kalam-mai-jarni.webp" alt="মাই জার্নি" class="mini-cover" loading="lazy" />
             <div class="mini-title">মাই জার্নি</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/e-pi-je-abdul-kalam-larning-hau-tu-flaee.html" class="mini-book-card">
+          <a href="../book/e-pi-je-abdul-kalam-larning-hau-tu-flaee.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-pi-je-abdul-kalam-larning-hau-tu-flaee.webp" alt="লার্নিং হাউ টু ফ্লাই" class="mini-cover" loading="lazy" />
             <div class="mini-title">লার্নিং হাউ টু ফ্লাই</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span></div>
           </a>
         
-          <a href="../book/e-pi-je-abdul-kalam-sndhixn-prtikulota-jajer-laxje-jatra.html" class="mini-book-card">
+          <a href="../book/e-pi-je-abdul-kalam-sndhixn-prtikulota-jajer-laxje-jatra.html" class="mini-book-card holo-card">
             <img src="../assets/covers/e-pi-je-abdul-kalam-sndhixn-prtikulota-jajer-laxje-jatra.webp" alt="সন্ধিক্ষণ _ প্রতিকূলতা জয়ের লক্ষ্যে যাত্রা" class="mini-cover" loading="lazy" />
             <div class="mini-title">সন্ধিক্ষণ _ প্রতিকূলতা জয়ের লক্ষ্যে যাত্রা</div>
             <div class="badges-row" style="margin-top:auto;"><span class="badge" style="font-size:0.65rem;padding:2px 5px;">KFX</span><span class="badge" style="font-size:0.65rem;padding:2px 5px;">EPUB</span></div>

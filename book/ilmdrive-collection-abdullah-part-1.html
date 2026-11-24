@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download Collection (Abdullah) [Part 1] (Collection Abdullah [Part 1]) by ILMDRIVE (Ilmdrive) free in PDF. ইন্টারনেট আর্কাইভ (Internet Archive), উপন্যাস ও সা...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/ilmdrive-collection-abdullah-part-1.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=ilmdrive-collection-abdullah-part-1" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/ilmdrive-collection-abdullah-part-1.webp" alt="Collection (Abdullah) [Part 1] - ILMDRIVE" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/CollectionBooks01/AfghanistaneAmarDekhaAllahrNidorshon.pdf" class="download-btn" download="AfghanistaneAmarDekhaAllahrNidorshon.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'AfghanistaneAmarDekhaAllahrNidorshon.pdf','file_extension':'pdf','book_title':'Collection (Abdullah) [Part 1]'});">
+          <a href="https://archive.org/download/CollectionBooks01/AfghanistaneAmarDekhaAllahrNidorshon.pdf" class="download-btn holo-card" download="AfghanistaneAmarDekhaAllahrNidorshon.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'AfghanistaneAmarDekhaAllahrNidorshon.pdf','file_extension':'pdf','book_title':'Collection (Abdullah) [Part 1]'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/ilmdrive-collection-taqi-usmani-part-4.html" class="mini-book-card">
+          <a href="../book/ilmdrive-collection-taqi-usmani-part-4.html" class="mini-book-card holo-card">
             <img src="../assets/covers/ilmdrive-collection-taqi-usmani-part-4.webp" alt="Collection (Taqi Usmani) [Part 4]" class="mini-cover" loading="lazy" />
             <div class="mini-title">Collection (Taqi Usmani) [Part 4]</div>
             <div class="mini-author">ILMDRIVE</div>
           </a>
         
-          <a href="../book/ilmdrive-collection-ali-nadawi-part-3.html" class="mini-book-card">
+          <a href="../book/ilmdrive-collection-ali-nadawi-part-3.html" class="mini-book-card holo-card">
             <img src="../assets/covers/ilmdrive-collection-ali-nadawi-part-3.webp" alt="Collection (Ali Nadawi) [Part 3]" class="mini-cover" loading="lazy" />
             <div class="mini-title">Collection (Ali Nadawi) [Part 3]</div>
             <div class="mini-author">ILMDRIVE</div>
           </a>
         
-          <a href="../book/ilmdrive-politics-related-books.html" class="mini-book-card">
+          <a href="../book/ilmdrive-politics-related-books.html" class="mini-book-card holo-card">
             <img src="../assets/covers/ilmdrive-politics-related-books.webp" alt="Politics Related Books" class="mini-cover" loading="lazy" />
             <div class="mini-title">Politics Related Books</div>
             <div class="mini-author">ILMDRIVE</div>
           </a>
         
-          <a href="../book/ilmdrive-jiboni-books.html" class="mini-book-card">
+          <a href="../book/ilmdrive-jiboni-books.html" class="mini-book-card holo-card">
             <img src="../assets/covers/ilmdrive-jiboni-books.webp" alt="Jiboni Books" class="mini-cover" loading="lazy" />
             <div class="mini-title">Jiboni Books</div>
             <div class="mini-author">ILMDRIVE</div>
           </a>
         
-          <a href="../book/ilmdrive-islamer-itihash-related-books.html" class="mini-book-card">
+          <a href="../book/ilmdrive-islamer-itihash-related-books.html" class="mini-book-card holo-card">
             <img src="../assets/covers/ilmdrive-islamer-itihash-related-books.webp" alt="Islamer Itihash Related books" class="mini-cover" loading="lazy" />
             <div class="mini-title">Islamer Itihash Related books</div>
             <div class="mini-author">ILMDRIVE</div>
           </a>
         
-          <a href="../book/ilmdrive-hadis-related-books.html" class="mini-book-card">
+          <a href="../book/ilmdrive-hadis-related-books.html" class="mini-book-card holo-card">
             <img src="../assets/covers/ilmdrive-hadis-related-books.webp" alt="Hadis Related Books" class="mini-cover" loading="lazy" />
             <div class="mini-title">Hadis Related Books</div>
             <div class="mini-author">ILMDRIVE</div>

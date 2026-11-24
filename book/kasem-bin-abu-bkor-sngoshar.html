@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download সংসার (Songosar) by কাশেম বিন আবু বকর (Kasem Bin Abu Bakr) free in KFX, EPUB. উপন্যাস ও সাহিত্য (General Fiction) Bengali literature digital edition...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/kasem-bin-abu-bkor-sngoshar.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -417,6 +420,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -424,6 +428,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=kasem-bin-abu-bkor-sngoshar" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -439,7 +446,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/kasem-bin-abu-bkor-sngoshar.webp" alt="সংসার - কাশেম বিন আবু বকর" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -469,7 +476,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-07/kasem-bin-abu-bkor-sngoshar.kfx" class="download-btn" download="সংসার - কাসেম বিন আবুবাকার.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সংসার - কাসেম বিন আবুবাকার.kfx','file_extension':'kfx','book_title':'সংসার'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-07/kasem-bin-abu-bkor-sngoshar.kfx" class="download-btn holo-card" download="সংসার - কাসেম বিন আবুবাকার.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সংসার - কাসেম বিন আবুবাকার.kfx','file_extension':'kfx','book_title':'সংসার'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -480,7 +487,7 @@ a:hover { color: #5ce1e6; }
             <span class="dl-icon">⬇</span>
           </a>
         
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-07/kasem-bin-abu-bkor-sngoshar.epub" class="download-btn" download="সংসার - কাসেম বিন আবুবাকার.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সংসার - কাসেম বিন আবুবাকার.epub','file_extension':'epub','book_title':'সংসার'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-07/kasem-bin-abu-bkor-sngoshar.epub" class="download-btn holo-card" download="সংসার - কাসেম বিন আবুবাকার.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'সংসার - কাসেম বিন আবুবাকার.epub','file_extension':'epub','book_title':'সংসার'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -526,37 +533,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/kasem-bin-abu-bkor-yekhane-keu-nei.html" class="mini-book-card">
+          <a href="../book/kasem-bin-abu-bkor-yekhane-keu-nei.html" class="mini-book-card holo-card">
             <img src="../assets/covers/kasem-bin-abu-bkor-yekhane-keu-nei.webp" alt="যেখানে কেউ নেই" class="mini-cover" loading="lazy" />
             <div class="mini-title">যেখানে কেউ নেই</div>
             <div class="mini-author">কাশেম বিন আবু বকর</div>
           </a>
         
-          <a href="../book/kasem-bin-abu-bkor-biyer-khonpa.html" class="mini-book-card">
+          <a href="../book/kasem-bin-abu-bkor-biyer-khonpa.html" class="mini-book-card holo-card">
             <img src="../assets/covers/kasem-bin-abu-bkor-biyer-khonpa.webp" alt="বিয়ের খোঁপা" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিয়ের খোঁপা</div>
             <div class="mini-author">কাশেম বিন আবু বকর</div>
           </a>
         
-          <a href="../book/kasem-bin-abu-bkor-jiban-bd-sundr.html" class="mini-book-card">
+          <a href="../book/kasem-bin-abu-bkor-jiban-bd-sundr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/kasem-bin-abu-bkor-jiban-bd-sundr.webp" alt="জীবন বড় সুন্দর" class="mini-cover" loading="lazy" />
             <div class="mini-title">জীবন বড় সুন্দর</div>
             <div class="mini-author">কাশেম বিন আবু বকর</div>
           </a>
         
-          <a href="../book/kasem-bin-abu-bkor-hridaje-aanka-chabi.html" class="mini-book-card">
+          <a href="../book/kasem-bin-abu-bkor-hridaje-aanka-chabi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/kasem-bin-abu-bkor-hridaje-aanka-chabi.webp" alt="হৃদয়ে আঁকা ছবি" class="mini-cover" loading="lazy" />
             <div class="mini-title">হৃদয়ে আঁকা ছবি</div>
             <div class="mini-author">কাশেম বিন আবু বকর</div>
           </a>
         
-          <a href="../book/kasem-bin-abu-bkor-kshma.html" class="mini-book-card">
+          <a href="../book/kasem-bin-abu-bkor-kshma.html" class="mini-book-card holo-card">
             <img src="../assets/covers/kasem-bin-abu-bkor-kshma.webp" alt="ক্ষমা" class="mini-cover" loading="lazy" />
             <div class="mini-title">ক্ষমা</div>
             <div class="mini-author">কাশেম বিন আবু বকর</div>
           </a>
         
-          <a href="../book/kasem-bin-abu-bkor-ki-pelam.html" class="mini-book-card">
+          <a href="../book/kasem-bin-abu-bkor-ki-pelam.html" class="mini-book-card holo-card">
             <img src="../assets/covers/kasem-bin-abu-bkor-ki-pelam.webp" alt="কি পেলাম" class="mini-cover" loading="lazy" />
             <div class="mini-title">কি পেলাম</div>
             <div class="mini-author">কাশেম বিন আবু বকর</div>

@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download কাউন্ট অব মন্টিক্রিষ্টো (Kaunt Ob Montikrishto) by আলেকজান্ডার দ্যুমা (Alexandre Dumas) free in EPUB, KFX. অনুবাদ (Translation), অ্যাডভেঞ্চার (Adven...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/alexandre-dumas-kaunt-ob-mntikrishto.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -419,6 +422,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -426,6 +430,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=alexandre-dumas-kaunt-ob-mntikrishto" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -441,7 +448,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/alexandre-dumas-kaunt-ob-mntikrishto.webp" alt="কাউন্ট অব মন্টিক্রিষ্টো - আলেকজান্ডার দ্যুমা" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -471,7 +478,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-03/alexandre-dumas-kaunt-ob-mntikrishto.epub" class="download-btn" download="কাউন্ট অব মন্টিক্রিষ্টো - আলেকজাণ্ডার দ্যুমা.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'কাউন্ট অব মন্টিক্রিষ্টো - আলেকজাণ্ডার দ্যুমা.epub','file_extension':'epub','book_title':'কাউন্ট অব মন্টিক্রিষ্টো'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-03/alexandre-dumas-kaunt-ob-mntikrishto.epub" class="download-btn holo-card" download="কাউন্ট অব মন্টিক্রিষ্টো - আলেকজাণ্ডার দ্যুমা.epub" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'কাউন্ট অব মন্টিক্রিষ্টো - আলেকজাণ্ডার দ্যুমা.epub','file_extension':'epub','book_title':'কাউন্ট অব মন্টিক্রিষ্টো'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #00ccff22; color: #00ccff; border: 1px solid #00ccff44;">EPUB</span>
               <div>
@@ -482,7 +489,7 @@ a:hover { color: #5ce1e6; }
             <span class="dl-icon">⬇</span>
           </a>
         
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-03/alexandre-dumas-kaunt-ob-mntikrishto.kfx" class="download-btn" download="কাউন্ট অব মন্টিক্রিষ্টো - আলেকজাণ্ডার দ্যুমা.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'কাউন্ট অব মন্টিক্রিষ্টো - আলেকজাণ্ডার দ্যুমা.kfx','file_extension':'kfx','book_title':'কাউন্ট অব মন্টিক্রিষ্টো'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-03/alexandre-dumas-kaunt-ob-mntikrishto.kfx" class="download-btn holo-card" download="কাউন্ট অব মন্টিক্রিষ্টো - আলেকজাণ্ডার দ্যুমা.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'কাউন্ট অব মন্টিক্রিষ্টো - আলেকজাণ্ডার দ্যুমা.kfx','file_extension':'kfx','book_title':'কাউন্ট অব মন্টিক্রিষ্টো'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -528,37 +535,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/alexandre-dumas-dj-krsikan-bradars.html" class="mini-book-card">
+          <a href="../book/alexandre-dumas-dj-krsikan-bradars.html" class="mini-book-card holo-card">
             <img src="../assets/covers/alexandre-dumas-dj-krsikan-bradars.webp" alt="দ্য কর্সিকান ব্রাদার্স" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্য কর্সিকান ব্রাদার্স</div>
             <div class="mini-author">আলেকজান্ডার দ্যুমা</div>
           </a>
         
-          <a href="../book/alexandre-dumas-dj-oolph-lidar.html" class="mini-book-card">
+          <a href="../book/alexandre-dumas-dj-oolph-lidar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/alexandre-dumas-dj-oolph-lidar.webp" alt="দ্য উলফ লিডার" class="mini-cover" loading="lazy" />
             <div class="mini-title">দ্য উলফ লিডার</div>
             <div class="mini-author">আলেকজান্ডার দ্যুমা</div>
           </a>
         
-          <a href="../book/alexandre-dumas-thri-masketijars.html" class="mini-book-card">
+          <a href="../book/alexandre-dumas-thri-masketijars.html" class="mini-book-card holo-card">
             <img src="../assets/covers/alexandre-dumas-thri-masketijars.webp" alt="থ্রি মাস্কেটিয়ার্স" class="mini-cover" loading="lazy" />
             <div class="mini-title">থ্রি মাস্কেটিয়ার্স</div>
             <div class="mini-author">আলেকজান্ডার দ্যুমা</div>
           </a>
         
-          <a href="../book/alexandre-dumas-tujaenoti-eeyaars-aafotar.html" class="mini-book-card">
+          <a href="../book/alexandre-dumas-tujaenoti-eeyaars-aafotar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/alexandre-dumas-tujaenoti-eeyaars-aafotar.webp" alt="টুয়েনটি ইয়ার্স আফটার" class="mini-cover" loading="lazy" />
             <div class="mini-title">টুয়েনটি ইয়ার্স আফটার</div>
             <div class="mini-author">আলেকজান্ডার দ্যুমা</div>
           </a>
         
-          <a href="../book/wilbur-smith-paojoar-ob-dy-sord.html" class="mini-book-card">
+          <a href="../book/wilbur-smith-paojoar-ob-dy-sord.html" class="mini-book-card holo-card">
             <img src="../assets/covers/wilbur-smith-paojoar-ob-dy-sord.webp" alt="পাওয়ার অব দ্য সোর্ড" class="mini-cover" loading="lazy" />
             <div class="mini-title">পাওয়ার অব দ্য সোর্ড</div>
             <div class="mini-author">উইলবার এডিসন স্মিথ</div>
           </a>
         
-          <a href="../book/wilbur-smith-rivar-gd.html" class="mini-book-card">
+          <a href="../book/wilbur-smith-rivar-gd.html" class="mini-book-card holo-card">
             <img src="../assets/covers/wilbur-smith-rivar-gd.webp" alt="রিভার গড" class="mini-cover" loading="lazy" />
             <div class="mini-title">রিভার গড</div>
             <div class="mini-author">উইলবার এডিসন স্মিথ</div>

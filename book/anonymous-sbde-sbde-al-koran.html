@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download শব্দে শব্দে আল কোরআন (Shobde Shobde Al Koroan) by অজ্ঞাত (Anonymous) free in PDF. Al-Qur-an, word to word. quran, ইন্টারনেট আর্কাইভ (Internet Archiv...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/anonymous-sbde-sbde-al-koran.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -420,6 +423,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -427,6 +431,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=anonymous-sbde-sbde-al-koran" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -442,7 +449,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/anonymous-sbde-sbde-al-koran.webp" alt="শব্দে শব্দে আল কোরআন - অজ্ঞাত" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           
@@ -472,7 +479,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://archive.org/download/muftioliullah_2_201805/%E0%A6%B6%E0%A6%AC%E0%A7%8D%E0%A6%A6%E0%A7%87%20%E0%A6%B6%E0%A6%AC%E0%A7%8D%E0%A6%A6%E0%A7%87%20%E0%A6%86%E0%A6%B2-%E0%A6%95%E0%A7%8B%E0%A6%B0%E0%A6%86%E0%A6%A8%201.pdf" class="download-btn" download="শব্দে শব্দে আল-কোরআন 1.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'শব্দে শব্দে আল-কোরআন 1.pdf','file_extension':'pdf','book_title':'শব্দে শব্দে আল কোরআন'});">
+          <a href="https://archive.org/download/muftioliullah_2_201805/%E0%A6%B6%E0%A6%AC%E0%A7%8D%E0%A6%A6%E0%A7%87%20%E0%A6%B6%E0%A6%AC%E0%A7%8D%E0%A6%A6%E0%A7%87%20%E0%A6%86%E0%A6%B2-%E0%A6%95%E0%A7%8B%E0%A6%B0%E0%A6%86%E0%A6%A8%201.pdf" class="download-btn holo-card" download="শব্দে শব্দে আল-কোরআন 1.pdf" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'শব্দে শব্দে আল-কোরআন 1.pdf','file_extension':'pdf','book_title':'শব্দে শব্দে আল কোরআন'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444444;">PDF</span>
               <div>
@@ -518,37 +525,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/anonymous-al-koran.html" class="mini-book-card">
+          <a href="../book/anonymous-al-koran.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-al-koran.webp" alt="আল কোরআন" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল কোরআন</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-al-bidaya-wan-nihaya.html" class="mini-book-card">
+          <a href="../book/anonymous-al-bidaya-wan-nihaya.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-al-bidaya-wan-nihaya.webp" alt="al bidaya wan nihaya" class="mini-cover" loading="lazy" />
             <div class="mini-title">al bidaya wan nihaya</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-al-fikohul-akbar.html" class="mini-book-card">
+          <a href="../book/anonymous-al-fikohul-akbar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-al-fikohul-akbar.webp" alt="আল ফিকহুল আকবার" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল ফিকহুল আকবার</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-al-kuranul-krim-bangla-onubad.html" class="mini-book-card">
+          <a href="../book/anonymous-al-kuranul-krim-bangla-onubad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-al-kuranul-krim-bangla-onubad.webp" alt="আল কুরআনুল করীম ( বাংলা অনুবাদ )" class="mini-cover" loading="lazy" />
             <div class="mini-title">আল কুরআনুল করীম ( বাংলা অনুবাদ )</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-upanishad-by-atul-chandra-sen-et-al-bengali-translation.html" class="mini-book-card">
+          <a href="../book/anonymous-upanishad-by-atul-chandra-sen-et-al-bengali-translation.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-upanishad-by-atul-chandra-sen-et-al-bengali-translation.webp" alt="Upanishad by Atul Chandra Sen et al. (Bengali translation)" class="mini-cover" loading="lazy" />
             <div class="mini-title">Upanishad by Atul Chandra Sen et al. (Bengali translation)</div>
             <div class="mini-author">অজ্ঞাত</div>
           </a>
         
-          <a href="../book/anonymous-al-qaulul-badee-fi-salat-ala-habil-al-shafi-by-imam-sakhawi.html" class="mini-book-card">
+          <a href="../book/anonymous-al-qaulul-badee-fi-salat-ala-habil-al-shafi-by-imam-sakhawi.html" class="mini-book-card holo-card">
             <img src="../assets/covers/anonymous-al-qaulul-badee-fi-salat-ala-habil-al-shafi-by-imam-sakhawi.webp" alt="Al Qaulul Badee Fi Salat Ala Habil Al Shafi By Imam Sakhawi" class="mini-cover" loading="lazy" />
             <div class="mini-title">Al Qaulul Badee Fi Salat Ala Habil Al Shafi By Imam Sakhawi</div>
             <div class="mini-author">অজ্ঞাত</div>

@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download নারী (Naree) by হুমায়ুন আজাদ (Humayun Azad) free in KFX. উপন্যাস (Novel), প্রবন্ধ ও ভাষাতত্ত্ব (Linguistics &amp;amp; Essays) Bengali literature digital...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/humayun-azad-nari.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=humayun-azad-nari" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/humayun-azad-nari.webp" alt="নারী - হুমায়ুন আজাদ" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-24/humayun-azad-nari.kfx" class="download-btn" download="নারী - হুমায়ুন আজাদ.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নারী - হুমায়ুন আজাদ.kfx','file_extension':'kfx','book_title':'নারী'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-24/humayun-azad-nari.kfx" class="download-btn holo-card" download="নারী - হুমায়ুন আজাদ.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'নারী - হুমায়ুন আজাদ.kfx','file_extension':'kfx','book_title':'নারী'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/humayun-azad-bangla-bhasar-satrumitr.html" class="mini-book-card">
+          <a href="../book/humayun-azad-bangla-bhasar-satrumitr.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-azad-bangla-bhasar-satrumitr.webp" alt="বাঙলা ভাষার শত্রুমিত্র" class="mini-cover" loading="lazy" />
             <div class="mini-title">বাঙলা ভাষার শত্রুমিত্র</div>
             <div class="mini-author">হুমায়ুন আজাদ</div>
           </a>
         
-          <a href="../book/humayun-azad-kto-ndee-sarobor-ba-bangla-bhasar-jibnee.html" class="mini-book-card">
+          <a href="../book/humayun-azad-kto-ndee-sarobor-ba-bangla-bhasar-jibnee.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-azad-kto-ndee-sarobor-ba-bangla-bhasar-jibnee.webp" alt="কতো নদী সরোবর বা বাঙলা ভাষার জীবনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">কতো নদী সরোবর বা বাঙলা ভাষার জীবনী</div>
             <div class="mini-author">হুমায়ুন আজাদ</div>
           </a>
         
-          <a href="../book/humayun-azad-shb-kichu-venge-pde.html" class="mini-book-card">
+          <a href="../book/humayun-azad-shb-kichu-venge-pde.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-azad-shb-kichu-venge-pde.webp" alt="সব কিছু ভেঙে পড়ে" class="mini-cover" loading="lazy" />
             <div class="mini-title">সব কিছু ভেঙে পড়ে</div>
             <div class="mini-author">হুমায়ুন আজাদ</div>
           </a>
         
-          <a href="../book/humayun-azad-lal-nil-dipaboli-ba-bangla-sahityer-jibnee.html" class="mini-book-card">
+          <a href="../book/humayun-azad-lal-nil-dipaboli-ba-bangla-sahityer-jibnee.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-azad-lal-nil-dipaboli-ba-bangla-sahityer-jibnee.webp" alt="লাল নীল দীপাবলী বা বাঙলা সাহিত্যের জীবনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">লাল নীল দীপাবলী বা বাঙলা সাহিত্যের জীবনী</div>
             <div class="mini-author">হুমায়ুন আজাদ</div>
           </a>
         
-          <a href="../book/humayun-azad-manus-hisebe-amar-oporadhoshmooh.html" class="mini-book-card">
+          <a href="../book/humayun-azad-manus-hisebe-amar-oporadhoshmooh.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-azad-manus-hisebe-amar-oporadhoshmooh.webp" alt="মানুষ হিশেবে আমার অপরাধসমূহ" class="mini-cover" loading="lazy" />
             <div class="mini-title">মানুষ হিশেবে আমার অপরাধসমূহ</div>
             <div class="mini-author">হুমায়ুন আজাদ</div>
           </a>
         
-          <a href="../book/humayun-azad-pak-sar-jmin-sad-bad.html" class="mini-book-card">
+          <a href="../book/humayun-azad-pak-sar-jmin-sad-bad.html" class="mini-book-card holo-card">
             <img src="../assets/covers/humayun-azad-pak-sar-jmin-sad-bad.webp" alt="পাক সার জমিন সাদ বাদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">পাক সার জমিন সাদ বাদ</div>
             <div class="mini-author">হুমায়ুন আজাদ</div>

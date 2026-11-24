@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download এসো (Eso) by ইমদাদুল হক মিলন (Eemdadul Hk Miln) free in KFX. উপন্যাস ও সাহিত্য (General Fiction) Bengali literature digital edition on Bibyutatsu Bo...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/imdadul-hok-milon-eso.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -417,6 +420,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -424,6 +428,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=imdadul-hok-milon-eso" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -439,7 +446,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/imdadul-hok-milon-eso.webp" alt="এসো - ইমদাদুল হক মিলন" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -469,7 +476,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-04/imdadul-hok-milon-eso.kfx" class="download-btn" download="এসো - ইমদাদুল হক মিলন.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'এসো - ইমদাদুল হক মিলন.kfx','file_extension':'kfx','book_title':'এসো'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-04/imdadul-hok-milon-eso.kfx" class="download-btn holo-card" download="এসো - ইমদাদুল হক মিলন.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'এসো - ইমদাদুল হক মিলন.kfx','file_extension':'kfx','book_title':'এসো'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -515,37 +522,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/imdadul-hok-milon-sreshth-glp.html" class="mini-book-card">
+          <a href="../book/imdadul-hok-milon-sreshth-glp.html" class="mini-book-card holo-card">
             <img src="../assets/covers/imdadul-hok-milon-sreshth-glp.webp" alt="শ্রেষ্ঠ গল্প" class="mini-cover" loading="lazy" />
             <div class="mini-title">শ্রেষ্ঠ গল্প</div>
             <div class="mini-author">ইমদাদুল হক মিলন</div>
           </a>
         
-          <a href="../book/imdadul-hok-milon-bibidh-rchana.html" class="mini-book-card">
+          <a href="../book/imdadul-hok-milon-bibidh-rchana.html" class="mini-book-card holo-card">
             <img src="../assets/covers/imdadul-hok-milon-bibidh-rchana.webp" alt="বিবিধ রচনা" class="mini-cover" loading="lazy" />
             <div class="mini-title">বিবিধ রচনা</div>
             <div class="mini-author">ইমদাদুল হক মিলন</div>
           </a>
         
-          <a href="../book/imdadul-hok-milon-priyo-humajun-aahamed.html" class="mini-book-card">
+          <a href="../book/imdadul-hok-milon-priyo-humajun-aahamed.html" class="mini-book-card holo-card">
             <img src="../assets/covers/imdadul-hok-milon-priyo-humajun-aahamed.webp" alt="প্রিয় হুমায়ূন আহমেদ" class="mini-cover" loading="lazy" />
             <div class="mini-title">প্রিয় হুমায়ূন আহমেদ</div>
             <div class="mini-author">ইমদাদুল হক মিলন</div>
           </a>
         
-          <a href="../book/imdadul-hok-milon-prija.html" class="mini-book-card">
+          <a href="../book/imdadul-hok-milon-prija.html" class="mini-book-card holo-card">
             <img src="../assets/covers/imdadul-hok-milon-prija.webp" alt="প্রিয়" class="mini-cover" loading="lazy" />
             <div class="mini-title">প্রিয়</div>
             <div class="mini-author">ইমদাদুল হক মিলন</div>
           </a>
         
-          <a href="../book/imdadul-hok-milon-nurjahan.html" class="mini-book-card">
+          <a href="../book/imdadul-hok-milon-nurjahan.html" class="mini-book-card holo-card">
             <img src="../assets/covers/imdadul-hok-milon-nurjahan.webp" alt="নূরজাহান" class="mini-cover" loading="lazy" />
             <div class="mini-title">নূরজাহান</div>
             <div class="mini-author">ইমদাদুল হক মিলন</div>
           </a>
         
-          <a href="../book/imdadul-hok-milon-dui-banglar-dampty-klaher-sot-kahini.html" class="mini-book-card">
+          <a href="../book/imdadul-hok-milon-dui-banglar-dampty-klaher-sot-kahini.html" class="mini-book-card holo-card">
             <img src="../assets/covers/imdadul-hok-milon-dui-banglar-dampty-klaher-sot-kahini.webp" alt="দুই বাংলার দাম্পত্য কলহের শত কাহিনী" class="mini-cover" loading="lazy" />
             <div class="mini-title">দুই বাংলার দাম্পত্য কলহের শত কাহিনী</div>
             <div class="mini-author">ইমদাদুল হক মিলন</div>

@@ -26,9 +26,12 @@
   <meta name="twitter:description" content="Download ছোটগল্প সংকলন (Chhotogolp Songokolon) by আখতারুজ্জামান ইলিয়াস (Akhtaruzzaman Elias) free in KFX. উপন্যাস (Novel), ক্লাসিক ও সাহিত্য (Classics) Benga...">
   <meta name="twitter:image" content="https://bibyutatsu.github.io/ebooks/assets/covers/akhtaruzzaman-elias-chotogolp-songakoln.webp">
 
+  <script>(function(){var t=localStorage.getItem('bm-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/pages.css?v=3.2">
+  <script src="../assets/pages.js?v=3.2" defer></script>
 
   
     <script type="application/ld+json">
@@ -418,6 +421,7 @@ a:hover { color: #5ce1e6; }
   </style>
 </head>
 <body>
+  <canvas id="canvas-ui-layer"></canvas>
   <header class="site-header">
     <div class="container header-inner">
       <a href="../" class="brand">
@@ -425,6 +429,9 @@ a:hover { color: #5ce1e6; }
         <span>Bibyutatsu BookStore</span>
       </a>
       <nav class="header-nav">
+        <button type="button" class="theme-subpage-btn" onclick="cyclePageTheme()" title="Switch Theme">
+          <span id="subpage-theme-label">THEME</span> 🎨
+        </button>
         <a href="../" class="nav-btn">← Back to Full Library (2,900+ Books)</a>
         <a href="../?book=akhtaruzzaman-elias-chotogolp-songakoln" class="nav-btn primary">Open in Web App ⚡</a>
       </nav>
@@ -440,7 +447,7 @@ a:hover { color: #5ce1e6; }
     </div>
 
     <article class="book-layout">
-      <div class="cover-wrapper">
+      <div class="cover-wrapper holo-card">
         <img src="../assets/covers/akhtaruzzaman-elias-chotogolp-songakoln.webp" alt="ছোটগল্প সংকলন - আখতারুজ্জামান ইলিয়াস" class="book-cover" fetchpriority="high" />
         <div class="badges-row" style="justify-content:center;">
           <span class="badge">Published: 2023</span>
@@ -470,7 +477,7 @@ a:hover { color: #5ce1e6; }
           </div>
           <div class="download-grid">
             
-          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-02/akhtaruzzaman-elias-chotogolp-songakoln.kfx" class="download-btn" download="ছোটগল্প সংকলন - আখতারুজ্জামান ইলিয়াস.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ছোটগল্প সংকলন - আখতারুজ্জামান ইলিয়াস.kfx','file_extension':'kfx','book_title':'ছোটগল্প সংকলন'});">
+          <a href="https://github.com/Bibyutatsu/ebooks/releases/download/v1.0-batch-02/akhtaruzzaman-elias-chotogolp-songakoln.kfx" class="download-btn holo-card" download="ছোটগল্প সংকলন - আখতারুজ্জামান ইলিয়াস.kfx" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','file_download',{'file_name':'ছোটগল্প সংকলন - আখতারুজ্জামান ইলিয়াস.kfx','file_extension':'kfx','book_title':'ছোটগল্প সংকলন'});">
             <div class="dl-left">
               <span class="fmt-tag" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44;">KFX</span>
               <div>
@@ -516,37 +523,37 @@ a:hover { color: #5ce1e6; }
       <h2 class="section-heading"><span>📚</span> Related Books & Recommendations</h2>
       <div class="related-grid">
         
-          <a href="../book/akhtaruzzaman-elias-sngoskritir-vanga-setu.html" class="mini-book-card">
+          <a href="../book/akhtaruzzaman-elias-sngoskritir-vanga-setu.html" class="mini-book-card holo-card">
             <img src="../assets/covers/akhtaruzzaman-elias-sngoskritir-vanga-setu.webp" alt="সংস্কৃতির ভাঙা সেতু" class="mini-cover" loading="lazy" />
             <div class="mini-title">সংস্কৃতির ভাঙা সেতু</div>
             <div class="mini-author">আখতারুজ্জামান ইলিয়াস</div>
           </a>
         
-          <a href="../book/akhtaruzzaman-elias-dudh-vate-ootpat.html" class="mini-book-card">
+          <a href="../book/akhtaruzzaman-elias-dudh-vate-ootpat.html" class="mini-book-card holo-card">
             <img src="../assets/covers/akhtaruzzaman-elias-dudh-vate-ootpat.webp" alt="দুধ ভাতে উৎপাত" class="mini-cover" loading="lazy" />
             <div class="mini-title">দুধ ভাতে উৎপাত</div>
             <div class="mini-author">আখতারুজ্জামান ইলিয়াস</div>
           </a>
         
-          <a href="../book/akhtaruzzaman-elias-chilekothar-shepai.html" class="mini-book-card">
+          <a href="../book/akhtaruzzaman-elias-chilekothar-shepai.html" class="mini-book-card holo-card">
             <img src="../assets/covers/akhtaruzzaman-elias-chilekothar-shepai.webp" alt="চিলেকোঠার সেপাই" class="mini-cover" loading="lazy" />
             <div class="mini-title">চিলেকোঠার সেপাই</div>
             <div class="mini-author">আখতারুজ্জামান ইলিয়াস</div>
           </a>
         
-          <a href="../book/akhtaruzzaman-elias-khojoabonama.html" class="mini-book-card">
+          <a href="../book/akhtaruzzaman-elias-khojoabonama.html" class="mini-book-card holo-card">
             <img src="../assets/covers/akhtaruzzaman-elias-khojoabonama.webp" alt="খোয়াবনামা" class="mini-cover" loading="lazy" />
             <div class="mini-title">খোয়াবনামা</div>
             <div class="mini-author">আখতারুজ্জামান ইলিয়াস</div>
           </a>
         
-          <a href="../book/akhtaruzzaman-elias-khonayari.html" class="mini-book-card">
+          <a href="../book/akhtaruzzaman-elias-khonayari.html" class="mini-book-card holo-card">
             <img src="../assets/covers/akhtaruzzaman-elias-khonayari.webp" alt="খোঁয়ারি" class="mini-cover" loading="lazy" />
             <div class="mini-title">খোঁয়ারি</div>
             <div class="mini-author">আখতারুজ্জামান ইলিয়াস</div>
           </a>
         
-          <a href="../book/akhtaruzzaman-elias-onj-ghre-anj-sbar.html" class="mini-book-card">
+          <a href="../book/akhtaruzzaman-elias-onj-ghre-anj-sbar.html" class="mini-book-card holo-card">
             <img src="../assets/covers/akhtaruzzaman-elias-onj-ghre-anj-sbar.webp" alt="অন্য ঘরে অন্য স্বর" class="mini-cover" loading="lazy" />
             <div class="mini-title">অন্য ঘরে অন্য স্বর</div>
             <div class="mini-author">আখতারুজ্জামান ইলিয়াস</div>
